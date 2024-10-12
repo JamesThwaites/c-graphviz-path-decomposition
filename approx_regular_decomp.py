@@ -1,6 +1,4 @@
 # from time import perf_counter
-from dataclasses import dataclass
-from collections import OrderedDict
 
 def get_entry_node(block: str) -> str:
     match block[0]:
@@ -77,7 +75,7 @@ def decompose(program: list[str]) -> list[set[str]]:
 
 
 
-print(program)
+# print(program)
 
 for bag in decompose(program):
     print(bag)

@@ -44,15 +44,18 @@ class Snode:
         outgoing_edge_types: list[EdgeType] = [edge.type for edge in self.outgoing_edges]
 
 
+        try:
+            if incoming_edge_types.count(EdgeType.IF) > 1:
+                self.mergeNodes([edge.source for edge in self.incoming_edges if edge.type == EdgeType.IF], EdgeType.IF)
+                incoming_edge_types: list[EdgeType] = [edge.type for edge in self.incoming_edges]
 
-        if incoming_edge_types.count(EdgeType.IF) > 1:
-            self.mergeNodes([node for node in self.incoming_edges if node.type == EdgeType.IF], EdgeType.IF)
-            incoming_edge_types: list[EdgeType] = [edge.type for edge in self.incoming_edges]
-
-        if incoming_edge_types.count(EdgeType.ELSE) > 1:
-            self.mergeNodes([node for node in self.incoming_edges if node.type == EdgeType.ELSE], EdgeType.ELSE)
-            incoming_edge_types: list[EdgeType] = [edge.type for edge in self.incoming_edges]
-
+            if incoming_edge_types.count(EdgeType.ELSE) > 1:
+                self.mergeNodes([edge.source for edge in self.incoming_edges if edge.type == EdgeType.ELSE], EdgeType.ELSE)
+                incoming_edge_types: list[EdgeType] = [edge.type for edge in self.incoming_edges]
+        
+        except ValueError as e:
+            #print(self.name + ":", e, file=sys.stderr)
+            return
 
         if EdgeType.SWITCH in outgoing_edge_types:
             self.type = NodeType.SWITCH
@@ -94,10 +97,15 @@ class Snode:
     def mergeNodes(self, nodes: list['Snode'], inc_edge_type: EdgeType):
         assert inc_edge_type in (EdgeType.IF, EdgeType.ELSE)
 
-        # 'self' = merge node
+        # print("merging onto node:", self.name)
+        # print("nodes to merge:", [node.name for node in nodes])
 
-        first = Snode.getFirstInGroup(nodes)
-        last = Snode.getLastInGroup(nodes)
+        # 'self' = merge node
+        first, connected1 = Snode.getFirstInGroup(nodes)
+        last, connected2 = Snode.getLastInGroup(nodes)
+
+        if not (connected1 or connected2):
+            raise ValueError("Nodes provided are not connected, will re-attempt merge later")
 
         to_remove = [edge for edge in self.incoming_edges
                     if (edge.source != first and edge.type == inc_edge_type)]
@@ -120,8 +128,9 @@ class Snode:
                 if node != last:
                     for edge in node.outgoing_edges: # remove edges from nodes to be pruned (except 'last' node)
                         edge.destination.incoming_edges.remove(edge)
-                        print("REMOVED EDGE!")
+                        # print("REMOVED EDGE!", edge.source.name, edge.destination.name)
 
+        # print(last.name)
         assert len(last.outgoing_edges) == 1 
         # 'last' should only have one outgoing edge since its edge into merge node was removed in (1)
 
@@ -130,26 +139,37 @@ class Snode:
         # modify this edge's source from 'last' to 'first' and append it to 'first's outgoing edges
         # this finalises the merge process since now 'first' replaces all the nodes in the CFG structure whilst
         # maintaining connectivty
+        # print(first.name, [edge.destination.name for edge in first.outgoing_edges])
 
     @staticmethod
-    def getFirstInGroup(nodes: list['Snode']) -> 'Snode':
+    def getFirstInGroup(nodes: list['Snode']) -> tuple['Snode', bool]:
+        group_connected = False
+        to_ret = None
         for node in nodes:
             for edge in node.incoming_edges:
                 if edge.type != EdgeType.LOOP and edge.source in nodes:
+                    group_connected = True
                     break
 
             else:
-                return node
+                to_ret = node
+
+        return to_ret, group_connected
             
     @staticmethod
-    def getLastInGroup(nodes: list['Snode']) -> 'Snode':
+    def getLastInGroup(nodes: list['Snode']) -> tuple['Snode', bool]:
+        group_connected = False
+        to_ret = None
         for node in nodes:
             for edge in node.outgoing_edges:
                 if edge.type != EdgeType.LOOP and edge.destination in nodes:
+                    group_connected = True
                     break
 
             else:
-                return node
+                to_ret = node
+
+        return to_ret, group_connected
             
     def getIfElseEdges(self) -> tuple['Sedge', 'Sedge']:
         assert self.type == NodeType.IF
@@ -209,6 +229,7 @@ class Snode:
                 return False
             
             Snode.merged.append(self.found)
+            # print("Merge:", self.name, self.found.name)
             return True
         
         return False
@@ -221,6 +242,8 @@ class Snode:
                 if self.outgoing_edges[0].destination.type == NodeType.RETURN:
                     if self.outgoing_edges[0].destination in Snode.merged:
                         return f'o{self.name.split("_")[-1]}'
+                if self.outgoing_edges[0].destination in Snode.merged:
+                    return f'o{self.name.split("_")[-1]}'
                 if self.outgoing_edges[0].type == EdgeType.SINGLE:
                     return f"o{self.name.split("_")[-1]} {self.outgoing_edges[0].destination}"
                 return f'o{self.name.split("_")[-1]}'
@@ -231,6 +254,8 @@ class Snode:
                 if self.outgoing_edges[0].destination.type == NodeType.RETURN:
                     if self.outgoing_edges[0].destination in Snode.merged:
                         return f'o{self.name.split("_")[-1]}'
+                if self.outgoing_edges[0].destination in Snode.merged:
+                    return f'o{self.name.split("_")[-1]}'
                 if self.outgoing_edges[0].type == EdgeType.SINGLE:
                     return f"o{self.name.split("_")[-1]} {self.outgoing_edges[0].destination}"
                 return f'o{self.name.split("_")[-1]}'
@@ -308,7 +333,7 @@ class Sedge:
                 self.type = EdgeType.SINGLE
 
             case _:
-                raise Exception(f"No edge type found for edge from {source} to {destination}")
+                raise Exception(f"No edge type found for edge from {source.name} to {destination.name}")
             
 input_graph: Dot = pydot.graph_from_dot_file(sys.argv[1])[0]
 main_sg: Subgraph = input_graph.get_subgraph('"cluster_main"')[0]
@@ -375,7 +400,18 @@ for node in nodes.values():
 entry_node.type = NodeType.ENTRY
 exit_node.type = NodeType.EXIT
 
-for node in nodes.values():
-    node.determineType()
+while True:
+    for node in nodes.values():
+        node.determineType()
+
+    for node in nodes.values():
+        if node.type == None:
+            break
+    
+    else:
+        break
+
+# for node in nodes.values():
+#     print(node.name, node.type, [(e.destination.name, e.type) for e in node.outgoing_edges])
 
 print(entry_node)

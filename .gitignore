@@ -166,3 +166,4 @@ cython_debug/
 *.out
 graphs/
 tokenised/
+.old

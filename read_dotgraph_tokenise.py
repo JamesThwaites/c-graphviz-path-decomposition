@@ -47,8 +47,8 @@ class Snode:
         if self.type != None: # type already set
             return
         
-        incoming_edge_types: list[EdgeType] = [edge.type for edge in self.incoming_edges]
-        outgoing_edge_types: list[EdgeType] = [edge.type for edge in self.outgoing_edges]
+        incoming_edge_types = [edge.type for edge in self.incoming_edges]
+        outgoing_edge_types = [edge.type for edge in self.outgoing_edges]
 
         if EdgeType.SWITCH in outgoing_edge_types:
             self.type = NodeType.SWITCH
@@ -420,6 +420,9 @@ class Sedge:
         self.source = source
         self.destination = destination
 
+        if dot_edge is None:
+            return
+
         match dot_edge.get_attributes():
             case {'style': '"dotted,bold"', 'color': 'blue'}:
                 self.type = EdgeType.LOOP
@@ -461,7 +464,7 @@ def main(graph_file_name: str = ''):
     main_sg: Subgraph = input_graph.get_subgraph('"cluster_main"')[0]
     input_graph_edges: list[Edge] = main_sg.get_edge_list()
 
-    # Construct dictionary of nodes
+    # Construct dictionary of nodes {'node_name': object}
     nodes: dict[str, Snode] = {}
 
     # Initialise list to store which loops each node is within
@@ -494,7 +497,8 @@ def main(graph_file_name: str = ''):
                                         node.get_attributes()["label"].strip('"')
                                     )
 
-        # prepend subgraphs of the current subgraph to the list of subgraphs still left to iterate
+        # Prepend subgraphs of the current subgraph to the list of
+        # subgraphs still left to iterate.
         # 'sg_label' is also prepended as a marker to tell the loop that we have exited the subgraph
         sgs_to_iterate = [*sg_to_iterate.get_subgraphs(), sg_label, *sgs_to_iterate]
 
@@ -506,11 +510,11 @@ def main(graph_file_name: str = ''):
         destination = edge.get_destination()[:-2]
         source = edge.get_source()[:-2]
 
-        new_edge = Sedge(nodes[source], nodes[destination], edge)
+        entry_edge = Sedge(nodes[source], nodes[destination], edge)
 
-        nodes[source].outgoing_edges.append(new_edge)
-        nodes[destination].incoming_edges.append(new_edge)
-        if new_edge.type != EdgeType.LOOP:
+        nodes[source].outgoing_edges.append(entry_edge)
+        nodes[destination].incoming_edges.append(entry_edge)
+        if entry_edge.type != EdgeType.LOOP:
             nodes[destination].non_loop_in_edge_count += 1
 
     # Find start and end nodes
@@ -527,7 +531,7 @@ def main(graph_file_name: str = ''):
     # Merge multi-conditionals
     while True:
         for node in nodes.values():
-            incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
+            incoming_edge_types = [edge.type for edge in node.incoming_edges]
 
             try:
                 if incoming_edge_types.count(EdgeType.IF) > 1:
@@ -540,22 +544,110 @@ def main(graph_file_name: str = ''):
                     incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
                     break
             
+            # If merge isn't possible yet due to nodes being
+            # disconnected, skip for now and come back later.
             except ValueError as e:
                 #print(self.name + ":", e, file=sys.stderr)
                 continue
         else:
             break
 
+    # Reformat switch statments
     while True:
+        # Look if there are any switches to format
         for node in nodes.values():
-            node.determineType()
+            outgoing_edge_types = [edge.type for edge in node.outgoing_edges]
 
-        for node in nodes.values():
-            if node.type == None:
+            if EdgeType.SWITCH in outgoing_edge_types:
+                case_nodes: list[Snode] = []
+
+                # The node after the switch if there's no default case
+                fallthrough_node = None
+                
+                for edge in node.outgoing_edges:
+                    edge.destination.incoming_edges.remove(edge)
+
+                    # The fallthrough node will have more than 1 in-edge
+                    if len(edge.destination.incoming_edges) > 0:
+                        fallthrough_node = edge.destination
+
+                    # Cases only have 1 in-edge, so 0 now
+                    else:
+                        case_nodes.append(edge.destination)
+                    
+                if fallthrough_node != None:
+                    case_nodes.append(fallthrough_node)
+
+                new_nodes = [
+                    Snode(
+                        f"s_{s_node.name}",
+                        s_node.inloops,
+                        ""
+                    )
+                    for s_node in case_nodes[:-1]
+                ]                    
+
+                entry_edge = Sedge(node, new_nodes[0], None)
+                entry_edge.type = EdgeType.SINGLE
+
+                node.outgoing_edges = [entry_edge]
+                new_nodes[0].incoming_edges = [entry_edge]
+                
+                for i, new_node in enumerate(new_nodes):
+                    nodes[new_node.name] = new_node
+                    new_node.non_loop_in_edge_count = 1
+                    
+                    if_edge = Sedge(
+                                new_node,
+                                case_nodes[i],
+                                None
+                            )
+                    if_edge.type = EdgeType.IF
+
+                    case_nodes[i].incoming_edges = [
+                        if_edge
+                    ]
+
+                    if i + 1 < len(new_nodes):
+                        else_edge = Sedge(
+                                            new_node,
+                                            new_nodes[i+1],
+                                            None
+                                        )
+                        else_edge.type = EdgeType.ELSE
+
+                        new_nodes[i+1].incoming_edges = [
+                            else_edge
+                        ]
+
+                        new_node.outgoing_edges = [
+                            if_edge, else_edge
+                        ]
+
+                    else:
+                        else_edge = Sedge(
+                                            new_node,
+                                            case_nodes[-1],
+                                            None
+                                        )
+                        else_edge.type = EdgeType.ELSE
+
+                        case_nodes[-1].incoming_edges.append(
+                            else_edge
+                        )
+
+                        new_node.outgoing_edges = [
+                            if_edge, else_edge
+                        ]
+
+                    # print(new_node.name, [edge.destination.name for edge in new_node.outgoing_edges])
                 break
-        
         else:
             break
+
+    # Compute node types
+    for node in nodes.values():
+        node.determineType()
 
     # for node in nodes.values():
     #     print(node.name, node.type, [(e.destination.name, e.type) for e in node.outgoing_edges])

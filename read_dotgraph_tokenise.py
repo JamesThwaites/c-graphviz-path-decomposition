@@ -50,10 +50,7 @@ class Snode:
         incoming_edge_types = [edge.type for edge in self.incoming_edges]
         outgoing_edge_types = [edge.type for edge in self.outgoing_edges]
 
-        if EdgeType.SWITCH in outgoing_edge_types:
-            self.type = NodeType.SWITCH
-
-        elif EdgeType.LOOP in incoming_edge_types:
+        if EdgeType.LOOP in incoming_edge_types:
             if (len(outgoing_edge_types) == 2 
                 and EdgeType.IF in outgoing_edge_types
                 #and EdgeType.ELSE in outgoing_edge_types
@@ -66,6 +63,7 @@ class Snode:
             else:
                 self.type = NodeType.DO_WHILE_START
                 print("DO_WHILE_START:", self.name)
+                raise ValueError("Do-while blocks are unsupported!")
 
         elif EdgeType.ELSE in outgoing_edge_types:
             if EdgeType.IF in outgoing_edge_types:
@@ -74,6 +72,7 @@ class Snode:
             elif EdgeType.LOOP in outgoing_edge_types:
                 self.type = NodeType.DO_WHILE_END
                 print("DO_WHILE_END:", self.name)
+                raise ValueError("Do-while blocks are unsupported!")
 
         elif EdgeType.IF in outgoing_edge_types:
             if EdgeType.LOOP in outgoing_edge_types:
@@ -410,7 +409,7 @@ class Snode:
                     else:
                         if_block = if_edge.destination
                     
-                    if else_edge.type != EdgeType.LOOP and else_block == "":
+                    if else_edge.type != EdgeType.LOOP and else_block == "" and else_edge.destination not in Snode.merged:
                         merge_block = else_edge.destination
 
                 return f"i{count} {if_block}{f" e{count} " if else_block != '' else ''}{else_block} f{count}{' ' if merge_block != '' else ''}{merge_block}"
@@ -569,7 +568,9 @@ def main(graph_file_name: str = ''):
 
                     # The fallthrough node will have more than 1 in-edge
                     if len(edge.destination.incoming_edges) > 0:
-                        fallthrough_node = edge.destination
+                        if fallthrough_node != None:
+                            raise ValueError("Switch cases without 'break' statements are unsupported!")
+                        fallthrough_node = edge.destination                            
 
                     # Cases only have 1 in-edge, so 0 now
                     else:
@@ -577,6 +578,8 @@ def main(graph_file_name: str = ''):
                     
                 if fallthrough_node != None:
                     case_nodes.append(fallthrough_node)
+                    # for edge in fallthrough_node.incoming_edges:
+                    #     edge.source.outgoing_edges.remove(edge)
 
                 new_nodes = [
                     Snode(
@@ -655,7 +658,7 @@ def main(graph_file_name: str = ''):
     if graph_file_name == '':
 
         # for node in nodes.values():
-        #     print(node.name, node.type)
+        #     print(node.name, node.type, [edge.source.name for edge in node.incoming_edges])
 
         # for br in Snode.breaks:
         #     print(br.source.name, br.destination.name)

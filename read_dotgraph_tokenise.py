@@ -63,7 +63,7 @@ class Snode:
             else:
                 self.type = NodeType.DO_WHILE_START
                 print("DO_WHILE_START:", self.name)
-                raise ValueError("Do-while blocks are unsupported!")
+                raise ValueError(f"Do-while blocks are unsupported! Offending node: {self.name}")
 
         elif EdgeType.ELSE in outgoing_edge_types:
             if EdgeType.IF in outgoing_edge_types:
@@ -72,13 +72,13 @@ class Snode:
             elif EdgeType.LOOP in outgoing_edge_types:
                 self.type = NodeType.DO_WHILE_END
                 print("DO_WHILE_END:", self.name)
-                raise ValueError("Do-while blocks are unsupported!")
+                raise ValueError(f"Do-while blocks are unsupported! Offending node: {self.name}")
 
         elif EdgeType.IF in outgoing_edge_types:
             if EdgeType.LOOP in outgoing_edge_types:
                 self.type = NodeType.IF
 
-        elif EdgeType.END in outgoing_edge_types:
+        elif EdgeType.END in outgoing_edge_types or len(outgoing_edge_types) == 0:
             self.type = NodeType.RETURN
 
         elif len(outgoing_edge_types) == 1:
@@ -348,7 +348,8 @@ class Snode:
             
             case NodeType.RETURN:
                 # return f"o{self.name.split("_")[-1]} {self.outgoing_edges[0].destination}"
-                return ""
+                Snode.ret_count += 1
+                return f"r{Snode.ret_count}"
             
             case NodeType.ENTRY:
                 return f"p {self.outgoing_edges[0].destination}"
@@ -441,12 +442,22 @@ class Sedge:
             case {'style': '"solid,bold"', 'color': 'black', 'weight': '100'}:
                 self.type = EdgeType.SINGLE
 
+            case {'color': 'red'}:
+                raise ValueError(f"Unsupported edge type! Offending edge is from {source.name} to {destination.name}")
+
             case _:
                 raise Exception(f"No edge type found for edge from {source.name} to {destination.name}")
 
 
 
 def main(graph_file_name: str = ''):
+    if graph_file_name != '':
+        input_graph: Dot = pydot.graph_from_dot_file(graph_file_name)[0]
+    else:
+        input_graph: Dot = pydot.graph_from_dot_file(sys.argv[1])[0]
+
+    main_sg: Subgraph = input_graph.get_subgraph('"cluster_main"')[0]
+
     # reset Snode 
     # (for testing purposes/running on multiple graphs in a row)
     Snode.if_count = 0
@@ -455,12 +466,6 @@ def main(graph_file_name: str = ''):
     Snode.dones = {}
     Snode.breaks = set()
 
-    if graph_file_name != '':
-        input_graph: Dot = pydot.graph_from_dot_file(graph_file_name)[0]
-    else:
-        input_graph: Dot = pydot.graph_from_dot_file(sys.argv[1])[0]
-
-    main_sg: Subgraph = input_graph.get_subgraph('"cluster_main"')[0]
     input_graph_edges: list[Edge] = main_sg.get_edge_list()
 
     # Construct dictionary of nodes {'node_name': object}
@@ -569,10 +574,11 @@ def main(graph_file_name: str = ''):
                     # The fallthrough node will have more than 1 in-edge
                     if len(edge.destination.incoming_edges) > 0:
                         if fallthrough_node != None:
-                            raise ValueError("Switch cases without 'break' statements are unsupported!")
+                            raise ValueError(f"Switch cases without 'break' statements are unsupported! Offending switch node: {node.name}")
                         fallthrough_node = edge.destination                            
 
-                    # Cases only have 1 in-edge, so 0 now
+                    # Cases only have 1 in-edge to begin with, so they
+                    # have 0 now
                     else:
                         case_nodes.append(edge.destination)
                     

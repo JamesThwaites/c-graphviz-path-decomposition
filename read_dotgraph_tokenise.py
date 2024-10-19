@@ -25,7 +25,11 @@ class EdgeType(Enum):
     END = auto()
     SWITCH = auto()
 
+class MergeError(Exception):
+    pass
 
+class UnsupportedError(Exception):
+    pass
 
 class Snode:
     if_count = 0
@@ -52,18 +56,19 @@ class Snode:
 
         if EdgeType.LOOP in incoming_edge_types:
             if (len(outgoing_edge_types) == 2 
-                and EdgeType.IF in outgoing_edge_types
-                #and EdgeType.ELSE in outgoing_edge_types
+                and (
+                    EdgeType.IF in outgoing_edge_types or
+                    EdgeType.ELSE in outgoing_edge_types
+                )
             ):
-
                 self.type = NodeType.WHILE
                 _, done_edge = self.getWhileDoneEdges()
                 Snode.dones[done_edge.destination] = self.inloops[-1]
 
             else:
                 self.type = NodeType.DO_WHILE_START
-                print("DO_WHILE_START:", self.name)
-                raise ValueError(f"Do-while blocks are unsupported! Offending node: {self.name}")
+                # print("DO_WHILE_START:", self.name)
+                raise UnsupportedError(f"Do-while blocks are unsupported! Offending node: {self.name}")
 
         elif EdgeType.ELSE in outgoing_edge_types:
             if EdgeType.IF in outgoing_edge_types:
@@ -71,8 +76,8 @@ class Snode:
 
             elif EdgeType.LOOP in outgoing_edge_types:
                 self.type = NodeType.DO_WHILE_END
-                print("DO_WHILE_END:", self.name)
-                raise ValueError(f"Do-while blocks are unsupported! Offending node: {self.name}")
+                # print("DO_WHILE_END:", self.name)
+                raise UnsupportedError(f"Do-while blocks are unsupported! Offending node: {self.name}")
 
         elif EdgeType.IF in outgoing_edge_types:
             if EdgeType.LOOP in outgoing_edge_types:
@@ -88,6 +93,10 @@ class Snode:
             # else:
             #     self.type = NodeType.MERGE
 
+        elif outgoing_edge_types.count(EdgeType.LOOP) == len(outgoing_edge_types):
+            self.type = NodeType.IF
+
+        # print(self.name, self.inloops)
         assert self.type != None # Every node should get a type
         
 
@@ -108,7 +117,7 @@ class Snode:
         last, connected2 = Snode.getLastInGroup(nodes)
 
         if not (connected1 or connected2):
-            raise ValueError("Nodes provided are not connected, "
+            raise MergeError("Nodes provided are not connected, "
                              "will re-attempt merge later")
 
     #   (1) Remove edges going into merge node from nodes to be pruned
@@ -221,7 +230,13 @@ class Snode:
         assert self.type == NodeType.IF
         assert len(self.outgoing_edges) == 2
 
-        if self.outgoing_edges[0].type == EdgeType.LOOP:
+        if self.outgoing_edges[0].type == EdgeType.LOOP and self.outgoing_edges[1].type == EdgeType.LOOP:
+            if self.outgoing_edges[0].destination.inloops[-1] == self.inloops[-1]:
+                return self.outgoing_edges[1], self.outgoing_edges[0]
+            else:
+                return self.outgoing_edges[0], self.outgoing_edges[1]
+
+        elif self.outgoing_edges[0].type == EdgeType.LOOP:
             return self.outgoing_edges[1], self.outgoing_edges[0]
         
         elif self.outgoing_edges[1].type == EdgeType.LOOP:
@@ -359,7 +374,11 @@ class Snode:
             
             case NodeType.WHILE:
                 loop_edge, done_edge = self.getWhileDoneEdges()
-                ret = f"w{self.inloops[-1].split()[-1]} {loop_edge.destination} d{self.inloops[-1].split()[-1]}"
+                if loop_edge.type != EdgeType.LOOP:
+                    ret = f"w{self.inloops[-1].split()[-1]} {loop_edge.destination} d{self.inloops[-1].split()[-1]}"
+                else:
+                    ret = f"w{self.inloops[-1].split()[-1]} o{self.name.split("_")[-1]} d{self.inloops[-1].split()[-1]}"
+
                 if done_edge.type != EdgeType.LOOP:
                     ret += f" {done_edge.destination}"
                 return ret
@@ -375,22 +394,20 @@ class Snode:
                 
                 # handle merge since this indicates no break/continue/return inside if block
                 if self.findMerge(if_edge):
+                    # If-block
                     if_block = if_edge.destination
 
+                    # Else-block
                     if else_edge.destination != self.found:
                         else_block = else_edge.destination
 
+                    # Merge-block
                     if self.found not in Snode.merged:
                         Snode.merged.add(self.found)                        
                         merge_block = self.found
                         
                     else:
                         merge_block = ""
-
-                    
-
-                    
-
 
                 else:
                     # account for continue statements
@@ -406,9 +423,11 @@ class Snode:
                             else_block = else_edge.destination
 
                     # account for break and return statements
-                    # else block is definitely in the loop
                     else:
-                        if_block = if_edge.destination
+                        if if_edge.type == EdgeType.LOOP:
+                            if_block = f"b{Snode.dones[if_edge.destination].split()[-1]}"
+                        else:
+                            if_block = if_edge.destination
                     
                     if else_edge.type != EdgeType.LOOP and else_block == "" and else_edge.destination not in Snode.merged:
                         merge_block = else_edge.destination
@@ -443,239 +462,275 @@ class Sedge:
                 self.type = EdgeType.SINGLE
 
             case {'color': 'red'}:
-                raise ValueError(f"Unsupported edge type! Offending edge is from {source.name} to {destination.name}")
+                raise UnsupportedError(f"Unsupported edge type! Offending edge is from {source.name} to {destination.name}")
 
             case _:
                 raise Exception(f"No edge type found for edge from {source.name} to {destination.name}")
 
+def tokenise_subgraph(subgraph: Subgraph):
+    # Catches UnsupportedError to pass as result
+    try:
+        # Reset Snode 
+        # for testing purposes/running on multiple graphs in a row
+        Snode.if_count = 0
+        Snode.ret_count = -1
+        Snode.merged = set()
+        Snode.dones = {}
+        Snode.breaks = set()
 
+        input_graph_edges: list[Edge] = subgraph.get_edge_list()
 
-def main(graph_file_name: str = ''):
-    if graph_file_name != '':
-        input_graph: Dot = pydot.graph_from_dot_file(graph_file_name)[0]
-    else:
-        input_graph: Dot = pydot.graph_from_dot_file(sys.argv[1])[0]
+        # Construct dictionary of nodes {'node_name': object}
+        nodes: dict[str, Snode] = {}
 
-    main_sg: Subgraph = input_graph.get_subgraph('"cluster_main"')[0]
+        # Initialise list to store which loops each node is within
+        sgs_to_iterate: list[Subgraph] = [subgraph]
+        inloops: list[str] = []
 
-    # reset Snode 
-    # (for testing purposes/running on multiple graphs in a row)
-    Snode.if_count = 0
-    Snode.ret_count = -1
-    Snode.merged = set()
-    Snode.dones = {}
-    Snode.breaks = set()
+        # Add nodes to the dictionary 
+        while sgs_to_iterate:
+            sg_to_iterate = sgs_to_iterate.pop(0)
 
-    input_graph_edges: list[Edge] = main_sg.get_edge_list()
-
-    # Construct dictionary of nodes {'node_name': object}
-    nodes: dict[str, Snode] = {}
-
-    # Initialise list to store which loops each node is within
-    sgs_to_iterate: list[Subgraph] = [main_sg]
-    inloops: list[str] = []
-
-    # Add nodes to the dictionary 
-    while sgs_to_iterate:
-        sg_to_iterate = sgs_to_iterate.pop(0)
-
-        """
-        If the subgraph is a string, that means
-        it is a marker to remove that subgraph name
-        from inloops, since the subsequent subgraphs
-        are no longer within that subgraph
-        """
-        if isinstance(sg_to_iterate, str):
-            inloops.remove(sg_to_iterate)
-            continue
-
-        sg_label = sg_to_iterate.get_attributes()["label"].strip('"')
-        inloops.append(sg_label)
-
-        # for node within the current subgraph
-        for node in sg_to_iterate.get_nodes():
-            # create a node object and add it to the node dictionary
-            nodes[node.get_name()] = Snode(
-                                        node.get_name(), 
-                                        inloops, 
-                                        node.get_attributes()["label"].strip('"')
-                                    )
-
-        # Prepend subgraphs of the current subgraph to the list of
-        # subgraphs still left to iterate.
-        # 'sg_label' is also prepended as a marker to tell the loop that we have exited the subgraph
-        sgs_to_iterate = [*sg_to_iterate.get_subgraphs(), sg_label, *sgs_to_iterate]
-
-    # Add edges to nodes
-    for edge in input_graph_edges:
-        if edge.get_attributes()['style'] == '"invis"':
-            continue
-
-        destination = edge.get_destination()[:-2]
-        source = edge.get_source()[:-2]
-
-        entry_edge = Sedge(nodes[source], nodes[destination], edge)
-
-        nodes[source].outgoing_edges.append(entry_edge)
-        nodes[destination].incoming_edges.append(entry_edge)
-        if entry_edge.type != EdgeType.LOOP:
-            nodes[destination].non_loop_in_edge_count += 1
-
-    # Find start and end nodes
-    for node in nodes.values():
-        if node.label == 'ENTRY':
-            entry_node = node
-            
-        elif node.label == 'EXIT':
-            exit_node = node
-
-    entry_node.type = NodeType.ENTRY
-    exit_node.type = NodeType.EXIT
-
-    # Merge multi-conditionals
-    while True:
-        for node in nodes.values():
-            incoming_edge_types = [edge.type for edge in node.incoming_edges]
-
-            try:
-                if incoming_edge_types.count(EdgeType.IF) > 1:
-                    node.mergeNodes([edge.source for edge in node.incoming_edges if edge.type == EdgeType.IF], EdgeType.IF)
-                    incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
-                    break
-
-                if incoming_edge_types.count(EdgeType.ELSE) > 1:
-                    node.mergeNodes([edge.source for edge in node.incoming_edges if edge.type == EdgeType.ELSE], EdgeType.ELSE)
-                    incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
-                    break
-            
-            # If merge isn't possible yet due to nodes being
-            # disconnected, skip for now and come back later.
-            except ValueError as e:
-                #print(self.name + ":", e, file=sys.stderr)
+            """
+            If the subgraph is a string, that means
+            it is a marker to remove that subgraph name
+            from inloops, since the subsequent subgraphs
+            are no longer within that subgraph
+            """
+            if isinstance(sg_to_iterate, str):
+                inloops.remove(sg_to_iterate)
                 continue
-        else:
-            break
 
-    # Reformat switch statments
-    while True:
-        # Look if there are any switches to format
+            sg_label = sg_to_iterate.get_attributes()["label"].strip('"')
+            inloops.append(sg_label)
+
+            # for node within the current subgraph
+            for node in sg_to_iterate.get_nodes():
+                # create a node object and add it to the node dictionary
+                nodes[node.get_name()] = Snode(
+                                            node.get_name(), 
+                                            inloops, 
+                                            node.get_attributes()["label"].strip('"')
+                                        )
+
+            # Prepend subgraphs of the current subgraph to the list of
+            # subgraphs still left to iterate.
+            # 'sg_label' is also prepended as a marker to tell the loop that we have exited the subgraph
+            sgs_to_iterate = [*sg_to_iterate.get_subgraphs(), sg_label, *sgs_to_iterate]
+
+        # Add edges to nodes
+        for edge in input_graph_edges:
+            if edge.get_attributes()['style'] == '"invis"':
+                continue
+
+            destination = edge.get_destination()[:-2]
+            source = edge.get_source()[:-2]
+
+            entry_edge = Sedge(nodes[source], nodes[destination], edge)
+
+            nodes[source].outgoing_edges.append(entry_edge)
+            nodes[destination].incoming_edges.append(entry_edge)
+            if entry_edge.type != EdgeType.LOOP:
+                nodes[destination].non_loop_in_edge_count += 1
+
+        # Find start and end nodes
         for node in nodes.values():
-            outgoing_edge_types = [edge.type for edge in node.outgoing_edges]
-
-            if EdgeType.SWITCH in outgoing_edge_types:
-                case_nodes: list[Snode] = []
-
-                # The node after the switch if there's no default case
-                fallthrough_node = None
+            if node.label == 'ENTRY':
+                entry_node = node
                 
-                for edge in node.outgoing_edges:
-                    edge.destination.incoming_edges.remove(edge)
+            elif node.label == 'EXIT':
+                exit_node = node
 
-                    # The fallthrough node will have more than 1 in-edge
-                    if len(edge.destination.incoming_edges) > 0:
-                        if fallthrough_node != None:
-                            raise ValueError(f"Switch cases without 'break' statements are unsupported! Offending switch node: {node.name}")
-                        fallthrough_node = edge.destination                            
+        entry_node.type = NodeType.ENTRY
+        exit_node.type = NodeType.EXIT
 
-                    # Cases only have 1 in-edge to begin with, so they
-                    # have 0 now
-                    else:
-                        case_nodes.append(edge.destination)
-                    
-                if fallthrough_node != None:
-                    case_nodes.append(fallthrough_node)
-                    # for edge in fallthrough_node.incoming_edges:
-                    #     edge.source.outgoing_edges.remove(edge)
+        # Merge multi-conditionals
+        while True:
+            for node in nodes.values():
+                incoming_edge_types = [edge.type for edge in node.incoming_edges]
 
-                new_nodes = [
-                    Snode(
-                        f"s_{s_node.name}",
-                        s_node.inloops,
-                        ""
-                    )
-                    for s_node in case_nodes[:-1]
-                ]                    
+                try:
+                    if incoming_edge_types.count(EdgeType.IF) > 1:
+                        node.mergeNodes([edge.source for edge in node.incoming_edges if edge.type == EdgeType.IF], EdgeType.IF)
+                        incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
+                        break
 
-                entry_edge = Sedge(node, new_nodes[0], None)
-                entry_edge.type = EdgeType.SINGLE
-
-                node.outgoing_edges = [entry_edge]
-                new_nodes[0].incoming_edges = [entry_edge]
+                    if incoming_edge_types.count(EdgeType.ELSE) > 1:
+                        node.mergeNodes([edge.source for edge in node.incoming_edges if edge.type == EdgeType.ELSE], EdgeType.ELSE)
+                        incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
+                        break
                 
-                for i, new_node in enumerate(new_nodes):
-                    nodes[new_node.name] = new_node
-                    new_node.non_loop_in_edge_count = 1
-                    
-                    if_edge = Sedge(
-                                new_node,
-                                case_nodes[i],
-                                None
-                            )
-                    if_edge.type = EdgeType.IF
-
-                    case_nodes[i].incoming_edges = [
-                        if_edge
-                    ]
-
-                    if i + 1 < len(new_nodes):
-                        else_edge = Sedge(
-                                            new_node,
-                                            new_nodes[i+1],
-                                            None
-                                        )
-                        else_edge.type = EdgeType.ELSE
-
-                        new_nodes[i+1].incoming_edges = [
-                            else_edge
-                        ]
-
-                        new_node.outgoing_edges = [
-                            if_edge, else_edge
-                        ]
-
-                    else:
-                        else_edge = Sedge(
-                                            new_node,
-                                            case_nodes[-1],
-                                            None
-                                        )
-                        else_edge.type = EdgeType.ELSE
-
-                        case_nodes[-1].incoming_edges.append(
-                            else_edge
-                        )
-
-                        new_node.outgoing_edges = [
-                            if_edge, else_edge
-                        ]
-
-                    # print(new_node.name, [edge.destination.name for edge in new_node.outgoing_edges])
+                # If merge isn't possible yet due to nodes being
+                # disconnected, skip for now and come back later.
+                except MergeError as e:
+                    #print(self.name + ":", e, file=sys.stderr)
+                    continue
+            else:
                 break
-        else:
-            break
 
-    # Compute node types
-    for node in nodes.values():
-        node.determineType()
+        # Reformat switch statments
+        while True:
+            # Look if there are any switches to format
+            for node in nodes.values():
+                outgoing_edge_types = [edge.type for edge in node.outgoing_edges]
 
-    # for node in nodes.values():
-    #     print(node.name, node.type, [(e.destination.name, e.type) for e in node.outgoing_edges])
-    
-    if graph_file_name == '':
+                if EdgeType.SWITCH in outgoing_edge_types:
+                    case_nodes: list[Snode] = []
+
+                    # The node after the switch if there's no default case
+                    fallthrough_node = None
+                    
+                    for edge in node.outgoing_edges:
+                        edge.destination.incoming_edges.remove(edge)
+
+                        # The fallthrough node will have more than 1 in-edge
+                        if len(edge.destination.incoming_edges) > 0:
+                            if fallthrough_node != None:
+                                raise UnsupportedError(f"Switch cases without 'break' statements are unsupported! Offending switch node: {node.name}")
+                            fallthrough_node = edge.destination                            
+
+                        # Cases only have 1 in-edge to begin with, so they
+                        # have 0 now
+                        else:
+                            case_nodes.append(edge.destination)
+                        
+                    if fallthrough_node != None:
+                        case_nodes.append(fallthrough_node)
+                        # for edge in fallthrough_node.incoming_edges:
+                        #     edge.source.outgoing_edges.remove(edge)
+
+                    new_nodes = [
+                        Snode(
+                            f"s_{s_node.name}",
+                            s_node.inloops,
+                            ""
+                        )
+                        for s_node in case_nodes[:-1]
+                    ]                    
+
+                    entry_edge = Sedge(node, new_nodes[0], None)
+                    entry_edge.type = EdgeType.SINGLE
+
+                    node.outgoing_edges = [entry_edge]
+                    new_nodes[0].incoming_edges = [entry_edge]
+                    
+                    for i, new_node in enumerate(new_nodes):
+                        nodes[new_node.name] = new_node
+                        new_node.non_loop_in_edge_count = 1
+                        
+                        if_edge = Sedge(
+                                    new_node,
+                                    case_nodes[i],
+                                    None
+                                )
+                        if_edge.type = EdgeType.IF
+
+                        case_nodes[i].incoming_edges = [
+                            if_edge
+                        ]
+
+                        if i + 1 < len(new_nodes):
+                            else_edge = Sedge(
+                                                new_node,
+                                                new_nodes[i+1],
+                                                None
+                                            )
+                            else_edge.type = EdgeType.ELSE
+
+                            new_nodes[i+1].incoming_edges = [
+                                else_edge
+                            ]
+
+                            new_node.outgoing_edges = [
+                                if_edge, else_edge
+                            ]
+
+                        else:
+                            else_edge = Sedge(
+                                                new_node,
+                                                case_nodes[-1],
+                                                None
+                                            )
+                            else_edge.type = EdgeType.ELSE
+
+                            case_nodes[-1].incoming_edges.append(
+                                else_edge
+                            )
+
+                            new_node.outgoing_edges = [
+                                if_edge, else_edge
+                            ]
+
+                        # print(new_node.name, [edge.destination.name for edge in new_node.outgoing_edges])
+                    break
+            else:
+                break
+
+        # Compute node types
+        for node in nodes.values():
+            node.determineType()
 
         # for node in nodes.values():
-        #     print(node.name, node.type, [edge.source.name for edge in node.incoming_edges])
+        #     print(node.name, node.type)
 
-        # for br in Snode.breaks:
-        #     print(br.source.name, br.destination.name)
+        # for edge in nodes["fn_8_basic_block_4"].getWhileDoneEdges():
+        #     print(edge.destination.name)
 
-        # for d in Snode.dones:
-        #     print(d.name, Snode.dones[d])
-        
-        print(f"{entry_node} {exit_node}")
+        # for br in Snode.dones:
+        #     print(Snode.dones[br], br.name)
+
+        return f"{entry_node} {exit_node}"
+    
+    except UnsupportedError as e:
+        return e
+
+def tokenise_dot_file(graph_file_name: str, subgraph_name: str = ''):
+    input_graph: Dot = pydot.graph_from_dot_file(graph_file_name)[0]
+    subgraphs: dict[str, Subgraph] = {
+        sg.get_name().strip('"'): sg 
+        for sg in input_graph.get_subgraph_list()
+    }
+
+    # Return the result for the one subgraph
+    if subgraph_name != '':
+        return tokenise_subgraph(subgraphs[subgraph_name])
+    
+    # Return the results for all subgraphs as 
+    # a dict with format {'subgraph_name': 'tokeniser_output'}
+    return {
+        sg_name: tokenise_subgraph(sg)
+        for sg_name, sg in subgraphs.items()
+    }
+
+def main():
+    if len(sys.argv) == 1 or len(sys.argv) > 3:
+        print(f"Usage: {__file__.split('/')[-1]}.py <path_to_dot_file> [<subgraph_name>]\n"
+              f"e.g. read_dotgraph_tokenise a-strlen-5.c.015t.cfg.dot cluster_main")
+        return
+    
+    input_graph: Dot = pydot.graph_from_dot_file(sys.argv[1])[0]
+    subgraphs: dict[str, Subgraph] = {
+        sg.get_name().strip('"'): sg 
+        for sg in input_graph.get_subgraph_list()
+    }
+
+    if len(sys.argv) > 2:
+        try:
+            print(tokenise_subgraph(subgraphs[sys.argv[2]]))
+        except KeyError:
+            print("That subgraph does not exist! Pick one of these:", ", ".join([sg_name for sg_name in subgraphs]))
 
     else:
-        return f"{entry_node} {exit_node}"
+        # Create results dict {'subgraph_name': 'tokeniser_output'}
+        results: dict[str, str] = {
+            sg_name: tokenise_subgraph(sg)
+            for sg_name, sg in subgraphs.items()
+        }
+        
+        # Print results for each subgraph
+        for subgraph_name, tokens in results.items():
+            print(f"{subgraph_name}:\n{tokens}\n")
+
 
 if __name__ == "__main__":
     main()

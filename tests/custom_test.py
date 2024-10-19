@@ -53,3 +53,7 @@ class CustomTest(unittest.TestCase):
     def test_custom_multiconditional_without_else(self):
         tokens = tokenise("tests/custom_test_graphs/multiconditional_no_else.cfg.dot")
         self.assertEqual(tokens, "p i0 o6 f0 i1 o11 f1 o12 r0 m")
+
+    def test_switch_without_default(self):
+        tokens = tokenise("tests/custom_test_graphs/switch_no_default.cfg.dot")
+        self.assertEqual(tokens, "p o2 i0 i1 o4 e1 o5 f1 o6 e0 i2 o7 e2 i3 o8 f3 f2 f0 o9 r0 m")

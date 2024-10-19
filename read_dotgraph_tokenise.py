@@ -1,6 +1,6 @@
 import pydot
 import sys
-import re
+from itertools import chain
 from pydot.core import Dot, Subgraph, Node, Edge
 from enum import Enum, auto
 
@@ -58,7 +58,8 @@ class Snode:
             if (len(outgoing_edge_types) == 2 
                 and (
                     EdgeType.IF in outgoing_edge_types or
-                    EdgeType.ELSE in outgoing_edge_types
+                    EdgeType.ELSE in outgoing_edge_types or 
+                    EdgeType.LOOP in outgoing_edge_types
                 )
             ):
                 self.type = NodeType.WHILE
@@ -107,22 +108,36 @@ class Snode:
         A multi-conditional is an ```if``` or ```while``` statement
         with multiple conditions (e.g. ```if x1 and x2```)
         """
-        assert inc_edge_type in (EdgeType.IF, EdgeType.ELSE)
+        assert inc_edge_type in (EdgeType.IF, EdgeType.ELSE, EdgeType.LOOP)
+        for node in nodes:
+            if node in [edge.destination for edge in node.outgoing_edges]:
+                raise MergeError("Group contains a self-referencing node")
 
         # self = 'merge node'
 
         # first = node evaluating the first conditional
-        first, connected1 = Snode.getFirstInGroup(nodes)
+        first = Snode.getFirstInGroup(nodes)
         # last = node evaluating the last conditional
-        last, connected2 = Snode.getLastInGroup(nodes)
+        last = Snode.getLastInGroup(nodes)
 
-        if not (connected1 or connected2):
+        group_connected = True
+        for node in nodes:
+            for neighbour in chain(
+                [edge.source for edge in node.incoming_edges],
+                [edge.destination for edge in node.outgoing_edges]
+            ):
+                if neighbour in nodes:
+                    break
+            else:
+                group_connected = False
+
+        if not group_connected:
             raise MergeError("Nodes provided are not connected, "
                              "will re-attempt merge later")
 
     #   (1) Remove edges going into merge node from nodes to be pruned
         to_remove = [edge for edge in self.incoming_edges
-                    if (edge.source != first 
+                    if (edge.source != first and edge.source in nodes
                     and edge.type == inc_edge_type)]
 
         for edge in to_remove:
@@ -163,7 +178,10 @@ class Snode:
                             edge.destination.non_loop_in_edge_count -= 1
                         # print("REMOVED EDGE!", edge.source.name, edge.destination.name)
 
+        # print([node.name for node in nodes])
         # print(last.name)
+        # for edge in last.outgoing_edges:
+        #     print(edge.destination.name)
         assert len(last.outgoing_edges) == 1 
         # 'last' should only have one outgoing edge since its edge 
         # into the merge node was removed in (1)
@@ -179,53 +197,81 @@ class Snode:
         #     print([e.destination.name for e in first.getWhileDoneEdges()])
 
     @staticmethod
-    def getFirstInGroup(nodes: list['Snode']) -> tuple['Snode', bool]:
+    def getFirstInGroup(nodes: list['Snode']) -> 'Snode':
         """Finds and returns the 'first' node in ```nodes```.
         
         The 'first' node is the node with no incoming edge from any
         other node in ```nodes```.
-        
-        The second return value is a flag indicating whether the 
-        graph of ```nodes``` is connected (i.e. whether a path exists
-        between every pair of nodes)
         """
-        group_connected = False
         to_ret = None
         for node in nodes:
             for edge in node.incoming_edges:
                 if edge.type != EdgeType.LOOP and edge.source in nodes:
-                    group_connected = True
                     break
-
             else:
                 to_ret = node
 
-        return to_ret, group_connected
+        return to_ret
             
     @staticmethod
-    def getLastInGroup(nodes: list['Snode']) -> tuple['Snode', bool]:
+    def getLastInGroup(nodes: list['Snode']) -> 'Snode':
         """Finds and returns the 'last' node in ```nodes```.
         
         The 'last' node is the node with no outgoing edge to any
         other node in ```nodes```.
-        
-        The second return value is a flag indicating whether the 
-        graph of ```nodes``` is connected (i.e. whether a path exists
-        between every pair of nodes)
         """
-        group_connected = False
         to_ret = None
         for node in nodes:
             for edge in node.outgoing_edges:
                 if edge.type != EdgeType.LOOP and edge.destination in nodes:
-                    group_connected = True
                     break
-
             else:
                 to_ret = node
 
-        return to_ret, group_connected
-            
+        return to_ret
+    
+    def getLoopMergeGroups(self, nodes: list['Snode']) -> list[list['Snode']]:
+        # Remove nodes with only one out edge (i.e. nodes at the end of loops)
+        for node in nodes[:]:
+            if len(node.outgoing_edges) < 2:
+                nodes.remove(node)
+
+        def exploreEdges(edges: list[Sedge]):
+            for edge in edges:
+                if edge.type == EdgeType.LOOP:
+                    return
+                
+                if edge.source not in group and edge.source in nodes:
+                    group.append(edge.source)
+                    exploreEdges(edge.source.incoming_edges)
+                    exploreEdges(edge.source.outgoing_edges)
+
+                if edge.destination not in group and edge.destination in nodes:
+                    group.append(edge.destination)
+                    exploreEdges(edge.destination.incoming_edges)
+                    exploreEdges(edge.destination.outgoing_edges)
+
+        groups: list[list['Snode']] = []
+        # Start with a random node and check if neighbours are also in nodes
+        # If so, build a group
+        for node in nodes[:]:
+            if node not in nodes:
+                continue
+            group = [node]
+            exploreEdges(node.incoming_edges)
+            exploreEdges(node.outgoing_edges)
+            for nd in group:
+                nodes.remove(nd)
+
+            if len(group) > 1:
+                groups.append(group)
+
+        # for group in groups:
+        #     for node in group:
+        #         print(node.name)
+        return groups
+                
+
     def getIfElseEdges(self) -> tuple['Sedge', 'Sedge']:
         assert self.type == NodeType.IF
         assert len(self.outgoing_edges) == 2
@@ -357,6 +403,7 @@ class Snode:
                 
                 if (self.outgoing_edges[0].destination.type == NodeType.RETURN):
                     Snode.ret_count += 1
+                    return f'r{Snode.ret_count}'
                     return f'o{self.name.split("_")[-1]} r{Snode.ret_count}'
                 
                 return f"o{self.name.split("_")[-1]} {self.outgoing_edges[0].destination}"
@@ -552,13 +599,27 @@ def tokenise_subgraph(subgraph: Subgraph):
                 try:
                     if incoming_edge_types.count(EdgeType.IF) > 1:
                         node.mergeNodes([edge.source for edge in node.incoming_edges if edge.type == EdgeType.IF], EdgeType.IF)
-                        incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
                         break
 
                     if incoming_edge_types.count(EdgeType.ELSE) > 1:
                         node.mergeNodes([edge.source for edge in node.incoming_edges if edge.type == EdgeType.ELSE], EdgeType.ELSE)
-                        incoming_edge_types: list[EdgeType] = [edge.type for edge in node.incoming_edges]
                         break
+
+                    if incoming_edge_types.count(EdgeType.LOOP) > 1:
+                        groups = node.getLoopMergeGroups([edge.source for edge in node.incoming_edges if edge.type == EdgeType.LOOP])
+                        for group in groups:
+                            first = Snode.getFirstInGroup(group)
+                            last = Snode.getLastInGroup(group)
+                            while (set([e.source for e in first.incoming_edges])
+                                   .intersection(set([e.source for e in last.incoming_edges]))
+                            ):
+                                group.remove(last)
+                                last = Snode.getLastInGroup(group)
+
+                            node.mergeNodes(group, EdgeType.LOOP)
+
+                        if groups:
+                            break
                 
                 # If merge isn't possible yet due to nodes being
                 # disconnected, skip for now and come back later.
@@ -682,7 +743,10 @@ def tokenise_subgraph(subgraph: Subgraph):
         return f"{entry_node} {exit_node}"
     
     except UnsupportedError as e:
-        return e
+        return f"UnsupportedError: {e}"
+    
+    except Exception as e:
+        return f"Unexpected Error: {repr(e)}"
 
 def tokenise_dot_file(graph_file_name: str, subgraph_name: str = ''):
     input_graph: Dot = pydot.graph_from_dot_file(graph_file_name)[0]
@@ -704,8 +768,8 @@ def tokenise_dot_file(graph_file_name: str, subgraph_name: str = ''):
 
 def main():
     if len(sys.argv) == 1 or len(sys.argv) > 3:
-        print(f"Usage: {__file__.split('/')[-1]}.py <path_to_dot_file> [<subgraph_name>]\n"
-              f"e.g. read_dotgraph_tokenise a-strlen-5.c.015t.cfg.dot cluster_main")
+        print(f"Usage:  <path_to_dot_file> [<subgraph_name>]\n"
+              f"e.g. {__file__.split('/')[-1]}.py a-strlen-5.c.015t.cfg.dot cluster_main")
         return
     
     input_graph: Dot = pydot.graph_from_dot_file(sys.argv[1])[0]
@@ -730,7 +794,6 @@ def main():
         # Print results for each subgraph
         for subgraph_name, tokens in results.items():
             print(f"{subgraph_name}:\n{tokens}\n")
-
 
 if __name__ == "__main__":
     main()

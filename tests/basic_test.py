@@ -4,7 +4,7 @@ from read_dotgraph_tokenise import tokenise_dot_file
 class BasicTest(unittest.TestCase):
     def test_if(self):
         tokens = tokenise_dot_file("tests/basic_test_graphs/a-0005-ifstmt.c.015t.cfg.dot", "cluster_main")
-        self.assertEqual(tokens, "p i0 o3 e0 i1 o5 e1 i2 o7 e2 o8 f2 f1 f0 r0 m")
+        self.assertEqual(tokens, "p i0 r0 f0 i1 r1 f1 i2 r2 f2 r3 m")
 
     def test_while(self):
         tokens = tokenise_dot_file("tests/basic_test_graphs/a-0006-whilestmt.c.015t.cfg.dot", "cluster_main")

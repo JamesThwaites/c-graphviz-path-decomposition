@@ -51,6 +51,10 @@ class Snode:
         if self.type != None: # type already set
             return
         
+        if "CLOBBER" in self.label:
+            self.type = NodeType.RETURN
+            return
+        
         incoming_edge_types = [edge.type for edge in self.incoming_edges]
         outgoing_edge_types = [edge.type for edge in self.outgoing_edges]
 
@@ -63,7 +67,11 @@ class Snode:
                 )
             ):
                 self.type = NodeType.WHILE
-                _, done_edge = self.getWhileDoneEdges()
+                loop_edge, done_edge = self.getWhileDoneEdges()
+                if loop_edge.destination.inloops[-1] == self.inloops[-1]:
+                    if done_edge.destination.inloops[-1] == self.inloops[-1]:
+                        raise UnsupportedError(f"Do-while blocks are unsupported! Offending node: {self.name}")
+                    
                 Snode.dones[done_edge.destination] = self.inloops[-1]
 
             else:
@@ -338,7 +346,11 @@ class Snode:
             if edge.type == EdgeType.LOOP:
                 return None
             
-            if edge.destination.non_loop_in_edge_count > 1 and edge.destination not in Snode.dones:
+            if edge.destination.non_loop_in_edge_count > 1:
+                # if edge.destination in Snode.dones:
+                #     non_loop_in_edge_count = len([e for e in edge.destination.incoming_edges if e not in Snode.breaks])
+                #     if_depth -= (non_loop_in_edge_count - 1)
+                # else:
                 if_depth -= (edge.destination.non_loop_in_edge_count - 1)
                 if if_depth < 0:
                     return edge
@@ -375,6 +387,7 @@ class Snode:
             for inc_edge in self.found.destination.incoming_edges:
                 if inc_edge.source.inloops[-1] != Snode.dones[self.found.destination]:
                     Snode.breaks.add(inc_edge)
+                    inc_edge.destination.non_loop_in_edge_count -= 1
 
             self.found = self.found.source
             # i.e. self.found = the node before the DONE node
@@ -426,7 +439,7 @@ class Snode:
                 else:
                     ret = f"w{self.inloops[-1].split()[-1]} o{self.name.split("_")[-1]} d{self.inloops[-1].split()[-1]}"
 
-                if done_edge.type != EdgeType.LOOP:
+                if done_edge.type != EdgeType.LOOP and done_edge.destination not in Snode.merged:
                     ret += f" {done_edge.destination}"
                 return ret
                 #return f"w{self.inloops[-1].split()[-1]} {loop_edge.destination} d{self.inloops[-1].split()[-1]} {done_edge.destination}"

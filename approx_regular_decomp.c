@@ -2,9 +2,12 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdarg.h>
+#include<time.h>
 
 #define INITIAL_ARRAY_LENGTH 8
 #define BUILD_BUFFER_LENGTH 10
+
+#define bag_width(i) bags_array[i].len_ifs + bags_array[i].len_whiles + bags_array[i].include_margorp + bags_array[i].num_nodes
 
 typedef struct {
     char node_type;
@@ -17,8 +20,22 @@ typedef struct {
     int* whiles;
     int len_whiles;
     int include_margorp;
-    char* blocks;
+    int num_nodes;
+    node* nodes;
 } bag;
+
+int ntoa(char** dest, node in_node) {
+    char *buffer = malloc(sizeof(char) * BUILD_BUFFER_LENGTH);
+    int written;
+    if (in_node.id == 0) {
+        written = snprintf(buffer, BUILD_BUFFER_LENGTH, "%c", in_node.node_type);
+
+    } else {
+        written = snprintf(buffer, BUILD_BUFFER_LENGTH, "%c%d", in_node.node_type, in_node.id);
+    }
+    *dest = buffer;
+    return written;
+}
 
 int has_entry_node(node in_node) {
     switch (in_node.node_type) {
@@ -64,7 +81,7 @@ int remove_int(int* int_array, int to_remove, int* current_array_length) {
     for (int i = (*current_array_length) - 1; i >= 0; i--) {
         if (int_array[i] == to_remove) {
             if (i != *current_array_length - 1) {
-                memcpy(int_array + i*sizeof(int), int_array + (i+1)*sizeof(int), (*current_array_length)-i);
+                memcpy(int_array + i, int_array + i + 1, (*current_array_length)-i);
             } else {
                 int_array[i] = 0;
             }
@@ -101,7 +118,7 @@ bag* append_bag(bag* bag_array, bag to_append, int* current_array_length) {
     return bag_array;
 }
 
-bag build_bag(int* ifs, int* whiles, int len_ifs, int len_whiles, int include_margorp, int num_blocks, ...) {
+bag build_bag(int* ifs, int* whiles, int len_ifs, int len_whiles, int include_margorp, int num_nodes, ...) {
     va_list valist;
 
     bag new_bag;
@@ -116,74 +133,47 @@ bag build_bag(int* ifs, int* whiles, int len_ifs, int len_whiles, int include_ma
 
     new_bag.include_margorp = include_margorp;
 
+    new_bag.num_nodes = num_nodes;
+    new_bag.nodes = malloc(sizeof(node) * num_nodes);
 
-    int total_len = 0;
-    int* lens = malloc(sizeof(int) * num_blocks);
-    va_start(valist, num_blocks);
-    for (int i = 0; i < num_blocks; i++) {
-        lens[i] = strlen(va_arg(valist, char*));
-        total_len += lens[i];
+    va_start(valist, num_nodes);
+    node to_add;
+    for (int i = 0; i < num_nodes; i++) {
+        to_add = va_arg(valist, node);
+        memcpy(new_bag.nodes + i, &to_add, sizeof(node));
     }
     va_end(valist);
-
-    new_bag.blocks = malloc(sizeof(char) * (total_len + num_blocks));
-
-    char* current_arg;
-    char* cursor = new_bag.blocks;
-
-    va_start(valist, num_blocks);
-    for (int i = 0; i < num_blocks; i++) {
-        current_arg = va_arg(valist, char*);
-        strcpy(cursor, current_arg);
-        free(current_arg);
-        cursor += lens[i] * sizeof(char);
-
-        if (i + 1 < num_blocks) {
-            memset(cursor, ' ', 1);
-            cursor += sizeof(char);
-        }
-    }
-    va_end(valist);
-    free(lens);
 
     return new_bag;
 }
 
-char* stringify_nodes(int num_blocks, node* in_nodes) {
-
-    return NULL;
-}
-
-char* ntoa(node in_node) {
-    char *buffer = malloc(sizeof(char) * BUILD_BUFFER_LENGTH);
-    if (in_node.id == 0) {
-        snprintf(buffer, BUILD_BUFFER_LENGTH, "%c", in_node.node_type);
-
-    } else {
-        snprintf(buffer, BUILD_BUFFER_LENGTH, "%c%d", in_node.node_type, in_node.id);
+char* stringify_nodes(int num_nodes, node* in_nodes) {
+    int total_len = 0;
+    int* lens = malloc(sizeof(int) * num_nodes);
+    char** strings = malloc(sizeof(char*) * num_nodes);
+    for (int i = 0; i < num_nodes; i++) {
+        lens[i] = ntoa(&(strings[i]), in_nodes[i]);
+        //printf("%s %c%d,", strings[i], in_nodes[i].node_type, in_nodes[i].id);
+        total_len += lens[i];
     }
-    return buffer;
-}
+    
+    char* output = malloc(sizeof(char) * (total_len + num_nodes));
+    char* cursor = output;
 
-char* build_include(int* ifs, int* whiles, int len_ifs, int len_whiles) {
-    int i;
-    int written;
-    char buffer[BUILD_BUFFER_LENGTH];
-    char *output = NULL;
-    int len_output = 0;
+    for (int i = 0; i < num_nodes; i++) {
+        strcpy(cursor, strings[i]);
+        free(strings[i]);
+        cursor += lens[i];
 
-    for (i = 0; i < len_ifs; i++) {
-        if (ifs[i] > 0) {
-            written = snprintf(buffer, BUILD_BUFFER_LENGTH, "i%d ", ifs[i]);
-
-        } else {
-            written = snprintf(buffer, BUILD_BUFFER_LENGTH, "f%d ", -ifs[i]);
-        }
-        if (output == NULL) {
-            output = malloc(sizeof(char) * written);
-            //strcpy();
+        if (i + 1 < num_nodes) {
+            memset(cursor, ' ', 1);
+            cursor += 1;
         }
     }
+    //printf("\n");
+    free(lens);
+    free(strings);
+
     return output;
 }
 
@@ -224,6 +214,8 @@ int main(int argc, char *argv[]) {
     while_count *= 2;
 
     //printf("num_nodes: %d\n", current_len_node_array);
+
+    clock_t start = clock();
 
     bag *bags_array = malloc(sizeof(bag) * current_len_node_array);
     int num_bags = 0;
@@ -268,7 +260,7 @@ int main(int argc, char *argv[]) {
                                 bags_array, 
                                 build_bag(
                                     ifs, whiles, len_ifs, len_whiles, include_margorp,
-                                    1, ntoa(node_array[i])
+                                    1, node_array[i]
                                 ),
                                 &num_bags
                             );
@@ -279,7 +271,7 @@ int main(int argc, char *argv[]) {
                                 bags_array, 
                                 build_bag(
                                     ifs, whiles, len_ifs, len_whiles, include_margorp,
-                                    1, ntoa(node_array[i])
+                                    1, node_array[i]
                                 ),
                                 &num_bags
                             );
@@ -290,7 +282,7 @@ int main(int argc, char *argv[]) {
                                 bags_array, 
                                 build_bag(
                                     ifs, whiles, len_ifs, len_whiles, include_margorp,
-                                    1, ntoa(node_array[i])
+                                    1, node_array[i]
                                 ),
                                 &num_bags
                             );
@@ -301,7 +293,7 @@ int main(int argc, char *argv[]) {
                                 bags_array, 
                                 build_bag(
                                     ifs, whiles, len_ifs, len_whiles, include_margorp,
-                                    1, ntoa(node_array[i])
+                                    1, node_array[i]
                                 ),
                                 &num_bags
                             );
@@ -312,7 +304,7 @@ int main(int argc, char *argv[]) {
                             bags_array, 
                             build_bag(
                                 ifs, whiles, len_ifs, len_whiles, include_margorp,
-                                2, ntoa(node_array[i]), ntoa(node_array[i+1])
+                                2, node_array[i], node_array[i+1]
                             ),
                             &num_bags
                         );
@@ -322,9 +314,16 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    printf("num_bags: %d\n", num_bags);
+    clock_t clocks_taken = (clock() - start);
+    double time_taken = clocks_taken / CLOCKS_PER_SEC;
+
+    int max_width = 0;
 
     for (int i = 0; i < num_bags; i++) {
+        if (bag_width(i) > max_width) {
+            max_width = bag_width(i);
+        }
+
         if (bags_array[i].include_margorp) {
             printf("m ");
         }
@@ -344,16 +343,48 @@ int main(int argc, char *argv[]) {
                 printf("d%d ", -(bags_array[i].whiles[j]));
             }
         }
-        printf("%s\n", bags_array[i].blocks);
+        printf("%s\n", stringify_nodes(bags_array[i].num_nodes, bags_array[i].nodes));
 
         free(bags_array[i].ifs);
         free(bags_array[i].whiles);
-        free(bags_array[i].blocks);
+        free(bags_array[i].nodes);
     }
 
     free(ifs);
     free(whiles);
     free(bags_array);
     free(node_array);
+
+    printf("\n");
+    printf("# of Bags: %d\n", num_bags);
+    printf("# of Nodes: %d\n", current_len_node_array);
+    printf("Width: %d\n", max_width - 1);
+    printf("\n");
+    printf("Clocks taken: %ld\n", clocks_taken);
+    printf("Time taken: %f\n",      time_taken);
+    printf("CPS: %ld\n",            CLOCKS_PER_SEC);
+
     return 0;
 }
+
+// char* build_include(int* ifs, int* whiles, int len_ifs, int len_whiles) {
+//     int i;
+//     int written;
+//     char buffer[BUILD_BUFFER_LENGTH];
+//     char *output = NULL;
+//     int len_output = 0;
+
+//     for (i = 0; i < len_ifs; i++) {
+//         if (ifs[i] > 0) {
+//             written = snprintf(buffer, BUILD_BUFFER_LENGTH, "i%d ", ifs[i]);
+
+//         } else {
+//             written = snprintf(buffer, BUILD_BUFFER_LENGTH, "f%d ", -ifs[i]);
+//         }
+//         if (output == NULL) {
+//             output = malloc(sizeof(char) * written);
+//             //strcpy();
+//         }
+//     }
+//     return output;
+// }

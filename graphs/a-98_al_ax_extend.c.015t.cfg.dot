@@ -1,0 +1,86 @@
+digraph "a-98_al_ax_extend.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/98_al_ax_extend.c:25:22]\ fpus\ =\ [valid_files/98_al_ax_extend.c:25:36]\ _us;\l\
+|[valid_files/98_al_ax_extend.c:26:13]\ fpss\ =\ [valid_files/98_al_ax_extend.c:26:27]\ _ss;\l\
+|[valid_files/98_al_ax_extend.c:27:21]\ fpuc\ =\ [valid_files/98_al_ax_extend.c:27:35]\ _uc;\l\
+|[valid_files/98_al_ax_extend.c:28:19]\ fpsc\ =\ [valid_files/98_al_ax_extend.c:28:33]\ _sc;\l\
+|[valid_files/98_al_ax_extend.c:30:37]\ _1\ =\ fpus\ ();\l\
+|[valid_files/98_al_ax_extend.c:30:37\ discrim\ 1]\ _2\ =\ (int)\ _1;\l\
+|[valid_files/98_al_ax_extend.c:30:5\ discrim\ 1]\ _3\ =\ _2\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:30:27\ discrim\ 1]\ _4\ =\ _us\ ();\l\
+|[valid_files/98_al_ax_extend.c:30:27\ discrim\ 2]\ _5\ =\ (int)\ _4;\l\
+|[valid_files/98_al_ax_extend.c:30:5\ discrim\ 2]\ _6\ =\ _5\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:30:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:30:12]\ \"%08X\ %08X\\n\",\ _6,\ _3);\l\
+|[valid_files/98_al_ax_extend.c:31:37]\ _7\ =\ fpss\ ();\l\
+|[valid_files/98_al_ax_extend.c:31:37\ discrim\ 1]\ _8\ =\ (int)\ _7;\l\
+|[valid_files/98_al_ax_extend.c:31:5\ discrim\ 1]\ _9\ =\ _8\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:31:27\ discrim\ 1]\ _10\ =\ _ss\ ();\l\
+|[valid_files/98_al_ax_extend.c:31:27\ discrim\ 2]\ _11\ =\ (int)\ _10;\l\
+|[valid_files/98_al_ax_extend.c:31:5\ discrim\ 2]\ _12\ =\ _11\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:31:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:31:12]\ \"%08X\ %08X\\n\",\ _12,\ _9);\l\
+|[valid_files/98_al_ax_extend.c:32:37]\ _13\ =\ fpuc\ ();\l\
+|[valid_files/98_al_ax_extend.c:32:37\ discrim\ 1]\ _14\ =\ (int)\ _13;\l\
+|[valid_files/98_al_ax_extend.c:32:5\ discrim\ 1]\ _15\ =\ _14\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:32:27\ discrim\ 1]\ _16\ =\ _uc\ ();\l\
+|[valid_files/98_al_ax_extend.c:32:27\ discrim\ 2]\ _17\ =\ (int)\ _16;\l\
+|[valid_files/98_al_ax_extend.c:32:5\ discrim\ 2]\ _18\ =\ _17\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:32:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:32:12]\ \"%08X\ %08X\\n\",\ _18,\ _15);\l\
+|[valid_files/98_al_ax_extend.c:33:37]\ _19\ =\ fpsc\ ();\l\
+|[valid_files/98_al_ax_extend.c:33:37\ discrim\ 1]\ _20\ =\ (int)\ _19;\l\
+|[valid_files/98_al_ax_extend.c:33:5\ discrim\ 1]\ _21\ =\ _20\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:33:27\ discrim\ 1]\ _22\ =\ _sc\ ();\l\
+|[valid_files/98_al_ax_extend.c:33:27\ discrim\ 2]\ _23\ =\ (int)\ _22;\l\
+|[valid_files/98_al_ax_extend.c:33:5\ discrim\ 2]\ _24\ =\ _23\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:33:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:33:12]\ \"%08X\ %08X\\n\",\ _24,\ _21);\l\
+|[valid_files/98_al_ax_extend.c:34:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/98_al_ax_extend.c:35:39]\ _25\ =\ _us\ ();\l\
+|[valid_files/98_al_ax_extend.c:35:39\ discrim\ 1]\ _26\ =\ (int)\ _25;\l\
+|[valid_files/98_al_ax_extend.c:35:5\ discrim\ 1]\ _27\ =\ _26\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:35:27\ discrim\ 1]\ _28\ =\ fpus\ ();\l\
+|[valid_files/98_al_ax_extend.c:35:27\ discrim\ 2]\ _29\ =\ (int)\ _28;\l\
+|[valid_files/98_al_ax_extend.c:35:5\ discrim\ 2]\ _30\ =\ _29\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:35:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:35:12]\ \"%08X\ %08X\\n\",\ _30,\ _27);\l\
+|[valid_files/98_al_ax_extend.c:36:39]\ _31\ =\ _ss\ ();\l\
+|[valid_files/98_al_ax_extend.c:36:39\ discrim\ 1]\ _32\ =\ (int)\ _31;\l\
+|[valid_files/98_al_ax_extend.c:36:5\ discrim\ 1]\ _33\ =\ _32\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:36:27\ discrim\ 1]\ _34\ =\ fpss\ ();\l\
+|[valid_files/98_al_ax_extend.c:36:27\ discrim\ 2]\ _35\ =\ (int)\ _34;\l\
+|[valid_files/98_al_ax_extend.c:36:5\ discrim\ 2]\ _36\ =\ _35\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:36:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:36:12]\ \"%08X\ %08X\\n\",\ _36,\ _33);\l\
+|[valid_files/98_al_ax_extend.c:37:39]\ _37\ =\ _uc\ ();\l\
+|[valid_files/98_al_ax_extend.c:37:39\ discrim\ 1]\ _38\ =\ (int)\ _37;\l\
+|[valid_files/98_al_ax_extend.c:37:5\ discrim\ 1]\ _39\ =\ _38\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:37:27\ discrim\ 1]\ _40\ =\ fpuc\ ();\l\
+|[valid_files/98_al_ax_extend.c:37:27\ discrim\ 2]\ _41\ =\ (int)\ _40;\l\
+|[valid_files/98_al_ax_extend.c:37:5\ discrim\ 2]\ _42\ =\ _41\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:37:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:37:12]\ \"%08X\ %08X\\n\",\ _42,\ _39);\l\
+|[valid_files/98_al_ax_extend.c:38:39]\ _43\ =\ _sc\ ();\l\
+|[valid_files/98_al_ax_extend.c:38:39\ discrim\ 1]\ _44\ =\ (int)\ _43;\l\
+|[valid_files/98_al_ax_extend.c:38:5\ discrim\ 1]\ _45\ =\ _44\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:38:27\ discrim\ 1]\ _46\ =\ fpsc\ ();\l\
+|[valid_files/98_al_ax_extend.c:38:27\ discrim\ 2]\ _47\ =\ (int)\ _46;\l\
+|[valid_files/98_al_ax_extend.c:38:5\ discrim\ 2]\ _48\ =\ _47\ +\ 1;\l\
+|[valid_files/98_al_ax_extend.c:38:5\ discrim\ 2]\ printf\ ([valid_files/98_al_ax_extend.c:38:12]\ \"%08X\ %08X\\n\",\ _48,\ _45);\l\
+|[valid_files/98_al_ax_extend.c:40:12]\ D.3753\ =\ 0;\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3753;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+}

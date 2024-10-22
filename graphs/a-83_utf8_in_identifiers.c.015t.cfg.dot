@@ -1,0 +1,29 @@
+digraph "a-83_utf8_in_identifiers.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/83_utf8_in_identifiers.c:5:5]\ привет.0_1\ =\ привет;\l\
+|[valid_files/83_utf8_in_identifiers.c:5:5]\ printf\ ([valid_files/83_utf8_in_identifiers.c:5:12]\ \"\\xd0\\xbf\\xd1\\x80\\xd0\\xb8\\xd0\\xb2\\xd0\\xb5\\xd1\\x82=%g\\n\",\ привет.0_1);\l\
+|[valid_files/83_utf8_in_identifiers.c:6:5]\ Lefèvre.1_2\ =\ Lefèvre;\l\
+|[valid_files/83_utf8_in_identifiers.c:6:5]\ printf\ ([valid_files/83_utf8_in_identifiers.c:6:12]\ \"Lef\\xc3\\xa8vre=%d\\n\",\ Lefèvre.1_2);\l\
+|[valid_files/83_utf8_in_identifiers.c:7:12]\ D.3209\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3209;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

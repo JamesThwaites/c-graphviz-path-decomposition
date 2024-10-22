@@ -1,0 +1,676 @@
+digraph "a-va-arg-24.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_verify" {
+	style="dashed";
+	color="black";
+	label="verify ()";
+	subgraph cluster_6_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_6_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/va-arg-24.c:15:17\ discrim\ 1]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:16:10]\ _1\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/va-arg-24.c:16:10]\ _2\ =\ _1\ *\ 4;\l\
+|[valid_files/va-arg-24.c:16:10]\ _3\ =\ n\ +\ _2;\l\
+|[valid_files/va-arg-24.c:16:10]\ _4\ =\ [valid_files/va-arg-24.c:16:10]\ *_3;\l\
+|[valid_files/va-arg-24.c:16:8]\ if\ (i\ !=\ _4)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:18:54]\ _5\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/va-arg-24.c:18:54]\ _6\ =\ _5\ *\ 4;\l\
+|[valid_files/va-arg-24.c:18:54]\ _7\ =\ n\ +\ _6;\l\
+|[valid_files/va-arg-24.c:18:2]\ _8\ =\ [valid_files/va-arg-24.c:18:2]\ *_7;\l\
+|[valid_files/va-arg-24.c:18:2]\ printf\ ([valid_files/va-arg-24.c:18:10]\ \"\ %s:\ n[%d]\ =\ %d\ expected\ %d\\n\",\ tcase,\ i,\ _8,\ i);\l\
+|[valid_files/va-arg-24.c:19:8]\ errors.0_9\ =\ errors;\l\
+|[valid_files/va-arg-24.c:19:8]\ _10\ =\ errors.0_9\ +\ 1;\l\
+|[valid_files/va-arg-24.c:19:8]\ errors\ =\ _10;\l\
+}"];
+
+	fn_6_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:15:25\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:15:10]\ i\ =\ 0;\l\
+[valid_files/va-arg-24.c:15:3]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/va-arg-24.c:21:1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_4:s -> fn_6_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_5:s -> fn_6_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_6_basic_block_6:s -> fn_6_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_6:s -> fn_6_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_7:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs0" {
+	style="dashed";
+	color="black";
+	label="varargs0 ()";
+	subgraph cluster_7_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_7_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 3]\ [valid_files/va-arg-24.c:69:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:69:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:69:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 1]\ [valid_files/va-arg-24.c:69:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 1]\ i\ =\ 1;\l\
+[valid_files/va-arg-24.c:69:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:69:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:69:1]\ \"varargs0\",\ [valid_files/va-arg-24.c:69:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:69:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_4:s -> fn_7_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_5:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs1" {
+	style="dashed";
+	color="black";
+	label="varargs1 ()";
+	subgraph cluster_8_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_8_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 3]\ [valid_files/va-arg-24.c:70:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:70:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:70:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 1]\ [valid_files/va-arg-24.c:70:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 1]\ [valid_files/va-arg-24.c:70:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 1]\ i\ =\ 2;\l\
+[valid_files/va-arg-24.c:70:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:70:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:70:1]\ \"varargs1\",\ [valid_files/va-arg-24.c:70:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:70:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_8_basic_block_4:s -> fn_8_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_4:s -> fn_8_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_5:s -> fn_8_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs2" {
+	style="dashed";
+	color="black";
+	label="varargs2 ()";
+	subgraph cluster_9_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_9_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 3]\ [valid_files/va-arg-24.c:71:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_9_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_9_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_9_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:71:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:71:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 1]\ [valid_files/va-arg-24.c:71:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 1]\ [valid_files/va-arg-24.c:71:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 1]\ [valid_files/va-arg-24.c:71:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 1]\ i\ =\ 3;\l\
+[valid_files/va-arg-24.c:71:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:71:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:71:1]\ \"varargs2\",\ [valid_files/va-arg-24.c:71:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:71:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_9_basic_block_0:s -> fn_9_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_2:s -> fn_9_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_3:s -> fn_9_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_4:s -> fn_9_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_4:s -> fn_9_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_5:s -> fn_9_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_9_basic_block_0:s -> fn_9_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs3" {
+	style="dashed";
+	color="black";
+	label="varargs3 ()";
+	subgraph cluster_10_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_10_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_10_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 3]\ [valid_files/va-arg-24.c:72:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_10_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_10_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_10_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:72:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:72:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 1]\ [valid_files/va-arg-24.c:72:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 1]\ [valid_files/va-arg-24.c:72:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 1]\ [valid_files/va-arg-24.c:72:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 1]\ [valid_files/va-arg-24.c:72:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 1]\ i\ =\ 4;\l\
+[valid_files/va-arg-24.c:72:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_10_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:72:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:72:1]\ \"varargs3\",\ [valid_files/va-arg-24.c:72:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:72:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_10_basic_block_0:s -> fn_10_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_2:s -> fn_10_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_3:s -> fn_10_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_10_basic_block_4:s -> fn_10_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_10_basic_block_4:s -> fn_10_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_10_basic_block_0:s -> fn_10_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs4" {
+	style="dashed";
+	color="black";
+	label="varargs4 ()";
+	subgraph cluster_11_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_11_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 3]\ [valid_files/va-arg-24.c:73:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_11_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_11_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_11_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:73:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:73:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ [valid_files/va-arg-24.c:73:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ [valid_files/va-arg-24.c:73:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ [valid_files/va-arg-24.c:73:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ [valid_files/va-arg-24.c:73:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ [valid_files/va-arg-24.c:73:1]\ n[4]\ =\ q4;\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ i\ =\ 5;\l\
+[valid_files/va-arg-24.c:73:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:73:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:73:1]\ \"varargs4\",\ [valid_files/va-arg-24.c:73:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:73:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_11_basic_block_0:s -> fn_11_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_2:s -> fn_11_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_3:s -> fn_11_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_11_basic_block_4:s -> fn_11_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_11_basic_block_4:s -> fn_11_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_11_basic_block_5:s -> fn_11_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_11_basic_block_0:s -> fn_11_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs5" {
+	style="dashed";
+	color="black";
+	label="varargs5 ()";
+	subgraph cluster_12_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_12_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_12_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 3]\ [valid_files/va-arg-24.c:74:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_12_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_12_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_12_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:74:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:74:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ [valid_files/va-arg-24.c:74:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ [valid_files/va-arg-24.c:74:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ [valid_files/va-arg-24.c:74:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ [valid_files/va-arg-24.c:74:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ [valid_files/va-arg-24.c:74:1]\ n[4]\ =\ q4;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ [valid_files/va-arg-24.c:74:1]\ n[5]\ =\ q5;\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ i\ =\ 6;\l\
+[valid_files/va-arg-24.c:74:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_12_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:74:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:74:1]\ \"varargs5\",\ [valid_files/va-arg-24.c:74:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:74:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_12_basic_block_0:s -> fn_12_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_12_basic_block_2:s -> fn_12_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_12_basic_block_3:s -> fn_12_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_12_basic_block_4:s -> fn_12_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_12_basic_block_4:s -> fn_12_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_12_basic_block_5:s -> fn_12_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_12_basic_block_0:s -> fn_12_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs6" {
+	style="dashed";
+	color="black";
+	label="varargs6 ()";
+	subgraph cluster_13_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_13_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_13_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 3]\ [valid_files/va-arg-24.c:75:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_13_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_13_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_13_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:75:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:75:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[4]\ =\ q4;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[5]\ =\ q5;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ [valid_files/va-arg-24.c:75:1]\ n[6]\ =\ q6;\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ i\ =\ 7;\l\
+[valid_files/va-arg-24.c:75:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_13_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:75:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:75:1]\ \"varargs6\",\ [valid_files/va-arg-24.c:75:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:75:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_13_basic_block_0:s -> fn_13_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_13_basic_block_2:s -> fn_13_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_13_basic_block_3:s -> fn_13_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_13_basic_block_4:s -> fn_13_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_13_basic_block_4:s -> fn_13_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_13_basic_block_5:s -> fn_13_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_13_basic_block_0:s -> fn_13_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs7" {
+	style="dashed";
+	color="black";
+	label="varargs7 ()";
+	subgraph cluster_14_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_14_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_14_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 3]\ [valid_files/va-arg-24.c:76:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_14_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_14_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_14_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:76:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:76:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[4]\ =\ q4;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[5]\ =\ q5;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[6]\ =\ q6;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ [valid_files/va-arg-24.c:76:1]\ n[7]\ =\ q7;\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ i\ =\ 8;\l\
+[valid_files/va-arg-24.c:76:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_14_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:76:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:76:1]\ \"varargs7\",\ [valid_files/va-arg-24.c:76:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:76:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_14_basic_block_0:s -> fn_14_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_14_basic_block_2:s -> fn_14_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_14_basic_block_3:s -> fn_14_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_14_basic_block_4:s -> fn_14_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_14_basic_block_4:s -> fn_14_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_14_basic_block_5:s -> fn_14_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_14_basic_block_0:s -> fn_14_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs8" {
+	style="dashed";
+	color="black";
+	label="varargs8 ()";
+	subgraph cluster_15_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_15_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_15_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 3]\ [valid_files/va-arg-24.c:77:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_15_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_15_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_15_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:77:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:77:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[4]\ =\ q4;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[5]\ =\ q5;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[6]\ =\ q6;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[7]\ =\ q7;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ [valid_files/va-arg-24.c:77:1]\ n[8]\ =\ q8;\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ i\ =\ 9;\l\
+[valid_files/va-arg-24.c:77:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_15_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:77:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:77:1]\ \"varargs8\",\ [valid_files/va-arg-24.c:77:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:77:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_15_basic_block_0:s -> fn_15_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_15_basic_block_2:s -> fn_15_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_15_basic_block_3:s -> fn_15_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_15_basic_block_4:s -> fn_15_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_15_basic_block_4:s -> fn_15_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_15_basic_block_5:s -> fn_15_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_15_basic_block_0:s -> fn_15_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_varargs9" {
+	style="dashed";
+	color="black";
+	label="varargs9 ()";
+	subgraph cluster_16_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_16_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 2]\ if\ (i\ \<=\ 10)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_16_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 3]\ _1\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 3]\ [valid_files/va-arg-24.c:78:1]\ n[i]\ =\ _1;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_16_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_16_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_16_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:78:1]\ __builtin_va_start\ ([valid_files/va-arg-24.c:78:1]\ &ap,\ 0);\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[0]\ =\ q0;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[1]\ =\ q1;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[2]\ =\ q2;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[3]\ =\ q3;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[4]\ =\ q4;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[5]\ =\ q5;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[6]\ =\ q6;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[7]\ =\ q7;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[8]\ =\ q8;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ [valid_files/va-arg-24.c:78:1]\ n[9]\ =\ q9;\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ i\ =\ 10;\l\
+[valid_files/va-arg-24.c:78:1]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_16_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 4]\ __builtin_va_end\ ([valid_files/va-arg-24.c:78:1]\ &ap);\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 1]\ verify\ ([valid_files/va-arg-24.c:78:1]\ \"varargs9\",\ [valid_files/va-arg-24.c:78:1]\ &n);\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+|n\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-24.c:78:1\ discrim\ 4]\ return;\l\
+}"];
+
+	fn_16_basic_block_0:s -> fn_16_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_16_basic_block_2:s -> fn_16_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_16_basic_block_3:s -> fn_16_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_16_basic_block_4:s -> fn_16_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_16_basic_block_4:s -> fn_16_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_16_basic_block_5:s -> fn_16_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_16_basic_block_0:s -> fn_16_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_17_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_17_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_17_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-24.c:82:3]\ varargs0\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:83:3]\ varargs1\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:84:3]\ varargs2\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:85:3]\ varargs3\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:86:3]\ varargs4\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:87:3]\ varargs5\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:88:3]\ varargs6\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:89:3]\ varargs7\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:90:3]\ varargs8\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:91:3]\ varargs9\ (0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10);\l\
+|[valid_files/va-arg-24.c:93:7]\ errors.1_1\ =\ errors;\l\
+|[valid_files/va-arg-24.c:93:6]\ if\ (errors.1_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_17_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-24.c:94:5]\ abort\ ();\l\
+}"];
+
+	fn_17_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-24.c:95:3]\ exit\ (0);\l\
+}"];
+
+	fn_17_basic_block_0:s -> fn_17_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_17_basic_block_2:s -> fn_17_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_17_basic_block_2:s -> fn_17_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_17_basic_block_0:s -> fn_17_basic_block_1:n [style="invis",constraint=true];
+}
+}

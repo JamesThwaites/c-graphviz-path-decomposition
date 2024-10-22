@@ -1,0 +1,623 @@
+digraph "a-va-arg-pack-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo1" {
+	style="dashed";
+	color="black";
+	label="foo1 ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-pack-1.c:25:3]\ __builtin_va_start\ ([valid_files/va-arg-pack-1.c:25:3]\ &ap,\ 0);\l\
+|[valid_files/va-arg-pack-1.c:26:6]\ if\ (x\ \<\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-pack-1.c:26:13\ discrim\ 1]\ if\ (x\ \>\ 19)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-pack-1.c:26:31\ discrim\ 2]\ _1\ =\ [valid_files/va-arg-pack-1.c:26:31]\ seen[x];\l\
+|[valid_files/va-arg-pack-1.c:26:24\ discrim\ 2]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-pack-1.c:27:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/va-arg-pack-1.c:28:13]\ cnt.0_2\ =\ cnt;\l\
+|[valid_files/va-arg-pack-1.c:28:13]\ _3\ =\ cnt.0_2\ +\ 1;\l\
+|[valid_files/va-arg-pack-1.c:28:11]\ cnt\ =\ _3;\l\
+|[valid_files/va-arg-pack-1.c:28:13]\ cnt.1_4\ =\ cnt;\l\
+|[valid_files/va-arg-pack-1.c:28:11]\ _5\ =\ (char)\ cnt.1_4;\l\
+|[valid_files/va-arg-pack-1.c:28:11]\ [valid_files/va-arg-pack-1.c:28:7]\ seen[x]\ =\ _5;\l\
+|[valid_files/va-arg-pack-1.c:29:6]\ if\ (y\ !=\ 6)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/va-arg-pack-1.c:30:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/va-arg-pack-1.c:31:5]\ i\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:32:6]\ if\ (i\ !=\ 5)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/va-arg-pack-1.c:33:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/va-arg-pack-1.c:34:3]\ switch\ (x)\ \<[valid_files/va-arg-pack-1.c:63:5]\ default:\ \<L28\>\ [INV],\ [valid_files/va-arg-pack-1.c:36:5]\ case\ 0:\ \<L8\>\ [INV],\ [valid_files/va-arg-pack-1.c:50:5]\ case\ 1:\ \<L19\>\ [INV],\ [valid_files/va-arg-pack-1.c:61:5]\ case\ 2:\ \<L27\>\ [INV]\>\l\
+}"];
+
+	fn_0_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/va-arg-pack-1.c:36:5]\ \<L8\>:\l\
+|[valid_files/va-arg-pack-1.c:37:9]\ i\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:38:10]\ if\ (i\ !=\ 9)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/va-arg-pack-1.c:38:24\ discrim\ 1]\ v1.2_6\ =\ v1;\l\
+|[valid_files/va-arg-pack-1.c:38:18\ discrim\ 1]\ if\ (v1.2_6\ !=\ 9)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/va-arg-pack-1.c:39:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/va-arg-pack-1.c:40:9]\ a\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:41:11]\ _7\ =\ __builtin_memcmp\ ([valid_files/va-arg-pack-1.c:41:11]\ &[valid_files/va-arg-pack-1.c:41:30]\ a.c,\ [valid_files/va-arg-pack-1.c:41:11]\ &[valid_files/va-arg-pack-1.c:41:36]\ v4.c,\ 16);\l\
+|[valid_files/va-arg-pack-1.c:41:10\ discrim\ 1]\ if\ (_7\ !=\ 0)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/va-arg-pack-1.c:42:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/va-arg-pack-1.c:43:9]\ v\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:44:10]\ if\ (v\ !=\ [valid_files/va-arg-pack-1.c:44:25]\ &v4)\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 18\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/va-arg-pack-1.c:45:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/va-arg-pack-1.c:46:9]\ l\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:47:10]\ if\ (l\ !=\ 3)\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/va-arg-pack-1.c:47:24\ discrim\ 1]\ v2.3_8\ =\ v2;\l\
+|[valid_files/va-arg-pack-1.c:47:18\ discrim\ 1]\ if\ (v2.3_8\ !=\ 4)\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/va-arg-pack-1.c:48:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+[valid_files/va-arg-pack-1.c:49:7]\ goto\ \<bb\ 32\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|[valid_files/va-arg-pack-1.c:50:5]\ \<L19\>:\l\
+|[valid_files/va-arg-pack-1.c:51:10]\ ld\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:52:10]\ if\ (ld\ !=\ 4.1e+1)\l\
+\ \ goto\ \<bb\ 24\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 23\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 23\>:\l\
+|[valid_files/va-arg-pack-1.c:52:26\ discrim\ 1]\ v5.4_9\ =\ v5;\l\
+|[valid_files/va-arg-pack-1.c:52:20\ discrim\ 1]\ if\ (ld\ !=\ v5.4_9)\l\
+\ \ goto\ \<bb\ 24\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 25\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 24\>:\l\
+|[valid_files/va-arg-pack-1.c:53:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 25\>:\l\
+|[valid_files/va-arg-pack-1.c:54:9]\ i\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:55:10]\ if\ (i\ !=\ 8)\l\
+\ \ goto\ \<bb\ 26\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 27\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_26 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 26\>:\l\
+|[valid_files/va-arg-pack-1.c:56:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_27 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 27\>:\l\
+|[valid_files/va-arg-pack-1.c:57:9]\ v\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:58:10]\ if\ (v\ !=\ [valid_files/va-arg-pack-1.c:58:16]\ &v2)\l\
+\ \ goto\ \<bb\ 28\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 29\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_28 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 28\>:\l\
+|[valid_files/va-arg-pack-1.c:59:2]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_29 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 29\>:\l\
+[valid_files/va-arg-pack-1.c:60:7]\ goto\ \<bb\ 32\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_30 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 30\>:\l\
+|[valid_files/va-arg-pack-1.c:61:5]\ \<L27\>:\l\
+[valid_files/va-arg-pack-1.c:62:7]\ goto\ \<bb\ 32\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_31 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 31\>:\l\
+|[valid_files/va-arg-pack-1.c:63:5]\ \<L28\>:\l\
+|[valid_files/va-arg-pack-1.c:64:7]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_32 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 32\>:\l\
+|[valid_files/va-arg-pack-1.c:66:3]\ __builtin_va_end\ ([valid_files/va-arg-pack-1.c:66:3]\ &ap);\l\
+|[valid_files/va-arg-pack-1.c:67:10]\ D.2846\ =\ x;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_33 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 33\>:\l\
+|\<L31\>:\l\
+|[valid_files/va-arg-pack-1.c:67:10]\ return\ D.2846;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_31:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_11:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_22:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_30:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_16:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_16:s -> fn_0_basic_block_17:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_16:s -> fn_0_basic_block_18:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_18:s -> fn_0_basic_block_20:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_18:s -> fn_0_basic_block_19:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_19:s -> fn_0_basic_block_20:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_19:s -> fn_0_basic_block_21:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_21:s -> fn_0_basic_block_32:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_22:s -> fn_0_basic_block_24:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_22:s -> fn_0_basic_block_23:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_23:s -> fn_0_basic_block_24:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_23:s -> fn_0_basic_block_25:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_25:s -> fn_0_basic_block_26:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_25:s -> fn_0_basic_block_27:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_27:s -> fn_0_basic_block_28:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_27:s -> fn_0_basic_block_29:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_29:s -> fn_0_basic_block_32:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_30:s -> fn_0_basic_block_32:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_32:s -> fn_0_basic_block_33:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_33:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo2" {
+	style="dashed";
+	color="black";
+	label="foo2 ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-pack-1.c:79:3]\ __builtin_va_start\ ([valid_files/va-arg-pack-1.c:79:3]\ &ap,\ 0);\l\
+|[valid_files/va-arg-pack-1.c:80:6]\ if\ (x\ \<\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-pack-1.c:80:13\ discrim\ 1]\ if\ (x\ \>\ 19)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-pack-1.c:80:31\ discrim\ 2]\ _1\ =\ [valid_files/va-arg-pack-1.c:80:31]\ seen[x];\l\
+|[valid_files/va-arg-pack-1.c:80:24\ discrim\ 2]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-pack-1.c:81:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/va-arg-pack-1.c:82:13]\ cnt.5_2\ =\ cnt;\l\
+|[valid_files/va-arg-pack-1.c:82:13]\ _3\ =\ cnt.5_2\ +\ 1;\l\
+|[valid_files/va-arg-pack-1.c:82:11]\ cnt\ =\ _3;\l\
+|[valid_files/va-arg-pack-1.c:82:13]\ cnt.6_4\ =\ cnt;\l\
+|[valid_files/va-arg-pack-1.c:82:19]\ _5\ =\ (char)\ cnt.6_4;\l\
+|[valid_files/va-arg-pack-1.c:82:19]\ _6\ =\ _5\ \|\ 64;\l\
+|[valid_files/va-arg-pack-1.c:82:11]\ [valid_files/va-arg-pack-1.c:82:7]\ seen[x]\ =\ _6;\l\
+|[valid_files/va-arg-pack-1.c:83:6]\ if\ (y\ !=\ 10)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/va-arg-pack-1.c:84:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/va-arg-pack-1.c:85:3]\ switch\ (x)\ \<[valid_files/va-arg-pack-1.c:108:5]\ default:\ \<L20\>\ [INV],\ [valid_files/va-arg-pack-1.c:106:5]\ case\ 2:\ \<L19\>\ [INV],\ [valid_files/va-arg-pack-1.c:87:5]\ case\ 11:\ \<L6\>\ [INV],\ [valid_files/va-arg-pack-1.c:89:5]\ case\ 12:\ \<L7\>\ [INV]\>\l\
+}"];
+
+	fn_1_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/va-arg-pack-1.c:87:5]\ \<L6\>:\l\
+[valid_files/va-arg-pack-1.c:88:7]\ goto\ \<bb\ 24\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/va-arg-pack-1.c:89:5]\ \<L7\>:\l\
+|[valid_files/va-arg-pack-1.c:90:10]\ ld\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:91:10]\ if\ (ld\ !=\ 4.1e+1)\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/va-arg-pack-1.c:91:26\ discrim\ 1]\ v5.7_7\ =\ v5;\l\
+|[valid_files/va-arg-pack-1.c:91:20\ discrim\ 1]\ if\ (v5.7_7\ !=\ 4.0e+1)\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/va-arg-pack-1.c:92:2]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/va-arg-pack-1.c:93:9]\ a\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:94:11]\ _8\ =\ __builtin_memcmp\ ([valid_files/va-arg-pack-1.c:94:11]\ &[valid_files/va-arg-pack-1.c:94:30]\ a.c,\ [valid_files/va-arg-pack-1.c:94:11]\ &[valid_files/va-arg-pack-1.c:94:36]\ v4.c,\ 16);\l\
+|[valid_files/va-arg-pack-1.c:94:10\ discrim\ 1]\ if\ (_8\ !=\ 0)\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/va-arg-pack-1.c:95:2]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/va-arg-pack-1.c:96:9]\ b\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:97:11]\ _9\ =\ __builtin_memcmp\ ([valid_files/va-arg-pack-1.c:97:11]\ &[valid_files/va-arg-pack-1.c:97:30]\ b.c,\ [valid_files/va-arg-pack-1.c:97:11]\ &[valid_files/va-arg-pack-1.c:97:36]\ v4.c,\ 16);\l\
+|[valid_files/va-arg-pack-1.c:97:10\ discrim\ 1]\ if\ (_9\ !=\ 0)\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/va-arg-pack-1.c:98:2]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/va-arg-pack-1.c:99:9]\ v\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:100:10]\ if\ (v\ !=\ [valid_files/va-arg-pack-1.c:100:16]\ &v2)\l\
+\ \ goto\ \<bb\ 18\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/va-arg-pack-1.c:101:2]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/va-arg-pack-1.c:102:10]\ ll\ =\ .VA_ARG\ (&ap,\ 0B,\ 0B);\l\
+|[valid_files/va-arg-pack-1.c:103:10]\ if\ (ll\ !=\ 16)\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/va-arg-pack-1.c:104:2]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+[valid_files/va-arg-pack-1.c:105:7]\ goto\ \<bb\ 24\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|[valid_files/va-arg-pack-1.c:106:5]\ \<L19\>:\l\
+[valid_files/va-arg-pack-1.c:107:7]\ goto\ \<bb\ 24\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 23\>:\l\
+|[valid_files/va-arg-pack-1.c:108:5]\ \<L20\>:\l\
+|[valid_files/va-arg-pack-1.c:109:7]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 24\>:\l\
+|[valid_files/va-arg-pack-1.c:111:3]\ __builtin_va_end\ ([valid_files/va-arg-pack-1.c:111:3]\ &ap);\l\
+|[valid_files/va-arg-pack-1.c:112:12]\ D.2866\ =\ x\ +\ 8;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+|b\ =\ \{CLOBBER(eos)\};\l\
+|ap\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 25\>:\l\
+|\<L23\>:\l\
+|[valid_files/va-arg-pack-1.c:112:12]\ return\ D.2866;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_23:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_22:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_9:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_10:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_9:s -> fn_1_basic_block_24:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_10:s -> fn_1_basic_block_12:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_10:s -> fn_1_basic_block_11:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_11:s -> fn_1_basic_block_12:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_11:s -> fn_1_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_13:s -> fn_1_basic_block_14:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_13:s -> fn_1_basic_block_15:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_15:s -> fn_1_basic_block_16:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_15:s -> fn_1_basic_block_17:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_17:s -> fn_1_basic_block_18:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_17:s -> fn_1_basic_block_19:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_19:s -> fn_1_basic_block_20:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_19:s -> fn_1_basic_block_21:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_21:s -> fn_1_basic_block_24:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_22:s -> fn_1_basic_block_24:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_24:s -> fn_1_basic_block_25:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_25:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo3" {
+	style="dashed";
+	color="black";
+	label="foo3 ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-pack-1.c:118:10]\ D.2869\ =\ 6;\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/va-arg-pack-1.c:118:10\ discrim\ 1]\ return\ D.2869;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ v2.8_1\ =\ v2;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ v2.9_2\ =\ v2.8_1;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ _3\ =\ v2.9_2\ +\ 1;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ v2\ =\ _3;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ v1.10_4\ =\ v1;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ _5\ =\ v1.10_4\ +\ 1;\l\
+|[valid_files/va-arg-pack-1.c:132:6]\ v1\ =\ _5;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ v1.11_6\ =\ v1;\l\
+|[valid_files/va-arg-pack-1.c:132:7]\ _7\ =\ bar\ (0,\ v1.11_6,\ v4,\ [valid_files/va-arg-pack-1.c:132:7]\ &v4,\ v2.9_2);\l\
+|[valid_files/va-arg-pack-1.c:132:6\ discrim\ 1]\ if\ (_7\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-pack-1.c:133:5]\ abort\ ();\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-pack-1.c:134:7]\ v3.12_8\ =\ v3;\l\
+|[valid_files/va-arg-pack-1.c:134:7]\ v5.13_9\ =\ v5;\l\
+|[valid_files/va-arg-pack-1.c:134:7]\ _10\ =\ v5.13_9\ +\ 1.0e+0;\l\
+|[valid_files/va-arg-pack-1.c:134:6]\ v5\ =\ _10;\l\
+|[valid_files/va-arg-pack-1.c:134:7]\ v5.14_11\ =\ v5;\l\
+|[valid_files/va-arg-pack-1.c:134:7]\ _12\ =\ bar\ (1,\ v5.14_11,\ 8,\ v3.12_8);\l\
+|[valid_files/va-arg-pack-1.c:134:6\ discrim\ 1]\ if\ (_12\ !=\ 1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/va-arg-pack-1.c:135:5]\ abort\ ();\l\
+}"];
+
+	fn_4_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/va-arg-pack-1.c:136:7]\ _13\ =\ bar\ (2);\l\
+|[valid_files/va-arg-pack-1.c:136:6\ discrim\ 1]\ if\ (_13\ !=\ 2)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/va-arg-pack-1.c:137:5]\ abort\ ();\l\
+}"];
+
+	fn_4_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/va-arg-pack-1.c:138:7]\ v1.15_14\ =\ v1;\l\
+|[valid_files/va-arg-pack-1.c:138:7]\ _15\ =\ v1.15_14\ +\ 2;\l\
+|[valid_files/va-arg-pack-1.c:138:7]\ _16\ =\ bar\ (_15);\l\
+|[valid_files/va-arg-pack-1.c:138:6\ discrim\ 1]\ if\ (_16\ !=\ 19)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/va-arg-pack-1.c:139:5]\ abort\ ();\l\
+}"];
+
+	fn_4_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ v3.16_17\ =\ v3;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ v5.17_18\ =\ v5;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ v5.18_19\ =\ v5.17_18;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ _20\ =\ v5.18_19\ -\ 1.0e+0;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ v5\ =\ _20;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ v1.19_21\ =\ v1;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ _22\ =\ v1.19_21\ +\ 3;\l\
+|[valid_files/va-arg-pack-1.c:140:7]\ _23\ =\ bar\ (_22,\ v5.18_19,\ v4,\ v4,\ v3.16_17,\ 16);\l\
+|[valid_files/va-arg-pack-1.c:140:6\ discrim\ 1]\ if\ (_23\ !=\ 20)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/va-arg-pack-1.c:141:5]\ abort\ ();\l\
+}"];
+
+	fn_4_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/va-arg-pack-1.c:142:10]\ D.2881\ =\ 0;\l\
+}"];
+
+	fn_4_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|\<L10\>:\l\
+|return\ D.2881;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_6:s -> fn_4_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_6:s -> fn_4_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_8:s -> fn_4_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_8:s -> fn_4_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_10:s -> fn_4_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_10:s -> fn_4_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_12:s -> fn_4_basic_block_13:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_13:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-pack-1.c:124:6]\ if\ (x\ \<=\ 9)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-pack-1.c:125:12]\ _1\ =\ foo3\ ();\l\
+|[valid_files/va-arg-pack-1.c:125:12\ discrim\ 1]\ D.2885\ =\ foo1\ (x,\ _1,\ 5,\ __builtin_va_arg_pack\ ());\l\
+|[valid_files/va-arg-pack-1.c:125:12\ discrim\ 2]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/va-arg-pack-1.c:125:12]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/va-arg-pack-1.c:126:19]\ _2\ =\ foo3\ ();\l\
+|[valid_files/va-arg-pack-1.c:126:10\ discrim\ 1]\ _3\ =\ _2\ +\ 4;\l\
+|[valid_files/va-arg-pack-1.c:126:10\ discrim\ 1]\ D.2885\ =\ foo2\ (x,\ _3,\ __builtin_va_arg_pack\ ());\l\
+}"];
+
+	fn_3_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L2\>:\l\
+|return\ D.2885;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_4:s -> fn_3_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_5:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+}

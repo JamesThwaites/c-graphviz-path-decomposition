@@ -1,0 +1,91 @@
+digraph "a-pr51447.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr51447.c:14:1]\ D.2791\ =\ __builtin_dwarf_cfa\ (0);\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr51447.c:14:1\ discrim\ 1]\ D.2789\ =\ D.2791;\l\
+|[valid_files/pr51447.c:14:1\ discrim\ 1]\ FRAME.1.FRAME_BASE.PARENT\ =\ D.2789;\l\
+|[valid_files/pr51447.c:18:9]\ save\ =\ ptr;\l\
+|[valid_files/pr51447.c:26:3]\ bar\ ([valid_files/pr51447.c:26:3]\ &nonlocal_lab);\ [static-chain:\ &FRAME.1]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr51447.c:27:10]\ D.2780\ =\ 1;\l\
+[valid_files/pr51447.c:27:10]\ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L0\>:\ [non-local]\l\
+goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|.ABNORMAL_DISPATCHER\ (0);\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/pr51447.c:28:1]\ nonlocal_lab:\l\
+|[valid_files/pr51447.c:29:11]\ ptr.0_1\ =\ ptr;\l\
+|[valid_files/pr51447.c:29:6]\ if\ (ptr.0_1\ !=\ [valid_files/pr51447.c:29:14]\ &nonlocal_lab)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/pr51447.c:30:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/pr51447.c:32:7]\ ptr\ =\ save;\l\
+|[valid_files/pr51447.c:34:10]\ D.2780\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|\<L4\>:\l\
+|return\ D.2780;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_6:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_6:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_10:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_5:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_9:s -> fn_0_basic_block_10:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr51447.c:23:6]\ ptr\ =\ func;\l\
+|[valid_files/pr51447.c:24:2]\ //\ predicted\ unlikely\ by\ goto\ predictor.\l\
+|[valid_files/pr51447.c:24:2]\ D.2787\ =\ &CHAIN.2-\>__nl_goto_buf;\l\
+|[valid_files/pr51447.c:24:2]\ __builtin_nonlocal_goto\ (&\<L0\>,\ D.2787);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,71 @@
+digraph "a-va-arg-21.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_doit" {
+	style="dashed";
+	color="black";
+	label="doit ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-21.c:19:27]\ ap_ptr\ =\ [valid_files/va-arg-21.c:19:36]\ &ap_array;\l\
+|[valid_files/va-arg-21.c:21:17]\ _1\ =\ malloc\ (24);\l\
+|[valid_files/va-arg-21.c:21:15\ discrim\ 1]\ [valid_files/va-arg-21.c:21:11]\ ap_array[0]\ =\ _1;\l\
+|[valid_files/va-arg-21.c:22:15]\ [valid_files/va-arg-21.c:22:11]\ ap_array[1]\ =\ 0B;\l\
+|[valid_files/va-arg-21.c:23:17]\ _2\ =\ malloc\ (24);\l\
+|[valid_files/va-arg-21.c:23:15\ discrim\ 1]\ [valid_files/va-arg-21.c:23:11]\ ap_array[2]\ =\ _2;\l\
+|[valid_files/va-arg-21.c:25:3]\ _3\ =\ [valid_files/va-arg-21.c:25:3]\ ap_array[0];\l\
+|[valid_files/va-arg-21.c:25:3]\ __builtin_va_start\ (_3,\ 0);\l\
+|[valid_files/va-arg-21.c:26:3]\ _4\ =\ [valid_files/va-arg-21.c:26:3]\ *ap_ptr;\l\
+|[valid_files/va-arg-21.c:26:3]\ vprintf\ (s,\ _4);\l\
+|[valid_files/va-arg-21.c:28:3]\ ap_ptr.0_5\ =\ ap_ptr;\l\
+|[valid_files/va-arg-21.c:28:3]\ ap_ptr\ =\ ap_ptr.0_5\ +\ 8;\l\
+|[valid_files/va-arg-21.c:28:3]\ _6\ =\ [valid_files/va-arg-21.c:28:3]\ *ap_ptr.0_5;\l\
+|[valid_files/va-arg-21.c:28:3]\ __builtin_va_end\ (_6);\l\
+|[valid_files/va-arg-21.c:31:9]\ ap_ptr\ =\ ap_ptr\ +\ 8;\l\
+|[valid_files/va-arg-21.c:33:3]\ _7\ =\ [valid_files/va-arg-21.c:33:3]\ ap_array[2];\l\
+|[valid_files/va-arg-21.c:33:3]\ __builtin_va_start\ (_7,\ 0);\l\
+|[valid_files/va-arg-21.c:36:3]\ _8\ =\ [valid_files/va-arg-21.c:36:3]\ *ap_ptr;\l\
+|[valid_files/va-arg-21.c:36:3]\ vprintf\ (s,\ _8);\l\
+|[valid_files/va-arg-21.c:37:3]\ _9\ =\ [valid_files/va-arg-21.c:37:3]\ *ap_ptr;\l\
+|[valid_files/va-arg-21.c:37:3]\ __builtin_va_end\ (_9);\l\
+|[valid_files/va-arg-21.c:40:7]\ _10\ =\ [valid_files/va-arg-21.c:40:7]\ *ap_ptr;\l\
+|[valid_files/va-arg-21.c:40:6]\ if\ (_10\ ==\ 0B)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/va-arg-21.c:41:5]\ abort\ ();\l\
+}"];
+
+	fn_6_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|ap_array\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/va-arg-21.c:42:1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_4:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/va-arg-21.c:46:3]\ doit\ ([valid_files/va-arg-21.c:46:9]\ \"%s\",\ [valid_files/va-arg-21.c:46:15]\ \"hello\ world\\n\");\l\
+|[valid_files/va-arg-21.c:47:3]\ exit\ (0);\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+}

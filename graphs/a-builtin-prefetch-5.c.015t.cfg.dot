@@ -1,0 +1,113 @@
+digraph "a-builtin-prefetch-5.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="arg_ptr ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-5.c:21:3]\ __builtin_prefetch\ (p,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-5.c:22:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_arg_idx" {
+	style="dashed";
+	color="black";
+	label="arg_idx ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-5.c:27:3]\ _1\ =\ (sizetype)\ i;\l\
+|[valid_files/builtin-prefetch-5.c:27:23]\ _2\ =\ p\ +\ _1;\l\
+|[valid_files/builtin-prefetch-5.c:27:3]\ __builtin_prefetch\ (_2,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-5.c:28:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_glob_ptr" {
+	style="dashed";
+	color="black";
+	label="glob_ptr ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-5.c:33:3]\ ptr.0_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-5.c:33:3]\ __builtin_prefetch\ (ptr.0_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-5.c:34:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_glob_idx" {
+	style="dashed";
+	color="black";
+	label="glob_idx ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-5.c:39:3]\ ptr.1_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-5.c:39:3]\ idx.2_2\ =\ idx;\l\
+|[valid_files/builtin-prefetch-5.c:39:3]\ _3\ =\ (sizetype)\ idx.2_2;\l\
+|[valid_files/builtin-prefetch-5.c:39:23]\ _4\ =\ ptr.1_1\ +\ _3;\l\
+|[valid_files/builtin-prefetch-5.c:39:3]\ __builtin_prefetch\ (_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-5.c:40:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-5.c:45:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-5.c:45:23]\ &[valid_files/builtin-prefetch-5.c:45:25]\ s.b,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-5.c:46:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-5.c:46:23]\ &[valid_files/builtin-prefetch-5.c:46:27]\ [valid_files/builtin-prefetch-5.c:46:25]\ s.c[1],\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-5.c:48:3]\ arg_ptr\ ([valid_files/builtin-prefetch-5.c:48:3]\ &[valid_files/builtin-prefetch-5.c:48:16]\ [valid_files/builtin-prefetch-5.c:48:14]\ s.c[1]);\l\
+|[valid_files/builtin-prefetch-5.c:49:3]\ ptr.3_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-5.c:49:3]\ _2\ =\ ptr.3_1\ +\ 3;\l\
+|[valid_files/builtin-prefetch-5.c:49:3]\ arg_ptr\ (_2);\l\
+|[valid_files/builtin-prefetch-5.c:50:3]\ ptr.4_3\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-5.c:50:3]\ arg_idx\ (ptr.4_3,\ 3);\l\
+|[valid_files/builtin-prefetch-5.c:51:3]\ ptr.5_4\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-5.c:51:3]\ _5\ =\ ptr.5_4\ +\ 1;\l\
+|[valid_files/builtin-prefetch-5.c:51:3]\ arg_idx\ (_5,\ 2);\l\
+|[valid_files/builtin-prefetch-5.c:52:7]\ idx\ =\ 3;\l\
+|[valid_files/builtin-prefetch-5.c:53:3]\ glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-5.c:54:3]\ glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-5.c:55:6]\ ptr.6_6\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-5.c:55:6]\ _7\ =\ ptr.6_6\ +\ 1;\l\
+|[valid_files/builtin-prefetch-5.c:55:6]\ ptr\ =\ _7;\l\
+|[valid_files/builtin-prefetch-5.c:56:7]\ idx\ =\ 2;\l\
+|[valid_files/builtin-prefetch-5.c:57:3]\ glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-5.c:58:3]\ glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-5.c:59:3]\ exit\ (0);\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

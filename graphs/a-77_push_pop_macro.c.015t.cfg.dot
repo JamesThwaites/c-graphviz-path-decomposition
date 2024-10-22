@@ -1,0 +1,30 @@
+digraph "a-77_push_pop_macro.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/77_push_pop_macro.c:13:5]\ printf\ ([valid_files/77_push_pop_macro.c:13:12]\ \"abort\ =\ %s\\n\",\ [valid_files/77_push_pop_macro.c:13:28]\ \"111\");\l\
+|[valid_files/77_push_pop_macro.c:18:5]\ printf\ ([valid_files/77_push_pop_macro.c:18:12]\ \"abort\ =\ %s\\n\",\ [valid_files/77_push_pop_macro.c:18:28]\ \"222\");\l\
+|[valid_files/77_push_pop_macro.c:23:5]\ printf\ ([valid_files/77_push_pop_macro.c:23:12]\ \"abort\ =\ %s\\n\",\ [valid_files/77_push_pop_macro.c:23:28]\ \"333\");\l\
+|[valid_files/77_push_pop_macro.c:26:5]\ printf\ ([valid_files/77_push_pop_macro.c:26:12]\ \"abort\ =\ %s\\n\",\ [valid_files/77_push_pop_macro.c:26:28]\ \"222\");\l\
+|[valid_files/77_push_pop_macro.c:29:5]\ printf\ ([valid_files/77_push_pop_macro.c:29:12]\ \"abort\ =\ %s\\n\",\ [valid_files/77_push_pop_macro.c:29:28]\ \"111\");\l\
+|[\<built-in\>:0:0]\ D.3207\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[\<built-in\>:0:0\ discrim\ 1]\ return\ D.3207;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

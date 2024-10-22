@@ -1,0 +1,441 @@
+digraph "a-eeprof-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/eeprof-1.c:20:3]\ last_fn_entered.0_1\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:20:3]\ if\ (last_fn_entered.0_1\ !=\ [valid_files/eeprof-1.c:20:3]\ foo)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/eeprof-1.c:20:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/eeprof-1.c:21:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo2" {
+	style="dashed";
+	color="black";
+	label="foo2 ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/eeprof-1.c:26:3]\ entry_calls.1_1\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:26:3]\ if\ (entry_calls.1_1\ !=\ 1)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/eeprof-1.c:26:3\ discrim\ 2]\ exit_calls.2_2\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:26:3\ discrim\ 2]\ if\ (exit_calls.2_2\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/eeprof-1.c:26:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/eeprof-1.c:27:3]\ last_fn_entered.3_3\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:27:3]\ if\ (last_fn_entered.3_3\ !=\ [valid_files/eeprof-1.c:27:3]\ foo2)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/eeprof-1.c:27:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/eeprof-1.c:28:3]\ foo\ ();\l\
+|[valid_files/eeprof-1.c:29:3]\ entry_calls.4_4\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:29:3]\ if\ (entry_calls.4_4\ !=\ 2)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/eeprof-1.c:29:3\ discrim\ 2]\ exit_calls.5_5\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:29:3\ discrim\ 2]\ if\ (exit_calls.5_5\ !=\ 1)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/eeprof-1.c:29:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/eeprof-1.c:30:3]\ last_fn_entered.6_6\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:30:3]\ if\ (last_fn_entered.6_6\ !=\ [valid_files/eeprof-1.c:30:3]\ foo)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/eeprof-1.c:30:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/eeprof-1.c:31:3]\ last_fn_exited.7_7\ =\ last_fn_exited;\l\
+|[valid_files/eeprof-1.c:31:3]\ if\ (last_fn_exited.7_7\ !=\ [valid_files/eeprof-1.c:31:3]\ foo)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/eeprof-1.c:31:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/eeprof-1.c:32:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_10:s -> fn_1_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_10:s -> fn_1_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_12:s -> fn_1_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_12:s -> fn_1_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_14:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_nfoo" {
+	style="dashed";
+	color="black";
+	label="nfoo ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/eeprof-1.c:38:3]\ entry_calls.8_1\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:38:3]\ if\ (entry_calls.8_1\ !=\ 2)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/eeprof-1.c:38:3\ discrim\ 2]\ exit_calls.9_2\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:38:3\ discrim\ 2]\ if\ (exit_calls.9_2\ !=\ 2)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/eeprof-1.c:38:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/eeprof-1.c:39:3]\ last_fn_entered.10_3\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:39:3]\ if\ (last_fn_entered.10_3\ !=\ [valid_files/eeprof-1.c:39:3]\ foo)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/eeprof-1.c:39:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/eeprof-1.c:40:3]\ last_fn_exited.11_4\ =\ last_fn_exited;\l\
+|[valid_files/eeprof-1.c:40:3]\ if\ (last_fn_exited.11_4\ !=\ [valid_files/eeprof-1.c:40:3]\ foo2)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/eeprof-1.c:40:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/eeprof-1.c:41:3]\ foo\ ();\l\
+|[valid_files/eeprof-1.c:42:3]\ entry_calls.12_5\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:42:3]\ if\ (entry_calls.12_5\ !=\ 3)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/eeprof-1.c:42:3\ discrim\ 2]\ exit_calls.13_6\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:42:3\ discrim\ 2]\ if\ (exit_calls.13_6\ !=\ 3)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/eeprof-1.c:42:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/eeprof-1.c:43:3]\ last_fn_entered.14_7\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:43:3]\ if\ (last_fn_entered.14_7\ !=\ [valid_files/eeprof-1.c:43:3]\ foo)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/eeprof-1.c:43:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/eeprof-1.c:44:3]\ last_fn_exited.15_8\ =\ last_fn_exited;\l\
+|[valid_files/eeprof-1.c:44:3]\ if\ (last_fn_exited.15_8\ !=\ [valid_files/eeprof-1.c:44:3]\ foo)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/eeprof-1.c:44:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/eeprof-1.c:45:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_7:s -> fn_2_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_7:s -> fn_2_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_9:s -> fn_2_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_9:s -> fn_2_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_10:s -> fn_2_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_10:s -> fn_2_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_12:s -> fn_2_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_12:s -> fn_2_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_14:s -> fn_2_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_14:s -> fn_2_basic_block_16:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_16:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/eeprof-1.c:49:3]\ entry_calls.16_1\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:49:3]\ if\ (entry_calls.16_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/eeprof-1.c:49:3\ discrim\ 2]\ exit_calls.17_2\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:49:3\ discrim\ 2]\ if\ (exit_calls.17_2\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/eeprof-1.c:49:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/eeprof-1.c:51:3]\ foo2\ ();\l\
+|[valid_files/eeprof-1.c:53:3]\ entry_calls.18_3\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:53:3]\ if\ (entry_calls.18_3\ !=\ 2)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/eeprof-1.c:53:3\ discrim\ 2]\ exit_calls.19_4\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:53:3\ discrim\ 2]\ if\ (exit_calls.19_4\ !=\ 2)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/eeprof-1.c:53:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/eeprof-1.c:54:3]\ last_fn_entered.20_5\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:54:3]\ if\ (last_fn_entered.20_5\ !=\ [valid_files/eeprof-1.c:54:3]\ foo)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/eeprof-1.c:54:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/eeprof-1.c:55:3]\ last_fn_exited.21_6\ =\ last_fn_exited;\l\
+|[valid_files/eeprof-1.c:55:3]\ if\ (last_fn_exited.21_6\ !=\ [valid_files/eeprof-1.c:55:3]\ foo2)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/eeprof-1.c:55:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/eeprof-1.c:57:3]\ nfoo\ ();\l\
+|[valid_files/eeprof-1.c:59:3]\ entry_calls.22_7\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:59:3]\ if\ (entry_calls.22_7\ !=\ 3)\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/eeprof-1.c:59:3\ discrim\ 2]\ exit_calls.23_8\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:59:3\ discrim\ 2]\ if\ (exit_calls.23_8\ !=\ 3)\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/eeprof-1.c:59:3\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/eeprof-1.c:60:3]\ last_fn_entered.24_9\ =\ last_fn_entered;\l\
+|[valid_files/eeprof-1.c:60:3]\ if\ (last_fn_entered.24_9\ !=\ [valid_files/eeprof-1.c:60:3]\ foo)\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/eeprof-1.c:60:3\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/eeprof-1.c:62:10]\ D.2843\ =\ 0;\l\
+}"];
+
+	fn_3_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|\<L15\>:\l\
+|return\ D.2843;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_5:s -> fn_3_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_5:s -> fn_3_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_6:s -> fn_3_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_6:s -> fn_3_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_8:s -> fn_3_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_8:s -> fn_3_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_10:s -> fn_3_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_10:s -> fn_3_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_12:s -> fn_3_basic_block_14:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_12:s -> fn_3_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_13:s -> fn_3_basic_block_14:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_13:s -> fn_3_basic_block_15:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_15:s -> fn_3_basic_block_16:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_15:s -> fn_3_basic_block_17:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_17:s -> fn_3_basic_block_18:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_18:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster___cyg_profile_func_enter" {
+	style="dashed";
+	color="black";
+	label="__cyg_profile_func_enter ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/eeprof-1.c:71:14]\ entry_calls.25_1\ =\ entry_calls;\l\
+|[valid_files/eeprof-1.c:71:14]\ _2\ =\ entry_calls.25_1\ +\ 1;\l\
+|[valid_files/eeprof-1.c:71:14]\ entry_calls\ =\ _2;\l\
+|[valid_files/eeprof-1.c:72:21]\ fn.26_3\ =\ (void\ (*\<T24f\>)\ ())\ fn;\l\
+|[valid_files/eeprof-1.c:72:19]\ last_fn_entered\ =\ fn.26_3;\l\
+|[valid_files/eeprof-1.c:73:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster___cyg_profile_func_exit" {
+	style="dashed";
+	color="black";
+	label="__cyg_profile_func_exit ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/eeprof-1.c:77:13]\ exit_calls.27_1\ =\ exit_calls;\l\
+|[valid_files/eeprof-1.c:77:13]\ _2\ =\ exit_calls.27_1\ +\ 1;\l\
+|[valid_files/eeprof-1.c:77:13]\ exit_calls\ =\ _2;\l\
+|[valid_files/eeprof-1.c:78:20]\ fn.28_3\ =\ (void\ (*\<T24f\>)\ ())\ fn;\l\
+|[valid_files/eeprof-1.c:78:18]\ last_fn_exited\ =\ fn.28_3;\l\
+|[valid_files/eeprof-1.c:79:1]\ return;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+}

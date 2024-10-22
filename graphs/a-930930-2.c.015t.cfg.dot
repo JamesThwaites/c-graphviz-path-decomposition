@@ -1,0 +1,85 @@
+digraph "a-930930-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_test_endianness" {
+	style="dashed";
+	color="black";
+	label="test_endianness ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/930930-2.c:9:8]\ [valid_files/930930-2.c:9:5]\ dw.d\ =\ 1.0e+1;\l\
+|[valid_files/930930-2.c:10:14]\ _1\ =\ [valid_files/930930-2.c:10:14]\ [valid_files/930930-2.c:10:12]\ dw.u[0];\l\
+|[valid_files/930930-2.c:10:27]\ _2\ =\ _1\ !=\ 0;\l\
+|[valid_files/930930-2.c:10:27]\ D.2786\ =\ (int)\ _2;\l\
+|dw\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/930930-2.c:10:27]\ return\ D.2786;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test_endianness_vol" {
+	style="dashed";
+	color="black";
+	label="test_endianness_vol ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/930930-2.c:21:8]\ [valid_files/930930-2.c:21:5]\ dw.d\ =\ 1.0e+1;\l\
+|[valid_files/930930-2.c:22:14]\ _1\ =\ [valid_files/930930-2.c:22:14]\ [valid_files/930930-2.c:22:12]\ dw.u[0];\l\
+|[valid_files/930930-2.c:22:27]\ _2\ =\ _1\ !=\ 0;\l\
+|[valid_files/930930-2.c:22:27]\ D.2789\ =\ (int)\ _2;\l\
+|dw\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/930930-2.c:22:27]\ return\ D.2789;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/930930-2.c:27:7]\ _1\ =\ test_endianness\ ();\l\
+|[valid_files/930930-2.c:27:29\ discrim\ 1]\ _2\ =\ test_endianness_vol\ ();\l\
+|[valid_files/930930-2.c:27:6\ discrim\ 2]\ if\ (_1\ !=\ _2)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/930930-2.c:28:5]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/930930-2.c:29:3]\ exit\ (0);\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

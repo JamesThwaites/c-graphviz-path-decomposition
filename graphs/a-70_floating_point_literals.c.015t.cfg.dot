@@ -1,0 +1,77 @@
+digraph "a-70_floating_point_literals.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/70_floating_point_literals.c:6:11]\ fa0\ =\ 1.23000003397464752197265625e-1;\l\
+|[valid_files/70_floating_point_literals.c:7:11]\ fa1\ =\ 1.22999996416e+11;\l\
+|[valid_files/70_floating_point_literals.c:8:11]\ fa2\ =\ 1.2299999885799495213944965144037269055843353271484375e-13;\l\
+|[valid_files/70_floating_point_literals.c:9:11]\ fa3\ =\ 1.22999996416e+11;\l\
+|[valid_files/70_floating_point_literals.c:10:5]\ _1\ =\ (double)\ fa3;\l\
+|[valid_files/70_floating_point_literals.c:10:5]\ _2\ =\ (double)\ fa2;\l\
+|[valid_files/70_floating_point_literals.c:10:5]\ _3\ =\ (double)\ fa1;\l\
+|[valid_files/70_floating_point_literals.c:10:5]\ _4\ =\ (double)\ fa0;\l\
+|[valid_files/70_floating_point_literals.c:10:5]\ printf\ ([valid_files/70_floating_point_literals.c:10:12]\ \"%f\\n%f\\n%f\\n%f\\n\\n\",\ _4,\ _3,\ _2,\ _1);\l\
+|[valid_files/70_floating_point_literals.c:12:11]\ fb0\ =\ 1.231230010986328125e+2;\l\
+|[valid_files/70_floating_point_literals.c:13:11]\ fb1\ =\ 1.2312299700224e+14;\l\
+|[valid_files/70_floating_point_literals.c:14:11]\ fb2\ =\ 1.2312299790817604616677272133529186248779296875e-10;\l\
+|[valid_files/70_floating_point_literals.c:15:11]\ fb3\ =\ 1.2312299700224e+14;\l\
+|[valid_files/70_floating_point_literals.c:16:5]\ _5\ =\ (double)\ fb3;\l\
+|[valid_files/70_floating_point_literals.c:16:5]\ _6\ =\ (double)\ fb2;\l\
+|[valid_files/70_floating_point_literals.c:16:5]\ _7\ =\ (double)\ fb1;\l\
+|[valid_files/70_floating_point_literals.c:16:5]\ _8\ =\ (double)\ fb0;\l\
+|[valid_files/70_floating_point_literals.c:16:5]\ printf\ ([valid_files/70_floating_point_literals.c:16:12]\ \"%f\\n%f\\n%f\\n%f\\n\\n\",\ _8,\ _7,\ _6,\ _5);\l\
+|[valid_files/70_floating_point_literals.c:18:11]\ fc0\ =\ 1.23e+2;\l\
+|[valid_files/70_floating_point_literals.c:19:11]\ fc1\ =\ 1.23000003231744e+14;\l\
+|[valid_files/70_floating_point_literals.c:20:11]\ fc2\ =\ 1.22999999074835386636550538241863250732421875e-10;\l\
+|[valid_files/70_floating_point_literals.c:21:11]\ fc3\ =\ 1.23000003231744e+14;\l\
+|[valid_files/70_floating_point_literals.c:22:5]\ _9\ =\ (double)\ fc3;\l\
+|[valid_files/70_floating_point_literals.c:22:5]\ _10\ =\ (double)\ fc2;\l\
+|[valid_files/70_floating_point_literals.c:22:5]\ _11\ =\ (double)\ fc1;\l\
+|[valid_files/70_floating_point_literals.c:22:5]\ _12\ =\ (double)\ fc0;\l\
+|[valid_files/70_floating_point_literals.c:22:5]\ printf\ ([valid_files/70_floating_point_literals.c:22:12]\ \"%f\\n%f\\n%f\\n%f\\n\\n\",\ _12,\ _11,\ _10,\ _9);\l\
+|[valid_files/70_floating_point_literals.c:24:11]\ fd0\ =\ 1.23000003231744e+14;\l\
+|[valid_files/70_floating_point_literals.c:25:11]\ fd1\ =\ 1.22999999074835386636550538241863250732421875e-10;\l\
+|[valid_files/70_floating_point_literals.c:26:11]\ fd2\ =\ 1.23000003231744e+14;\l\
+|[valid_files/70_floating_point_literals.c:27:5]\ _13\ =\ (double)\ fd2;\l\
+|[valid_files/70_floating_point_literals.c:27:5]\ _14\ =\ (double)\ fd1;\l\
+|[valid_files/70_floating_point_literals.c:27:5]\ _15\ =\ (double)\ fd0;\l\
+|[valid_files/70_floating_point_literals.c:27:5]\ printf\ ([valid_files/70_floating_point_literals.c:27:12]\ \"%f\\n%f\\n%f\\n\\n\",\ _15,\ _14,\ _13);\l\
+|[valid_files/70_floating_point_literals.c:28:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/70_floating_point_literals.c:31:12]\ da0\ =\ 4.28e+2;\l\
+|[valid_files/70_floating_point_literals.c:32:12]\ da1\ =\ 2.55107879638671875e-5;\l\
+|[valid_files/70_floating_point_literals.c:33:12]\ da2\ =\ 4.28e+2;\l\
+|[valid_files/70_floating_point_literals.c:34:5]\ printf\ ([valid_files/70_floating_point_literals.c:34:12]\ \"%f\\n%f\\n%f\\n\\n\",\ da0,\ da1,\ da2);\l\
+|[valid_files/70_floating_point_literals.c:36:12]\ db0\ =\ 1.756112e+6;\l\
+|[valid_files/70_floating_point_literals.c:37:12]\ db1\ =\ 1.0467243194580078125e-1;\l\
+|[valid_files/70_floating_point_literals.c:38:12]\ db2\ =\ 1.756592e+6;\l\
+|[valid_files/70_floating_point_literals.c:39:5]\ printf\ ([valid_files/70_floating_point_literals.c:39:12]\ \"%f\\n%f\\n%f\\n\\n\",\ db0,\ db1,\ db2);\l\
+|[valid_files/70_floating_point_literals.c:41:12]\ dc0\ =\ 1.753088e+6;\l\
+|[valid_files/70_floating_point_literals.c:42:12]\ dc1\ =\ 1.044921875e-1;\l\
+|[valid_files/70_floating_point_literals.c:43:12]\ dc2\ =\ 1.753088e+6;\l\
+|[valid_files/70_floating_point_literals.c:44:5]\ printf\ ([valid_files/70_floating_point_literals.c:44:12]\ \"%f\\n%f\\n%f\\n\\n\",\ dc0,\ dc1,\ dc2);\l\
+|[valid_files/70_floating_point_literals.c:46:12]\ dd0\ =\ 1.753088e+6;\l\
+|[valid_files/70_floating_point_literals.c:47:12]\ dd1\ =\ 1.044921875e-1;\l\
+|[valid_files/70_floating_point_literals.c:48:12]\ dd2\ =\ 1.753088e+6;\l\
+|[valid_files/70_floating_point_literals.c:49:5]\ printf\ ([valid_files/70_floating_point_literals.c:49:12]\ \"%f\\n%f\\n%f\\n\\n\",\ dd0,\ dd1,\ dd2);\l\
+|[valid_files/70_floating_point_literals.c:50:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/70_floating_point_literals.c:76:12]\ D.3234\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3234;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

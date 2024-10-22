@@ -1,0 +1,285 @@
+digraph "a-89_nocode_wanted.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_kb_wait_1" {
+	style="dashed";
+	color="black";
+	label="kb_wait_1 ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/89_nocode_wanted.c:7:13]\ printf\ ([valid_files/89_nocode_wanted.c:7:20]\ \"timeout=%ld\\n\",\ timeout);\l\
+|[valid_files/89_nocode_wanted.c:13:16]\ timeout\ =\ timeout\ +\ 18446744073709551615;\l\
+|[valid_files/89_nocode_wanted.c:14:14\ discrim\ 1]\ if\ (timeout\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:4:19]\ timeout\ =\ 2;\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/89_nocode_wanted.c:15:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_kb_wait_2" {
+	style="dashed";
+	color="black";
+	label="kb_wait_2 ()";
+	subgraph cluster_1_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/89_nocode_wanted.c:21:13]\ printf\ ([valid_files/89_nocode_wanted.c:21:20]\ \"timeout=%ld\\n\",\ timeout);\l\
+|[valid_files/89_nocode_wanted.c:27:16]\ timeout\ =\ timeout\ +\ 18446744073709551615;\l\
+|[valid_files/89_nocode_wanted.c:28:14\ discrim\ 1]\ if\ (timeout\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	}
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:18:19]\ timeout\ =\ 2;\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/89_nocode_wanted.c:29:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_kb_wait_2_1" {
+	style="dashed";
+	color="black";
+	label="kb_wait_2_1 ()";
+	subgraph cluster_2_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/89_nocode_wanted.c:35:13]\ printf\ ([valid_files/89_nocode_wanted.c:35:20]\ \"timeout=%ld\\n\",\ timeout);\l\
+|[valid_files/89_nocode_wanted.c:42:16]\ timeout\ =\ timeout\ +\ 18446744073709551615;\l\
+|[valid_files/89_nocode_wanted.c:43:14\ discrim\ 1]\ if\ (timeout\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	}
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:32:19]\ timeout\ =\ 2;\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/89_nocode_wanted.c:44:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_4:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_kb_wait_2_2" {
+	style="dashed";
+	color="black";
+	label="kb_wait_2_2 ()";
+	subgraph cluster_3_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/89_nocode_wanted.c:50:13\ discrim\ 1]\ printf\ ([valid_files/89_nocode_wanted.c:50:20]\ \"timeout=%ld\\n\",\ timeout);\l\
+}"];
+
+	fn_3_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/89_nocode_wanted.c:57:16]\ timeout\ =\ timeout\ +\ 18446744073709551615;\l\
+|[valid_files/89_nocode_wanted.c:58:14]\ if\ (timeout\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	}
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:47:19]\ timeout\ =\ 2;\l\
+}"];
+
+	fn_3_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/89_nocode_wanted.c:59:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_4:s -> fn_3_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_3_basic_block_4:s -> fn_3_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_5:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_kb_wait_3" {
+	style="dashed";
+	color="black";
+	label="kb_wait_3 ()";
+	subgraph cluster_4_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/89_nocode_wanted.c:65:13\ discrim\ 1]\ iftmp.0\ =\ printf\ ([valid_files/89_nocode_wanted.c:65:20]\ \"timeout=%ld\\n\",\ timeout);\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/89_nocode_wanted.c:74:16]\ timeout\ =\ timeout\ +\ 18446744073709551615;\l\
+|[valid_files/89_nocode_wanted.c:75:14]\ if\ (timeout\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	}
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:62:19]\ timeout\ =\ 2;\l\
+}"];
+
+	fn_4_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/89_nocode_wanted.c:76:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_4_basic_block_4:s -> fn_4_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_5:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_kb_wait_4" {
+	style="dashed";
+	color="black";
+	label="kb_wait_4 ()";
+	subgraph cluster_5_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/89_nocode_wanted.c:82:13\ discrim\ 1]\ printf\ ([valid_files/89_nocode_wanted.c:82:20]\ \"timeout=%ld\\n\",\ timeout);\l\
+}"];
+
+	fn_5_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/89_nocode_wanted.c:98:16]\ timeout\ =\ timeout\ +\ 18446744073709551615;\l\
+|[valid_files/89_nocode_wanted.c:99:14]\ if\ (timeout\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	}
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:79:19]\ timeout\ =\ 2;\l\
+}"];
+
+	fn_5_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/89_nocode_wanted.c:100:1]\ return;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_3:s -> fn_5_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_4:s -> fn_5_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_5_basic_block_4:s -> fn_5_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_5_basic_block_5:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/89_nocode_wanted.c:103:5]\ __builtin_puts\ (&\"begin\"[0]);\l\
+|[valid_files/89_nocode_wanted.c:104:5]\ kb_wait_1\ ();\l\
+|[valid_files/89_nocode_wanted.c:105:5]\ kb_wait_2\ ();\l\
+|[valid_files/89_nocode_wanted.c:106:5]\ kb_wait_2_1\ ();\l\
+|[valid_files/89_nocode_wanted.c:107:5]\ kb_wait_2_2\ ();\l\
+|[valid_files/89_nocode_wanted.c:108:5]\ kb_wait_3\ ();\l\
+|[valid_files/89_nocode_wanted.c:109:5]\ kb_wait_4\ ();\l\
+|[valid_files/89_nocode_wanted.c:110:5]\ __builtin_puts\ (&\"end\"[0]);\l\
+|[valid_files/89_nocode_wanted.c:111:12]\ D.2833\ =\ 0;\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.2833;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+}

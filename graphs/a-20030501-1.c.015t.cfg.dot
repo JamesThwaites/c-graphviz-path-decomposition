@@ -1,0 +1,59 @@
+digraph "a-20030501-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030501-1.c:2:1]\ D.2788\ =\ __builtin_dwarf_cfa\ (0);\l\
+|[valid_files/20030501-1.c:2:1\ discrim\ 1]\ FRAME.0.FRAME_BASE.PARENT\ =\ D.2788;\l\
+|[valid_files/20030501-1.c:4:7]\ D.2786\ =\ 10;\l\
+|[valid_files/20030501-1.c:4:7]\ FRAME.0.size\ =\ D.2786;\l\
+|[valid_files/20030501-1.c:12:7]\ _1\ =\ retframe_block\ ();\ [static-chain:\ &FRAME.0]\l\
+|[valid_files/20030501-1.c:12:6\ discrim\ 1]\ if\ (_1\ !=\ 15)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20030501-1.c:13:7]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20030501-1.c:14:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_retframe_block" {
+	style="dashed";
+	color="black";
+	label="retframe_block ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030501-1.c:9:21]\ D.2785\ =\ CHAIN.1-\>size;\l\
+|[valid_files/20030501-1.c:9:21]\ D.2781\ =\ D.2785\ +\ 5;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20030501-1.c:9:21\ discrim\ 1]\ return\ D.2781;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,96 @@
+digraph "a-92_enum_bitfield.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_blah" {
+	style="dashed";
+	color="black";
+	label="blah ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/92_enum_bitfield.c:34:19]\ D.2802\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/92_enum_bitfield.c:34:19\ discrim\ 1]\ return\ D.2802;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_convert_like_real" {
+	style="dashed";
+	color="black";
+	label="convert_like_real ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/92_enum_bitfield.c:38:44]\ _1\ =\ [valid_files/92_enum_bitfield.c:38:44]\ [valid_files/92_enum_bitfield.c:38:36]\ convs-\>common.code;\l\
+|[valid_files/92_enum_bitfield.c:38:12]\ _2\ =\ (unsigned\ int)\ _1;\l\
+|[valid_files/92_enum_bitfield.c:38:3]\ if\ (_2\ ==\ 152)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/92_enum_bitfield.c:40:5]\ \<L0\>:\l\
+|[valid_files/92_enum_bitfield.c:43:14]\ D.2804\ =\ blah\ ();\l\
+[valid_files/92_enum_bitfield.c:43:14]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/92_enum_bitfield.c:44:5]\ \<L1\>:\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/92_enum_bitfield.c:47:4]\ __builtin_puts\ (&\"unsigned\ enum\ bit-fields\ broken\"[0]);\l\
+|[valid_files/92_enum_bitfield.c:48:11]\ D.2804\ =\ 0;\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|\<L3\>:\l\
+|return\ D.2804;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/92_enum_bitfield.c:55:21]\ [valid_files/92_enum_bitfield.c:55:15]\ [valid_files/92_enum_bitfield.c:55:8]\ convs.common.code\ =\ 152;\l\
+|[valid_files/92_enum_bitfield.c:56:3]\ convert_like_real\ ([valid_files/92_enum_bitfield.c:56:3]\ &convs);\l\
+|[valid_files/92_enum_bitfield.c:57:10]\ D.2806\ =\ 0;\l\
+|convs\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2806;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

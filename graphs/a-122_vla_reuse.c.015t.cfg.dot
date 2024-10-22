@@ -1,0 +1,138 @@
+digraph "a-122_vla_reuse.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/122_vla_reuse.c:12:13]\ _1\ =\ n\ %\ 100;\l\
+|[valid_files/122_vla_reuse.c:12:19]\ D.3215\ =\ _1\ +\ 1;\l\
+|[valid_files/122_vla_reuse.c:12:5]\ saved_stack.1\ =\ __builtin_stack_save\ ();\l\
+|[valid_files/122_vla_reuse.c:12:19\ discrim\ 1]\ _2\ =\ (long\ int)\ D.3215;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _3\ =\ _2\ +\ -1;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _4\ =\ (sizetype)\ _3;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ D.3216\ =\ _4;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _5\ =\ (sizetype)\ D.3215;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _6\ =\ (bitsizetype)\ _5;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _7\ =\ _6\ *\ 32;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ D.3217\ =\ _7;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _8\ =\ (sizetype)\ D.3215;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _9\ =\ _8\ *\ 4;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ D.3218\ =\ _9;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _10\ =\ (sizetype)\ D.3215;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _11\ =\ (bitsizetype)\ _10;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _12\ =\ _11\ *\ 32;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ D.3219\ =\ _12;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _13\ =\ (sizetype)\ D.3215;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ _14\ =\ _13\ *\ 4;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ D.3220\ =\ _14;\l\
+|[valid_files/122_vla_reuse.c:12:9\ discrim\ 1]\ x.0\ =\ __builtin_alloca_with_align\ (D.3220,\ 32);\l\
+|[valid_files/122_vla_reuse.c:13:8]\ if\ (first\ ==\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/122_vla_reuse.c:14:13]\ _15\ =\ [valid_files/122_vla_reuse.c:14:13]\ &[valid_files/122_vla_reuse.c:14:15]\ [valid_files/122_vla_reuse.c:14:15]\ (*x.0)[0];\l\
+|[valid_files/122_vla_reuse.c:14:26]\ _16\ =\ n\ %\ 100;\l\
+|[valid_files/122_vla_reuse.c:14:32]\ _17\ =\ _16\ +\ 1;\l\
+|[valid_files/122_vla_reuse.c:14:23]\ _18\ =\ [valid_files/122_vla_reuse.c:14:23]\ p[_17];\l\
+|[valid_files/122_vla_reuse.c:14:12]\ if\ (_15\ !=\ _18)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/122_vla_reuse.c:20:13]\ _23\ =\ n\ %\ 100;\l\
+|[valid_files/122_vla_reuse.c:20:19]\ _24\ =\ _23\ +\ 1;\l\
+|[valid_files/122_vla_reuse.c:20:26]\ _25\ =\ [valid_files/122_vla_reuse.c:20:26]\ &[valid_files/122_vla_reuse.c:20:28]\ [valid_files/122_vla_reuse.c:20:28]\ (*x.0)[0];\l\
+|[valid_files/122_vla_reuse.c:20:24]\ [valid_files/122_vla_reuse.c:20:10]\ p[_24]\ =\ _25;\l\
+|[valid_files/122_vla_reuse.c:21:19]\ _26\ =\ n\ \<=\ 99;\l\
+|[valid_files/122_vla_reuse.c:21:15]\ first\ =\ (int)\ _26;\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/122_vla_reuse.c:23:10]\ [valid_files/122_vla_reuse.c:23:6]\ [valid_files/122_vla_reuse.c:23:6]\ (*x.0)[0]\ =\ 1;\l\
+|[valid_files/122_vla_reuse.c:24:9]\ _27\ =\ n\ %\ 100;\l\
+|[valid_files/122_vla_reuse.c:24:16]\ [valid_files/122_vla_reuse.c:24:6]\ [valid_files/122_vla_reuse.c:24:6]\ (*x.0)[_27]\ =\ 2;\l\
+|[valid_files/122_vla_reuse.c:25:6]\ n\ =\ n\ +\ 1;\l\
+|[valid_files/122_vla_reuse.c:26:8]\ if\ (n\ \<=\ 99999)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/122_vla_reuse.c:27:9]\ //\ predicted\ unlikely\ by\ goto\ predictor.\l\
+|[valid_files/122_vla_reuse.c:27:9\ discrim\ 1]\ __builtin_stack_restore\ (saved_stack.1);\l\
+goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/122_vla_reuse.c:10:9]\ lab:\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/122_vla_reuse.c:6:9]\ n\ =\ 0;\l\
+|[valid_files/122_vla_reuse.c:7:10]\ first\ =\ 1;\l\
+[0:0]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/122_vla_reuse.c:15:53]\ _19\ =\ n\ %\ 100;\l\
+|[valid_files/122_vla_reuse.c:15:59]\ _20\ =\ _19\ +\ 1;\l\
+|[valid_files/122_vla_reuse.c:15:13]\ _21\ =\ [valid_files/122_vla_reuse.c:15:13]\ p[_20];\l\
+|[valid_files/122_vla_reuse.c:15:13]\ _22\ =\ [valid_files/122_vla_reuse.c:15:13]\ &[valid_files/122_vla_reuse.c:15:44]\ [valid_files/122_vla_reuse.c:15:44]\ (*x.0)[0];\l\
+|[valid_files/122_vla_reuse.c:15:13]\ printf\ ([valid_files/122_vla_reuse.c:15:21]\ \"ERROR:\ %d\ %p\ $p\\n\",\ _22,\ _21);\l\
+|[valid_files/122_vla_reuse.c:16:19]\ D.3226\ =\ 1;\l\
+|[valid_files/122_vla_reuse.c:16:19]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/122_vla_reuse.c:16:19]\ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/122_vla_reuse.c:28:5]\ __builtin_puts\ (&\"OK\"[0]);\l\
+|[valid_files/122_vla_reuse.c:29:12]\ D.3226\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/122_vla_reuse.c:16:19\ discrim\ 1]\ __builtin_stack_restore\ (saved_stack.1);\l\
+|p\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|\<L13\>:\l\
+|return\ D.3226;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_9:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_12:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

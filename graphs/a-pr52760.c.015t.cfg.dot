@@ -1,0 +1,191 @@
+digraph "a-pr52760.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr52760.c:10:17\ discrim\ 1]\ if\ (i\ \<\ x)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr52760.c:12:28]\ _1\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:12:28]\ _2\ =\ _1\ *\ 8;\l\
+|[valid_files/pr52760.c:12:28]\ _3\ =\ y\ +\ _2;\l\
+|[valid_files/pr52760.c:12:31]\ _4\ =\ [valid_files/pr52760.c:12:31]\ _3-\>a;\l\
+|[valid_files/pr52760.c:12:40]\ _5\ =\ _4\ \>\>\ 8;\l\
+|[valid_files/pr52760.c:12:40]\ _6\ =\ (signed\ short)\ _5;\l\
+|[valid_files/pr52760.c:12:53]\ _7\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:12:53]\ _8\ =\ _7\ *\ 8;\l\
+|[valid_files/pr52760.c:12:53]\ _9\ =\ y\ +\ _8;\l\
+|[valid_files/pr52760.c:12:56]\ _10\ =\ [valid_files/pr52760.c:12:56]\ _9-\>a;\l\
+|[valid_files/pr52760.c:12:40]\ _11\ =\ (signed\ short)\ _10;\l\
+|[valid_files/pr52760.c:12:40]\ _12\ =\ _11\ \<\<\ 8;\l\
+|[valid_files/pr52760.c:12:40]\ _13\ =\ _6\ \|\ _12;\l\
+|[valid_files/pr52760.c:12:8]\ _14\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:12:8]\ _15\ =\ _14\ *\ 8;\l\
+|[valid_files/pr52760.c:12:8]\ _16\ =\ y\ +\ _15;\l\
+|[valid_files/pr52760.c:12:40]\ _17\ =\ (short\ unsigned\ int)\ _13;\l\
+|[valid_files/pr52760.c:12:14]\ [valid_files/pr52760.c:12:11]\ _16-\>a\ =\ _17;\l\
+|[valid_files/pr52760.c:13:28]\ _18\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:13:28]\ _19\ =\ _18\ *\ 8;\l\
+|[valid_files/pr52760.c:13:28]\ _20\ =\ y\ +\ _19;\l\
+|[valid_files/pr52760.c:13:31]\ _21\ =\ [valid_files/pr52760.c:13:31]\ _20-\>b;\l\
+|[valid_files/pr52760.c:13:40]\ _22\ =\ _21\ \>\>\ 8;\l\
+|[valid_files/pr52760.c:13:40]\ _23\ =\ (signed\ short)\ _22;\l\
+|[valid_files/pr52760.c:13:53]\ _24\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:13:53]\ _25\ =\ _24\ *\ 8;\l\
+|[valid_files/pr52760.c:13:53]\ _26\ =\ y\ +\ _25;\l\
+|[valid_files/pr52760.c:13:56]\ _27\ =\ [valid_files/pr52760.c:13:56]\ _26-\>b;\l\
+|[valid_files/pr52760.c:13:40]\ _28\ =\ (signed\ short)\ _27;\l\
+|[valid_files/pr52760.c:13:40]\ _29\ =\ _28\ \<\<\ 8;\l\
+|[valid_files/pr52760.c:13:40]\ _30\ =\ _23\ \|\ _29;\l\
+|[valid_files/pr52760.c:13:8]\ _31\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:13:8]\ _32\ =\ _31\ *\ 8;\l\
+|[valid_files/pr52760.c:13:8]\ _33\ =\ y\ +\ _32;\l\
+|[valid_files/pr52760.c:13:40]\ _34\ =\ (short\ unsigned\ int)\ _30;\l\
+|[valid_files/pr52760.c:13:14]\ [valid_files/pr52760.c:13:11]\ _33-\>b\ =\ _34;\l\
+|[valid_files/pr52760.c:14:28]\ _35\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:14:28]\ _36\ =\ _35\ *\ 8;\l\
+|[valid_files/pr52760.c:14:28]\ _37\ =\ y\ +\ _36;\l\
+|[valid_files/pr52760.c:14:31]\ _38\ =\ [valid_files/pr52760.c:14:31]\ _37-\>c;\l\
+|[valid_files/pr52760.c:14:40]\ _39\ =\ _38\ \>\>\ 8;\l\
+|[valid_files/pr52760.c:14:40]\ _40\ =\ (signed\ short)\ _39;\l\
+|[valid_files/pr52760.c:14:53]\ _41\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:14:53]\ _42\ =\ _41\ *\ 8;\l\
+|[valid_files/pr52760.c:14:53]\ _43\ =\ y\ +\ _42;\l\
+|[valid_files/pr52760.c:14:56]\ _44\ =\ [valid_files/pr52760.c:14:56]\ _43-\>c;\l\
+|[valid_files/pr52760.c:14:40]\ _45\ =\ (signed\ short)\ _44;\l\
+|[valid_files/pr52760.c:14:40]\ _46\ =\ _45\ \<\<\ 8;\l\
+|[valid_files/pr52760.c:14:40]\ _47\ =\ _40\ \|\ _46;\l\
+|[valid_files/pr52760.c:14:8]\ _48\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:14:8]\ _49\ =\ _48\ *\ 8;\l\
+|[valid_files/pr52760.c:14:8]\ _50\ =\ y\ +\ _49;\l\
+|[valid_files/pr52760.c:14:40]\ _51\ =\ (short\ unsigned\ int)\ _47;\l\
+|[valid_files/pr52760.c:14:14]\ [valid_files/pr52760.c:14:11]\ _50-\>c\ =\ _51;\l\
+|[valid_files/pr52760.c:15:28]\ _52\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:15:28]\ _53\ =\ _52\ *\ 8;\l\
+|[valid_files/pr52760.c:15:28]\ _54\ =\ y\ +\ _53;\l\
+|[valid_files/pr52760.c:15:31]\ _55\ =\ [valid_files/pr52760.c:15:31]\ _54-\>d;\l\
+|[valid_files/pr52760.c:15:40]\ _56\ =\ _55\ \>\>\ 8;\l\
+|[valid_files/pr52760.c:15:40]\ _57\ =\ (signed\ short)\ _56;\l\
+|[valid_files/pr52760.c:15:53]\ _58\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:15:53]\ _59\ =\ _58\ *\ 8;\l\
+|[valid_files/pr52760.c:15:53]\ _60\ =\ y\ +\ _59;\l\
+|[valid_files/pr52760.c:15:56]\ _61\ =\ [valid_files/pr52760.c:15:56]\ _60-\>d;\l\
+|[valid_files/pr52760.c:15:40]\ _62\ =\ (signed\ short)\ _61;\l\
+|[valid_files/pr52760.c:15:40]\ _63\ =\ _62\ \<\<\ 8;\l\
+|[valid_files/pr52760.c:15:40]\ _64\ =\ _57\ \|\ _63;\l\
+|[valid_files/pr52760.c:15:8]\ _65\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/pr52760.c:15:8]\ _66\ =\ _65\ *\ 8;\l\
+|[valid_files/pr52760.c:15:8]\ _67\ =\ y\ +\ _66;\l\
+|[valid_files/pr52760.c:15:40]\ _68\ =\ (short\ unsigned\ int)\ _64;\l\
+|[valid_files/pr52760.c:15:14]\ [valid_files/pr52760.c:15:11]\ _67-\>d\ =\ _68;\l\
+|[valid_files/pr52760.c:10:23\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr52760.c:10:10]\ i\ =\ 0;\l\
+[valid_files/pr52760.c:10:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr52760.c:17:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr52760.c:22:12]\ t.a\ =\ 1;\l\
+|[valid_files/pr52760.c:22:12]\ t.b\ =\ 515;\l\
+|[valid_files/pr52760.c:22:12]\ t.c\ =\ 1029;\l\
+|[valid_files/pr52760.c:22:12]\ t.d\ =\ 1543;\l\
+|[valid_files/pr52760.c:23:3]\ foo\ (1,\ [valid_files/pr52760.c:23:3]\ &t);\l\
+|[valid_files/pr52760.c:24:8]\ _1\ =\ [valid_files/pr52760.c:24:8]\ t.a;\l\
+|[valid_files/pr52760.c:24:6]\ if\ (_1\ !=\ 256)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr52760.c:24:25\ discrim\ 1]\ _2\ =\ [valid_files/pr52760.c:24:25]\ t.b;\l\
+|[valid_files/pr52760.c:24:21\ discrim\ 1]\ if\ (_2\ !=\ 770)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr52760.c:24:42\ discrim\ 2]\ _3\ =\ [valid_files/pr52760.c:24:42]\ t.c;\l\
+|[valid_files/pr52760.c:24:38\ discrim\ 2]\ if\ (_3\ !=\ 1284)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr52760.c:24:59\ discrim\ 3]\ _4\ =\ [valid_files/pr52760.c:24:59]\ t.d;\l\
+|[valid_files/pr52760.c:24:55\ discrim\ 3]\ if\ (_4\ !=\ 1798)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr52760.c:25:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/pr52760.c:26:10]\ D.2791\ =\ 0;\l\
+|t\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L6\>:\l\
+|return\ D.2791;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

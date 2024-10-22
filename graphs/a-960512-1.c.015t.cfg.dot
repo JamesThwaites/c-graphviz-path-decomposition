@@ -1,0 +1,65 @@
+digraph "a-960512-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/960512-1.c:7:8]\ [valid_files/960512-1.c:7:4]\ a[9]\ =\ 0;\l\
+|[valid_files/960512-1.c:8:8]\ _1\ =\ [valid_files/960512-1.c:8:8]\ a[9];\l\
+|[valid_files/960512-1.c:8:5]\ _2\ =\ (double)\ _1;\l\
+|[valid_files/960512-1.c:8:5]\ c\ =\ COMPLEX_EXPR\ \<_2,\ 0.0\>;\l\
+|[valid_files/960512-1.c:9:10]\ D.2778\ =\ c;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/960512-1.c:9:10]\ return\ D.2778;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/960512-1.c:16:11]\ c\ =\ f\ ();\l\
+|[valid_files/960512-1.c:16:9\ discrim\ 1]\ c.0\ =\ c;\l\
+|[valid_files/960512-1.c:16:7\ discrim\ 1]\ _1\ =\ [valid_files/960512-1.c:16:7]\ REALPART_EXPR\ \<c.0\>;\l\
+|[valid_files/960512-1.c:16:7\ discrim\ 1]\ _2\ =\ _1\ !=\ 0.0;\l\
+|[valid_files/960512-1.c:16:7\ discrim\ 1]\ _3\ =\ [valid_files/960512-1.c:16:7]\ IMAGPART_EXPR\ \<c.0\>;\l\
+|[valid_files/960512-1.c:16:7\ discrim\ 1]\ _4\ =\ _3\ !=\ 0.0;\l\
+|[valid_files/960512-1.c:16:7\ discrim\ 1]\ _5\ =\ _2\ \|\ _4;\l\
+|[valid_files/960512-1.c:16:6\ discrim\ 1]\ if\ (_5\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/960512-1.c:17:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/960512-1.c:18:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

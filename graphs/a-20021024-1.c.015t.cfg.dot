@@ -1,0 +1,115 @@
+digraph "a-20021024-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20021024-1.c:11:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	subgraph cluster_1_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20021024-1.c:17:1]\ top:\l\
+|[valid_files/20021024-1.c:18:7]\ rs2\ =\ rop\ \>\>\ 23;\l\
+|[valid_files/20021024-1.c:19:14]\ _1\ =\ rop\ \>\>\ 9;\l\
+|[valid_files/20021024-1.c:19:7]\ rs1\ =\ _1\ &\ 511;\l\
+|[valid_files/20021024-1.c:20:6]\ rd\ =\ rop\ &\ 511;\l\
+|[valid_files/20021024-1.c:22:3]\ cp.0_2\ =\ cp;\l\
+|[valid_files/20021024-1.c:22:7]\ [valid_files/20021024-1.c:22:3]\ *cp.0_2\ =\ 1;\l\
+|[valid_files/20021024-1.c:23:8]\ _3\ =\ (long\ unsigned\ int)\ rs1;\l\
+|[valid_files/20021024-1.c:23:8]\ _4\ =\ _3\ *\ 8;\l\
+|[valid_files/20021024-1.c:23:8]\ _5\ =\ r\ +\ _4;\l\
+|[valid_files/20021024-1.c:23:8]\ _6\ =\ [valid_files/20021024-1.c:23:8]\ *_5;\l\
+|[valid_files/20021024-1.c:23:17]\ _7\ =\ (long\ unsigned\ int)\ rs2;\l\
+|[valid_files/20021024-1.c:23:17]\ _8\ =\ _7\ *\ 8;\l\
+|[valid_files/20021024-1.c:23:17]\ _9\ =\ r\ +\ _8;\l\
+|[valid_files/20021024-1.c:23:17]\ _10\ =\ [valid_files/20021024-1.c:23:17]\ *_9;\l\
+|[valid_files/20021024-1.c:23:14]\ _11\ =\ _6\ +\ _10;\l\
+|[valid_files/20021024-1.c:23:5]\ m\ =\ _11;\l\
+|[valid_files/20021024-1.c:24:3]\ cp.1_12\ =\ cp;\l\
+|[valid_files/20021024-1.c:24:7]\ [valid_files/20021024-1.c:24:3]\ *cp.1_12\ =\ 2;\l\
+|[valid_files/20021024-1.c:25:3]\ foo\ ();\l\
+|[valid_files/20021024-1.c:26:6]\ if\ (rd\ ==\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20021024-1.c:27:5]\ //\ predicted\ unlikely\ by\ goto\ predictor.\l\
+[valid_files/20021024-1.c:27:5]\ goto\ \<bb\ 2\>;\ [INV]\l\
+}"];
+
+	}
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20021024-1.c:28:4]\ _13\ =\ (long\ unsigned\ int)\ rd;\l\
+|[valid_files/20021024-1.c:28:4]\ _14\ =\ _13\ *\ 8;\l\
+|[valid_files/20021024-1.c:28:4]\ _15\ =\ r\ +\ _14;\l\
+|[valid_files/20021024-1.c:28:9]\ [valid_files/20021024-1.c:28:4]\ *_15\ =\ 1;\l\
+|[valid_files/20021024-1.c:29:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_2:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_4:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20021024-1.c:35:6]\ cp\ =\ [valid_files/20021024-1.c:35:8]\ &cr;\l\
+|[valid_files/20021024-1.c:37:8]\ [valid_files/20021024-1.c:37:4]\ r[4]\ =\ 47;\l\
+|[valid_files/20021024-1.c:38:8]\ [valid_files/20021024-1.c:38:4]\ r[8]\ =\ 11;\l\
+|[valid_files/20021024-1.c:39:3]\ bar\ (67110927,\ [valid_files/20021024-1.c:39:34]\ &r);\l\
+|[valid_files/20021024-1.c:41:9]\ m.2_1\ =\ m;\l\
+|[valid_files/20021024-1.c:41:6]\ if\ (m.2_1\ !=\ 58)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20021024-1.c:42:5]\ abort\ ();\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20021024-1.c:43:3]\ exit\ (0);\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

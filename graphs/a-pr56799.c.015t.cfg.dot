@@ -1,0 +1,115 @@
+digraph "a-pr56799.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr56799.c:12:7]\ [valid_files/pr56799.c:12:4]\ a.x\ =\ 65536;\l\
+|[valid_files/pr56799.c:13:7]\ [valid_files/pr56799.c:13:4]\ a.y\ =\ 1;\l\
+|[valid_files/pr56799.c:14:7]\ r\ =\ foo\ ([valid_files/pr56799.c:14:7]\ &a);\l\
+|[valid_files/pr56799.c:15:6]\ if\ (r\ ==\ 2)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr56799.c:15:19\ discrim\ 1]\ lo.0_1\ =\ lo;\l\
+|[valid_files/pr56799.c:15:14\ discrim\ 1]\ if\ (lo.0_1\ ==\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr56799.c:15:28\ discrim\ 2]\ hi.1_2\ =\ hi;\l\
+|[valid_files/pr56799.c:15:23\ discrim\ 2]\ if\ (hi.1_2\ ==\ 1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr56799.c:17:7]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr56799.c:19:3]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr56799.c:26:7]\ a\ =\ [valid_files/pr56799.c:26:14]\ ptr-\>x;\l\
+|[valid_files/pr56799.c:27:7]\ c\ =\ 0;\l\
+|[valid_files/pr56799.c:28:7]\ b\ =\ (u16)\ a;\l\
+|[valid_files/pr56799.c:29:6]\ if\ (b\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr56799.c:31:8]\ lo\ =\ 1;\l\
+|[valid_files/pr56799.c:32:13]\ _1\ =\ [valid_files/pr56799.c:32:13]\ ptr-\>y;\l\
+|[valid_files/pr56799.c:32:7]\ c\ =\ c\ +\ _1;\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr56799.c:34:9]\ _2\ =\ a\ \>\>\ 16;\l\
+|[valid_files/pr56799.c:34:5]\ b\ =\ (u16)\ _2;\l\
+|[valid_files/pr56799.c:35:6]\ if\ (b\ !=\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr56799.c:37:8]\ hi\ =\ 1;\l\
+|[valid_files/pr56799.c:38:12]\ _3\ =\ [valid_files/pr56799.c:38:12]\ ptr-\>y;\l\
+|[valid_files/pr56799.c:38:6]\ c\ =\ c\ +\ _3;\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr56799.c:40:11]\ _4\ =\ [valid_files/pr56799.c:40:11]\ ptr-\>y;\l\
+|[valid_files/pr56799.c:40:5]\ c\ =\ c\ +\ _4;\l\
+|[valid_files/pr56799.c:41:10]\ D.3238\ =\ c;\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|\<L4\>:\l\
+|[valid_files/pr56799.c:41:10\ discrim\ 1]\ return\ D.3238;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

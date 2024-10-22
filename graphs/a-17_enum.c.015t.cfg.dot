@@ -1,0 +1,95 @@
+digraph "a-17_enum.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_should_compile" {
+	style="dashed";
+	color="black";
+	label="should_compile ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/17_enum.c:37:9]\ [valid_files/17_enum.c:37:4]\ s-\>f2\ =\ [valid_files/17_enum.c:37:11]\ it_real_fn;\l\
+|[valid_files/17_enum.c:38:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_it_real_fn" {
+	style="dashed";
+	color="black";
+	label="it_real_fn ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/17_enum.c:42:10]\ D.3241\ =\ 1;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/17_enum.c:42:10\ discrim\ 1]\ return\ D.3241;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_deref_uintptr" {
+	style="dashed";
+	color="black";
+	label="deref_uintptr ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/17_enum.c:47:10]\ D.3243\ =\ [valid_files/17_enum.c:47:10]\ *p;\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/17_enum.c:47:10\ discrim\ 1]\ return\ D.3243;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/17_enum.c:57:19]\ epos\ =\ 1;\l\
+|[valid_files/17_enum.c:59:4]\ printf\ ([valid_files/17_enum.c:59:11]\ \"%d\ %d\ %d\ %d\ %d\ %d\ %d\ %d\\n\",\ 0,\ 1,\ 2,\ 3,\ 54,\ 73,\ 74,\ 75);\l\
+|[valid_files/17_enum.c:61:9]\ frod\ =\ 12;\l\
+|[valid_files/17_enum.c:62:4]\ printf\ ([valid_files/17_enum.c:62:11]\ \"%d\\n\",\ frod);\l\
+|[valid_files/17_enum.c:63:9]\ frod\ =\ 54;\l\
+|[valid_files/17_enum.c:64:4]\ printf\ ([valid_files/17_enum.c:64:11]\ \"%d\\n\",\ frod);\l\
+|[valid_files/17_enum.c:67:4]\ _1\ =\ deref_uintptr\ ([valid_files/17_enum.c:67:4]\ &epos);\l\
+|[valid_files/17_enum.c:67:4\ discrim\ 1]\ printf\ ([valid_files/17_enum.c:67:12]\ \"enum\ to\ int:\ %u\\n\",\ _1);\l\
+|[valid_files/17_enum.c:69:11]\ D.3245\ =\ 0;\l\
+|epos\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3245;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+}

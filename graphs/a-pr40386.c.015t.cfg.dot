@@ -1,0 +1,514 @@
+digraph "a-pr40386.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr40386.c:31:7]\ c.0_1\ =\ c;\l\
+|[valid_files/pr40386.c:31:7]\ _2\ =\ (int)\ c.0_1;\l\
+|[valid_files/pr40386.c:31:7]\ shift1.1_3\ =\ shift1;\l\
+|[valid_files/pr40386.c:31:7]\ _4\ =\ _2\ \>\>\ shift1.1_3;\l\
+|[valid_files/pr40386.c:31:7]\ c.2_5\ =\ c;\l\
+|[valid_files/pr40386.c:31:7]\ _6\ =\ (int)\ c.2_5;\l\
+|[valid_files/pr40386.c:31:7]\ shift1.3_7\ =\ shift1;\l\
+|[valid_files/pr40386.c:31:7]\ shift1.4_8\ =\ (unsigned\ int)\ shift1.3_7;\l\
+|[valid_files/pr40386.c:31:7]\ _9\ =\ 8\ -\ shift1.4_8;\l\
+|[valid_files/pr40386.c:31:7]\ _10\ =\ _6\ \<\<\ _9;\l\
+|[valid_files/pr40386.c:31:7]\ _11\ =\ _4\ \|\ _10;\l\
+|[valid_files/pr40386.c:31:6]\ if\ (_11\ !=\ 835)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr40386.c:32:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr40386.c:34:7]\ c.5_12\ =\ c;\l\
+|[valid_files/pr40386.c:34:7]\ _13\ =\ c.5_12\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:34:7]\ _14\ =\ (int)\ _13;\l\
+|[valid_files/pr40386.c:34:7]\ c.6_15\ =\ c;\l\
+|[valid_files/pr40386.c:34:7]\ _16\ =\ (int)\ c.6_15;\l\
+|[valid_files/pr40386.c:34:7]\ _17\ =\ _16\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:34:7]\ _18\ =\ _14\ \|\ _17;\l\
+|[valid_files/pr40386.c:34:6]\ if\ (_18\ !=\ 835)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr40386.c:35:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr40386.c:37:7]\ s.7_19\ =\ s;\l\
+|[valid_files/pr40386.c:37:7]\ _20\ =\ (int)\ s.7_19;\l\
+|[valid_files/pr40386.c:37:7]\ shift1.8_21\ =\ shift1;\l\
+|[valid_files/pr40386.c:37:7]\ _22\ =\ _20\ \>\>\ shift1.8_21;\l\
+|[valid_files/pr40386.c:37:7]\ s.9_23\ =\ s;\l\
+|[valid_files/pr40386.c:37:7]\ _24\ =\ (int)\ s.9_23;\l\
+|[valid_files/pr40386.c:37:7]\ shift1.10_25\ =\ shift1;\l\
+|[valid_files/pr40386.c:37:7]\ shift1.11_26\ =\ (unsigned\ int)\ shift1.10_25;\l\
+|[valid_files/pr40386.c:37:7]\ _27\ =\ 16\ -\ shift1.11_26;\l\
+|[valid_files/pr40386.c:37:7]\ _28\ =\ _24\ \<\<\ _27;\l\
+|[valid_files/pr40386.c:37:7]\ _29\ =\ _22\ \|\ _28;\l\
+|[valid_files/pr40386.c:37:6]\ if\ (_29\ !=\ -221)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/pr40386.c:38:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/pr40386.c:40:7]\ s.12_30\ =\ s;\l\
+|[valid_files/pr40386.c:40:7]\ _31\ =\ s.12_30\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:40:7]\ _32\ =\ (int)\ _31;\l\
+|[valid_files/pr40386.c:40:7]\ s.13_33\ =\ s;\l\
+|[valid_files/pr40386.c:40:7]\ _34\ =\ (int)\ s.13_33;\l\
+|[valid_files/pr40386.c:40:7]\ _35\ =\ _34\ \<\<\ 12;\l\
+|[valid_files/pr40386.c:40:7]\ _36\ =\ _32\ \|\ _35;\l\
+|[valid_files/pr40386.c:40:6]\ if\ (_36\ !=\ -221)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/pr40386.c:41:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/pr40386.c:43:7]\ i.14_37\ =\ i;\l\
+|[valid_files/pr40386.c:43:7]\ shift1.15_38\ =\ shift1;\l\
+|[valid_files/pr40386.c:43:7]\ _39\ =\ i.14_37\ \>\>\ shift1.15_38;\l\
+|[valid_files/pr40386.c:43:7]\ i.16_40\ =\ i;\l\
+|[valid_files/pr40386.c:43:7]\ shift1.17_41\ =\ shift1;\l\
+|[valid_files/pr40386.c:43:7]\ shift1.18_42\ =\ (unsigned\ int)\ shift1.17_41;\l\
+|[valid_files/pr40386.c:43:7]\ _43\ =\ 32\ -\ shift1.18_42;\l\
+|[valid_files/pr40386.c:43:7]\ _44\ =\ i.16_40\ \<\<\ _43;\l\
+|[valid_files/pr40386.c:43:7]\ _45\ =\ _39\ \|\ _44;\l\
+|[valid_files/pr40386.c:43:6]\ if\ (_45\ !=\ 1073745699)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/pr40386.c:44:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/pr40386.c:46:7]\ i.19_46\ =\ i;\l\
+|[valid_files/pr40386.c:46:7]\ _47\ =\ i.19_46\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:46:7]\ i.20_48\ =\ i;\l\
+|[valid_files/pr40386.c:46:7]\ _49\ =\ i.20_48\ \<\<\ 28;\l\
+|[valid_files/pr40386.c:46:7]\ _50\ =\ _47\ \|\ _49;\l\
+|[valid_files/pr40386.c:46:6]\ if\ (_50\ !=\ 1073745699)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/pr40386.c:47:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/pr40386.c:49:7]\ l.21_51\ =\ l;\l\
+|[valid_files/pr40386.c:49:7]\ shift1.22_52\ =\ shift1;\l\
+|[valid_files/pr40386.c:49:7]\ _53\ =\ l.21_51\ \>\>\ shift1.22_52;\l\
+|[valid_files/pr40386.c:49:7]\ l.23_54\ =\ l;\l\
+|[valid_files/pr40386.c:49:7]\ shift1.24_55\ =\ shift1;\l\
+|[valid_files/pr40386.c:49:7]\ shift1.25_56\ =\ (unsigned\ int)\ shift1.24_55;\l\
+|[valid_files/pr40386.c:49:7]\ _57\ =\ 64\ -\ shift1.25_56;\l\
+|[valid_files/pr40386.c:49:7]\ _58\ =\ l.23_54\ \<\<\ _57;\l\
+|[valid_files/pr40386.c:49:7]\ _59\ =\ _53\ \|\ _58;\l\
+|[valid_files/pr40386.c:49:6]\ if\ (_59\ !=\ -9223372036600806041)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/pr40386.c:50:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/pr40386.c:52:7]\ l.26_60\ =\ l;\l\
+|[valid_files/pr40386.c:52:7]\ _61\ =\ l.26_60\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:52:7]\ l.27_62\ =\ l;\l\
+|[valid_files/pr40386.c:52:7]\ _63\ =\ l.27_62\ \<\<\ 60;\l\
+|[valid_files/pr40386.c:52:7]\ _64\ =\ _61\ \|\ _63;\l\
+|[valid_files/pr40386.c:52:6]\ if\ (_64\ !=\ -9223372036600806041)\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 18\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/pr40386.c:53:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/pr40386.c:55:7]\ ll.28_65\ =\ ll;\l\
+|[valid_files/pr40386.c:55:7]\ shift1.29_66\ =\ shift1;\l\
+|[valid_files/pr40386.c:55:7]\ _67\ =\ ll.28_65\ \>\>\ shift1.29_66;\l\
+|[valid_files/pr40386.c:55:7]\ ll.30_68\ =\ ll;\l\
+|[valid_files/pr40386.c:55:7]\ shift1.31_69\ =\ shift1;\l\
+|[valid_files/pr40386.c:55:7]\ shift1.32_70\ =\ (unsigned\ int)\ shift1.31_69;\l\
+|[valid_files/pr40386.c:55:7]\ _71\ =\ 64\ -\ shift1.32_70;\l\
+|[valid_files/pr40386.c:55:7]\ _72\ =\ ll.30_68\ \<\<\ _71;\l\
+|[valid_files/pr40386.c:55:7]\ _73\ =\ _67\ \|\ _72;\l\
+|[valid_files/pr40386.c:55:6]\ if\ (_73\ !=\ 68174490360335855)\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/pr40386.c:56:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/pr40386.c:58:7]\ ll.33_74\ =\ ll;\l\
+|[valid_files/pr40386.c:58:7]\ _75\ =\ ll.33_74\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:58:7]\ ll.34_76\ =\ ll;\l\
+|[valid_files/pr40386.c:58:7]\ _77\ =\ ll.34_76\ \<\<\ 60;\l\
+|[valid_files/pr40386.c:58:7]\ _78\ =\ _75\ \|\ _77;\l\
+|[valid_files/pr40386.c:58:6]\ if\ (_78\ !=\ 68174490360335855)\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 22\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+|[valid_files/pr40386.c:59:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|[valid_files/pr40386.c:61:7]\ ll.35_79\ =\ ll;\l\
+|[valid_files/pr40386.c:61:7]\ shift2.36_80\ =\ shift2;\l\
+|[valid_files/pr40386.c:61:7]\ _81\ =\ ll.35_79\ \>\>\ shift2.36_80;\l\
+|[valid_files/pr40386.c:61:7]\ ll.37_82\ =\ ll;\l\
+|[valid_files/pr40386.c:61:7]\ shift2.38_83\ =\ shift2;\l\
+|[valid_files/pr40386.c:61:7]\ shift2.39_84\ =\ (unsigned\ int)\ shift2.38_83;\l\
+|[valid_files/pr40386.c:61:7]\ _85\ =\ 64\ -\ shift2.39_84;\l\
+|[valid_files/pr40386.c:61:7]\ _86\ =\ ll.37_82\ \<\<\ _85;\l\
+|[valid_files/pr40386.c:61:7]\ _87\ =\ _81\ \|\ _86;\l\
+|[valid_files/pr40386.c:61:6]\ if\ (_87\ !=\ -994074541463572736)\l\
+\ \ goto\ \<bb\ 23\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 24\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 23\>:\l\
+|[valid_files/pr40386.c:62:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 24\>:\l\
+|[valid_files/pr40386.c:64:7]\ ll.40_88\ =\ ll;\l\
+|[valid_files/pr40386.c:64:7]\ _89\ =\ ll.40_88\ \>\>\ 60;\l\
+|[valid_files/pr40386.c:64:7]\ ll.41_90\ =\ ll;\l\
+|[valid_files/pr40386.c:64:7]\ _91\ =\ ll.41_90\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:64:7]\ _92\ =\ _89\ \|\ _91;\l\
+|[valid_files/pr40386.c:64:6]\ if\ (_92\ !=\ -994074541463572736)\l\
+\ \ goto\ \<bb\ 25\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 26\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 25\>:\l\
+|[valid_files/pr40386.c:65:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_26 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 26\>:\l\
+|[valid_files/pr40386.c:67:7]\ c.42_93\ =\ c;\l\
+|[valid_files/pr40386.c:67:7]\ _94\ =\ (int)\ c.42_93;\l\
+|[valid_files/pr40386.c:67:7]\ shift1.43_95\ =\ shift1;\l\
+|[valid_files/pr40386.c:67:7]\ _96\ =\ _94\ \<\<\ shift1.43_95;\l\
+|[valid_files/pr40386.c:67:7]\ c.44_97\ =\ c;\l\
+|[valid_files/pr40386.c:67:7]\ _98\ =\ (int)\ c.44_97;\l\
+|[valid_files/pr40386.c:67:7]\ shift1.45_99\ =\ shift1;\l\
+|[valid_files/pr40386.c:67:7]\ shift1.46_100\ =\ (unsigned\ int)\ shift1.45_99;\l\
+|[valid_files/pr40386.c:67:7]\ _101\ =\ 8\ -\ shift1.46_100;\l\
+|[valid_files/pr40386.c:67:7]\ _102\ =\ _98\ \>\>\ _101;\l\
+|[valid_files/pr40386.c:67:7]\ _103\ =\ _96\ \|\ _102;\l\
+|[valid_files/pr40386.c:67:6]\ if\ (_103\ !=\ 835)\l\
+\ \ goto\ \<bb\ 27\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 28\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_27 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 27\>:\l\
+|[valid_files/pr40386.c:68:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_28 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 28\>:\l\
+|[valid_files/pr40386.c:70:7]\ c.47_104\ =\ c;\l\
+|[valid_files/pr40386.c:70:7]\ _105\ =\ (int)\ c.47_104;\l\
+|[valid_files/pr40386.c:70:7]\ _106\ =\ _105\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:70:7]\ c.48_107\ =\ c;\l\
+|[valid_files/pr40386.c:70:7]\ _108\ =\ c.48_107\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:70:7]\ _109\ =\ (int)\ _108;\l\
+|[valid_files/pr40386.c:70:7]\ _110\ =\ _106\ \|\ _109;\l\
+|[valid_files/pr40386.c:70:6]\ if\ (_110\ !=\ 835)\l\
+\ \ goto\ \<bb\ 29\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 30\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_29 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 29\>:\l\
+|[valid_files/pr40386.c:71:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_30 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 30\>:\l\
+|[valid_files/pr40386.c:73:7]\ s.49_111\ =\ s;\l\
+|[valid_files/pr40386.c:73:7]\ _112\ =\ (int)\ s.49_111;\l\
+|[valid_files/pr40386.c:73:7]\ shift1.50_113\ =\ shift1;\l\
+|[valid_files/pr40386.c:73:7]\ _114\ =\ _112\ \<\<\ shift1.50_113;\l\
+|[valid_files/pr40386.c:73:7]\ s.51_115\ =\ s;\l\
+|[valid_files/pr40386.c:73:7]\ _116\ =\ (int)\ s.51_115;\l\
+|[valid_files/pr40386.c:73:7]\ shift1.52_117\ =\ shift1;\l\
+|[valid_files/pr40386.c:73:7]\ shift1.53_118\ =\ (unsigned\ int)\ shift1.52_117;\l\
+|[valid_files/pr40386.c:73:7]\ _119\ =\ 16\ -\ shift1.53_118;\l\
+|[valid_files/pr40386.c:73:7]\ _120\ =\ _116\ \>\>\ _119;\l\
+|[valid_files/pr40386.c:73:7]\ _121\ =\ _114\ \|\ _120;\l\
+|[valid_files/pr40386.c:73:6]\ if\ (_121\ !=\ -1)\l\
+\ \ goto\ \<bb\ 31\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 32\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_31 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 31\>:\l\
+|[valid_files/pr40386.c:74:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_32 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 32\>:\l\
+|[valid_files/pr40386.c:76:7]\ s.54_122\ =\ s;\l\
+|[valid_files/pr40386.c:76:7]\ _123\ =\ (int)\ s.54_122;\l\
+|[valid_files/pr40386.c:76:7]\ _124\ =\ _123\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:76:7]\ s.55_125\ =\ s;\l\
+|[valid_files/pr40386.c:76:7]\ _126\ =\ s.55_125\ \>\>\ 12;\l\
+|[valid_files/pr40386.c:76:7]\ _127\ =\ (int)\ _126;\l\
+|[valid_files/pr40386.c:76:7]\ _128\ =\ _124\ \|\ _127;\l\
+|[valid_files/pr40386.c:76:6]\ if\ (_128\ !=\ -1)\l\
+\ \ goto\ \<bb\ 33\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 34\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_33 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 33\>:\l\
+|[valid_files/pr40386.c:77:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_34 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 34\>:\l\
+|[valid_files/pr40386.c:79:7]\ i.56_129\ =\ i;\l\
+|[valid_files/pr40386.c:79:7]\ shift1.57_130\ =\ shift1;\l\
+|[valid_files/pr40386.c:79:7]\ _131\ =\ i.56_129\ \<\<\ shift1.57_130;\l\
+|[valid_files/pr40386.c:79:7]\ i.58_132\ =\ i;\l\
+|[valid_files/pr40386.c:79:7]\ shift1.59_133\ =\ shift1;\l\
+|[valid_files/pr40386.c:79:7]\ shift1.60_134\ =\ (unsigned\ int)\ shift1.59_133;\l\
+|[valid_files/pr40386.c:79:7]\ _135\ =\ 32\ -\ shift1.60_134;\l\
+|[valid_files/pr40386.c:79:7]\ _136\ =\ i.58_132\ \>\>\ _135;\l\
+|[valid_files/pr40386.c:79:7]\ _137\ =\ _131\ \|\ _136;\l\
+|[valid_files/pr40386.c:79:6]\ if\ (_137\ !=\ 992064)\l\
+\ \ goto\ \<bb\ 35\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 36\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_35 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 35\>:\l\
+|[valid_files/pr40386.c:80:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_36 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 36\>:\l\
+|[valid_files/pr40386.c:82:7]\ i.61_138\ =\ i;\l\
+|[valid_files/pr40386.c:82:7]\ _139\ =\ i.61_138\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:82:7]\ i.62_140\ =\ i;\l\
+|[valid_files/pr40386.c:82:7]\ _141\ =\ i.62_140\ \>\>\ 28;\l\
+|[valid_files/pr40386.c:82:7]\ _142\ =\ _139\ \|\ _141;\l\
+|[valid_files/pr40386.c:82:6]\ if\ (_142\ !=\ 992064)\l\
+\ \ goto\ \<bb\ 37\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 38\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_37 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 37\>:\l\
+|[valid_files/pr40386.c:83:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_38 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 38\>:\l\
+|[valid_files/pr40386.c:85:7]\ l.63_143\ =\ l;\l\
+|[valid_files/pr40386.c:85:7]\ shift1.64_144\ =\ shift1;\l\
+|[valid_files/pr40386.c:85:7]\ _145\ =\ l.63_143\ \<\<\ shift1.64_144;\l\
+|[valid_files/pr40386.c:85:7]\ l.65_146\ =\ l;\l\
+|[valid_files/pr40386.c:85:7]\ shift1.66_147\ =\ shift1;\l\
+|[valid_files/pr40386.c:85:7]\ shift1.67_148\ =\ (unsigned\ int)\ shift1.66_147;\l\
+|[valid_files/pr40386.c:85:7]\ _149\ =\ 64\ -\ shift1.67_148;\l\
+|[valid_files/pr40386.c:85:7]\ _150\ =\ l.65_146\ \>\>\ _149;\l\
+|[valid_files/pr40386.c:85:7]\ _151\ =\ _145\ \|\ _150;\l\
+|[valid_files/pr40386.c:85:6]\ if\ (_151\ !=\ 65016260480)\l\
+\ \ goto\ \<bb\ 39\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 40\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_39 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 39\>:\l\
+|[valid_files/pr40386.c:86:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_40 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 40\>:\l\
+|[valid_files/pr40386.c:88:7]\ l.68_152\ =\ l;\l\
+|[valid_files/pr40386.c:88:7]\ _153\ =\ l.68_152\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:88:7]\ l.69_154\ =\ l;\l\
+|[valid_files/pr40386.c:88:7]\ _155\ =\ l.69_154\ \>\>\ 60;\l\
+|[valid_files/pr40386.c:88:7]\ _156\ =\ _153\ \|\ _155;\l\
+|[valid_files/pr40386.c:88:6]\ if\ (_156\ !=\ 65016260480)\l\
+\ \ goto\ \<bb\ 41\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 42\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_41 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 41\>:\l\
+|[valid_files/pr40386.c:89:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_42 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 42\>:\l\
+|[valid_files/pr40386.c:91:7]\ ll.70_157\ =\ ll;\l\
+|[valid_files/pr40386.c:91:7]\ shift1.71_158\ =\ shift1;\l\
+|[valid_files/pr40386.c:91:7]\ _159\ =\ ll.70_157\ \<\<\ shift1.71_158;\l\
+|[valid_files/pr40386.c:91:7]\ ll.72_160\ =\ ll;\l\
+|[valid_files/pr40386.c:91:7]\ shift1.73_161\ =\ shift1;\l\
+|[valid_files/pr40386.c:91:7]\ shift1.74_162\ =\ (unsigned\ int)\ shift1.73_161;\l\
+|[valid_files/pr40386.c:91:7]\ _163\ =\ 64\ -\ shift1.74_162;\l\
+|[valid_files/pr40386.c:91:7]\ _164\ =\ ll.72_160\ \>\>\ _163;\l\
+|[valid_files/pr40386.c:91:7]\ _165\ =\ _159\ \|\ _164;\l\
+|[valid_files/pr40386.c:91:6]\ if\ (_165\ !=\ -994074541463572736)\l\
+\ \ goto\ \<bb\ 43\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 44\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_43 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 43\>:\l\
+|[valid_files/pr40386.c:92:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_44 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 44\>:\l\
+|[valid_files/pr40386.c:94:7]\ ll.75_166\ =\ ll;\l\
+|[valid_files/pr40386.c:94:7]\ _167\ =\ ll.75_166\ \<\<\ 4;\l\
+|[valid_files/pr40386.c:94:7]\ ll.76_168\ =\ ll;\l\
+|[valid_files/pr40386.c:94:7]\ _169\ =\ ll.76_168\ \>\>\ 60;\l\
+|[valid_files/pr40386.c:94:7]\ _170\ =\ _167\ \|\ _169;\l\
+|[valid_files/pr40386.c:94:6]\ if\ (_170\ !=\ -994074541463572736)\l\
+\ \ goto\ \<bb\ 45\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 46\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_45 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 45\>:\l\
+|[valid_files/pr40386.c:95:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_46 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 46\>:\l\
+|[valid_files/pr40386.c:97:7]\ ll.77_171\ =\ ll;\l\
+|[valid_files/pr40386.c:97:7]\ shift2.78_172\ =\ shift2;\l\
+|[valid_files/pr40386.c:97:7]\ _173\ =\ ll.77_171\ \<\<\ shift2.78_172;\l\
+|[valid_files/pr40386.c:97:7]\ ll.79_174\ =\ ll;\l\
+|[valid_files/pr40386.c:97:7]\ shift2.80_175\ =\ shift2;\l\
+|[valid_files/pr40386.c:97:7]\ shift2.81_176\ =\ (unsigned\ int)\ shift2.80_175;\l\
+|[valid_files/pr40386.c:97:7]\ _177\ =\ 64\ -\ shift2.81_176;\l\
+|[valid_files/pr40386.c:97:7]\ _178\ =\ ll.79_174\ \>\>\ _177;\l\
+|[valid_files/pr40386.c:97:7]\ _179\ =\ _173\ \|\ _178;\l\
+|[valid_files/pr40386.c:97:6]\ if\ (_179\ !=\ 68174490360335855)\l\
+\ \ goto\ \<bb\ 47\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 48\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_47 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 47\>:\l\
+|[valid_files/pr40386.c:98:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_48 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 48\>:\l\
+|[valid_files/pr40386.c:100:7]\ ll.82_180\ =\ ll;\l\
+|[valid_files/pr40386.c:100:7]\ _181\ =\ ll.82_180\ \<\<\ 60;\l\
+|[valid_files/pr40386.c:100:7]\ ll.83_182\ =\ ll;\l\
+|[valid_files/pr40386.c:100:7]\ _183\ =\ ll.83_182\ \>\>\ 4;\l\
+|[valid_files/pr40386.c:100:7]\ _184\ =\ _181\ \|\ _183;\l\
+|[valid_files/pr40386.c:100:6]\ if\ (_184\ !=\ 68174490360335855)\l\
+\ \ goto\ \<bb\ 49\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 50\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_49 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 49\>:\l\
+|[valid_files/pr40386.c:101:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_50 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 50\>:\l\
+|[valid_files/pr40386.c:103:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_16:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_16:s -> fn_0_basic_block_17:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_16:s -> fn_0_basic_block_18:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_18:s -> fn_0_basic_block_19:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_18:s -> fn_0_basic_block_20:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_20:s -> fn_0_basic_block_21:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_20:s -> fn_0_basic_block_22:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_22:s -> fn_0_basic_block_23:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_22:s -> fn_0_basic_block_24:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_24:s -> fn_0_basic_block_25:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_24:s -> fn_0_basic_block_26:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_26:s -> fn_0_basic_block_27:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_26:s -> fn_0_basic_block_28:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_28:s -> fn_0_basic_block_29:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_28:s -> fn_0_basic_block_30:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_30:s -> fn_0_basic_block_31:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_30:s -> fn_0_basic_block_32:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_32:s -> fn_0_basic_block_33:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_32:s -> fn_0_basic_block_34:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_34:s -> fn_0_basic_block_35:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_34:s -> fn_0_basic_block_36:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_36:s -> fn_0_basic_block_37:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_36:s -> fn_0_basic_block_38:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_38:s -> fn_0_basic_block_39:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_38:s -> fn_0_basic_block_40:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_40:s -> fn_0_basic_block_41:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_40:s -> fn_0_basic_block_42:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_42:s -> fn_0_basic_block_43:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_42:s -> fn_0_basic_block_44:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_44:s -> fn_0_basic_block_45:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_44:s -> fn_0_basic_block_46:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_46:s -> fn_0_basic_block_47:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_46:s -> fn_0_basic_block_48:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_48:s -> fn_0_basic_block_49:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_48:s -> fn_0_basic_block_50:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

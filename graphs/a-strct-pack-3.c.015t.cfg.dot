@@ -1,0 +1,102 @@
+digraph "a-strct-pack-3.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/strct-pack-3.c:14:17\ discrim\ 1]\ if\ (j\ \<=\ 1)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/strct-pack-3.c:15:15]\ _7\ =\ (int)\ j;\l\
+|[valid_files/strct-pack-3.c:15:15]\ _8\ =\ [valid_files/strct-pack-3.c:15:15]\ [valid_files/strct-pack-3.c:15:12]\ ap-\>f[_7];\l\
+|[valid_files/strct-pack-3.c:15:7]\ _9\ =\ (unsigned\ short)\ _8;\l\
+|[valid_files/strct-pack-3.c:15:7]\ i.1_10\ =\ (unsigned\ short)\ i;\l\
+|[valid_files/strct-pack-3.c:15:7]\ _11\ =\ _9\ +\ i.1_10;\l\
+|[valid_files/strct-pack-3.c:15:7]\ i\ =\ (short\ int)\ _11;\l\
+|[valid_files/strct-pack-3.c:14:23\ discrim\ 3]\ j.2_12\ =\ j;\l\
+|[valid_files/strct-pack-3.c:14:23\ discrim\ 3]\ j.3_13\ =\ (unsigned\ short)\ j.2_12;\l\
+|[valid_files/strct-pack-3.c:14:23\ discrim\ 3]\ _14\ =\ j.3_13\ +\ 1;\l\
+|[valid_files/strct-pack-3.c:14:23\ discrim\ 3]\ j\ =\ (short\ int)\ _14;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/strct-pack-3.c:10:12]\ j\ =\ 1;\l\
+|[valid_files/strct-pack-3.c:12:12]\ _1\ =\ [valid_files/strct-pack-3.c:12:12]\ [valid_files/strct-pack-3.c:12:9]\ ap-\>f[1];\l\
+|[valid_files/strct-pack-3.c:12:5]\ i\ =\ (short\ int)\ _1;\l\
+|[valid_files/strct-pack-3.c:13:13]\ _2\ =\ (int)\ j;\l\
+|[valid_files/strct-pack-3.c:13:13]\ _3\ =\ [valid_files/strct-pack-3.c:13:13]\ [valid_files/strct-pack-3.c:13:10]\ ap-\>f[_2];\l\
+|[valid_files/strct-pack-3.c:13:5]\ _4\ =\ (unsigned\ short)\ _3;\l\
+|[valid_files/strct-pack-3.c:13:5]\ i.0_5\ =\ (unsigned\ short)\ i;\l\
+|[valid_files/strct-pack-3.c:13:5]\ _6\ =\ _4\ +\ i.0_5;\l\
+|[valid_files/strct-pack-3.c:13:5]\ i\ =\ (short\ int)\ _6;\l\
+|[valid_files/strct-pack-3.c:14:10]\ j\ =\ 0;\l\
+[valid_files/strct-pack-3.c:14:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/strct-pack-3.c:17:10]\ D.2787\ =\ (int)\ i;\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|\<L3\>:\l\
+|[valid_files/strct-pack-3.c:17:10\ discrim\ 1]\ return\ D.2787;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/strct-pack-3.c:23:10]\ [valid_files/strct-pack-3.c:23:6]\ [valid_files/strct-pack-3.c:23:4]\ a.f[0]\ =\ 100;\l\
+|[valid_files/strct-pack-3.c:24:10]\ [valid_files/strct-pack-3.c:24:6]\ [valid_files/strct-pack-3.c:24:4]\ a.f[1]\ =\ 13;\l\
+|[valid_files/strct-pack-3.c:25:7]\ _1\ =\ f\ ([valid_files/strct-pack-3.c:25:7]\ &a);\l\
+|[valid_files/strct-pack-3.c:25:6\ discrim\ 1]\ if\ (_1\ !=\ 139)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/strct-pack-3.c:26:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/strct-pack-3.c:27:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

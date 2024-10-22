@@ -1,0 +1,61 @@
+digraph "a-alias-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_typepun" {
+	style="dashed";
+	color="black";
+	label="typepun ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/alias-1.c:9:3]\ ptr2.0_1\ =\ ptr2;\l\
+|[valid_files/alias-1.c:9:8]\ [valid_files/alias-1.c:9:3]\ *ptr2.0_1\ =\ 0.0;\l\
+|[valid_files/alias-1.c:10:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/alias-1.c:14:3]\ ptr.1_1\ =\ ptr;\l\
+|[valid_files/alias-1.c:14:7]\ [valid_files/alias-1.c:14:3]\ *ptr.1_1\ =\ 1;\l\
+|[valid_files/alias-1.c:15:3]\ typepun\ ();\l\
+|[valid_files/alias-1.c:16:7]\ ptr.2_2\ =\ ptr;\l\
+|[valid_files/alias-1.c:16:7]\ _3\ =\ [valid_files/alias-1.c:16:7]\ *ptr.2_2;\l\
+|[valid_files/alias-1.c:16:6]\ if\ (_3\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/alias-1.c:17:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[\<built-in\>:0:0]\ D.2778\ =\ 0;\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L2\>:\l\
+|[\<built-in\>:0:0\ discrim\ 1]\ return\ D.2778;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

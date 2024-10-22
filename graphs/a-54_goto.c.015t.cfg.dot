@@ -1,0 +1,105 @@
+digraph "a-54_goto.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_fred" {
+	style="dashed";
+	color="black";
+	label="fred ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/54_goto.c:5:4]\ __builtin_puts\ (&\"In\ fred()\"[0]);\l\
+|[valid_files/54_goto.c:6:4]\ //\ predicted\ unlikely\ by\ goto\ predictor.\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/54_goto.c:8:1]\ done:\l\
+|[valid_files/54_goto.c:9:4]\ __builtin_puts\ (&\"At\ end\"[0]);\l\
+|[valid_files/54_goto.c:10:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_joe" {
+	style="dashed";
+	color="black";
+	label="joe ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/54_goto.c:14:8]\ b\ =\ 5678;\l\
+|[valid_files/54_goto.c:16:4]\ __builtin_puts\ (&\"In\ joe()\"[0]);\l\
+|[valid_files/54_goto.c:19:11]\ c\ =\ 1234;\l\
+|[valid_files/54_goto.c:20:7]\ printf\ ([valid_files/54_goto.c:20:14]\ \"c\ =\ %d\\n\",\ c);\l\
+|[valid_files/54_goto.c:21:7]\ //\ predicted\ unlikely\ by\ goto\ predictor.\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/54_goto.c:25:1]\ outer:\l\
+|[valid_files/54_goto.c:27:4]\ __builtin_puts\ (&\"done\"[0]);\l\
+|[valid_files/54_goto.c:28:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_henry" {
+	style="dashed";
+	color="black";
+	label="henry ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/54_goto.c:32:4]\ __builtin_puts\ (&\"In\ henry()\"[0]);\l\
+|[valid_files/54_goto.c:33:4]\ //\ predicted\ unlikely\ by\ goto\ predictor.\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/54_goto.c:37:1]\ inner:\l\
+|[valid_files/54_goto.c:38:9]\ b\ =\ 1234;\l\
+|[valid_files/54_goto.c:39:7]\ printf\ ([valid_files/54_goto.c:39:14]\ \"b\ =\ %d\\n\",\ b);\l\
+|[valid_files/54_goto.c:42:4]\ __builtin_puts\ (&\"done\"[0]);\l\
+|[valid_files/54_goto.c:43:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/54_goto.c:47:4]\ fred\ ();\l\
+|[valid_files/54_goto.c:48:4]\ joe\ ();\l\
+|[valid_files/54_goto.c:49:4]\ henry\ ();\l\
+|[valid_files/54_goto.c:51:11]\ D.3223\ =\ 0;\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3223;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+}

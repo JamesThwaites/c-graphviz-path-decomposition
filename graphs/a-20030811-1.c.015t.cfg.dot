@@ -1,0 +1,123 @@
+digraph "a-20030811-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_vararg" {
+	style="dashed";
+	color="black";
+	label="vararg ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030811-1.c:7:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test1" {
+	style="dashed";
+	color="black";
+	label="test1 ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030811-1.c:13:29]\ _1\ =\ __builtin_return_address\ (0);\l\
+|[valid_files/20030811-1.c:13:11\ discrim\ 1]\ _2\ =\ (long\ int)\ _1;\l\
+|[valid_files/20030811-1.c:13:7\ discrim\ 1]\ a\ =\ (int)\ _2;\l\
+|[valid_files/20030811-1.c:14:3]\ vararg\ (0,\ a);\l\
+|[valid_files/20030811-1.c:15:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test2" {
+	style="dashed";
+	color="black";
+	label="test2 ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030811-1.c:19:29]\ _1\ =\ __builtin_return_address\ (0);\l\
+|[valid_files/20030811-1.c:19:11\ discrim\ 1]\ _2\ =\ (long\ int)\ _1;\l\
+|[valid_files/20030811-1.c:19:11\ discrim\ 1]\ _3\ =\ (int)\ _2;\l\
+|[valid_files/20030811-1.c:19:9\ discrim\ 1]\ [valid_files/20030811-1.c:19:5]\ i0[0]\ =\ _3;\l\
+|[valid_files/20030811-1.c:20:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test3" {
+	style="dashed";
+	color="black";
+	label="test3 ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030811-1.c:24:26]\ _1\ =\ __builtin_return_address\ (0);\l\
+|[valid_files/20030811-1.c:24:8\ discrim\ 1]\ _2\ =\ (long\ int)\ _1;\l\
+|[valid_files/20030811-1.c:24:8\ discrim\ 1]\ _3\ =\ (int)\ _2;\l\
+|[valid_files/20030811-1.c:24:6\ discrim\ 1]\ i1\ =\ _3;\l\
+|[valid_files/20030811-1.c:25:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test4" {
+	style="dashed";
+	color="black";
+	label="test4 ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030811-1.c:29:38]\ _1\ =\ __builtin_return_address\ (0);\l\
+|[valid_files/20030811-1.c:29:26\ discrim\ 1]\ _2\ =\ (long\ long\ int)\ _1;\l\
+|[valid_files/20030811-1.c:29:22\ discrim\ 1]\ a\ =\ _2;\l\
+|[valid_files/20030811-1.c:30:11]\ a.0_3\ =\ a;\l\
+|[valid_files/20030811-1.c:30:11]\ _4\ =\ (int)\ a.0_3;\l\
+|[valid_files/20030811-1.c:30:9]\ [valid_files/20030811-1.c:30:5]\ i0[0]\ =\ _4;\l\
+|[valid_files/20030811-1.c:31:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030811-1.c:35:10]\ D.2791\ =\ 0;\l\
+}"];
+
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.2791;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_3:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+}

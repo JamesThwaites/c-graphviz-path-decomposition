@@ -1,0 +1,1403 @@
+digraph "a-95_bitfields.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_dump" {
+	style="dashed";
+	color="black";
+	label="dump ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/95_bitfields.c:191:21\ discrim\ 1]\ i\ =\ i\ +\ -1;\l\
+|[valid_files/95_bitfields.c:191:21\ discrim\ 1]\ if\ (i\ \>=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/95_bitfields.c:192:43]\ _1\ =\ (sizetype)\ i;\l\
+|[valid_files/95_bitfields.c:192:43]\ _2\ =\ p\ +\ _1;\l\
+|[valid_files/95_bitfields.c:192:43]\ _3\ =\ [valid_files/95_bitfields.c:192:43]\ *_2;\l\
+|[valid_files/95_bitfields.c:192:9]\ _4\ =\ (int)\ _3;\l\
+|[valid_files/95_bitfields.c:192:9]\ printf\ ([valid_files/95_bitfields.c:192:16]\ \"%02X\",\ _4);\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/95_bitfields.c:191:12]\ i\ =\ s;\l\
+[valid_files/95_bitfields.c:191:5]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/95_bitfields.c:193:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:194:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/95_bitfields.c:111:18]\ top.0_1\ =\ top;\l\
+|[valid_files/95_bitfields.c:111:18]\ _2\ =\ top.0_1\ *\ 2;\l\
+|[valid_files/95_bitfields.c:111:18]\ _3\ =\ (sizetype)\ _2;\l\
+|[valid_files/95_bitfields.c:111:1]\ _4\ =\ [valid_files/95_bitfields.c:111:8]\ \"\\n\\n\"\ +\ _3;\l\
+|[valid_files/95_bitfields.c:111:1]\ printf\ (_4);\l\
+|[valid_files/95_bitfields.c:12:5]\ s\ =\ [valid_files/95_bitfields.c:12:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:12:5]\ top.1_5\ =\ top;\l\
+|[valid_files/95_bitfields.c:12:5]\ _6\ =\ (sizetype)\ top.1_5;\l\
+|[valid_files/95_bitfields.c:12:5]\ _7\ =\ [valid_files/95_bitfields.c:12:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _6;\l\
+|[valid_files/95_bitfields.c:12:5]\ printf\ (_7,\ 1,\ [valid_files/95_bitfields.c:12:5]\ \"\",\ [valid_files/95_bitfields.c:12:5]\ \"\",\ [valid_files/95_bitfields.c:12:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 1]\ memset\ (s,\ 0,\ 12);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 4095;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 127;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 268435455;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ 15;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 31;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 3]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 819;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 68;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 5592405;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _8\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _9\ =\ (unsigned\ char)\ _8;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _10\ =\ _9\ +\ 6;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _11\ =\ (\<unnamed-unsigned:4\>)\ _10;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _11;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _12\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _13\ =\ _12\ +\ 1;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _13;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 7;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 5]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _14\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _15\ =\ (int)\ _14;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _15);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _16\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _17\ =\ (int)\ _16;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _17);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _18\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _19\ =\ (int)\ _18;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _19);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _20\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _21\ =\ (int)\ _20;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _21);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _22\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _23\ =\ (int)\ _22;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _23);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 4,\ 12);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:114:5]\ top\ =\ 0;\l\
+|[valid_files/95_bitfields.c:27:5]\ s\ =\ [valid_files/95_bitfields.c:27:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:27:5]\ top.2_24\ =\ top;\l\
+|[valid_files/95_bitfields.c:27:5]\ _25\ =\ (sizetype)\ top.2_24;\l\
+|[valid_files/95_bitfields.c:27:5]\ _26\ =\ [valid_files/95_bitfields.c:27:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _25;\l\
+|[valid_files/95_bitfields.c:27:5]\ printf\ (_26,\ 2,\ [valid_files/95_bitfields.c:27:5]\ \"\",\ [valid_files/95_bitfields.c:27:5]\ \"\",\ [valid_files/95_bitfields.c:27:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 1]\ memset\ (s,\ 0,\ 24);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 3]\ dump\ (s,\ 24);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ 30;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ 1311768467463790320;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _27\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _28\ =\ (unsigned\ char)\ _27;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _29\ =\ _28\ +\ 5;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _30\ =\ (\<unnamed-signed:4\>)\ _29;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _30;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _31\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _32\ =\ (\<unnamed-unsigned:4\>)\ _31;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _33\ =\ _32\ +\ 1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _34\ =\ (\<unnamed-signed:4\>)\ _33;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _34;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -2;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 5]\ dump\ (s,\ 24);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _35\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _36\ =\ (int)\ _35;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _36);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _37\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _38\ =\ (int)\ _37;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _38);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ _39\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %016llx\",\ _39);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _40\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _41\ =\ (int)\ _40;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _41);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _42\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _43\ =\ (int)\ _42;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _43);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 8,\ 24);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:37:5]\ s\ =\ [valid_files/95_bitfields.c:37:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:37:5]\ top.3_44\ =\ top;\l\
+|[valid_files/95_bitfields.c:37:5]\ _45\ =\ (sizetype)\ top.3_44;\l\
+|[valid_files/95_bitfields.c:37:5]\ _46\ =\ [valid_files/95_bitfields.c:37:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _45;\l\
+|[valid_files/95_bitfields.c:37:5]\ printf\ (_46,\ 3,\ [valid_files/95_bitfields.c:37:5]\ \"\",\ [valid_files/95_bitfields.c:37:5]\ \"\",\ [valid_files/95_bitfields.c:37:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 21;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 23;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 25;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _47\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _48\ =\ (unsigned\ char)\ _47;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _49\ =\ _48\ +\ 6;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _50\ =\ (\<unnamed-signed:5\>)\ _49;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _50;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _51\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _52\ =\ (\<unnamed-unsigned:5\>)\ _51;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _53\ =\ _52\ +\ 1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _54\ =\ (\<unnamed-signed:5\>)\ _53;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _54;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ 14;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _55\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _56\ =\ (int)\ _55;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _56);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _57\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _58\ =\ (int)\ _57;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _58);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _59\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _60\ =\ (int)\ _59;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _60);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _61\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _62\ =\ (int)\ _61;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _62);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _63\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _64\ =\ (int)\ _63;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _64);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 4,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:52:5]\ s\ =\ [valid_files/95_bitfields.c:52:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:52:5]\ top.4_65\ =\ top;\l\
+|[valid_files/95_bitfields.c:52:5]\ _66\ =\ (sizetype)\ top.4_65;\l\
+|[valid_files/95_bitfields.c:52:5]\ _67\ =\ [valid_files/95_bitfields.c:52:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _66;\l\
+|[valid_files/95_bitfields.c:52:5]\ printf\ (_67,\ 4,\ [valid_files/95_bitfields.c:52:5]\ \"\",\ [valid_files/95_bitfields.c:52:5]\ \"\",\ [valid_files/95_bitfields.c:52:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 127;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ 15;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _68\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _69\ =\ (unsigned\ char)\ _68;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _70\ =\ _69\ +\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _71\ =\ (\<unnamed-signed:7\>)\ _70;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _71;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _72\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _73\ =\ (\<unnamed-unsigned:7\>)\ _72;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _74\ =\ _73\ +\ 1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _75\ =\ (\<unnamed-signed:7\>)\ _74;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _75;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _76\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _77\ =\ (int)\ _76;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _77);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _78\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _79\ =\ (int)\ _78;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _79);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _80\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _81\ =\ (int)\ _80;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _81);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _82\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _83\ =\ (int)\ _82;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _83);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _84\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _85\ =\ (int)\ _84;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _85);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 4,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:65:5]\ s\ =\ [valid_files/95_bitfields.c:65:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:65:5]\ top.5_86\ =\ top;\l\
+|[valid_files/95_bitfields.c:65:5]\ _87\ =\ (sizetype)\ top.5_86;\l\
+|[valid_files/95_bitfields.c:65:5]\ _88\ =\ [valid_files/95_bitfields.c:65:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _87;\l\
+|[valid_files/95_bitfields.c:65:5]\ printf\ (_88,\ 5,\ [valid_files/95_bitfields.c:65:5]\ \"\",\ [valid_files/95_bitfields.c:65:5]\ \"\",\ [valid_files/95_bitfields.c:65:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 1]\ memset\ (s,\ 0,\ 24);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 274877906943;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 3]\ dump\ (s,\ 24);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ 4886718345;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -268435456;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 120;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _89\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _90\ =\ (unsigned\ char)\ _89;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _91\ =\ _90\ +\ 68;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _92\ =\ (char)\ _91;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _92;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _93\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _94\ =\ (unsigned\ char)\ _93;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _95\ =\ _94\ +\ 1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _96\ =\ (char)\ _95;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _96;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ 119;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 5]\ dump\ (s,\ 24);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ _97\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _97);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _98\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _99\ =\ (int)\ _98;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _99);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ _100\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _100);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _101\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _102\ =\ (int)\ _101;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _102);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _103\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _104\ =\ (int)\ _103;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _104);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 8,\ 24);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:77:5]\ s\ =\ [valid_files/95_bitfields.c:77:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:77:5]\ top.6_105\ =\ top;\l\
+|[valid_files/95_bitfields.c:77:5]\ _106\ =\ (sizetype)\ top.6_105;\l\
+|[valid_files/95_bitfields.c:77:5]\ _107\ =\ [valid_files/95_bitfields.c:77:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _106;\l\
+|[valid_files/95_bitfields.c:77:5]\ printf\ (_107,\ 6,\ [valid_files/95_bitfields.c:77:5]\ \"\",\ [valid_files/95_bitfields.c:77:5]\ \"\",\ [valid_files/95_bitfields.c:77:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 1]\ memset\ (s,\ 0,\ 12);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 3]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ 2;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ 3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _108\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _109\ =\ _108\ +\ 4;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _109;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _110\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _111\ =\ _110\ +\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _111;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 5]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _112\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _113\ =\ (int)\ _112;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _113);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _114\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _115\ =\ (int)\ _114;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _115);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _116\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _117\ =\ (int)\ _116;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _117);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ _118\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _118);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _119\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _120\ =\ (int)\ _119;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _120);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 4,\ 12);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:98:5]\ s\ =\ [valid_files/95_bitfields.c:98:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:98:5]\ top.7_121\ =\ top;\l\
+|[valid_files/95_bitfields.c:98:5]\ _122\ =\ (sizetype)\ top.7_121;\l\
+|[valid_files/95_bitfields.c:98:5]\ _123\ =\ [valid_files/95_bitfields.c:98:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _122;\l\
+|[valid_files/95_bitfields.c:98:5]\ printf\ (_123,\ 7,\ [valid_files/95_bitfields.c:98:5]\ \"\",\ [valid_files/95_bitfields.c:98:5]\ \"\",\ [valid_files/95_bitfields.c:98:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ 0;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _124\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _125\ =\ (unsigned\ short)\ _124;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _126\ =\ _125\ +\ 4;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _127\ =\ (\<unnamed-signed:11\>)\ _126;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _127;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _128\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _129\ =\ (\<unnamed-unsigned:11\>)\ _128;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _130\ =\ _129\ +\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _131\ =\ (\<unnamed-signed:11\>)\ _130;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _131;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ 5;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _132\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _133\ =\ (int)\ _132;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _133);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _134\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _135\ =\ (int)\ _134;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _135);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _136\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _137\ =\ (int)\ _136;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _137);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _138\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _139\ =\ (int)\ _138;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _139);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _140\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _141\ =\ (int)\ _140;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _141);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 8,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:111:18]\ top.8_142\ =\ top;\l\
+|[valid_files/95_bitfields.c:111:18]\ _143\ =\ top.8_142\ *\ 2;\l\
+|[valid_files/95_bitfields.c:111:18]\ _144\ =\ (sizetype)\ _143;\l\
+|[valid_files/95_bitfields.c:111:1]\ _145\ =\ [valid_files/95_bitfields.c:111:8]\ \"\\n\\n\"\ +\ _144;\l\
+|[valid_files/95_bitfields.c:111:1]\ printf\ (_145);\l\
+|[valid_files/95_bitfields.c:12:5]\ s\ =\ [valid_files/95_bitfields.c:12:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:12:5]\ top.9_146\ =\ top;\l\
+|[valid_files/95_bitfields.c:12:5]\ _147\ =\ (sizetype)\ top.9_146;\l\
+|[valid_files/95_bitfields.c:12:5]\ _148\ =\ [valid_files/95_bitfields.c:12:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _147;\l\
+|[valid_files/95_bitfields.c:12:5]\ printf\ (_148,\ 1,\ [valid_files/95_bitfields.c:12:5]\ \"\",\ [valid_files/95_bitfields.c:12:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:12:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 1]\ memset\ (s,\ 0,\ 7);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 4095;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 127;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 268435455;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ 15;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 31;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 3]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 819;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 68;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 5592405;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _149\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _150\ =\ (unsigned\ char)\ _149;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _151\ =\ _150\ +\ 6;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _152\ =\ (\<unnamed-unsigned:4\>)\ _151;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _152;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _153\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _154\ =\ _153\ +\ 1;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _154;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 7;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 5]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _155\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _156\ =\ (int)\ _155;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _156);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _157\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _158\ =\ (int)\ _157;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _158);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _159\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _160\ =\ (int)\ _159;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _160);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _161\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _162\ =\ (int)\ _161;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _162);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _163\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _164\ =\ (int)\ _163;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _164);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 7);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:114:5]\ top\ =\ 0;\l\
+|[valid_files/95_bitfields.c:27:5]\ s\ =\ [valid_files/95_bitfields.c:27:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:27:5]\ top.10_165\ =\ top;\l\
+|[valid_files/95_bitfields.c:27:5]\ _166\ =\ (sizetype)\ top.10_165;\l\
+|[valid_files/95_bitfields.c:27:5]\ _167\ =\ [valid_files/95_bitfields.c:27:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _166;\l\
+|[valid_files/95_bitfields.c:27:5]\ printf\ (_167,\ 2,\ [valid_files/95_bitfields.c:27:5]\ \"\",\ [valid_files/95_bitfields.c:27:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:27:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 1]\ memset\ (s,\ 0,\ 11);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 3]\ dump\ (s,\ 11);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ 30;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ 1311768467463790320;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _168\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _169\ =\ (unsigned\ char)\ _168;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _170\ =\ _169\ +\ 5;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _171\ =\ (\<unnamed-signed:4\>)\ _170;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _171;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _172\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _173\ =\ (\<unnamed-unsigned:4\>)\ _172;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _174\ =\ _173\ +\ 1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _175\ =\ (\<unnamed-signed:4\>)\ _174;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _175;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -2;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 5]\ dump\ (s,\ 11);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _176\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _177\ =\ (int)\ _176;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _177);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _178\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _179\ =\ (int)\ _178;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _179);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ _180\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %016llx\",\ _180);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _181\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _182\ =\ (int)\ _181;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _182);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _183\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _184\ =\ (int)\ _183;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _184);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 11);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:37:5]\ s\ =\ [valid_files/95_bitfields.c:37:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:37:5]\ top.11_185\ =\ top;\l\
+|[valid_files/95_bitfields.c:37:5]\ _186\ =\ (sizetype)\ top.11_185;\l\
+|[valid_files/95_bitfields.c:37:5]\ _187\ =\ [valid_files/95_bitfields.c:37:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _186;\l\
+|[valid_files/95_bitfields.c:37:5]\ printf\ (_187,\ 3,\ [valid_files/95_bitfields.c:37:5]\ \"\",\ [valid_files/95_bitfields.c:37:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:37:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 1]\ memset\ (s,\ 0,\ 6);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 3]\ dump\ (s,\ 6);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 21;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 23;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 25;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _188\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _189\ =\ (unsigned\ char)\ _188;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _190\ =\ _189\ +\ 6;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _191\ =\ (\<unnamed-signed:5\>)\ _190;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _191;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _192\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _193\ =\ (\<unnamed-unsigned:5\>)\ _192;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _194\ =\ _193\ +\ 1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _195\ =\ (\<unnamed-signed:5\>)\ _194;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _195;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ 14;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 5]\ dump\ (s,\ 6);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _196\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _197\ =\ (int)\ _196;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _197);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _198\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _199\ =\ (int)\ _198;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _199);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _200\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _201\ =\ (int)\ _200;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _201);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _202\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _203\ =\ (int)\ _202;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _203);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _204\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _205\ =\ (int)\ _204;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _205);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 6);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:52:5]\ s\ =\ [valid_files/95_bitfields.c:52:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:52:5]\ top.12_206\ =\ top;\l\
+|[valid_files/95_bitfields.c:52:5]\ _207\ =\ (sizetype)\ top.12_206;\l\
+|[valid_files/95_bitfields.c:52:5]\ _208\ =\ [valid_files/95_bitfields.c:52:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _207;\l\
+|[valid_files/95_bitfields.c:52:5]\ printf\ (_208,\ 4,\ [valid_files/95_bitfields.c:52:5]\ \"\",\ [valid_files/95_bitfields.c:52:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:52:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 1]\ memset\ (s,\ 0,\ 7);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 127;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 3]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ 15;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _209\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _210\ =\ (unsigned\ char)\ _209;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _211\ =\ _210\ +\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _212\ =\ (\<unnamed-signed:7\>)\ _211;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _212;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _213\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _214\ =\ (\<unnamed-unsigned:7\>)\ _213;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _215\ =\ _214\ +\ 1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _216\ =\ (\<unnamed-signed:7\>)\ _215;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _216;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 5]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _217\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _218\ =\ (int)\ _217;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _218);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _219\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _220\ =\ (int)\ _219;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _220);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _221\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _222\ =\ (int)\ _221;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _222);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _223\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _224\ =\ (int)\ _223;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _224);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _225\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _226\ =\ (int)\ _225;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _226);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 7);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:65:5]\ s\ =\ [valid_files/95_bitfields.c:65:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:65:5]\ top.13_227\ =\ top;\l\
+|[valid_files/95_bitfields.c:65:5]\ _228\ =\ (sizetype)\ top.13_227;\l\
+|[valid_files/95_bitfields.c:65:5]\ _229\ =\ [valid_files/95_bitfields.c:65:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _228;\l\
+|[valid_files/95_bitfields.c:65:5]\ printf\ (_229,\ 5,\ [valid_files/95_bitfields.c:65:5]\ \"\",\ [valid_files/95_bitfields.c:65:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:65:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 1]\ memset\ (s,\ 0,\ 18);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 274877906943;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 3]\ dump\ (s,\ 18);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ 4886718345;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -268435456;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 120;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _230\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _231\ =\ (unsigned\ char)\ _230;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _232\ =\ _231\ +\ 68;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _233\ =\ (char)\ _232;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _233;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _234\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _235\ =\ (unsigned\ char)\ _234;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _236\ =\ _235\ +\ 1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _237\ =\ (char)\ _236;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _237;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ 119;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 5]\ dump\ (s,\ 18);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ _238\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _238);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _239\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _240\ =\ (int)\ _239;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _240);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ _241\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _241);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _242\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _243\ =\ (int)\ _242;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _243);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _244\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _245\ =\ (int)\ _244;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _245);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 18);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:77:5]\ s\ =\ [valid_files/95_bitfields.c:77:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:77:5]\ top.14_246\ =\ top;\l\
+|[valid_files/95_bitfields.c:77:5]\ _247\ =\ (sizetype)\ top.14_246;\l\
+|[valid_files/95_bitfields.c:77:5]\ _248\ =\ [valid_files/95_bitfields.c:77:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _247;\l\
+|[valid_files/95_bitfields.c:77:5]\ printf\ (_248,\ 6,\ [valid_files/95_bitfields.c:77:5]\ \"\",\ [valid_files/95_bitfields.c:77:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:77:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 1]\ memset\ (s,\ 0,\ 10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 3]\ dump\ (s,\ 10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ 2;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ 3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _249\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _250\ =\ _249\ +\ 4;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _250;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _251\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _252\ =\ _251\ +\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _252;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 5]\ dump\ (s,\ 10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _253\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _254\ =\ (int)\ _253;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _254);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _255\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _256\ =\ (int)\ _255;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _256);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _257\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _258\ =\ (int)\ _257;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _258);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ _259\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _259);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _260\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _261\ =\ (int)\ _260;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _261);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 10);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:98:5]\ s\ =\ [valid_files/95_bitfields.c:98:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:98:5]\ top.15_262\ =\ top;\l\
+|[valid_files/95_bitfields.c:98:5]\ _263\ =\ (sizetype)\ top.15_262;\l\
+|[valid_files/95_bitfields.c:98:5]\ _264\ =\ [valid_files/95_bitfields.c:98:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _263;\l\
+|[valid_files/95_bitfields.c:98:5]\ printf\ (_264,\ 7,\ [valid_files/95_bitfields.c:98:5]\ \"\",\ [valid_files/95_bitfields.c:98:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:98:5]\ \"\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ 0;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _265\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _266\ =\ (unsigned\ short)\ _265;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _267\ =\ _266\ +\ 4;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _268\ =\ (\<unnamed-signed:11\>)\ _267;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _268;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _269\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _270\ =\ (\<unnamed-unsigned:11\>)\ _269;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _271\ =\ _270\ +\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _272\ =\ (\<unnamed-signed:11\>)\ _271;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _272;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ 5;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _273\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _274\ =\ (int)\ _273;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _274);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _275\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _276\ =\ (int)\ _275;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _276);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _277\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _278\ =\ (int)\ _277;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _278);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _279\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _280\ =\ (int)\ _279;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _280);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _281\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _282\ =\ (int)\ _281;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _282);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:111:18]\ top.16_283\ =\ top;\l\
+|[valid_files/95_bitfields.c:111:18]\ _284\ =\ top.16_283\ *\ 2;\l\
+|[valid_files/95_bitfields.c:111:18]\ _285\ =\ (sizetype)\ _284;\l\
+|[valid_files/95_bitfields.c:111:1]\ _286\ =\ [valid_files/95_bitfields.c:111:8]\ \"\\n\\n\"\ +\ _285;\l\
+|[valid_files/95_bitfields.c:111:1]\ printf\ (_286);\l\
+|[valid_files/95_bitfields.c:12:5]\ s\ =\ [valid_files/95_bitfields.c:12:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:12:5]\ top.17_287\ =\ top;\l\
+|[valid_files/95_bitfields.c:12:5]\ _288\ =\ (sizetype)\ top.17_287;\l\
+|[valid_files/95_bitfields.c:12:5]\ _289\ =\ [valid_files/95_bitfields.c:12:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _288;\l\
+|[valid_files/95_bitfields.c:12:5]\ printf\ (_289,\ 1,\ [valid_files/95_bitfields.c:12:5]\ \"\",\ [valid_files/95_bitfields.c:12:5]\ \"\",\ [valid_files/95_bitfields.c:12:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 1]\ memset\ (s,\ 0,\ 16);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 4095;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 127;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 268435455;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ 15;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 31;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 3]\ dump\ (s,\ 16);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 819;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 68;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 5592405;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _290\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _291\ =\ (unsigned\ char)\ _290;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _292\ =\ _291\ +\ 6;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _293\ =\ (\<unnamed-unsigned:4\>)\ _292;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _293;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _294\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _295\ =\ _294\ +\ 1;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _295;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 7;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 5]\ dump\ (s,\ 16);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _296\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _297\ =\ (int)\ _296;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _297);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _298\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _299\ =\ (int)\ _298;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _299);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _300\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _301\ =\ (int)\ _300;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _301);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _302\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _303\ =\ (int)\ _302;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _303);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _304\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _305\ =\ (int)\ _304;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _305);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 16,\ 16);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:114:5]\ top\ =\ 0;\l\
+|[valid_files/95_bitfields.c:27:5]\ s\ =\ [valid_files/95_bitfields.c:27:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:27:5]\ top.18_306\ =\ top;\l\
+|[valid_files/95_bitfields.c:27:5]\ _307\ =\ (sizetype)\ top.18_306;\l\
+|[valid_files/95_bitfields.c:27:5]\ _308\ =\ [valid_files/95_bitfields.c:27:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _307;\l\
+|[valid_files/95_bitfields.c:27:5]\ printf\ (_308,\ 2,\ [valid_files/95_bitfields.c:27:5]\ \"\",\ [valid_files/95_bitfields.c:27:5]\ \"\",\ [valid_files/95_bitfields.c:27:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 1]\ memset\ (s,\ 0,\ 32);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 3]\ dump\ (s,\ 32);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ 30;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ 1311768467463790320;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _309\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _310\ =\ (unsigned\ char)\ _309;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _311\ =\ _310\ +\ 5;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _312\ =\ (\<unnamed-signed:4\>)\ _311;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _312;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _313\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _314\ =\ (\<unnamed-unsigned:4\>)\ _313;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _315\ =\ _314\ +\ 1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _316\ =\ (\<unnamed-signed:4\>)\ _315;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _316;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -2;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 5]\ dump\ (s,\ 32);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _317\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _318\ =\ (int)\ _317;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _318);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _319\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _320\ =\ (int)\ _319;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _320);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ _321\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %016llx\",\ _321);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _322\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _323\ =\ (int)\ _322;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _323);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _324\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _325\ =\ (int)\ _324;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _325);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 16,\ 32);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:37:5]\ s\ =\ [valid_files/95_bitfields.c:37:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:37:5]\ top.19_326\ =\ top;\l\
+|[valid_files/95_bitfields.c:37:5]\ _327\ =\ (sizetype)\ top.19_326;\l\
+|[valid_files/95_bitfields.c:37:5]\ _328\ =\ [valid_files/95_bitfields.c:37:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _327;\l\
+|[valid_files/95_bitfields.c:37:5]\ printf\ (_328,\ 3,\ [valid_files/95_bitfields.c:37:5]\ \"\",\ [valid_files/95_bitfields.c:37:5]\ \"\",\ [valid_files/95_bitfields.c:37:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 1]\ memset\ (s,\ 0,\ 32);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 3]\ dump\ (s,\ 32);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 21;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 23;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 25;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _329\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _330\ =\ (unsigned\ char)\ _329;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _331\ =\ _330\ +\ 6;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _332\ =\ (\<unnamed-signed:5\>)\ _331;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _332;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _333\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _334\ =\ (\<unnamed-unsigned:5\>)\ _333;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _335\ =\ _334\ +\ 1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _336\ =\ (\<unnamed-signed:5\>)\ _335;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _336;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ 14;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 5]\ dump\ (s,\ 32);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _337\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _338\ =\ (int)\ _337;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _338);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _339\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _340\ =\ (int)\ _339;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _340);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _341\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _342\ =\ (int)\ _341;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _342);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _343\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _344\ =\ (int)\ _343;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _344);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _345\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _346\ =\ (int)\ _345;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _346);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 16,\ 32);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:52:5]\ s\ =\ [valid_files/95_bitfields.c:52:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:52:5]\ top.20_347\ =\ top;\l\
+|[valid_files/95_bitfields.c:52:5]\ _348\ =\ (sizetype)\ top.20_347;\l\
+|[valid_files/95_bitfields.c:52:5]\ _349\ =\ [valid_files/95_bitfields.c:52:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _348;\l\
+|[valid_files/95_bitfields.c:52:5]\ printf\ (_349,\ 4,\ [valid_files/95_bitfields.c:52:5]\ \"\",\ [valid_files/95_bitfields.c:52:5]\ \"\",\ [valid_files/95_bitfields.c:52:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 127;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ 15;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _350\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _351\ =\ (unsigned\ char)\ _350;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _352\ =\ _351\ +\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _353\ =\ (\<unnamed-signed:7\>)\ _352;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _353;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _354\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _355\ =\ (\<unnamed-unsigned:7\>)\ _354;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _356\ =\ _355\ +\ 1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _357\ =\ (\<unnamed-signed:7\>)\ _356;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _357;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _358\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _359\ =\ (int)\ _358;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _359);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _360\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _361\ =\ (int)\ _360;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _361);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _362\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _363\ =\ (int)\ _362;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _363);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _364\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _365\ =\ (int)\ _364;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _365);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _366\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _367\ =\ (int)\ _366;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _367);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 4,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:65:5]\ s\ =\ [valid_files/95_bitfields.c:65:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:65:5]\ top.21_368\ =\ top;\l\
+|[valid_files/95_bitfields.c:65:5]\ _369\ =\ (sizetype)\ top.21_368;\l\
+|[valid_files/95_bitfields.c:65:5]\ _370\ =\ [valid_files/95_bitfields.c:65:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _369;\l\
+|[valid_files/95_bitfields.c:65:5]\ printf\ (_370,\ 5,\ [valid_files/95_bitfields.c:65:5]\ \"\",\ [valid_files/95_bitfields.c:65:5]\ \"\",\ [valid_files/95_bitfields.c:65:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 1]\ memset\ (s,\ 0,\ 24);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 274877906943;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 3]\ dump\ (s,\ 24);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ 4886718345;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -268435456;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 120;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _371\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _372\ =\ (unsigned\ char)\ _371;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _373\ =\ _372\ +\ 68;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _374\ =\ (char)\ _373;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _374;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _375\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _376\ =\ (unsigned\ char)\ _375;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _377\ =\ _376\ +\ 1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _378\ =\ (char)\ _377;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _378;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ 119;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 5]\ dump\ (s,\ 24);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ _379\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _379);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _380\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _381\ =\ (int)\ _380;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _381);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ _382\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _382);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _383\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _384\ =\ (int)\ _383;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _384);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _385\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _386\ =\ (int)\ _385;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _386);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 8,\ 24);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:77:5]\ s\ =\ [valid_files/95_bitfields.c:77:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:77:5]\ top.22_387\ =\ top;\l\
+|[valid_files/95_bitfields.c:77:5]\ _388\ =\ (sizetype)\ top.22_387;\l\
+|[valid_files/95_bitfields.c:77:5]\ _389\ =\ [valid_files/95_bitfields.c:77:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _388;\l\
+|[valid_files/95_bitfields.c:77:5]\ printf\ (_389,\ 6,\ [valid_files/95_bitfields.c:77:5]\ \"\",\ [valid_files/95_bitfields.c:77:5]\ \"\",\ [valid_files/95_bitfields.c:77:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 1]\ memset\ (s,\ 0,\ 12);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 3]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ 2;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ 3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _390\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _391\ =\ _390\ +\ 4;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _391;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _392\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _393\ =\ _392\ +\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _393;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 5]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _394\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _395\ =\ (int)\ _394;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _395);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _396\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _397\ =\ (int)\ _396;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _397);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _398\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _399\ =\ (int)\ _398;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _399);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ _400\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _400);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _401\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _402\ =\ (int)\ _401;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _402);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 4,\ 12);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:98:5]\ s\ =\ [valid_files/95_bitfields.c:98:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:98:5]\ top.23_403\ =\ top;\l\
+|[valid_files/95_bitfields.c:98:5]\ _404\ =\ (sizetype)\ top.23_403;\l\
+|[valid_files/95_bitfields.c:98:5]\ _405\ =\ [valid_files/95_bitfields.c:98:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _404;\l\
+|[valid_files/95_bitfields.c:98:5]\ printf\ (_405,\ 7,\ [valid_files/95_bitfields.c:98:5]\ \"\",\ [valid_files/95_bitfields.c:98:5]\ \"\",\ [valid_files/95_bitfields.c:98:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ 0;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _406\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _407\ =\ (unsigned\ short)\ _406;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _408\ =\ _407\ +\ 4;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _409\ =\ (\<unnamed-signed:11\>)\ _408;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _409;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _410\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _411\ =\ (\<unnamed-unsigned:11\>)\ _410;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _412\ =\ _411\ +\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _413\ =\ (\<unnamed-signed:11\>)\ _412;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _413;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ 5;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _414\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _415\ =\ (int)\ _414;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _415);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _416\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _417\ =\ (int)\ _416;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _417);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _418\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _419\ =\ (int)\ _418;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _419);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _420\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _421\ =\ (int)\ _420;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _421);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _422\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _423\ =\ (int)\ _422;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _423);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 8,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:111:18]\ top.24_424\ =\ top;\l\
+|[valid_files/95_bitfields.c:111:18]\ _425\ =\ top.24_424\ *\ 2;\l\
+|[valid_files/95_bitfields.c:111:18]\ _426\ =\ (sizetype)\ _425;\l\
+|[valid_files/95_bitfields.c:111:1]\ _427\ =\ [valid_files/95_bitfields.c:111:8]\ \"\\n\\n\"\ +\ _426;\l\
+|[valid_files/95_bitfields.c:111:1]\ printf\ (_427);\l\
+|[valid_files/95_bitfields.c:12:5]\ s\ =\ [valid_files/95_bitfields.c:12:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:12:5]\ top.25_428\ =\ top;\l\
+|[valid_files/95_bitfields.c:12:5]\ _429\ =\ (sizetype)\ top.25_428;\l\
+|[valid_files/95_bitfields.c:12:5]\ _430\ =\ [valid_files/95_bitfields.c:12:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _429;\l\
+|[valid_files/95_bitfields.c:12:5]\ printf\ (_430,\ 1,\ [valid_files/95_bitfields.c:12:5]\ \"\",\ [valid_files/95_bitfields.c:12:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:12:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 1]\ memset\ (s,\ 0,\ 16);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 4095;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 127;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 268435455;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ 15;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 31;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 3]\ dump\ (s,\ 16);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>x\ =\ 819;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>y\ =\ 68;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>z\ =\ 5592405;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _431\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _432\ =\ (unsigned\ char)\ _431;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _433\ =\ _432\ +\ 6;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _434\ =\ (\<unnamed-unsigned:4\>)\ _433;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _434;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _435\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ _436\ =\ _435\ +\ 1;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>a\ =\ _436;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ [valid_files/95_bitfields.c:12:5]\ s-\>b\ =\ 7;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 5]\ dump\ (s,\ 16);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _437\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ _438\ =\ (int)\ _437;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _438);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _439\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ _440\ =\ (int)\ _439;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _440);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _441\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ _442\ =\ (int)\ _441;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _442);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _443\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ _444\ =\ (int)\ _443;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _444);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _445\ =\ [valid_files/95_bitfields.c:12:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ _446\ =\ (int)\ _445;\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"\ %02x\",\ _446);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:12:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:12:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 16,\ 16);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:114:5]\ top\ =\ 0;\l\
+|[valid_files/95_bitfields.c:27:5]\ s\ =\ [valid_files/95_bitfields.c:27:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:27:5]\ top.26_447\ =\ top;\l\
+|[valid_files/95_bitfields.c:27:5]\ _448\ =\ (sizetype)\ top.26_447;\l\
+|[valid_files/95_bitfields.c:27:5]\ _449\ =\ [valid_files/95_bitfields.c:27:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _448;\l\
+|[valid_files/95_bitfields.c:27:5]\ printf\ (_449,\ 2,\ [valid_files/95_bitfields.c:27:5]\ \"\",\ [valid_files/95_bitfields.c:27:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:27:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 1]\ memset\ (s,\ 0,\ 12);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 3]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>y\ =\ 30;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>z\ =\ 1311768467463790320;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _450\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _451\ =\ (unsigned\ char)\ _450;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _452\ =\ _451\ +\ 5;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _453\ =\ (\<unnamed-signed:4\>)\ _452;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _453;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _454\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _455\ =\ (\<unnamed-unsigned:4\>)\ _454;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _456\ =\ _455\ +\ 1;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ _457\ =\ (\<unnamed-signed:4\>)\ _456;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>a\ =\ _457;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ [valid_files/95_bitfields.c:27:5]\ s-\>b\ =\ -2;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 5]\ dump\ (s,\ 12);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _458\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ _459\ =\ (int)\ _458;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _459);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _460\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ _461\ =\ (int)\ _460;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _461);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ _462\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %016llx\",\ _462);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _463\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ _464\ =\ (int)\ _463;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _464);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _465\ =\ [valid_files/95_bitfields.c:27:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ _466\ =\ (int)\ _465;\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"\ %02x\",\ _466);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:27:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:27:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 12);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:37:5]\ s\ =\ [valid_files/95_bitfields.c:37:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:37:5]\ top.27_467\ =\ top;\l\
+|[valid_files/95_bitfields.c:37:5]\ _468\ =\ (sizetype)\ top.27_467;\l\
+|[valid_files/95_bitfields.c:37:5]\ _469\ =\ [valid_files/95_bitfields.c:37:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _468;\l\
+|[valid_files/95_bitfields.c:37:5]\ printf\ (_469,\ 3,\ [valid_files/95_bitfields.c:37:5]\ \"\",\ [valid_files/95_bitfields.c:37:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:37:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 1]\ memset\ (s,\ 0,\ 7);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 31;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 3]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>x\ =\ 21;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>y\ =\ 23;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>z\ =\ 25;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _470\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _471\ =\ (unsigned\ char)\ _470;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _472\ =\ _471\ +\ 6;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _473\ =\ (\<unnamed-signed:5\>)\ _472;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _473;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _474\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _475\ =\ (\<unnamed-unsigned:5\>)\ _474;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _476\ =\ _475\ +\ 1;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ _477\ =\ (\<unnamed-signed:5\>)\ _476;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>a\ =\ _477;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ [valid_files/95_bitfields.c:37:5]\ s-\>b\ =\ 14;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 5]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _478\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ _479\ =\ (int)\ _478;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _479);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _480\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ _481\ =\ (int)\ _480;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _481);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _482\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ _483\ =\ (int)\ _482;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _483);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _484\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ _485\ =\ (int)\ _484;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _485);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _486\ =\ [valid_files/95_bitfields.c:37:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ _487\ =\ (int)\ _486;\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"\ %02x\",\ _487);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:37:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:37:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 7);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:52:5]\ s\ =\ [valid_files/95_bitfields.c:52:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:52:5]\ top.28_488\ =\ top;\l\
+|[valid_files/95_bitfields.c:52:5]\ _489\ =\ (sizetype)\ top.28_488;\l\
+|[valid_files/95_bitfields.c:52:5]\ _490\ =\ [valid_files/95_bitfields.c:52:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _489;\l\
+|[valid_files/95_bitfields.c:52:5]\ printf\ (_490,\ 4,\ [valid_files/95_bitfields.c:52:5]\ \"\",\ [valid_files/95_bitfields.c:52:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:52:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 1]\ memset\ (s,\ 0,\ 7);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 127;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 3]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>x\ =\ 3;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>z\ =\ 15;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _491\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _492\ =\ (unsigned\ char)\ _491;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _493\ =\ _492\ +\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _494\ =\ (\<unnamed-signed:7\>)\ _493;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _494;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _495\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _496\ =\ (\<unnamed-unsigned:7\>)\ _495;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _497\ =\ _496\ +\ 1;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ _498\ =\ (\<unnamed-signed:7\>)\ _497;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>a\ =\ _498;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ [valid_files/95_bitfields.c:52:5]\ s-\>b\ =\ 120;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 5]\ dump\ (s,\ 7);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _499\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ _500\ =\ (int)\ _499;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _500);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _501\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ _502\ =\ (int)\ _501;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _502);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _503\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ _504\ =\ (int)\ _503;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _504);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _505\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ _506\ =\ (int)\ _505;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _506);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _507\ =\ [valid_files/95_bitfields.c:52:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ _508\ =\ (int)\ _507;\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"\ %02x\",\ _508);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:52:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:52:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 7);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:65:5]\ s\ =\ [valid_files/95_bitfields.c:65:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:65:5]\ top.29_509\ =\ top;\l\
+|[valid_files/95_bitfields.c:65:5]\ _510\ =\ (sizetype)\ top.29_509;\l\
+|[valid_files/95_bitfields.c:65:5]\ _511\ =\ [valid_files/95_bitfields.c:65:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _510;\l\
+|[valid_files/95_bitfields.c:65:5]\ printf\ (_511,\ 5,\ [valid_files/95_bitfields.c:65:5]\ \"\",\ [valid_files/95_bitfields.c:65:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:65:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 1]\ memset\ (s,\ 0,\ 18);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 274877906943;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 3]\ dump\ (s,\ 18);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>x\ =\ 4886718345;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>y\ =\ -268435456;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>z\ =\ 120;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _512\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _513\ =\ (unsigned\ char)\ _512;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _514\ =\ _513\ +\ 68;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _515\ =\ (char)\ _514;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _515;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _516\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _517\ =\ (unsigned\ char)\ _516;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _518\ =\ _517\ +\ 1;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ _519\ =\ (char)\ _518;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>a\ =\ _519;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ [valid_files/95_bitfields.c:65:5]\ s-\>b\ =\ 119;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 5]\ dump\ (s,\ 18);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ _520\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _520);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _521\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ _522\ =\ (int)\ _521;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _522);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ _523\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %016llx\",\ _523);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _524\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ _525\ =\ (int)\ _524;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _525);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _526\ =\ [valid_files/95_bitfields.c:65:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ _527\ =\ (int)\ _526;\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"\ %02x\",\ _527);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:65:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:65:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 18);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:77:5]\ s\ =\ [valid_files/95_bitfields.c:77:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:77:5]\ top.30_528\ =\ top;\l\
+|[valid_files/95_bitfields.c:77:5]\ _529\ =\ (sizetype)\ top.30_528;\l\
+|[valid_files/95_bitfields.c:77:5]\ _530\ =\ [valid_files/95_bitfields.c:77:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _529;\l\
+|[valid_files/95_bitfields.c:77:5]\ printf\ (_530,\ 6,\ [valid_files/95_bitfields.c:77:5]\ \"\",\ [valid_files/95_bitfields.c:77:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:77:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 1]\ memset\ (s,\ 0,\ 10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 3]\ dump\ (s,\ 10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>y\ =\ 2;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>z\ =\ 3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _531\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _532\ =\ _531\ +\ 4;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _532;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _533\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ _534\ =\ _533\ +\ 1;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>a\ =\ _534;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ [valid_files/95_bitfields.c:77:5]\ s-\>b\ =\ -3;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 5]\ dump\ (s,\ 10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _535\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ _536\ =\ (int)\ _535;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _536);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _537\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ _538\ =\ (int)\ _537;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _538);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _539\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ _540\ =\ (int)\ _539;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _540);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ _541\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _541);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _542\ =\ [valid_files/95_bitfields.c:77:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ _543\ =\ (int)\ _542;\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"\ %02x\",\ _543);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:77:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:77:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 10);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:98:5]\ s\ =\ [valid_files/95_bitfields.c:98:5]\ &_s;\l\
+|[valid_files/95_bitfields.c:98:5]\ top.31_544\ =\ top;\l\
+|[valid_files/95_bitfields.c:98:5]\ _545\ =\ (sizetype)\ top.31_544;\l\
+|[valid_files/95_bitfields.c:98:5]\ _546\ =\ [valid_files/95_bitfields.c:98:5]\ \"\\n----\ TEST\ %d%s%s%s\ ----\\n\"\ +\ _545;\l\
+|[valid_files/95_bitfields.c:98:5]\ printf\ (_546,\ 7,\ [valid_files/95_bitfields.c:98:5]\ \"\",\ [valid_files/95_bitfields.c:98:5]\ \"\ -\ PACKED\",\ [valid_files/95_bitfields.c:98:5]\ \"\ -\ WITH\ ALIGN\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 1]\ memset\ (s,\ 0,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 2]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ in\ use\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 3]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>x\ =\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>y\ =\ 0;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>z\ =\ -1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _547\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _548\ =\ (unsigned\ short)\ _547;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _549\ =\ _548\ +\ 4;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _550\ =\ (\<unnamed-signed:11\>)\ _549;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _550;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _551\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _552\ =\ (\<unnamed-unsigned:11\>)\ _551;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _553\ =\ _552\ +\ 1;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ _554\ =\ (\<unnamed-signed:11\>)\ _553;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>a\ =\ _554;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ [valid_files/95_bitfields.c:98:5]\ s-\>b\ =\ 5;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 4]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"bits\ as\ set\ :\ \");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 5]\ dump\ (s,\ 8);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 6]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"values\ \ \ \ \ \ :\");\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _555\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>x;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ _556\ =\ (int)\ _555;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 7]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _556);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _557\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>y;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ _558\ =\ (int)\ _557;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 8]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _558);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _559\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>z;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ _560\ =\ (int)\ _559;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 9]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _560);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _561\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>a;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ _562\ =\ (int)\ _561;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 10]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _562);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _563\ =\ [valid_files/95_bitfields.c:98:5]\ s-\>b;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ _564\ =\ (int)\ _563;\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 11]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"\ %02x\",\ _564);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 12]\ __builtin_putchar\ (10);\l\
+|[valid_files/95_bitfields.c:98:5\ discrim\ 13]\ printf\ ([valid_files/95_bitfields.c:98:5]\ \"align/size\ \ :\ %d\ %d\\n\",\ 1,\ 8);\l\
+|_s\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/95_bitfields.c:236:12]\ D.3735\ =\ 0;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3735;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

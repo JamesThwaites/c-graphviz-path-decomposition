@@ -1,0 +1,164 @@
+digraph "a-117_builtins.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/117_builtins.c:12:7]\ r\ =\ 0;\l\
+|[valid_files/117_builtins.c:17:3]\ __builtin_puts\ (&\"BOUNDS\ OFF:\"[0]);\l\
+|[valid_files/117_builtins.c:20:6]\ if\ (r\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/117_builtins.c:21:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/117_builtins.c:23:5]\ r\ =\ 0;\l\
+|[valid_files/117_builtins.c:24:3]\ _1\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:24:3]\ _2\ =\ (int)\ _1;\l\
+|[valid_files/117_builtins.c:24:3]\ printf\ ([valid_files/117_builtins.c:24:10]\ \"\ 1:%d\",\ _2);\l\
+|[valid_files/117_builtins.c:26:7]\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:26:25]\ &tmp]\ =\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:26:30]\ &str];\l\
+|[valid_files/117_builtins.c:26:7]\ p\ =\ [valid_files/117_builtins.c:26:25]\ &tmp;\l\
+|[valid_files/117_builtins.c:27:10]\ _3\ =\ [valid_files/117_builtins.c:27:10]\ &tmp\ !=\ p;\l\
+|[valid_files/117_builtins.c:27:5]\ r\ =\ (int)\ _3;\l\
+|[valid_files/117_builtins.c:28:3]\ _4\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:28:3]\ _5\ =\ (int)\ _4;\l\
+|[valid_files/117_builtins.c:28:3]\ printf\ ([valid_files/117_builtins.c:28:10]\ \"\ 2:%d\",\ _5);\l\
+|[valid_files/117_builtins.c:30:7]\ r\ =\ __builtin_memcmp\ (p,\ [valid_files/117_builtins.c:30:28]\ &str,\ 27);\l\
+|[valid_files/117_builtins.c:31:3]\ _6\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:31:3]\ _7\ =\ (int)\ _6;\l\
+|[valid_files/117_builtins.c:31:3]\ printf\ ([valid_files/117_builtins.c:31:10]\ \"\ 3:%d\",\ _7);\l\
+|[valid_files/117_builtins.c:33:7]\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:33:25]\ &tmp]\ =\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:33:30]\ &str];\l\
+|[valid_files/117_builtins.c:33:7]\ p\ =\ [valid_files/117_builtins.c:33:25]\ &tmp;\l\
+|[valid_files/117_builtins.c:34:8]\ r\ =\ __builtin_memcmp\ (p,\ [valid_files/117_builtins.c:34:29]\ &str,\ 27);\l\
+|[valid_files/117_builtins.c:35:3]\ _8\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:35:3]\ _9\ =\ (int)\ _8;\l\
+|[valid_files/117_builtins.c:35:3]\ printf\ ([valid_files/117_builtins.c:35:10]\ \"\ 4:%d\",\ _9);\l\
+|[valid_files/117_builtins.c:37:7]\ p\ =\ __builtin_memset\ ([valid_files/117_builtins.c:37:24]\ &tmp,\ 0,\ 100);\l\
+|[valid_files/117_builtins.c:38:32]\ if\ ([valid_files/117_builtins.c:38:10]\ &tmp\ !=\ p)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/117_builtins.c:38:23\ discrim\ 2]\ _10\ =\ [valid_files/117_builtins.c:38:23]\ tmp[0];\l\
+|[valid_files/117_builtins.c:38:17\ discrim\ 2]\ if\ (_10\ !=\ 0)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/117_builtins.c:38:38\ discrim\ 4]\ _11\ =\ [valid_files/117_builtins.c:38:38]\ tmp[99];\l\
+|[valid_files/117_builtins.c:38:32\ discrim\ 4]\ if\ (_11\ !=\ 0)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/117_builtins.c:38:32\ discrim\ 5]\ iftmp.0\ =\ 1;\l\
+[valid_files/117_builtins.c:38:32]\ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/117_builtins.c:38:32\ discrim\ 6]\ iftmp.0\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/117_builtins.c:38:5\ discrim\ 8]\ r\ =\ iftmp.0;\l\
+|[valid_files/117_builtins.c:39:3]\ _12\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:39:3]\ _13\ =\ (int)\ _12;\l\
+|[valid_files/117_builtins.c:39:3]\ printf\ ([valid_files/117_builtins.c:39:10]\ \"\ 5:%d\",\ _13);\l\
+|[valid_files/117_builtins.c:41:5]\ r\ =\ 0;\l\
+|[valid_files/117_builtins.c:42:3]\ _14\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:42:3]\ _15\ =\ (int)\ _14;\l\
+|[valid_files/117_builtins.c:42:3]\ printf\ ([valid_files/117_builtins.c:42:10]\ \"\ 6:%d\",\ _15);\l\
+|[valid_files/117_builtins.c:44:7]\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:44:24]\ &tmp]\ =\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:44:29]\ &str];\l\
+|[valid_files/117_builtins.c:44:7]\ p\ =\ [valid_files/117_builtins.c:44:24]\ &tmp;\l\
+|[valid_files/117_builtins.c:45:8]\ r\ =\ __builtin_memcmp\ (p,\ [valid_files/117_builtins.c:45:29]\ &str,\ 27);\l\
+|[valid_files/117_builtins.c:46:3]\ _16\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:46:3]\ _17\ =\ (int)\ _16;\l\
+|[valid_files/117_builtins.c:46:3]\ printf\ ([valid_files/117_builtins.c:46:10]\ \"\ 7:%d\",\ _17);\l\
+|[valid_files/117_builtins.c:48:7]\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:48:25]\ &tmp]\ =\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:48:30]\ &str];\l\
+|[valid_files/117_builtins.c:48:7]\ p\ =\ [valid_files/117_builtins.c:48:25]\ &tmp;\l\
+|[valid_files/117_builtins.c:49:8]\ r\ =\ __builtin_memcmp\ (p,\ [valid_files/117_builtins.c:49:29]\ &str,\ 27);\l\
+|[valid_files/117_builtins.c:50:3]\ _18\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:50:3]\ _19\ =\ (int)\ _18;\l\
+|[valid_files/117_builtins.c:50:3]\ printf\ ([valid_files/117_builtins.c:50:10]\ \"\ 8:%d\",\ _19);\l\
+|[valid_files/117_builtins.c:52:8]\ r\ =\ __builtin_strcmp\ (p,\ [valid_files/117_builtins.c:52:29]\ &str);\l\
+|[valid_files/117_builtins.c:53:3]\ _20\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:53:3]\ _21\ =\ (int)\ _20;\l\
+|[valid_files/117_builtins.c:53:3]\ printf\ ([valid_files/117_builtins.c:53:10]\ \"\ 9:%d\",\ _21);\l\
+|[valid_files/117_builtins.c:55:8]\ r\ =\ __builtin_strcmp\ (p,\ [valid_files/117_builtins.c:55:30]\ &str);\l\
+|[valid_files/117_builtins.c:56:3]\ _22\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:56:3]\ _23\ =\ (int)\ _22;\l\
+|[valid_files/117_builtins.c:56:3]\ printf\ ([valid_files/117_builtins.c:56:10]\ \"\ 10:%d\",\ _23);\l\
+|[valid_files/117_builtins.c:58:10]\ [valid_files/117_builtins.c:58:6]\ tmp[0]\ =\ 0;\l\
+|[valid_files/117_builtins.c:59:7]\ D.3223\ =\ __builtin_strlen\ ([valid_files/117_builtins.c:59:24]\ &tmp);\l\
+|[valid_files/117_builtins.c:59:7\ discrim\ 1]\ D.3224\ =\ [valid_files/117_builtins.c:59:24]\ &tmp\ +\ D.3223;\l\
+|[valid_files/117_builtins.c:59:7\ discrim\ 1]\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})D.3224]\ =\ MEM\ \<unsigned\ char[27]\>\ [(char\ *\ \{ref-all\})[valid_files/117_builtins.c:59:29]\ &str];\l\
+|[valid_files/117_builtins.c:59:7\ discrim\ 1]\ p\ =\ [valid_files/117_builtins.c:59:24]\ &tmp;\l\
+|[valid_files/117_builtins.c:60:8]\ r\ =\ __builtin_memcmp\ (p,\ [valid_files/117_builtins.c:60:29]\ &str,\ 27);\l\
+|[valid_files/117_builtins.c:61:3]\ _24\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:61:3]\ _25\ =\ (int)\ _24;\l\
+|[valid_files/117_builtins.c:61:3]\ printf\ ([valid_files/117_builtins.c:61:10]\ \"\ 11:%d\",\ _25);\l\
+|[valid_files/117_builtins.c:63:8]\ _26\ =\ __builtin_strchr\ (p,\ 122);\l\
+|[valid_files/117_builtins.c:63:36\ discrim\ 1]\ _27\ =\ p\ +\ 25;\l\
+|[valid_files/117_builtins.c:63:33\ discrim\ 1]\ _28\ =\ _26\ !=\ _27;\l\
+|[valid_files/117_builtins.c:63:5\ discrim\ 1]\ r\ =\ (int)\ _28;\l\
+|[valid_files/117_builtins.c:64:3]\ _29\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:64:3]\ _30\ =\ (int)\ _29;\l\
+|[valid_files/117_builtins.c:64:3]\ printf\ ([valid_files/117_builtins.c:64:10]\ \"\ 12:%d\",\ _30);\l\
+|[valid_files/117_builtins.c:66:7]\ p\ =\ __builtin_strdup\ ([valid_files/117_builtins.c:66:25]\ &str);\l\
+|[valid_files/117_builtins.c:67:8]\ r\ =\ __builtin_memcmp\ (p,\ [valid_files/117_builtins.c:67:29]\ &str,\ 27);\l\
+|[valid_files/117_builtins.c:68:3]\ _31\ =\ r\ ==\ 0;\l\
+|[valid_files/117_builtins.c:68:3]\ _32\ =\ (int)\ _31;\l\
+|[valid_files/117_builtins.c:68:3]\ printf\ ([valid_files/117_builtins.c:68:10]\ \"\ 13:%d\",\ _32);\l\
+|[valid_files/117_builtins.c:69:3]\ __builtin_free\ (p);\l\
+|[valid_files/117_builtins.c:71:7]\ p\ =\ __builtin_malloc\ (100);\l\
+|[valid_files/117_builtins.c:72:3]\ __builtin_memset\ (p,\ 0,\ 100);\l\
+|[valid_files/117_builtins.c:73:7]\ p\ =\ __builtin_realloc\ (p,\ 1000);\l\
+|[valid_files/117_builtins.c:74:3]\ __builtin_memset\ (p,\ 0,\ 1000);\l\
+|[valid_files/117_builtins.c:75:3]\ __builtin_free\ (p);\l\
+|[valid_files/117_builtins.c:77:7]\ p\ =\ __builtin_calloc\ (10,\ 10);\l\
+|[valid_files/117_builtins.c:78:3]\ __builtin_memset\ (p,\ 0,\ 100);\l\
+|[valid_files/117_builtins.c:79:3]\ __builtin_free\ (p);\l\
+|[valid_files/117_builtins.c:82:7]\ p\ =\ __builtin_alloca\ (100);\l\
+|[valid_files/117_builtins.c:83:3]\ __builtin_memset\ (p,\ 0,\ 100);\l\
+|[valid_files/117_builtins.c:85:3]\ __builtin_putchar\ (10);\l\
+|tmp\ =\ \{CLOBBER(eos)\};\l\
+|[\<built-in\>:0:0]\ D.3222\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|\<L7\>:\l\
+|[\<built-in\>:0:0\ discrim\ 1]\ return\ D.3222;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_9:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_9:s -> fn_0_basic_block_10:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,191 @@
+digraph "a-20081218-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20081218-1.c:6:3]\ __builtin_memset\ ([valid_files/20081218-1.c:6:21]\ &a,\ 38,\ 520);\l\
+|[valid_files/20081218-1.c:7:11]\ D.2792\ =\ [valid_files/20081218-1.c:7:11]\ a.i;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20081218-1.c:7:11\ discrim\ 1]\ return\ D.2792;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20081218-1.c:13:3]\ __builtin_memset\ ([valid_files/20081218-1.c:13:21]\ &a,\ 54,\ 520);\l\
+|[valid_files/20081218-1.c:14:7]\ [valid_files/20081218-1.c:14:4]\ a.i\ =\ 909522486;\l\
+|[valid_files/20081218-1.c:15:7]\ [valid_files/20081218-1.c:15:4]\ a.j\ =\ 909588022;\l\
+|[valid_files/20081218-1.c:16:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	subgraph cluster_2_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_2_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/20081218-1.c:35:17\ discrim\ 1]\ i.1_10\ =\ (unsigned\ int)\ i;\l\
+|[valid_files/20081218-1.c:35:17\ discrim\ 1]\ if\ (i.1_10\ \<=\ 519)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/20081218-1.c:36:21]\ _7\ =\ (sizetype)\ i;\l\
+|[valid_files/20081218-1.c:36:21]\ _8\ =\ [valid_files/20081218-1.c:36:18]\ &a\ +\ _7;\l\
+|[valid_files/20081218-1.c:36:21]\ _9\ =\ [valid_files/20081218-1.c:36:21]\ *_8;\l\
+|[valid_files/20081218-1.c:36:8]\ if\ (_9\ !=\ 54)\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/20081218-1.c:35:30\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	subgraph cluster_2_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_2_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/20081218-1.c:27:17\ discrim\ 1]\ i.0_5\ =\ (unsigned\ int)\ i;\l\
+|[valid_files/20081218-1.c:27:17\ discrim\ 1]\ if\ (i.0_5\ \<=\ 519)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/20081218-1.c:28:21]\ _2\ =\ (sizetype)\ i;\l\
+|[valid_files/20081218-1.c:28:21]\ _3\ =\ [valid_files/20081218-1.c:28:18]\ &a\ +\ _2;\l\
+|[valid_files/20081218-1.c:28:21]\ _4\ =\ [valid_files/20081218-1.c:28:21]\ *_3;\l\
+|[valid_files/20081218-1.c:28:8]\ if\ (_4\ !=\ 38)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/20081218-1.c:27:30\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20081218-1.c:25:7]\ _1\ =\ foo\ ();\l\
+|[valid_files/20081218-1.c:25:6\ discrim\ 1]\ if\ (_1\ !=\ 640034342)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20081218-1.c:26:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_2_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/20081218-1.c:27:10]\ i\ =\ 0;\l\
+[valid_files/20081218-1.c:27:3]\ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/20081218-1.c:29:7]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_2_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/20081218-1.c:31:3]\ bar\ ();\l\
+|[valid_files/20081218-1.c:32:8]\ _6\ =\ [valid_files/20081218-1.c:32:8]\ a.j;\l\
+|[valid_files/20081218-1.c:32:6]\ if\ (_6\ !=\ 909588022)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/20081218-1.c:33:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_2_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/20081218-1.c:34:7]\ [valid_files/20081218-1.c:34:4]\ a.j\ =\ 909522486;\l\
+|[valid_files/20081218-1.c:35:10]\ i\ =\ 0;\l\
+[valid_files/20081218-1.c:35:3]\ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/20081218-1.c:37:7]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_2_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/20081218-1.c:38:10]\ D.2796\ =\ 0;\l\
+}"];
+
+	fn_2_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|\<L16\>:\l\
+|return\ D.2796;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_9:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_6:s -> fn_2_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_6:s -> fn_2_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_8:s -> fn_2_basic_block_9:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_2_basic_block_9:s -> fn_2_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_9:s -> fn_2_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_10:s -> fn_2_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_10:s -> fn_2_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_12:s -> fn_2_basic_block_16:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_13:s -> fn_2_basic_block_14:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_13:s -> fn_2_basic_block_15:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_15:s -> fn_2_basic_block_16:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_2_basic_block_16:s -> fn_2_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_16:s -> fn_2_basic_block_17:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_17:s -> fn_2_basic_block_18:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_18:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

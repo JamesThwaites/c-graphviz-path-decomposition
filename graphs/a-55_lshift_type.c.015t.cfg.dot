@@ -1,0 +1,205 @@
+digraph "a-55_lshift_type.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_check" {
+	style="dashed";
+	color="black";
+	label="check ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/55_lshift_type.c:39:21]\ _1\ =\ arg1\ !=\ shift;\l\
+|[valid_files/55_lshift_type.c:39:7]\ failed\ =\ (int)\ _1;\l\
+|[valid_files/55_lshift_type.c:40:7]\ debug.0_2\ =\ debug;\l\
+|[valid_files/55_lshift_type.c:40:6]\ if\ (debug.0_2\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/55_lshift_type.c:40:13\ discrim\ 1]\ if\ (failed\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/55_lshift_type.c:41:5]\ printf\ ([valid_files/55_lshift_type.c:41:13]\ \"%s\ %d\ %d\\n\",\ s,\ arg1,\ shift);\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/55_lshift_type.c:42:11]\ nfailed.1_3\ =\ nfailed;\l\
+|[valid_files/55_lshift_type.c:42:11]\ _4\ =\ failed\ +\ nfailed.1_3;\l\
+|[valid_files/55_lshift_type.c:42:11]\ nfailed\ =\ _4;\l\
+|[valid_files/55_lshift_type.c:43:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/55_lshift_type.c:48:16]\ _1\ =\ argc\ \>\ 1;\l\
+|[valid_files/55_lshift_type.c:48:16]\ _2\ =\ (int)\ _1;\l\
+|[valid_files/55_lshift_type.c:48:9]\ debug\ =\ _2;\l\
+|[valid_files/55_lshift_type.c:49:3]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 1]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 2]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 3]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 4]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 5]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 6]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 7]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 8]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 9]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 10]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 11]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 12]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 13]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 14]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 15]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ short)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 16]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 17]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 18]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 19]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 20]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 21]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 22]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 23]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((int)((1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 24]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 25]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 26]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 27]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 28]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 29]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 30]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 31]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ int)((1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 32]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 33]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 34]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 35]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 36]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 37]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 38]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 39]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 40]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 41]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 42]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 43]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 44]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 45]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 46]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 47]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 48]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 49]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 50]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 51]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 52]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 53]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 54]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 55]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((long\ long)((1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 56]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 57]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 58]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 59]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 60]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 61]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 62]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:49:3\ discrim\ 63]\ check\ ([valid_files/55_lshift_type.c:49:3]\ \"((unsigned\ long\ long)((1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 1]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 2]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 3]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 4]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 5]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 6]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 7]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 8]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 9]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 10]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 11]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 12]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 13]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 14]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 15]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ short)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 16]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 17]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 18]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 19]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 20]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 21]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 22]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 23]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((int)((-1)))\",\ -4,\ -4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 24]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 25]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 26]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 27]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 28]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 29]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 30]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 31]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ int)((-1)))\",\ 4,\ 4);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 32]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 33]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 34]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 35]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 36]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 37]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 38]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 39]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 40]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 41]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 42]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 43]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 44]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 45]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 46]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 47]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 48]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 49]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 50]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 51]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 52]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 53]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 54]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 55]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((long\ long)((-1)))\",\ -8,\ -8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 56]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 57]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 58]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 59]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 60]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 61]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 62]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:50:3\ discrim\ 63]\ check\ ([valid_files/55_lshift_type.c:50:3]\ \"((unsigned\ long\ long)((-1)))\",\ 8,\ 8);\l\
+|[valid_files/55_lshift_type.c:51:3]\ nfailed.2_3\ =\ nfailed;\l\
+|[valid_files/55_lshift_type.c:51:3]\ printf\ ([valid_files/55_lshift_type.c:51:11]\ \"%d\ test(s)\ failed\\n\",\ nfailed.2_3);\l\
+|[valid_files/55_lshift_type.c:52:18]\ nfailed.3_4\ =\ nfailed;\l\
+|[valid_files/55_lshift_type.c:52:18]\ _5\ =\ nfailed.3_4\ !=\ 0;\l\
+|[valid_files/55_lshift_type.c:52:18]\ D.3400\ =\ (int)\ _5;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3400;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,247 @@
+digraph "a-builtin-prefetch-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_simple_global" {
+	style="dashed";
+	color="black";
+	label="simple_global ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:29:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:29:23]\ &glob_int_arr,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:30:3]\ glob_ptr_int.0_1\ =\ glob_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:30:3]\ __builtin_prefetch\ (glob_ptr_int.0_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:31:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:31:23]\ &glob_int,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:32:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_simple_file" {
+	style="dashed";
+	color="black";
+	label="simple_file ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:39:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:39:23]\ &stat_int_arr,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:40:3]\ stat_ptr_int.1_1\ =\ stat_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:40:3]\ __builtin_prefetch\ (stat_ptr_int.1_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:41:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:41:23]\ &stat_int,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:42:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_simple_static_local" {
+	style="dashed";
+	color="black";
+	label="simple_static_local ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:52:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:52:23]\ &gx,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:53:3]\ hx.2_1\ =\ hx;\l\
+|[valid_files/builtin-prefetch-2.c:53:3]\ __builtin_prefetch\ (hx.2_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:54:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:54:23]\ &ix,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:55:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_simple_local" {
+	style="dashed";
+	color="black";
+	label="simple_local ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:63:8]\ hx\ =\ [valid_files/builtin-prefetch-2.c:63:13]\ &gx;\l\
+|[valid_files/builtin-prefetch-2.c:65:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:65:23]\ &gx,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:66:3]\ __builtin_prefetch\ (hx,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:67:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:67:23]\ &ix,\ 0,\ 0);\l\
+|gx\ =\ \{CLOBBER(eos)\};\l\
+|ix\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/builtin-prefetch-2.c:68:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_simple_arg" {
+	style="dashed";
+	color="black";
+	label="simple_arg ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:75:3]\ __builtin_prefetch\ (g,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:76:3]\ __builtin_prefetch\ (h,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:77:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:77:23]\ &i,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:78:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_expr_global" {
+	style="dashed";
+	color="black";
+	label="expr_global ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:85:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:85:23]\ &str,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:86:3]\ ptr_str.3_1\ =\ ptr_str;\l\
+|[valid_files/builtin-prefetch-2.c:86:3]\ __builtin_prefetch\ (ptr_str.3_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:87:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:87:23]\ &[valid_files/builtin-prefetch-2.c:87:27]\ str.b,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:88:31]\ ptr_str.4_2\ =\ ptr_str;\l\
+|[valid_files/builtin-prefetch-2.c:88:23]\ _3\ =\ [valid_files/builtin-prefetch-2.c:88:23]\ &[valid_files/builtin-prefetch-2.c:88:31]\ ptr_str.4_2-\>b;\l\
+|[valid_files/builtin-prefetch-2.c:88:3]\ __builtin_prefetch\ (_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:89:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:89:23]\ &[valid_files/builtin-prefetch-2.c:89:27]\ str.d,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:90:31]\ ptr_str.5_4\ =\ ptr_str;\l\
+|[valid_files/builtin-prefetch-2.c:90:23]\ _5\ =\ [valid_files/builtin-prefetch-2.c:90:23]\ &[valid_files/builtin-prefetch-2.c:90:31]\ ptr_str.5_4-\>d;\l\
+|[valid_files/builtin-prefetch-2.c:90:3]\ __builtin_prefetch\ (_5,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:91:26]\ _6\ =\ [valid_files/builtin-prefetch-2.c:91:26]\ str.next;\l\
+|[valid_files/builtin-prefetch-2.c:91:3]\ __builtin_prefetch\ (_6,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:92:30]\ ptr_str.6_7\ =\ ptr_str;\l\
+|[valid_files/builtin-prefetch-2.c:92:30]\ _8\ =\ [valid_files/builtin-prefetch-2.c:92:30]\ ptr_str.6_7-\>next;\l\
+|[valid_files/builtin-prefetch-2.c:92:3]\ __builtin_prefetch\ (_8,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:93:26]\ _9\ =\ [valid_files/builtin-prefetch-2.c:93:26]\ str.next;\l\
+|[valid_files/builtin-prefetch-2.c:93:31]\ _10\ =\ [valid_files/builtin-prefetch-2.c:93:31]\ &[valid_files/builtin-prefetch-2.c:93:31]\ _9-\>d;\l\
+|[valid_files/builtin-prefetch-2.c:93:3]\ __builtin_prefetch\ (_10,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:94:30]\ ptr_str.7_11\ =\ ptr_str;\l\
+|[valid_files/builtin-prefetch-2.c:94:30]\ _12\ =\ [valid_files/builtin-prefetch-2.c:94:30]\ ptr_str.7_11-\>next;\l\
+|[valid_files/builtin-prefetch-2.c:94:36]\ _13\ =\ [valid_files/builtin-prefetch-2.c:94:36]\ &[valid_files/builtin-prefetch-2.c:94:36]\ _12-\>d;\l\
+|[valid_files/builtin-prefetch-2.c:94:3]\ __builtin_prefetch\ (_13,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:96:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:96:23]\ &glob_int_arr,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:97:3]\ glob_ptr_int.8_14\ =\ glob_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:97:3]\ __builtin_prefetch\ (glob_ptr_int.8_14,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:98:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:98:23]\ &[valid_files/builtin-prefetch-2.c:98:36]\ glob_int_arr[2],\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:99:3]\ glob_ptr_int.9_15\ =\ glob_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:99:23]\ _16\ =\ glob_ptr_int.9_15\ +\ 12;\l\
+|[valid_files/builtin-prefetch-2.c:99:3]\ __builtin_prefetch\ (_16,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:100:3]\ _17\ =\ [valid_files/builtin-prefetch-2.c:100:23]\ &glob_int_arr\ +\ 12;\l\
+|[valid_files/builtin-prefetch-2.c:100:3]\ __builtin_prefetch\ (_17,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:101:35]\ glob_int.10_18\ =\ glob_int;\l\
+|[valid_files/builtin-prefetch-2.c:101:35]\ _19\ =\ (long\ unsigned\ int)\ glob_int.10_18;\l\
+|[valid_files/builtin-prefetch-2.c:101:35]\ _20\ =\ _19\ *\ 4;\l\
+|[valid_files/builtin-prefetch-2.c:101:3]\ _21\ =\ [valid_files/builtin-prefetch-2.c:101:23]\ &glob_int_arr\ +\ _20;\l\
+|[valid_files/builtin-prefetch-2.c:101:3]\ __builtin_prefetch\ (_21,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:102:3]\ glob_ptr_int.11_22\ =\ glob_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:102:35]\ _23\ =\ glob_ptr_int.11_22\ +\ 20;\l\
+|[valid_files/builtin-prefetch-2.c:102:3]\ __builtin_prefetch\ (_23,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:103:3]\ glob_ptr_int.12_24\ =\ glob_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:103:35]\ glob_int.13_25\ =\ glob_int;\l\
+|[valid_files/builtin-prefetch-2.c:103:35]\ _26\ =\ (long\ unsigned\ int)\ glob_int.13_25;\l\
+|[valid_files/builtin-prefetch-2.c:103:35]\ _27\ =\ _26\ *\ 4;\l\
+|[valid_files/builtin-prefetch-2.c:103:35]\ _28\ =\ glob_ptr_int.12_24\ +\ _27;\l\
+|[valid_files/builtin-prefetch-2.c:103:3]\ __builtin_prefetch\ (_28,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:104:1]\ return;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_expr_local" {
+	style="dashed";
+	color="black";
+	label="expr_local ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:112:8]\ pb\ =\ [valid_files/builtin-prefetch-2.c:112:13]\ &b;\l\
+|[valid_files/builtin-prefetch-2.c:114:13]\ pt\ =\ [valid_files/builtin-prefetch-2.c:114:18]\ &t;\l\
+|[valid_files/builtin-prefetch-2.c:115:7]\ j\ =\ 4;\l\
+|[valid_files/builtin-prefetch-2.c:117:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:117:23]\ &t,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:118:3]\ __builtin_prefetch\ (pt,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:119:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:119:23]\ &[valid_files/builtin-prefetch-2.c:119:25]\ t.b,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:120:23]\ _1\ =\ [valid_files/builtin-prefetch-2.c:120:23]\ &[valid_files/builtin-prefetch-2.c:120:26]\ pt-\>b;\l\
+|[valid_files/builtin-prefetch-2.c:120:3]\ __builtin_prefetch\ (_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:121:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:121:23]\ &[valid_files/builtin-prefetch-2.c:121:25]\ t.d,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:122:23]\ _2\ =\ [valid_files/builtin-prefetch-2.c:122:23]\ &[valid_files/builtin-prefetch-2.c:122:26]\ pt-\>d;\l\
+|[valid_files/builtin-prefetch-2.c:122:3]\ __builtin_prefetch\ (_2,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:123:24]\ _3\ =\ [valid_files/builtin-prefetch-2.c:123:24]\ t.next;\l\
+|[valid_files/builtin-prefetch-2.c:123:3]\ __builtin_prefetch\ (_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:124:25]\ _4\ =\ [valid_files/builtin-prefetch-2.c:124:25]\ pt-\>next;\l\
+|[valid_files/builtin-prefetch-2.c:124:3]\ __builtin_prefetch\ (_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:125:24]\ _5\ =\ [valid_files/builtin-prefetch-2.c:125:24]\ t.next;\l\
+|[valid_files/builtin-prefetch-2.c:125:29]\ _6\ =\ [valid_files/builtin-prefetch-2.c:125:29]\ &[valid_files/builtin-prefetch-2.c:125:29]\ _5-\>d;\l\
+|[valid_files/builtin-prefetch-2.c:125:3]\ __builtin_prefetch\ (_6,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:126:25]\ _7\ =\ [valid_files/builtin-prefetch-2.c:126:25]\ pt-\>next;\l\
+|[valid_files/builtin-prefetch-2.c:126:31]\ _8\ =\ [valid_files/builtin-prefetch-2.c:126:31]\ &[valid_files/builtin-prefetch-2.c:126:31]\ _7-\>d;\l\
+|[valid_files/builtin-prefetch-2.c:126:3]\ __builtin_prefetch\ (_8,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:128:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:128:23]\ &b,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:129:3]\ __builtin_prefetch\ (pb,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:130:3]\ __builtin_prefetch\ ([valid_files/builtin-prefetch-2.c:130:23]\ &[valid_files/builtin-prefetch-2.c:130:25]\ b[2],\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:131:23]\ _9\ =\ pb\ +\ 12;\l\
+|[valid_files/builtin-prefetch-2.c:131:3]\ __builtin_prefetch\ (_9,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:132:3]\ _10\ =\ [valid_files/builtin-prefetch-2.c:132:23]\ &b\ +\ 12;\l\
+|[valid_files/builtin-prefetch-2.c:132:3]\ __builtin_prefetch\ (_10,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:133:24]\ _11\ =\ (long\ unsigned\ int)\ j;\l\
+|[valid_files/builtin-prefetch-2.c:133:24]\ _12\ =\ _11\ *\ 4;\l\
+|[valid_files/builtin-prefetch-2.c:133:3]\ _13\ =\ [valid_files/builtin-prefetch-2.c:133:23]\ &b\ +\ _12;\l\
+|[valid_files/builtin-prefetch-2.c:133:3]\ __builtin_prefetch\ (_13,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:134:25]\ _14\ =\ pb\ +\ 20;\l\
+|[valid_files/builtin-prefetch-2.c:134:3]\ __builtin_prefetch\ (_14,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-2.c:135:25]\ _15\ =\ (long\ unsigned\ int)\ j;\l\
+|[valid_files/builtin-prefetch-2.c:135:25]\ _16\ =\ _15\ *\ 4;\l\
+|[valid_files/builtin-prefetch-2.c:135:25]\ _17\ =\ pb\ +\ _16;\l\
+|[valid_files/builtin-prefetch-2.c:135:3]\ __builtin_prefetch\ (_17,\ 0,\ 0);\l\
+|b\ =\ \{CLOBBER(eos)\};\l\
+|t\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/builtin-prefetch-2.c:136:1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-2.c:141:3]\ simple_global\ ();\l\
+|[valid_files/builtin-prefetch-2.c:142:3]\ simple_file\ ();\l\
+|[valid_files/builtin-prefetch-2.c:143:3]\ simple_static_local\ ();\l\
+|[valid_files/builtin-prefetch-2.c:144:3]\ simple_local\ ();\l\
+|[valid_files/builtin-prefetch-2.c:145:3]\ glob_int.14_1\ =\ glob_int;\l\
+|[valid_files/builtin-prefetch-2.c:145:3]\ glob_ptr_int.15_2\ =\ glob_ptr_int;\l\
+|[valid_files/builtin-prefetch-2.c:145:3]\ simple_arg\ ([valid_files/builtin-prefetch-2.c:145:15]\ &glob_int_arr,\ glob_ptr_int.15_2,\ glob_int.14_1);\l\
+|[valid_files/builtin-prefetch-2.c:147:12]\ [valid_files/builtin-prefetch-2.c:147:6]\ str.next\ =\ [valid_files/builtin-prefetch-2.c:147:14]\ &str;\l\
+|[valid_files/builtin-prefetch-2.c:148:3]\ expr_global\ ();\l\
+|[valid_files/builtin-prefetch-2.c:149:3]\ expr_local\ ();\l\
+|[valid_files/builtin-prefetch-2.c:151:3]\ exit\ (0);\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+}

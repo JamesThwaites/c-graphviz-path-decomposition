@@ -1,0 +1,312 @@
+digraph "a-119_random_stuff.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_tst_branch" {
+	style="dashed";
+	color="black";
+	label="tst_branch ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:9:3]\ printf\ ([valid_files/119_random_stuff.c:9:10]\ \"tst_branch\ --\");\l\
+|gotovar.0\ =\ [valid_files/119_random_stuff.c:10:9]\ &a;\l\
+[valid_files/119_random_stuff.c:10:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/119_random_stuff.c:12:1]\ a:\l\
+|[valid_files/119_random_stuff.c:13:3]\ __builtin_puts\ (&\"\ --\"[0]);\l\
+|[valid_files/119_random_stuff.c:14:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|goto\ gotovar.0;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_void_ptr" {
+	style="dashed";
+	color="black";
+	label="tst_void_ptr ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:19:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_shift" {
+	style="dashed";
+	color="black";
+	label="tst_shift ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:23:7]\ i\ =\ 1;\l\
+|[valid_files/119_random_stuff.c:24:13]\ l\ =\ 1;\l\
+|[valid_files/119_random_stuff.c:25:5]\ i\ =\ 0;\l\
+|[valid_files/119_random_stuff.c:26:5]\ l\ =\ 0;\l\
+|[valid_files/119_random_stuff.c:27:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_const_addr" {
+	style="dashed";
+	color="black";
+	label="tst_const_addr ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:34:16]\ addr\ =\ mmap\ (536870912B,\ 4096,\ 3,\ 48,\ -1,\ 0);\l\
+|[valid_files/119_random_stuff.c:35:6]\ if\ (addr\ !=\ -1B)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/119_random_stuff.c:36:5]\ _1\ =\ 536870912B;\l\
+|[valid_files/119_random_stuff.c:36:5]\ _2\ =\ [valid_files/119_random_stuff.c:36:5]\ *_1;\l\
+|[valid_files/119_random_stuff.c:36:5]\ _3\ =\ 536870912B;\l\
+|[valid_files/119_random_stuff.c:36:24]\ _4\ =\ _2\ +\ 42;\l\
+|[valid_files/119_random_stuff.c:36:24]\ [valid_files/119_random_stuff.c:36:5]\ *_3\ =\ _4;\l\
+|[valid_files/119_random_stuff.c:37:5]\ munmap\ (addr,\ 4096);\l\
+}"];
+
+	fn_3_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/119_random_stuff.c:39:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_4:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_zero_struct" {
+	style="dashed";
+	color="black";
+	label="tst_zero_struct ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|ret\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|\<L1\>:\l\
+|[valid_files/119_random_stuff.c:47:10]\ return\ D.3315;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_big" {
+	style="dashed";
+	color="black";
+	label="tst_big ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:52:11]\ \<retval\>\ =\ tst;\l\
+}"];
+
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/119_random_stuff.c:52:11\ discrim\ 1]\ return\ \<retval\>;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_3:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_adr" {
+	style="dashed";
+	color="black";
+	label="tst_adr ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:58:4]\ fp\ ([valid_files/119_random_stuff.c:58:9]\ &buf,\ [valid_files/119_random_stuff.c:58:14]\ \"%.0f\",\ 5.0e+0);\l\
+|[valid_files/119_random_stuff.c:59:3]\ printf\ ([valid_files/119_random_stuff.c:59:10]\ \"tst_adr\ %s\\n\",\ [valid_files/119_random_stuff.c:59:26]\ &buf);\l\
+|buf\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/119_random_stuff.c:60:1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst" {
+	style="dashed";
+	color="black";
+	label="tst ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:64:13]\ value\ =\ 3;\l\
+|[valid_files/119_random_stuff.c:65:10]\ _1\ =\ (unsigned\ int)\ value;\l\
+|[valid_files/119_random_stuff.c:65:10]\ _2\ =\ -_1;\l\
+|[valid_files/119_random_stuff.c:65:10]\ D.3320\ =\ (int)\ _2;\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/119_random_stuff.c:65:10\ discrim\ 1]\ return\ D.3320;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_compare" {
+	style="dashed";
+	color="black";
+	label="tst_compare ()";
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:71:32]\ _1\ =\ tst\ ();\l\
+|[valid_files/119_random_stuff.c:71:3\ discrim\ 1]\ if\ (_1\ \>\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/119_random_stuff.c:71:3\ discrim\ 1]\ iftmp.1\ =\ [valid_files/119_random_stuff.c:71:44]\ \"error\";\l\
+[0:0]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/119_random_stuff.c:71:3\ discrim\ 2]\ iftmp.1\ =\ [valid_files/119_random_stuff.c:71:54]\ \"ok\";\l\
+}"];
+
+	fn_8_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/119_random_stuff.c:71:3\ discrim\ 4]\ printf\ ([valid_files/119_random_stuff.c:71:11]\ \"tst_compare:\ %s\\n\",\ iftmp.1);\l\
+|[valid_files/119_random_stuff.c:72:1]\ return;\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_4:s -> fn_8_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_5:s -> fn_8_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_pack" {
+	style="dashed";
+	color="black";
+	label="tst_pack ()";
+	fn_9_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_9_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_9_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:80:7]\ [valid_files/119_random_stuff.c:80:4]\ i.f\ =\ 5;\l\
+|[valid_files/119_random_stuff.c:80:16]\ [valid_files/119_random_stuff.c:80:13]\ j.f\ =\ 5;\l\
+|[valid_files/119_random_stuff.c:81:50]\ _1\ =\ [valid_files/119_random_stuff.c:81:50]\ i.f;\l\
+|[valid_files/119_random_stuff.c:81:3]\ _2\ =\ (int)\ _1;\l\
+|[valid_files/119_random_stuff.c:81:45]\ _3\ =\ [valid_files/119_random_stuff.c:81:45]\ j.f;\l\
+|[valid_files/119_random_stuff.c:81:3]\ _4\ =\ (int)\ _3;\l\
+|[valid_files/119_random_stuff.c:81:3]\ printf\ ([valid_files/119_random_stuff.c:81:10]\ \"tst_pack:\ j.f\ =\ %d,\ i.f\ =\ %d\\n\",\ _4,\ _2);\l\
+|[valid_files/119_random_stuff.c:82:1]\ return;\l\
+}"];
+
+	fn_9_basic_block_0:s -> fn_9_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_2:s -> fn_9_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_9_basic_block_0:s -> fn_9_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_tst_cast" {
+	style="dashed";
+	color="black";
+	label="tst_cast ()";
+	fn_10_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_10_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_10_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:86:15]\ c\ =\ -86;\l\
+|[valid_files/119_random_stuff.c:87:11]\ _1\ =\ (short\ unsigned\ int)\ c;\l\
+|[valid_files/119_random_stuff.c:87:11]\ _2\ =\ (int)\ _1;\l\
+|[valid_files/119_random_stuff.c:87:7]\ r\ =\ _2\ ^\ -103;\l\
+|[valid_files/119_random_stuff.c:88:3]\ printf\ ([valid_files/119_random_stuff.c:88:11]\ \"schar\ to\ ushort\ cast:\ %x\\n\",\ r);\l\
+|[valid_files/119_random_stuff.c:89:1]\ return;\l\
+}"];
+
+	fn_10_basic_block_0:s -> fn_10_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_2:s -> fn_10_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_10_basic_block_0:s -> fn_10_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_11_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_11_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_11_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/119_random_stuff.c:96:3]\ tst_branch\ ();\l\
+|[valid_files/119_random_stuff.c:97:3]\ tst_shift\ ();\l\
+|[valid_files/119_random_stuff.c:98:3]\ tst_void_ptr\ ([valid_files/119_random_stuff.c:98:16]\ &[valid_files/119_random_stuff.c:98:22]\ [valid_files/119_random_stuff.c:98:20]\ big.a[0],\ 0);\l\
+|[valid_files/119_random_stuff.c:100:3]\ tst_const_addr\ ();\l\
+|[valid_files/119_random_stuff.c:102:3]\ tst_zero_struct\ ();\l\
+|[valid_files/119_random_stuff.c:103:3]\ tst_big\ (big);\l\
+|[valid_files/119_random_stuff.c:104:3]\ tst_adr\ ([valid_files/119_random_stuff.c:104:11]\ sprintf);\l\
+|[valid_files/119_random_stuff.c:105:3]\ tst_compare\ ();\l\
+|[valid_files/119_random_stuff.c:106:3]\ tst_pack\ ();\l\
+|[valid_files/119_random_stuff.c:107:3]\ tst_cast\ ();\l\
+|big\ =\ \{CLOBBER(eos)\};\l\
+|[\<built-in\>:0:0]\ D.3326\ =\ 0;\l\
+}"];
+
+	fn_11_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[\<built-in\>:0:0\ discrim\ 1]\ return\ D.3326;\l\
+}"];
+
+	fn_11_basic_block_0:s -> fn_11_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_2:s -> fn_11_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_3:s -> fn_11_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_11_basic_block_0:s -> fn_11_basic_block_1:n [style="invis",constraint=true];
+}
+}

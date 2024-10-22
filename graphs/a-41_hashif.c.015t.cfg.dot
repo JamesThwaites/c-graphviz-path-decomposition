@@ -1,0 +1,31 @@
+digraph "a-41_hashif.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/41_hashif.c:5:4]\ __builtin_puts\ (&\"#include\ test\"[0]);\l\
+|[valid_files/41_hashif.c:11:4]\ __builtin_puts\ (&\"b\"[0]);\l\
+|[valid_files/41_hashif.c:29:4]\ __builtin_puts\ (&\"g\"[0]);\l\
+|[valid_files/41_hashif.c:39:4]\ __builtin_puts\ (&\"i\"[0]);\l\
+|[valid_files/41_hashif.c:61:4]\ __builtin_puts\ (&\"p\"[0]);\l\
+|[valid_files/41_hashif.c:72:4]\ __builtin_puts\ (&\"r\"[0]);\l\
+|[valid_files/41_hashif.c:82:11]\ D.3207\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3207;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

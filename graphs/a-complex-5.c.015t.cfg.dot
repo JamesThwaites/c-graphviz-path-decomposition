@@ -1,0 +1,64 @@
+digraph "a-complex-5.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_p" {
+	style="dashed";
+	color="black";
+	label="p ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/complex-5.c:4:12]\ D.2781\ =\ a\ +\ b;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/complex-5.c:4:12\ discrim\ 1]\ return\ D.2781;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/complex-5.c:15:7]\ y.0_1\ =\ y;\l\
+|[valid_files/complex-5.c:15:7]\ x.1_2\ =\ x;\l\
+|[valid_files/complex-5.c:15:7]\ _3\ =\ p\ (x.1_2,\ y.0_1);\l\
+|[valid_files/complex-5.c:15:5\ discrim\ 1]\ z\ =\ _3;\l\
+|[valid_files/complex-5.c:16:7]\ z.2_4\ =\ z;\l\
+|[valid_files/complex-5.c:16:7]\ _5\ =\ __complex__\ (1.0e+0,\ 0.0)\ /\ z.2_4;\l\
+|[valid_files/complex-5.c:16:7]\ x.3_6\ =\ x;\l\
+|[valid_files/complex-5.c:16:7]\ _7\ =\ p\ (x.3_6,\ _5);\l\
+|[valid_files/complex-5.c:16:5\ discrim\ 1]\ y\ =\ _7;\l\
+|[valid_files/complex-5.c:17:9]\ z.4_8\ =\ z;\l\
+|[valid_files/complex-5.c:17:9]\ w.5_9\ =\ w;\l\
+|[valid_files/complex-5.c:17:6]\ if\ (z.4_8\ !=\ w.5_9)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/complex-5.c:18:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/complex-5.c:19:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

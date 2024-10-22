@@ -1,0 +1,60 @@
+digraph "a-51_static.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_henry" {
+	style="dashed";
+	color="black";
+	label="henry ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/51_static.c:10:4]\ fred.0_1\ =\ fred;\l\
+|[valid_files/51_static.c:10:4]\ printf\ ([valid_files/51_static.c:10:11]\ \"%d\\n\",\ fred.0_1);\l\
+|[valid_files/51_static.c:11:8]\ fred.1_2\ =\ fred;\l\
+|[valid_files/51_static.c:11:8]\ _3\ =\ fred.1_2\ +\ 1;\l\
+|[valid_files/51_static.c:11:8]\ fred\ =\ _3;\l\
+|[valid_files/51_static.c:12:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/51_static.c:16:4]\ fred.2_1\ =\ fred;\l\
+|[valid_files/51_static.c:16:4]\ printf\ ([valid_files/51_static.c:16:11]\ \"%d\\n\",\ fred.2_1);\l\
+|[valid_files/51_static.c:17:4]\ henry\ ();\l\
+|[valid_files/51_static.c:18:4]\ henry\ ();\l\
+|[valid_files/51_static.c:19:4]\ henry\ ();\l\
+|[valid_files/51_static.c:20:4]\ henry\ ();\l\
+|[valid_files/51_static.c:21:4]\ fred.3_2\ =\ fred;\l\
+|[valid_files/51_static.c:21:4]\ printf\ ([valid_files/51_static.c:21:11]\ \"%d\\n\",\ fred.3_2);\l\
+|[valid_files/51_static.c:22:9]\ fred\ =\ 8901;\l\
+|[valid_files/51_static.c:23:8]\ joe\ =\ 2345;\l\
+|[valid_files/51_static.c:24:4]\ fred.4_3\ =\ fred;\l\
+|[valid_files/51_static.c:24:4]\ printf\ ([valid_files/51_static.c:24:11]\ \"%d\\n\",\ fred.4_3);\l\
+|[valid_files/51_static.c:25:4]\ joe.5_4\ =\ joe;\l\
+|[valid_files/51_static.c:25:4]\ printf\ ([valid_files/51_static.c:25:11]\ \"%d\\n\",\ joe.5_4);\l\
+|[valid_files/51_static.c:27:11]\ D.3212\ =\ 0;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3212;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

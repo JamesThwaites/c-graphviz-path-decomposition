@@ -1,0 +1,49 @@
+digraph "a-10_pointer.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/10_pointer.c:15:6]\ a\ =\ 42;\l\
+|[valid_files/10_pointer.c:16:6]\ b\ =\ [valid_files/10_pointer.c:16:8]\ &a;\l\
+|[valid_files/10_pointer.c:17:4]\ _1\ =\ [valid_files/10_pointer.c:17:4]\ *b;\l\
+|[valid_files/10_pointer.c:17:4]\ printf\ ([valid_files/10_pointer.c:17:11]\ \"a\ =\ %d\\n\",\ _1);\l\
+|[valid_files/10_pointer.c:19:16]\ [valid_files/10_pointer.c:19:13]\ bolshevic.a\ =\ 12;\l\
+|[valid_files/10_pointer.c:20:16]\ [valid_files/10_pointer.c:20:13]\ bolshevic.b\ =\ 34;\l\
+|[valid_files/10_pointer.c:21:16]\ [valid_files/10_pointer.c:21:13]\ bolshevic.c\ =\ 56;\l\
+|[valid_files/10_pointer.c:23:4]\ _2\ =\ [valid_files/10_pointer.c:23:4]\ bolshevic.a;\l\
+|[valid_files/10_pointer.c:23:4]\ printf\ ([valid_files/10_pointer.c:23:11]\ \"bolshevic.a\ =\ %d\\n\",\ _2);\l\
+|[valid_files/10_pointer.c:24:4]\ _3\ =\ [valid_files/10_pointer.c:24:4]\ bolshevic.b;\l\
+|[valid_files/10_pointer.c:24:4]\ printf\ ([valid_files/10_pointer.c:24:11]\ \"bolshevic.b\ =\ %d\\n\",\ _3);\l\
+|[valid_files/10_pointer.c:25:4]\ _4\ =\ [valid_files/10_pointer.c:25:4]\ bolshevic.c;\l\
+|[valid_files/10_pointer.c:25:4]\ printf\ ([valid_files/10_pointer.c:25:11]\ \"bolshevic.c\ =\ %d\\n\",\ _4);\l\
+|[valid_files/10_pointer.c:27:18]\ tsar\ =\ [valid_files/10_pointer.c:27:25]\ &bolshevic;\l\
+|[valid_files/10_pointer.c:29:4]\ _5\ =\ [valid_files/10_pointer.c:29:4]\ tsar-\>a;\l\
+|[valid_files/10_pointer.c:29:4]\ printf\ ([valid_files/10_pointer.c:29:11]\ \"tsar-\>a\ =\ %d\\n\",\ _5);\l\
+|[valid_files/10_pointer.c:30:4]\ _6\ =\ [valid_files/10_pointer.c:30:4]\ tsar-\>b;\l\
+|[valid_files/10_pointer.c:30:4]\ printf\ ([valid_files/10_pointer.c:30:11]\ \"tsar-\>b\ =\ %d\\n\",\ _6);\l\
+|[valid_files/10_pointer.c:31:4]\ _7\ =\ [valid_files/10_pointer.c:31:4]\ tsar-\>c;\l\
+|[valid_files/10_pointer.c:31:4]\ printf\ ([valid_files/10_pointer.c:31:11]\ \"tsar-\>c\ =\ %d\\n\",\ _7);\l\
+|[valid_files/10_pointer.c:33:6]\ b\ =\ [valid_files/10_pointer.c:33:8]\ &[valid_files/10_pointer.c:33:19]\ bolshevic.b;\l\
+|[valid_files/10_pointer.c:34:4]\ _8\ =\ [valid_files/10_pointer.c:34:4]\ *b;\l\
+|[valid_files/10_pointer.c:34:4]\ printf\ ([valid_files/10_pointer.c:34:11]\ \"bolshevic.b\ =\ %d\\n\",\ _8);\l\
+|[valid_files/10_pointer.c:36:11]\ D.3216\ =\ 0;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3216;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

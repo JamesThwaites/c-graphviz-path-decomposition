@@ -1,0 +1,159 @@
+digraph "a-20020404-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_dump_bfd_file" {
+	style="dashed";
+	color="black";
+	label="dump_bfd_file ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:55:10]\ obfd\ =\ bfd_openw_with_cleanup\ (filename,\ target,\ mode);\l\
+|[valid_files/20020404-1.c:56:14]\ osection\ =\ bfd_make_section_anyway\ (obfd,\ [valid_files/20020404-1.c:56:45]\ \".newsec\");\l\
+|[valid_files/20020404-1.c:57:3]\ _1\ =\ (long\ long\ unsigned\ int)\ len;\l\
+|[valid_files/20020404-1.c:57:3]\ bfd_set_section_size\ (obfd,\ osection,\ _1);\l\
+|[valid_files/20020404-1.c:58:38]\ [valid_files/20020404-1.c:58:33]\ osection-\>lma\ =\ vaddr;\l\
+|[valid_files/20020404-1.c:58:33]\ _2\ =\ [valid_files/20020404-1.c:58:33]\ osection-\>lma;\l\
+|[valid_files/20020404-1.c:58:21]\ [valid_files/20020404-1.c:58:15]\ osection-\>vma\ =\ _2;\l\
+|[valid_files/20020404-1.c:58:76]\ [valid_files/20020404-1.c:58:61]\ osection-\>user_set_vma\ =\ 1;\l\
+|[valid_files/20020404-1.c:59:33]\ [valid_files/20020404-1.c:59:15]\ osection-\>alignment_power\ =\ 0;\l\
+|[valid_files/20020404-1.c:60:3]\ bfd_set_section_flags\ (obfd,\ osection,\ 515);\l\
+|[valid_files/20020404-1.c:61:21]\ [valid_files/20020404-1.c:61:11]\ osection-\>entsize\ =\ 0;\l\
+|[valid_files/20020404-1.c:62:3]\ _3\ =\ (long\ long\ unsigned\ int)\ len;\l\
+|[valid_files/20020404-1.c:62:3]\ bfd_set_section_contents\ (obfd,\ osection,\ buf,\ 0,\ _3);\l\
+|[valid_files/20020404-1.c:63:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bfd_openw_with_cleanup" {
+	style="dashed";
+	color="black";
+	label="bfd_openw_with_cleanup ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:69:9]\ D.2855\ =\ [valid_files/20020404-1.c:69:9]\ &foo_bfd;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20020404-1.c:69:9\ discrim\ 1]\ return\ D.2855;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bfd_make_section_anyway" {
+	style="dashed";
+	color="black";
+	label="bfd_make_section_anyway ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:77:9]\ D.2857\ =\ [valid_files/20020404-1.c:77:9]\ &foo_section;\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20020404-1.c:77:9\ discrim\ 1]\ return\ D.2857;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bfd_set_section_size" {
+	style="dashed";
+	color="black";
+	label="bfd_set_section_size ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:83:9]\ D.2859\ =\ 1;\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20020404-1.c:83:9\ discrim\ 1]\ return\ D.2859;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bfd_set_section_flags" {
+	style="dashed";
+	color="black";
+	label="bfd_set_section_flags ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:89:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bfd_set_section_contents" {
+	style="dashed";
+	color="black";
+	label="bfd_set_section_contents ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:94:5]\ if\ (count\ !=\ 514703087)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20020404-1.c:95:3]\ abort\ ();\l\
+}"];
+
+	fn_5_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20020404-1.c:96:1]\ return;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_5_basic_block_4:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020404-1.c:102:2]\ dump_bfd_file\ (0B,\ 0B,\ 0B,\ 3735928559,\ [valid_files/20020404-1.c:102:48]\ &hello,\ 514703087);\l\
+|[valid_files/20020404-1.c:103:2]\ exit\ (0);\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+}

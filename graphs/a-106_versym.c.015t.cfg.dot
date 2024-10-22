@@ -1,0 +1,52 @@
+digraph "a-106_versym.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/106_versym.c:13:3]\ pthread_condattr_init\ ([valid_files/106_versym.c:13:3]\ &attr);\l\
+|[valid_files/106_versym.c:14:3]\ pthread_condattr_setpshared\ ([valid_files/106_versym.c:14:3]\ &attr,\ 1);\l\
+|[valid_files/106_versym.c:15:19]\ _1\ =\ pthread_cond_init\ ([valid_files/106_versym.c:15:19]\ &condition,\ [valid_files/106_versym.c:15:19]\ &attr);\l\
+|[valid_files/106_versym.c:15:3\ discrim\ 1]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/106_versym.c:15:3\ discrim\ 1]\ iftmp.0\ =\ [valid_files/106_versym.c:15:59]\ \"fail\";\l\
+[0:0]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/106_versym.c:15:3\ discrim\ 2]\ iftmp.0\ =\ [valid_files/106_versym.c:15:66]\ \"ok\";\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/106_versym.c:15:3\ discrim\ 4]\ __builtin_puts\ (iftmp.0);\l\
+|[valid_files/106_versym.c:16:3]\ pthread_condattr_destroy\ ([valid_files/106_versym.c:16:3]\ &attr);\l\
+|[valid_files/106_versym.c:17:10]\ D.3825\ =\ 0;\l\
+|attr\ =\ \{CLOBBER(eos)\};\l\
+|condition\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|\<L4\>:\l\
+|return\ D.3825;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

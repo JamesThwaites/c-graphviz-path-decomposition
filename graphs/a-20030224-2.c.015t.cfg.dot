@@ -1,0 +1,61 @@
+digraph "a-20030224-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20030224-2.c:18:15]\ marker.magic.v16\ =\ 6533;\l\
+|[valid_files/20030224-2.c:18:15]\ marker.nodetype.v16\ =\ 8195;\l\
+|[valid_files/20030224-2.c:21:21]\ node_p.0_1\ =\ node_p;\l\
+|[valid_files/20030224-2.c:21:21]\ _2\ =\ [valid_files/20030224-2.c:21:21]\ node_p.0_1-\>totlen;\l\
+|[valid_files/20030224-2.c:18:15]\ marker.totlen\ =\ _2;\l\
+|[valid_files/20030224-2.c:23:19]\ _3\ =\ [valid_files/20030224-2.c:23:19]\ [valid_files/20030224-2.c:23:13]\ marker.magic.v16;\l\
+|[valid_files/20030224-2.c:23:6]\ if\ (_3\ !=\ 6533)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20030224-2.c:24:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20030224-2.c:25:22]\ _4\ =\ [valid_files/20030224-2.c:25:22]\ [valid_files/20030224-2.c:25:13]\ marker.nodetype.v16;\l\
+|[valid_files/20030224-2.c:25:6]\ if\ (_4\ !=\ 8195)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/20030224-2.c:26:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/20030224-2.c:27:10]\ D.2788\ =\ 0;\l\
+|marker\ =\ \{CLOBBER(eos)\};\l\
+|D.2781\ =\ \{CLOBBER(eos)\};\l\
+|D.2782\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|\<L5\>:\l\
+|return\ D.2788;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

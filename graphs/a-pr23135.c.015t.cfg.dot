@@ -1,0 +1,147 @@
+digraph "a-pr23135.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_verify" {
+	style="dashed";
+	color="black";
+	label="verify ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr23135.c:31:6]\ if\ (a1\ !=\ b1)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr23135.c:32:7]\ if\ (a2\ !=\ b2)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr23135.c:33:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr23135.c:34:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr23135.c:42:10]\ i.0_1\ =\ i;\l\
+|[valid_files/pr23135.c:42:10]\ j.1_2\ =\ j;\l\
+|[valid_files/pr23135.c:42:6]\ k0\ =\ i.0_1\ +\ j.1_2;\l\
+|[valid_files/pr23135.c:43:9]\ [valid_files/pr23135.c:43:6]\ res.v\ =\ k0;\l\
+|[valid_files/pr23135.c:45:3]\ _3\ =\ [valid_files/pr23135.c:45:3]\ [valid_files/pr23135.c:45:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:45:3]\ _4\ =\ [valid_files/pr23135.c:45:3]\ [valid_files/pr23135.c:45:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:45:3]\ verify\ (_4,\ _3,\ 160,\ 113,\ big);\l\
+|[valid_files/pr23135.c:47:10]\ i.2_5\ =\ i;\l\
+|[valid_files/pr23135.c:47:10]\ j.3_6\ =\ j;\l\
+|[valid_files/pr23135.c:47:6]\ k1\ =\ i.2_5\ *\ j.3_6;\l\
+|[valid_files/pr23135.c:48:9]\ [valid_files/pr23135.c:48:6]\ res.v\ =\ k1;\l\
+|[valid_files/pr23135.c:50:3]\ _7\ =\ [valid_files/pr23135.c:50:3]\ [valid_files/pr23135.c:50:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:50:3]\ _8\ =\ [valid_files/pr23135.c:50:3]\ [valid_files/pr23135.c:50:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:50:3]\ verify\ (_8,\ _7,\ 1500,\ 1300,\ big);\l\
+|[valid_files/pr23135.c:52:10]\ i.4_9\ =\ i;\l\
+|[valid_files/pr23135.c:52:10]\ j.5_10\ =\ j;\l\
+|[valid_files/pr23135.c:52:6]\ k2\ =\ i.4_9\ /\ j.5_10;\l\
+|[valid_files/pr23135.c:100:9]\ [valid_files/pr23135.c:100:6]\ res.v\ =\ k2;\l\
+|[valid_files/pr23135.c:102:3]\ _11\ =\ [valid_files/pr23135.c:102:3]\ [valid_files/pr23135.c:102:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:102:3]\ _12\ =\ [valid_files/pr23135.c:102:3]\ [valid_files/pr23135.c:102:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:102:3]\ verify\ (_12,\ _11,\ 15,\ 7,\ big);\l\
+|[valid_files/pr23135.c:104:10]\ i.6_13\ =\ i;\l\
+|[valid_files/pr23135.c:104:10]\ j.7_14\ =\ j;\l\
+|[valid_files/pr23135.c:104:6]\ k3\ =\ i.6_13\ &\ j.7_14;\l\
+|[valid_files/pr23135.c:105:9]\ [valid_files/pr23135.c:105:6]\ res.v\ =\ k3;\l\
+|[valid_files/pr23135.c:107:3]\ _15\ =\ [valid_files/pr23135.c:107:3]\ [valid_files/pr23135.c:107:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:107:3]\ _16\ =\ [valid_files/pr23135.c:107:3]\ [valid_files/pr23135.c:107:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:107:3]\ verify\ (_16,\ _15,\ 2,\ 4,\ big);\l\
+|[valid_files/pr23135.c:109:10]\ i.8_17\ =\ i;\l\
+|[valid_files/pr23135.c:109:10]\ j.9_18\ =\ j;\l\
+|[valid_files/pr23135.c:109:6]\ k4\ =\ i.8_17\ \|\ j.9_18;\l\
+|[valid_files/pr23135.c:110:9]\ [valid_files/pr23135.c:110:6]\ res.v\ =\ k4;\l\
+|[valid_files/pr23135.c:112:3]\ _19\ =\ [valid_files/pr23135.c:112:3]\ [valid_files/pr23135.c:112:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:112:3]\ _20\ =\ [valid_files/pr23135.c:112:3]\ [valid_files/pr23135.c:112:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:112:3]\ verify\ (_20,\ _19,\ 158,\ 109,\ big);\l\
+|[valid_files/pr23135.c:114:10]\ i.10_21\ =\ i;\l\
+|[valid_files/pr23135.c:114:10]\ j.11_22\ =\ j;\l\
+|[valid_files/pr23135.c:114:6]\ k5\ =\ i.10_21\ ^\ j.11_22;\l\
+|[valid_files/pr23135.c:115:9]\ [valid_files/pr23135.c:115:6]\ res.v\ =\ k5;\l\
+|[valid_files/pr23135.c:117:3]\ _23\ =\ [valid_files/pr23135.c:117:3]\ [valid_files/pr23135.c:117:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:117:3]\ _24\ =\ [valid_files/pr23135.c:117:3]\ [valid_files/pr23135.c:117:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:117:3]\ verify\ (_24,\ _23,\ 156,\ 105,\ big);\l\
+|[valid_files/pr23135.c:119:8]\ i.12_25\ =\ i;\l\
+|[valid_files/pr23135.c:119:6]\ k6\ =\ -i.12_25;\l\
+|[valid_files/pr23135.c:120:9]\ [valid_files/pr23135.c:120:6]\ res.v\ =\ k6;\l\
+|[valid_files/pr23135.c:121:3]\ _26\ =\ [valid_files/pr23135.c:121:3]\ [valid_files/pr23135.c:121:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:121:3]\ _27\ =\ [valid_files/pr23135.c:121:3]\ [valid_files/pr23135.c:121:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:121:3]\ verify\ (_27,\ _26,\ -150,\ -100,\ big);\l\
+|[valid_files/pr23135.c:123:8]\ i.13_28\ =\ i;\l\
+|[valid_files/pr23135.c:123:6]\ k7\ =\ ~i.13_28;\l\
+|[valid_files/pr23135.c:124:9]\ [valid_files/pr23135.c:124:6]\ res.v\ =\ k7;\l\
+|[valid_files/pr23135.c:125:3]\ _29\ =\ [valid_files/pr23135.c:125:3]\ [valid_files/pr23135.c:125:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:125:3]\ _30\ =\ [valid_files/pr23135.c:125:3]\ [valid_files/pr23135.c:125:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:125:3]\ verify\ (_30,\ _29,\ -151,\ -101,\ big);\l\
+|[valid_files/pr23135.c:127:10]\ _31\ =\ k0\ +\ k1;\l\
+|[valid_files/pr23135.c:127:15]\ _32\ =\ k3\ +\ _31;\l\
+|[valid_files/pr23135.c:127:20]\ _33\ =\ k4\ +\ _32;\l\
+|[valid_files/pr23135.c:127:25]\ _34\ =\ k5\ +\ _33;\l\
+|[valid_files/pr23135.c:127:30]\ _35\ =\ k6\ +\ _34;\l\
+|[valid_files/pr23135.c:127:35]\ _36\ =\ k7\ +\ _35;\l\
+|[valid_files/pr23135.c:127:5]\ k\ =\ _36;\l\
+|[valid_files/pr23135.c:128:9]\ k.14_37\ =\ k;\l\
+|[valid_files/pr23135.c:128:9]\ [valid_files/pr23135.c:128:6]\ res.v\ =\ k.14_37;\l\
+|[valid_files/pr23135.c:129:3]\ _38\ =\ [valid_files/pr23135.c:129:3]\ [valid_files/pr23135.c:129:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:129:3]\ _39\ =\ [valid_files/pr23135.c:129:3]\ [valid_files/pr23135.c:129:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:129:3]\ verify\ (_39,\ _38,\ 1675,\ 1430,\ big);\l\
+|[valid_files/pr23135.c:131:10]\ _40\ =\ k0\ *\ k1;\l\
+|[valid_files/pr23135.c:131:15]\ _41\ =\ k3\ *\ _40;\l\
+|[valid_files/pr23135.c:131:20]\ _42\ =\ k4\ *\ _41;\l\
+|[valid_files/pr23135.c:131:25]\ _43\ =\ k5\ *\ _42;\l\
+|[valid_files/pr23135.c:131:30]\ _44\ =\ k6\ *\ _43;\l\
+|[valid_files/pr23135.c:131:35]\ _45\ =\ k7\ *\ _44;\l\
+|[valid_files/pr23135.c:131:5]\ k\ =\ _45;\l\
+|[valid_files/pr23135.c:132:9]\ k.15_46\ =\ k;\l\
+|[valid_files/pr23135.c:132:9]\ [valid_files/pr23135.c:132:6]\ res.v\ =\ k.15_46;\l\
+|[valid_files/pr23135.c:133:3]\ _47\ =\ [valid_files/pr23135.c:133:3]\ [valid_files/pr23135.c:133:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:133:3]\ _48\ =\ [valid_files/pr23135.c:133:3]\ [valid_files/pr23135.c:133:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:133:3]\ verify\ (_48,\ _47,\ 1456467968,\ -1579586240,\ big);\l\
+|[valid_files/pr23135.c:135:10]\ _49\ =\ k0\ /\ k1;\l\
+|[valid_files/pr23135.c:135:15]\ _50\ =\ _49\ /\ k2;\l\
+|[valid_files/pr23135.c:135:20]\ _51\ =\ _50\ /\ k3;\l\
+|[valid_files/pr23135.c:135:25]\ _52\ =\ _51\ /\ k4;\l\
+|[valid_files/pr23135.c:135:30]\ _53\ =\ _52\ /\ k5;\l\
+|[valid_files/pr23135.c:135:35]\ _54\ =\ _53\ /\ k6;\l\
+|[valid_files/pr23135.c:135:40]\ _55\ =\ _54\ /\ k7;\l\
+|[valid_files/pr23135.c:135:5]\ k\ =\ _55;\l\
+|[valid_files/pr23135.c:136:9]\ k.16_56\ =\ k;\l\
+|[valid_files/pr23135.c:136:9]\ [valid_files/pr23135.c:136:6]\ res.v\ =\ k.16_56;\l\
+|[valid_files/pr23135.c:137:3]\ _57\ =\ [valid_files/pr23135.c:137:3]\ [valid_files/pr23135.c:137:24]\ res.i[1];\l\
+|[valid_files/pr23135.c:137:3]\ _58\ =\ [valid_files/pr23135.c:137:3]\ [valid_files/pr23135.c:137:14]\ res.i[0];\l\
+|[valid_files/pr23135.c:137:3]\ verify\ (_58,\ _57,\ 0,\ 0,\ big);\l\
+|[valid_files/pr23135.c:139:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

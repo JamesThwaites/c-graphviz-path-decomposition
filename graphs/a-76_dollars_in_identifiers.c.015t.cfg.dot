@@ -1,0 +1,45 @@
+digraph "a-76_dollars_in_identifiers.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/76_dollars_in_identifiers.c:13:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:13:11]\ \"fred=%d\\n\",\ 10);\l\
+|[valid_files/76_dollars_in_identifiers.c:14:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:14:11]\ \"joe=%d\\n\",\ 20);\l\
+|[valid_files/76_dollars_in_identifiers.c:15:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:15:11]\ \"henry=%d\\n\",\ 30);\l\
+|[valid_files/76_dollars_in_identifiers.c:17:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:17:11]\ \"fred2=%d\\n\",\ 10);\l\
+|[valid_files/76_dollars_in_identifiers.c:18:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:18:11]\ \"joe2=%d\\n\",\ 20);\l\
+|[valid_files/76_dollars_in_identifiers.c:19:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:19:11]\ \"henry2=%d\\n\",\ 30);\l\
+|[valid_files/76_dollars_in_identifiers.c:21:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:21:11]\ \"fred10=%d\\n\",\ 100);\l\
+|[valid_files/76_dollars_in_identifiers.c:22:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:22:11]\ \"joe_10=%d\\n\",\ 2);\l\
+|[valid_files/76_dollars_in_identifiers.c:24:8]\ $\ =\ 10;\l\
+|[valid_files/76_dollars_in_identifiers.c:25:8]\ a100$\ =\ 100;\l\
+|[valid_files/76_dollars_in_identifiers.c:26:8]\ a$$\ =\ 1000;\l\
+|[valid_files/76_dollars_in_identifiers.c:27:8]\ a$c$b\ =\ 2121;\l\
+|[valid_files/76_dollars_in_identifiers.c:28:8]\ $100\ =\ 10000;\l\
+|[valid_files/76_dollars_in_identifiers.c:29:16]\ $$$\ =\ [valid_files/76_dollars_in_identifiers.c:29:22]\ \"money\";\l\
+|[valid_files/76_dollars_in_identifiers.c:31:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:31:11]\ \"local=%d\\n\",\ $);\l\
+|[valid_files/76_dollars_in_identifiers.c:32:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:32:11]\ \"a100$=%d\\n\",\ a100$);\l\
+|[valid_files/76_dollars_in_identifiers.c:33:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:33:11]\ \"a$$=%d\\n\",\ a$$);\l\
+|[valid_files/76_dollars_in_identifiers.c:34:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:34:11]\ \"a$c$b=%d\\n\",\ a$c$b);\l\
+|[valid_files/76_dollars_in_identifiers.c:35:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:35:11]\ \"$100=%d\\n\",\ $100);\l\
+|[valid_files/76_dollars_in_identifiers.c:36:4]\ printf\ ([valid_files/76_dollars_in_identifiers.c:36:11]\ \"$$$=%s\",\ $$$);\l\
+|[valid_files/76_dollars_in_identifiers.c:38:11]\ D.3213\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3213;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

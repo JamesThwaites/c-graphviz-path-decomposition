@@ -1,0 +1,50 @@
+digraph "a-pr22061-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr22061-2.c:2:29]\ x.0_1\ =\ x;\l\
+|[valid_files/pr22061-2.c:2:29]\ _2\ =\ [valid_files/pr22061-2.c:2:29]\ *x.0_1;\l\
+|[valid_files/pr22061-2.c:2:32]\ _3\ =\ _2;\l\
+|[valid_files/pr22061-2.c:2:32]\ _4\ =\ _3\ +\ 1;\l\
+|[valid_files/pr22061-2.c:2:32]\ [valid_files/pr22061-2.c:2:29]\ *x.0_1\ =\ _4;\l\
+|[valid_files/pr22061-2.c:2:32]\ D.2778\ =\ _3;\l\
+|[valid_files/pr22061-2.c:2:32]\ _5\ =\ (long\ int)\ D.2778;\l\
+|[valid_files/pr22061-2.c:2:23]\ _6\ =\ _5\ +\ -1;\l\
+|[valid_files/pr22061-2.c:2:23]\ _7\ =\ (sizetype)\ _6;\l\
+|[valid_files/pr22061-2.c:2:23]\ D.2779\ =\ _7;\l\
+|[valid_files/pr22061-2.c:2:23]\ _8\ =\ (sizetype)\ D.2778;\l\
+|[valid_files/pr22061-2.c:2:23]\ _9\ =\ (bitsizetype)\ _8;\l\
+|[valid_files/pr22061-2.c:2:23]\ _10\ =\ _9\ *\ 8;\l\
+|[valid_files/pr22061-2.c:2:23]\ D.2780\ =\ _10;\l\
+|[valid_files/pr22061-2.c:2:23]\ _11\ =\ (sizetype)\ D.2778;\l\
+|[valid_files/pr22061-2.c:2:23]\ D.2781\ =\ _11;\l\
+|[valid_files/pr22061-2.c:2:38]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr22061-2.c:6:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

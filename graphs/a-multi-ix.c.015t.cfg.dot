@@ -1,0 +1,349 @@
+digraph "a-multi-ix.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/multi-ix.c:58:17\ discrim\ 1]\ if\ (i\ \<\ n)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/multi-ix.c:60:7]\ s\ (40,\ [valid_files/multi-ix.c:60:14]\ &a0,\ [valid_files/multi-ix.c:60:18]\ &a1,\ [valid_files/multi-ix.c:60:22]\ &a2,\ [valid_files/multi-ix.c:60:26]\ &a3,\ [valid_files/multi-ix.c:60:30]\ &a4,\ [valid_files/multi-ix.c:60:34]\ &a5,\ [valid_files/multi-ix.c:60:38]\ &a6,\ [valid_files/multi-ix.c:60:42]\ &a7,\ [valid_files/multi-ix.c:60:46]\ &a8,\ [valid_files/multi-ix.c:60:50]\ &a9,\ [valid_files/multi-ix.c:61:3]\ &a10,\ [valid_files/multi-ix.c:61:8]\ &a11,\ [valid_files/multi-ix.c:61:13]\ &a12,\ [valid_files/multi-ix.c:61:18]\ &a13,\ [valid_files/multi-ix.c:61:23]\ &a14,\ [valid_files/multi-ix.c:61:28]\ &a15,\ [valid_files/multi-ix.c:61:33]\ &a16,\ [valid_files/multi-ix.c:61:38]\ &a17,\ [valid_files/multi-ix.c:61:43]\ &a18,\ [valid_files/multi-ix.c:61:48]\ &a19,\ [valid_files/multi-ix.c:62:10]\ &a20,\ [valid_files/multi-ix.c:62:15]\ &a21,\ [valid_files/multi-ix.c:62:20]\ &a22,\ [valid_files/multi-ix.c:62:25]\ &a23,\ [valid_files/multi-ix.c:62:30]\ &a24,\ [valid_files/multi-ix.c:62:35]\ &a25,\ [valid_files/multi-ix.c:62:40]\ &a26,\ [valid_files/multi-ix.c:62:45]\ &a27,\ [valid_files/multi-ix.c:62:50]\ &a28,\ [valid_files/multi-ix.c:62:55]\ &a29,\ [valid_files/multi-ix.c:63:10]\ &a30,\ [valid_files/multi-ix.c:63:15]\ &a31,\ [valid_files/multi-ix.c:63:20]\ &a32,\ [valid_files/multi-ix.c:63:25]\ &a33,\ [valid_files/multi-ix.c:63:30]\ &a34,\ [valid_files/multi-ix.c:63:35]\ &a35,\ [valid_files/multi-ix.c:63:40]\ &a36,\ [valid_files/multi-ix.c:63:45]\ &a37,\ [valid_files/multi-ix.c:63:50]\ &a38,\ [valid_files/multi-ix.c:63:55]\ &a39);\l\
+|[valid_files/multi-ix.c:64:10]\ i0\ =\ [valid_files/multi-ix.c:64:14]\ a0[0];\l\
+|[valid_files/multi-ix.c:65:10]\ i1\ =\ [valid_files/multi-ix.c:65:14]\ a1[0];\l\
+|[valid_files/multi-ix.c:66:10]\ i2\ =\ [valid_files/multi-ix.c:66:14]\ a2[0];\l\
+|[valid_files/multi-ix.c:67:10]\ i3\ =\ [valid_files/multi-ix.c:67:14]\ a3[0];\l\
+|[valid_files/multi-ix.c:68:10]\ i4\ =\ [valid_files/multi-ix.c:68:14]\ a4[0];\l\
+|[valid_files/multi-ix.c:69:10]\ i5\ =\ [valid_files/multi-ix.c:69:14]\ a5[0];\l\
+|[valid_files/multi-ix.c:70:10]\ i6\ =\ [valid_files/multi-ix.c:70:14]\ a6[0];\l\
+|[valid_files/multi-ix.c:71:10]\ i7\ =\ [valid_files/multi-ix.c:71:14]\ a7[0];\l\
+|[valid_files/multi-ix.c:72:10]\ i8\ =\ [valid_files/multi-ix.c:72:14]\ a8[0];\l\
+|[valid_files/multi-ix.c:73:10]\ i9\ =\ [valid_files/multi-ix.c:73:14]\ a9[0];\l\
+|[valid_files/multi-ix.c:74:11]\ i10\ =\ [valid_files/multi-ix.c:74:16]\ a10[0];\l\
+|[valid_files/multi-ix.c:75:11]\ i11\ =\ [valid_files/multi-ix.c:75:16]\ a11[0];\l\
+|[valid_files/multi-ix.c:76:11]\ i12\ =\ [valid_files/multi-ix.c:76:16]\ a12[0];\l\
+|[valid_files/multi-ix.c:77:11]\ i13\ =\ [valid_files/multi-ix.c:77:16]\ a13[0];\l\
+|[valid_files/multi-ix.c:78:11]\ i14\ =\ [valid_files/multi-ix.c:78:16]\ a14[0];\l\
+|[valid_files/multi-ix.c:79:11]\ i15\ =\ [valid_files/multi-ix.c:79:16]\ a15[0];\l\
+|[valid_files/multi-ix.c:80:11]\ i16\ =\ [valid_files/multi-ix.c:80:16]\ a16[0];\l\
+|[valid_files/multi-ix.c:81:11]\ i17\ =\ [valid_files/multi-ix.c:81:16]\ a17[0];\l\
+|[valid_files/multi-ix.c:82:11]\ i18\ =\ [valid_files/multi-ix.c:82:16]\ a18[0];\l\
+|[valid_files/multi-ix.c:83:11]\ i19\ =\ [valid_files/multi-ix.c:83:16]\ a19[0];\l\
+|[valid_files/multi-ix.c:84:11]\ i20\ =\ [valid_files/multi-ix.c:84:16]\ a20[0];\l\
+|[valid_files/multi-ix.c:85:11]\ i21\ =\ [valid_files/multi-ix.c:85:16]\ a21[0];\l\
+|[valid_files/multi-ix.c:86:11]\ i22\ =\ [valid_files/multi-ix.c:86:16]\ a22[0];\l\
+|[valid_files/multi-ix.c:87:11]\ i23\ =\ [valid_files/multi-ix.c:87:16]\ a23[0];\l\
+|[valid_files/multi-ix.c:88:11]\ i24\ =\ [valid_files/multi-ix.c:88:16]\ a24[0];\l\
+|[valid_files/multi-ix.c:89:11]\ i25\ =\ [valid_files/multi-ix.c:89:16]\ a25[0];\l\
+|[valid_files/multi-ix.c:90:11]\ i26\ =\ [valid_files/multi-ix.c:90:16]\ a26[0];\l\
+|[valid_files/multi-ix.c:91:11]\ i27\ =\ [valid_files/multi-ix.c:91:16]\ a27[0];\l\
+|[valid_files/multi-ix.c:92:11]\ i28\ =\ [valid_files/multi-ix.c:92:16]\ a28[0];\l\
+|[valid_files/multi-ix.c:93:11]\ i29\ =\ [valid_files/multi-ix.c:93:16]\ a29[0];\l\
+|[valid_files/multi-ix.c:94:11]\ i30\ =\ [valid_files/multi-ix.c:94:16]\ a30[0];\l\
+|[valid_files/multi-ix.c:95:11]\ i31\ =\ [valid_files/multi-ix.c:95:16]\ a31[0];\l\
+|[valid_files/multi-ix.c:96:11]\ i32\ =\ [valid_files/multi-ix.c:96:16]\ a32[0];\l\
+|[valid_files/multi-ix.c:97:11]\ i33\ =\ [valid_files/multi-ix.c:97:16]\ a33[0];\l\
+|[valid_files/multi-ix.c:98:11]\ i34\ =\ [valid_files/multi-ix.c:98:16]\ a34[0];\l\
+|[valid_files/multi-ix.c:99:11]\ i35\ =\ [valid_files/multi-ix.c:99:16]\ a35[0];\l\
+|[valid_files/multi-ix.c:100:11]\ i36\ =\ [valid_files/multi-ix.c:100:16]\ a36[0];\l\
+|[valid_files/multi-ix.c:101:11]\ i37\ =\ [valid_files/multi-ix.c:101:16]\ a37[0];\l\
+|[valid_files/multi-ix.c:102:11]\ i38\ =\ [valid_files/multi-ix.c:102:16]\ a38[0];\l\
+|[valid_files/multi-ix.c:103:11]\ i39\ =\ [valid_files/multi-ix.c:103:16]\ a39[0];\l\
+|[valid_files/multi-ix.c:104:7]\ z\ (40,\ [valid_files/multi-ix.c:104:14]\ &a0,\ [valid_files/multi-ix.c:104:18]\ &a1,\ [valid_files/multi-ix.c:104:22]\ &a2,\ [valid_files/multi-ix.c:104:26]\ &a3,\ [valid_files/multi-ix.c:104:30]\ &a4,\ [valid_files/multi-ix.c:104:34]\ &a5,\ [valid_files/multi-ix.c:104:38]\ &a6,\ [valid_files/multi-ix.c:104:42]\ &a7,\ [valid_files/multi-ix.c:104:46]\ &a8,\ [valid_files/multi-ix.c:104:50]\ &a9,\ [valid_files/multi-ix.c:105:3]\ &a10,\ [valid_files/multi-ix.c:105:8]\ &a11,\ [valid_files/multi-ix.c:105:13]\ &a12,\ [valid_files/multi-ix.c:105:18]\ &a13,\ [valid_files/multi-ix.c:105:23]\ &a14,\ [valid_files/multi-ix.c:105:28]\ &a15,\ [valid_files/multi-ix.c:105:33]\ &a16,\ [valid_files/multi-ix.c:105:38]\ &a17,\ [valid_files/multi-ix.c:105:43]\ &a18,\ [valid_files/multi-ix.c:105:48]\ &a19,\ [valid_files/multi-ix.c:106:10]\ &a20,\ [valid_files/multi-ix.c:106:15]\ &a21,\ [valid_files/multi-ix.c:106:20]\ &a22,\ [valid_files/multi-ix.c:106:25]\ &a23,\ [valid_files/multi-ix.c:106:30]\ &a24,\ [valid_files/multi-ix.c:106:35]\ &a25,\ [valid_files/multi-ix.c:106:40]\ &a26,\ [valid_files/multi-ix.c:106:45]\ &a27,\ [valid_files/multi-ix.c:106:50]\ &a28,\ [valid_files/multi-ix.c:106:55]\ &a29,\ [valid_files/multi-ix.c:107:10]\ &a30,\ [valid_files/multi-ix.c:107:15]\ &a31,\ [valid_files/multi-ix.c:107:20]\ &a32,\ [valid_files/multi-ix.c:107:25]\ &a33,\ [valid_files/multi-ix.c:107:30]\ &a34,\ [valid_files/multi-ix.c:107:35]\ &a35,\ [valid_files/multi-ix.c:107:40]\ &a36,\ [valid_files/multi-ix.c:107:45]\ &a37,\ [valid_files/multi-ix.c:107:50]\ &a38,\ [valid_files/multi-ix.c:107:55]\ &a39);\l\
+|[valid_files/multi-ix.c:108:14]\ [valid_files/multi-ix.c:108:9]\ a0[i0]\ =\ i0;\l\
+|[valid_files/multi-ix.c:109:14]\ [valid_files/multi-ix.c:109:9]\ a1[i1]\ =\ i1;\l\
+|[valid_files/multi-ix.c:110:14]\ [valid_files/multi-ix.c:110:9]\ a2[i2]\ =\ i2;\l\
+|[valid_files/multi-ix.c:111:14]\ [valid_files/multi-ix.c:111:9]\ a3[i3]\ =\ i3;\l\
+|[valid_files/multi-ix.c:112:14]\ [valid_files/multi-ix.c:112:9]\ a4[i4]\ =\ i4;\l\
+|[valid_files/multi-ix.c:113:14]\ [valid_files/multi-ix.c:113:9]\ a5[i5]\ =\ i5;\l\
+|[valid_files/multi-ix.c:114:14]\ [valid_files/multi-ix.c:114:9]\ a6[i6]\ =\ i6;\l\
+|[valid_files/multi-ix.c:115:14]\ [valid_files/multi-ix.c:115:9]\ a7[i7]\ =\ i7;\l\
+|[valid_files/multi-ix.c:116:14]\ [valid_files/multi-ix.c:116:9]\ a8[i8]\ =\ i8;\l\
+|[valid_files/multi-ix.c:117:14]\ [valid_files/multi-ix.c:117:9]\ a9[i9]\ =\ i9;\l\
+|[valid_files/multi-ix.c:118:16]\ [valid_files/multi-ix.c:118:10]\ a10[i10]\ =\ i10;\l\
+|[valid_files/multi-ix.c:119:16]\ [valid_files/multi-ix.c:119:10]\ a11[i11]\ =\ i11;\l\
+|[valid_files/multi-ix.c:120:16]\ [valid_files/multi-ix.c:120:10]\ a12[i12]\ =\ i12;\l\
+|[valid_files/multi-ix.c:121:16]\ [valid_files/multi-ix.c:121:10]\ a13[i13]\ =\ i13;\l\
+|[valid_files/multi-ix.c:122:16]\ [valid_files/multi-ix.c:122:10]\ a14[i14]\ =\ i14;\l\
+|[valid_files/multi-ix.c:123:16]\ [valid_files/multi-ix.c:123:10]\ a15[i15]\ =\ i15;\l\
+|[valid_files/multi-ix.c:124:16]\ [valid_files/multi-ix.c:124:10]\ a16[i16]\ =\ i16;\l\
+|[valid_files/multi-ix.c:125:16]\ [valid_files/multi-ix.c:125:10]\ a17[i17]\ =\ i17;\l\
+|[valid_files/multi-ix.c:126:16]\ [valid_files/multi-ix.c:126:10]\ a18[i18]\ =\ i18;\l\
+|[valid_files/multi-ix.c:127:16]\ [valid_files/multi-ix.c:127:10]\ a19[i19]\ =\ i19;\l\
+|[valid_files/multi-ix.c:128:16]\ [valid_files/multi-ix.c:128:10]\ a20[i20]\ =\ i20;\l\
+|[valid_files/multi-ix.c:129:16]\ [valid_files/multi-ix.c:129:10]\ a21[i21]\ =\ i21;\l\
+|[valid_files/multi-ix.c:130:16]\ [valid_files/multi-ix.c:130:10]\ a22[i22]\ =\ i22;\l\
+|[valid_files/multi-ix.c:131:16]\ [valid_files/multi-ix.c:131:10]\ a23[i23]\ =\ i23;\l\
+|[valid_files/multi-ix.c:132:16]\ [valid_files/multi-ix.c:132:10]\ a24[i24]\ =\ i24;\l\
+|[valid_files/multi-ix.c:133:16]\ [valid_files/multi-ix.c:133:10]\ a25[i25]\ =\ i25;\l\
+|[valid_files/multi-ix.c:134:16]\ [valid_files/multi-ix.c:134:10]\ a26[i26]\ =\ i26;\l\
+|[valid_files/multi-ix.c:135:16]\ [valid_files/multi-ix.c:135:10]\ a27[i27]\ =\ i27;\l\
+|[valid_files/multi-ix.c:136:16]\ [valid_files/multi-ix.c:136:10]\ a28[i28]\ =\ i28;\l\
+|[valid_files/multi-ix.c:137:16]\ [valid_files/multi-ix.c:137:10]\ a29[i29]\ =\ i29;\l\
+|[valid_files/multi-ix.c:138:16]\ [valid_files/multi-ix.c:138:10]\ a30[i30]\ =\ i30;\l\
+|[valid_files/multi-ix.c:139:16]\ [valid_files/multi-ix.c:139:10]\ a31[i31]\ =\ i31;\l\
+|[valid_files/multi-ix.c:140:16]\ [valid_files/multi-ix.c:140:10]\ a32[i32]\ =\ i32;\l\
+|[valid_files/multi-ix.c:141:16]\ [valid_files/multi-ix.c:141:10]\ a33[i33]\ =\ i33;\l\
+|[valid_files/multi-ix.c:142:16]\ [valid_files/multi-ix.c:142:10]\ a34[i34]\ =\ i34;\l\
+|[valid_files/multi-ix.c:143:16]\ [valid_files/multi-ix.c:143:10]\ a35[i35]\ =\ i35;\l\
+|[valid_files/multi-ix.c:144:16]\ [valid_files/multi-ix.c:144:10]\ a36[i36]\ =\ i36;\l\
+|[valid_files/multi-ix.c:145:16]\ [valid_files/multi-ix.c:145:10]\ a37[i37]\ =\ i37;\l\
+|[valid_files/multi-ix.c:146:16]\ [valid_files/multi-ix.c:146:10]\ a38[i38]\ =\ i38;\l\
+|[valid_files/multi-ix.c:147:16]\ [valid_files/multi-ix.c:147:10]\ a39[i39]\ =\ i39;\l\
+|[valid_files/multi-ix.c:148:7]\ c\ (40,\ [valid_files/multi-ix.c:148:14]\ &a0,\ [valid_files/multi-ix.c:148:18]\ &a1,\ [valid_files/multi-ix.c:148:22]\ &a2,\ [valid_files/multi-ix.c:148:26]\ &a3,\ [valid_files/multi-ix.c:148:30]\ &a4,\ [valid_files/multi-ix.c:148:34]\ &a5,\ [valid_files/multi-ix.c:148:38]\ &a6,\ [valid_files/multi-ix.c:148:42]\ &a7,\ [valid_files/multi-ix.c:148:46]\ &a8,\ [valid_files/multi-ix.c:148:50]\ &a9,\ [valid_files/multi-ix.c:149:3]\ &a10,\ [valid_files/multi-ix.c:149:8]\ &a11,\ [valid_files/multi-ix.c:149:13]\ &a12,\ [valid_files/multi-ix.c:149:18]\ &a13,\ [valid_files/multi-ix.c:149:23]\ &a14,\ [valid_files/multi-ix.c:149:28]\ &a15,\ [valid_files/multi-ix.c:149:33]\ &a16,\ [valid_files/multi-ix.c:149:38]\ &a17,\ [valid_files/multi-ix.c:149:43]\ &a18,\ [valid_files/multi-ix.c:149:48]\ &a19,\ [valid_files/multi-ix.c:150:10]\ &a20,\ [valid_files/multi-ix.c:150:15]\ &a21,\ [valid_files/multi-ix.c:150:20]\ &a22,\ [valid_files/multi-ix.c:150:25]\ &a23,\ [valid_files/multi-ix.c:150:30]\ &a24,\ [valid_files/multi-ix.c:150:35]\ &a25,\ [valid_files/multi-ix.c:150:40]\ &a26,\ [valid_files/multi-ix.c:150:45]\ &a27,\ [valid_files/multi-ix.c:150:50]\ &a28,\ [valid_files/multi-ix.c:150:55]\ &a29,\ [valid_files/multi-ix.c:151:10]\ &a30,\ [valid_files/multi-ix.c:151:15]\ &a31,\ [valid_files/multi-ix.c:151:20]\ &a32,\ [valid_files/multi-ix.c:151:25]\ &a33,\ [valid_files/multi-ix.c:151:30]\ &a34,\ [valid_files/multi-ix.c:151:35]\ &a35,\ [valid_files/multi-ix.c:151:40]\ &a36,\ [valid_files/multi-ix.c:151:45]\ &a37,\ [valid_files/multi-ix.c:151:50]\ &a38,\ [valid_files/multi-ix.c:151:55]\ &a39);\l\
+|[valid_files/multi-ix.c:58:23\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/multi-ix.c:58:10]\ i\ =\ 0;\l\
+[valid_files/multi-ix.c:58:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|a0\ =\ \{CLOBBER(eos)\};\l\
+|a1\ =\ \{CLOBBER(eos)\};\l\
+|a2\ =\ \{CLOBBER(eos)\};\l\
+|a3\ =\ \{CLOBBER(eos)\};\l\
+|a4\ =\ \{CLOBBER(eos)\};\l\
+|a5\ =\ \{CLOBBER(eos)\};\l\
+|a6\ =\ \{CLOBBER(eos)\};\l\
+|a7\ =\ \{CLOBBER(eos)\};\l\
+|a8\ =\ \{CLOBBER(eos)\};\l\
+|a9\ =\ \{CLOBBER(eos)\};\l\
+|a10\ =\ \{CLOBBER(eos)\};\l\
+|a11\ =\ \{CLOBBER(eos)\};\l\
+|a12\ =\ \{CLOBBER(eos)\};\l\
+|a13\ =\ \{CLOBBER(eos)\};\l\
+|a14\ =\ \{CLOBBER(eos)\};\l\
+|a15\ =\ \{CLOBBER(eos)\};\l\
+|a16\ =\ \{CLOBBER(eos)\};\l\
+|a17\ =\ \{CLOBBER(eos)\};\l\
+|a18\ =\ \{CLOBBER(eos)\};\l\
+|a19\ =\ \{CLOBBER(eos)\};\l\
+|a20\ =\ \{CLOBBER(eos)\};\l\
+|a21\ =\ \{CLOBBER(eos)\};\l\
+|a22\ =\ \{CLOBBER(eos)\};\l\
+|a23\ =\ \{CLOBBER(eos)\};\l\
+|a24\ =\ \{CLOBBER(eos)\};\l\
+|a25\ =\ \{CLOBBER(eos)\};\l\
+|a26\ =\ \{CLOBBER(eos)\};\l\
+|a27\ =\ \{CLOBBER(eos)\};\l\
+|a28\ =\ \{CLOBBER(eos)\};\l\
+|a29\ =\ \{CLOBBER(eos)\};\l\
+|a30\ =\ \{CLOBBER(eos)\};\l\
+|a31\ =\ \{CLOBBER(eos)\};\l\
+|a32\ =\ \{CLOBBER(eos)\};\l\
+|a33\ =\ \{CLOBBER(eos)\};\l\
+|a34\ =\ \{CLOBBER(eos)\};\l\
+|a35\ =\ \{CLOBBER(eos)\};\l\
+|a36\ =\ \{CLOBBER(eos)\};\l\
+|a37\ =\ \{CLOBBER(eos)\};\l\
+|a38\ =\ \{CLOBBER(eos)\};\l\
+|a39\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/multi-ix.c:153:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/multi-ix.c:163:3]\ f\ (1);\l\
+|[valid_files/multi-ix.c:164:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_s" {
+	style="dashed";
+	color="black";
+	label="s ()";
+	subgraph cluster_2_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/multi-ix.c:172:11]\ n.0_1\ =\ n;\l\
+|[valid_files/multi-ix.c:172:11]\ n\ =\ n.0_1\ +\ -1;\l\
+|[valid_files/multi-ix.c:172:10]\ if\ (n.0_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/multi-ix.c:174:12]\ a\ =\ .VA_ARG\ (&list,\ 0B,\ 0B);\l\
+|[valid_files/multi-ix.c:175:12]\ [valid_files/multi-ix.c:175:8]\ *a\ =\ n;\l\
+}"];
+
+	}
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/multi-ix.c:171:3]\ __builtin_va_start\ ([valid_files/multi-ix.c:171:3]\ &list,\ 0);\l\
+[valid_files/multi-ix.c:172:9]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/multi-ix.c:177:3]\ __builtin_va_end\ ([valid_files/multi-ix.c:177:3]\ &list);\l\
+|list\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/multi-ix.c:178:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_2_basic_block_4:s -> fn_2_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_4:s -> fn_2_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_z" {
+	style="dashed";
+	color="black";
+	label="z ()";
+	subgraph cluster_3_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_3_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/multi-ix.c:185:11]\ n.1_1\ =\ n;\l\
+|[valid_files/multi-ix.c:185:11]\ n\ =\ n.1_1\ +\ -1;\l\
+|[valid_files/multi-ix.c:185:10]\ if\ (n.1_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/multi-ix.c:187:12]\ a\ =\ .VA_ARG\ (&list,\ 0B,\ 0B);\l\
+|[valid_files/multi-ix.c:188:7]\ __builtin_memset\ (a,\ 0,\ 2000);\l\
+}"];
+
+	}
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/multi-ix.c:184:3]\ __builtin_va_start\ ([valid_files/multi-ix.c:184:3]\ &list,\ 0);\l\
+[valid_files/multi-ix.c:185:9]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_3_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/multi-ix.c:190:3]\ __builtin_va_end\ ([valid_files/multi-ix.c:190:3]\ &list);\l\
+|list\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/multi-ix.c:191:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_3_basic_block_4:s -> fn_3_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_3_basic_block_4:s -> fn_3_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_3_basic_block_5:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_c" {
+	style="dashed";
+	color="black";
+	label="c ()";
+	subgraph cluster_4_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_4_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/multi-ix.c:198:11]\ n.2_5\ =\ n;\l\
+|[valid_files/multi-ix.c:198:11]\ n\ =\ n.2_5\ +\ -1;\l\
+|[valid_files/multi-ix.c:198:10]\ if\ (n.2_5\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/multi-ix.c:200:12]\ a\ =\ .VA_ARG\ (&list,\ 0B,\ 0B);\l\
+|[valid_files/multi-ix.c:201:12]\ _1\ =\ (long\ unsigned\ int)\ n;\l\
+|[valid_files/multi-ix.c:201:12]\ _2\ =\ _1\ *\ 4;\l\
+|[valid_files/multi-ix.c:201:12]\ _3\ =\ a\ +\ _2;\l\
+|[valid_files/multi-ix.c:201:12]\ _4\ =\ [valid_files/multi-ix.c:201:12]\ *_3;\l\
+|[valid_files/multi-ix.c:201:10]\ if\ (n\ !=\ _4)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	}
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/multi-ix.c:197:3]\ __builtin_va_start\ ([valid_files/multi-ix.c:197:3]\ &list,\ 0);\l\
+[valid_files/multi-ix.c:198:9]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/multi-ix.c:202:2]\ abort\ ();\l\
+}"];
+
+	fn_4_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/multi-ix.c:204:3]\ __builtin_va_end\ ([valid_files/multi-ix.c:204:3]\ &list);\l\
+|list\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/multi-ix.c:205:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_5:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_4_basic_block_5:s -> fn_4_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_5:s -> fn_4_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_6:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

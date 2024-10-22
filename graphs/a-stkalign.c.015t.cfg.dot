@@ -1,0 +1,186 @@
+digraph "a-stkalign.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_test" {
+	style="dashed";
+	color="black";
+	label="test ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/stkalign.c:15:3]\ __asm__(\"\"\ :\ \"=g\"\ x,\ \"=m\"\ s\ :\ \"0\"\ [valid_files/stkalign.c:15:39]\ &x,\ \"m\"\ s);\l\
+|[valid_files/stkalign.c:17:29]\ if\ (n\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/stkalign.c:17:14\ discrim\ 1]\ x.1_1\ =\ x;\l\
+|[valid_files/stkalign.c:17:14\ discrim\ 1]\ _2\ =\ n\ +\ 4294967295;\l\
+|[valid_files/stkalign.c:17:14\ discrim\ 1]\ iftmp.0\ =\ test\ (_2,\ x.1_1);\l\
+[0:0]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/stkalign.c:17:34\ discrim\ 2]\ x.2_3\ =\ x;\l\
+|[valid_files/stkalign.c:17:29\ discrim\ 2]\ iftmp.0\ =\ p\ ^\ x.2_3;\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/stkalign.c:17:29\ discrim\ 4]\ D.2810\ =\ iftmp.0;\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|x\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L7\>:\l\
+|[valid_files/stkalign.c:17:29]\ return\ D.2810;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test2" {
+	style="dashed";
+	color="black";
+	label="test2 ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/stkalign.c:26:3]\ __asm__(\"\"\ :\ \"=g\"\ x,\ \"=m\"\ s\ :\ \"0\"\ [valid_files/stkalign.c:26:39]\ &x,\ \"m\"\ s);\l\
+|[valid_files/stkalign.c:28:30]\ if\ (n\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/stkalign.c:28:14\ discrim\ 1]\ x.4_1\ =\ x;\l\
+|[valid_files/stkalign.c:28:14\ discrim\ 1]\ _2\ =\ n\ +\ 4294967295;\l\
+|[valid_files/stkalign.c:28:14\ discrim\ 1]\ iftmp.3\ =\ test2\ (_2,\ x.4_1);\l\
+[0:0]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/stkalign.c:28:35\ discrim\ 2]\ x.5_3\ =\ x;\l\
+|[valid_files/stkalign.c:28:30\ discrim\ 2]\ iftmp.3\ =\ p\ ^\ x.5_3;\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/stkalign.c:28:30\ discrim\ 4]\ D.2820\ =\ iftmp.3;\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|x\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L7\>:\l\
+|[valid_files/stkalign.c:28:30]\ return\ D.2820;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/stkalign.c:35:7]\ argc.6_1\ =\ (unsigned\ int)\ argc;\l\
+|[valid_files/stkalign.c:35:7]\ x\ =\ test\ (argc.6_1,\ 0);\l\
+|[valid_files/stkalign.c:36:18]\ _2\ =\ argc\ +\ 1;\l\
+|[valid_files/stkalign.c:36:8]\ _3\ =\ (unsigned\ int)\ _2;\l\
+|[valid_files/stkalign.c:36:8]\ D.2827\ =\ test\ (_3,\ 0);\l\
+|[valid_files/stkalign.c:36:5\ discrim\ 1]\ x\ =\ D.2827\ \|\ x;\l\
+|[valid_files/stkalign.c:37:18]\ _4\ =\ argc\ +\ 2;\l\
+|[valid_files/stkalign.c:37:8]\ _5\ =\ (unsigned\ int)\ _4;\l\
+|[valid_files/stkalign.c:37:8]\ D.2828\ =\ test\ (_5,\ 0);\l\
+|[valid_files/stkalign.c:37:5\ discrim\ 1]\ x\ =\ D.2828\ \|\ x;\l\
+|[valid_files/stkalign.c:39:7]\ argc.7_6\ =\ (unsigned\ int)\ argc;\l\
+|[valid_files/stkalign.c:39:7]\ y\ =\ test2\ (argc.7_6,\ 0);\l\
+|[valid_files/stkalign.c:40:19]\ _7\ =\ argc\ +\ 1;\l\
+|[valid_files/stkalign.c:40:8]\ _8\ =\ (unsigned\ int)\ _7;\l\
+|[valid_files/stkalign.c:40:8]\ D.2829\ =\ test2\ (_8,\ 0);\l\
+|[valid_files/stkalign.c:40:5\ discrim\ 1]\ y\ =\ D.2829\ \|\ y;\l\
+|[valid_files/stkalign.c:41:19]\ _9\ =\ argc\ +\ 2;\l\
+|[valid_files/stkalign.c:41:8]\ _10\ =\ (unsigned\ int)\ _9;\l\
+|[valid_files/stkalign.c:41:8]\ D.2830\ =\ test2\ (_10,\ 0);\l\
+|[valid_files/stkalign.c:41:5\ discrim\ 1]\ y\ =\ D.2830\ \|\ y;\l\
+|[valid_files/stkalign.c:43:13]\ _11\ =\ x\ &\ 63;\l\
+|[valid_files/stkalign.c:43:71]\ if\ (_11\ ==\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/stkalign.c:43:43\ discrim\ 1]\ _12\ =\ y\ &\ 63;\l\
+|[valid_files/stkalign.c:43:71\ discrim\ 1]\ if\ (_12\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/stkalign.c:43:71\ discrim\ 3]\ iftmp.8\ =\ 1;\l\
+[valid_files/stkalign.c:43:71]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/stkalign.c:43:71\ discrim\ 4]\ iftmp.8\ =\ 0;\l\
+}"];
+
+	fn_2_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/stkalign.c:43:71\ discrim\ 6]\ D.2831\ =\ iftmp.8;\l\
+}"];
+
+	fn_2_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|\<L4\>:\l\
+|return\ D.2831;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_4:s -> fn_2_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_6:s -> fn_2_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_7:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

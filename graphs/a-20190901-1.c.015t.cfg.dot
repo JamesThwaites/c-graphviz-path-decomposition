@@ -1,0 +1,66 @@
+digraph "a-20190901-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_tests_infinity_d" {
+	style="dashed";
+	color="black";
+	label="tests_infinity_d ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20190901-1.c:27:11]\ [valid_files/20190901-1.c:27:6]\ [valid_files/20190901-1.c:27:4]\ x.s.exp\ =\ 2047;\l\
+|[valid_files/20190901-1.c:28:12]\ [valid_files/20190901-1.c:28:6]\ [valid_files/20190901-1.c:28:4]\ x.s.manl\ =\ 0;\l\
+|[valid_files/20190901-1.c:29:12]\ [valid_files/20190901-1.c:29:6]\ [valid_files/20190901-1.c:29:4]\ x.s.manh\ =\ 0;\l\
+|[valid_files/20190901-1.c:30:11]\ [valid_files/20190901-1.c:30:6]\ [valid_files/20190901-1.c:30:4]\ x.s.sig\ =\ 0;\l\
+|[valid_files/20190901-1.c:31:11]\ D.2787\ =\ [valid_files/20190901-1.c:31:11]\ x.d;\l\
+|x\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/20190901-1.c:31:11]\ return\ D.2787;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20190901-1.c:37:14]\ x\ =\ tests_infinity_d\ ();\l\
+|[valid_files/20190901-1.c:38:6]\ if\ (x\ ==\ 0.0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20190901-1.c:39:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20190901-1.c:40:10]\ D.2792\ =\ 0;\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L2\>:\l\
+|return\ D.2792;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

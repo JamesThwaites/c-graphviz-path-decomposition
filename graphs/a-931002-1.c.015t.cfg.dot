@@ -1,0 +1,94 @@
+digraph "a-931002-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/931002-1.c:5:3]\ func\ ();\l\
+|[valid_files/931002-1.c:6:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/931002-1.c:8:1]\ D.2792\ =\ __builtin_dwarf_cfa\ (0);\l\
+|[valid_files/931002-1.c:8:1\ discrim\ 1]\ FRAME.0.FRAME_BASE.PARENT\ =\ D.2792;\l\
+|[valid_files/931002-1.c:8:1\ discrim\ 1]\ __builtin_init_trampoline\ (&FRAME.0.t0,\ t0,\ &FRAME.0);\l\
+|[valid_files/931002-1.c:24:3]\ t1\ ();\ [static-chain:\ &FRAME.0]\l\
+|[valid_files/931002-1.c:25:3]\ t1\ ();\ [static-chain:\ &FRAME.0]\l\
+|[valid_files/931002-1.c:26:3]\ t2\ ();\ [static-chain:\ &FRAME.0]\l\
+|[valid_files/931002-1.c:28:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_t0" {
+	style="dashed";
+	color="black";
+	label="t0 ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/931002-1.c:12:5]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_t1" {
+	style="dashed";
+	color="black";
+	label="t1 ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/931002-1.c:16:7]\ D.2788\ =\ &CHAIN.2-\>t0;\l\
+|[valid_files/931002-1.c:16:7]\ D.2789\ =\ __builtin_adjust_trampoline\ (D.2788);\l\
+|[valid_files/931002-1.c:16:7\ discrim\ 1]\ D.2790\ =\ (void\ (*\<T3de\>)\ ())\ D.2789;\l\
+|[valid_files/931002-1.c:16:7\ discrim\ 1]\ f\ (D.2790);\l\
+|[valid_files/931002-1.c:17:5]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_t2" {
+	style="dashed";
+	color="black";
+	label="t2 ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/931002-1.c:21:7]\ t1\ ();\ [static-chain:\ CHAIN.3]\l\
+|[valid_files/931002-1.c:22:5]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

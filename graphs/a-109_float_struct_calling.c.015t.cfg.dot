@@ -1,0 +1,58 @@
+digraph "a-109_float_struct_calling.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/109_float_struct_calling.c:17:17]\ D.3221\ =\ [valid_files/109_float_struct_calling.c:17:17]\ [valid_files/109_float_struct_calling.c:17:12]\ r.size.x;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/109_float_struct_calling.c:17:17\ discrim\ 1]\ return\ D.3221;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/109_float_struct_calling.c:21:17]\ p.x\ =\ 1.0e+0;\l\
+|[valid_files/109_float_struct_calling.c:21:17]\ p.y\ =\ 2.0e+0;\l\
+|[valid_files/109_float_struct_calling.c:22:16]\ r.top_left.x\ =\ 3.0e+0;\l\
+|[valid_files/109_float_struct_calling.c:22:16]\ r.top_left.y\ =\ 4.0e+0;\l\
+|[valid_files/109_float_struct_calling.c:22:16]\ r.size.x\ =\ 5.0e+0;\l\
+|[valid_files/109_float_struct_calling.c:22:16]\ r.size.y\ =\ 6.0e+0;\l\
+|[valid_files/109_float_struct_calling.c:25:19]\ _1\ =\ foo\ (p,\ r);\l\
+|[valid_files/109_float_struct_calling.c:25:4\ discrim\ 1]\ _2\ =\ (double)\ _1;\l\
+|[valid_files/109_float_struct_calling.c:25:4\ discrim\ 1]\ printf\ ([valid_files/109_float_struct_calling.c:25:11]\ \"%f\\n\",\ _2);\l\
+|[valid_files/109_float_struct_calling.c:26:11]\ D.3223\ =\ 0;\l\
+|p\ =\ \{CLOBBER(eos)\};\l\
+|r\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3223;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,192 @@
+digraph "a-simd-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_verify" {
+	style="dashed";
+	color="black";
+	label="verify ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/simd-2.c:22:6]\ if\ (a1\ !=\ b1)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/simd-2.c:23:7]\ if\ (a2\ !=\ b2)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/simd-2.c:24:7]\ if\ (a3\ !=\ b3)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/simd-2.c:25:7]\ if\ (a4\ !=\ b4)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/simd-2.c:26:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/simd-2.c:27:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/simd-2.c:32:9]\ i.0_1\ =\ i;\l\
+|[valid_files/simd-2.c:32:9]\ j.1_2\ =\ j;\l\
+|[valid_files/simd-2.c:32:9]\ _3\ =\ i.0_1\ +\ j.1_2;\l\
+|[valid_files/simd-2.c:32:5]\ k\ =\ _3;\l\
+|[valid_files/simd-2.c:33:9]\ k.2_4\ =\ k;\l\
+|[valid_files/simd-2.c:33:9]\ [valid_files/simd-2.c:33:6]\ res.v\ =\ k.2_4;\l\
+|[valid_files/simd-2.c:35:46]\ _5\ =\ [valid_files/simd-2.c:35:46]\ [valid_files/simd-2.c:35:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:35:3]\ _6\ =\ (int)\ _5;\l\
+|[valid_files/simd-2.c:35:36]\ _7\ =\ [valid_files/simd-2.c:35:36]\ [valid_files/simd-2.c:35:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:35:3]\ _8\ =\ (int)\ _7;\l\
+|[valid_files/simd-2.c:35:26]\ _9\ =\ [valid_files/simd-2.c:35:26]\ [valid_files/simd-2.c:35:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:35:3]\ _10\ =\ (int)\ _9;\l\
+|[valid_files/simd-2.c:35:16]\ _11\ =\ [valid_files/simd-2.c:35:16]\ [valid_files/simd-2.c:35:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:35:3]\ _12\ =\ (int)\ _11;\l\
+|[valid_files/simd-2.c:35:3]\ verify\ (_12,\ _10,\ _8,\ _6,\ 160,\ 113,\ 170,\ 230);\l\
+|[valid_files/simd-2.c:37:9]\ i.3_13\ =\ i;\l\
+|[valid_files/simd-2.c:37:9]\ j.4_14\ =\ j;\l\
+|[valid_files/simd-2.c:37:9]\ _15\ =\ i.3_13\ *\ j.4_14;\l\
+|[valid_files/simd-2.c:37:5]\ k\ =\ _15;\l\
+|[valid_files/simd-2.c:38:9]\ k.5_16\ =\ k;\l\
+|[valid_files/simd-2.c:38:9]\ [valid_files/simd-2.c:38:6]\ res.v\ =\ k.5_16;\l\
+|[valid_files/simd-2.c:40:46]\ _17\ =\ [valid_files/simd-2.c:40:46]\ [valid_files/simd-2.c:40:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:40:3]\ _18\ =\ (int)\ _17;\l\
+|[valid_files/simd-2.c:40:36]\ _19\ =\ [valid_files/simd-2.c:40:36]\ [valid_files/simd-2.c:40:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:40:3]\ _20\ =\ (int)\ _19;\l\
+|[valid_files/simd-2.c:40:26]\ _21\ =\ [valid_files/simd-2.c:40:26]\ [valid_files/simd-2.c:40:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:40:3]\ _22\ =\ (int)\ _21;\l\
+|[valid_files/simd-2.c:40:16]\ _23\ =\ [valid_files/simd-2.c:40:16]\ [valid_files/simd-2.c:40:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:40:3]\ _24\ =\ (int)\ _23;\l\
+|[valid_files/simd-2.c:40:3]\ verify\ (_24,\ _22,\ _20,\ _18,\ 1500,\ 1300,\ 3000,\ 6000);\l\
+|[valid_files/simd-2.c:42:9]\ i.6_25\ =\ i;\l\
+|[valid_files/simd-2.c:42:9]\ j.7_26\ =\ j;\l\
+|[valid_files/simd-2.c:42:9]\ _27\ =\ i.6_25\ /\ j.7_26;\l\
+|[valid_files/simd-2.c:42:5]\ k\ =\ _27;\l\
+|[valid_files/simd-2.c:43:9]\ k.8_28\ =\ k;\l\
+|[valid_files/simd-2.c:43:9]\ [valid_files/simd-2.c:43:6]\ res.v\ =\ k.8_28;\l\
+|[valid_files/simd-2.c:45:46]\ _29\ =\ [valid_files/simd-2.c:45:46]\ [valid_files/simd-2.c:45:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:45:3]\ _30\ =\ (int)\ _29;\l\
+|[valid_files/simd-2.c:45:36]\ _31\ =\ [valid_files/simd-2.c:45:36]\ [valid_files/simd-2.c:45:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:45:3]\ _32\ =\ (int)\ _31;\l\
+|[valid_files/simd-2.c:45:26]\ _33\ =\ [valid_files/simd-2.c:45:26]\ [valid_files/simd-2.c:45:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:45:3]\ _34\ =\ (int)\ _33;\l\
+|[valid_files/simd-2.c:45:16]\ _35\ =\ [valid_files/simd-2.c:45:16]\ [valid_files/simd-2.c:45:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:45:3]\ _36\ =\ (int)\ _35;\l\
+|[valid_files/simd-2.c:45:3]\ verify\ (_36,\ _34,\ _32,\ _30,\ 15,\ 7,\ 7,\ 6);\l\
+|[valid_files/simd-2.c:47:9]\ i.9_37\ =\ i;\l\
+|[valid_files/simd-2.c:47:9]\ j.10_38\ =\ j;\l\
+|[valid_files/simd-2.c:47:9]\ _39\ =\ i.9_37\ &\ j.10_38;\l\
+|[valid_files/simd-2.c:47:5]\ k\ =\ _39;\l\
+|[valid_files/simd-2.c:48:9]\ k.11_40\ =\ k;\l\
+|[valid_files/simd-2.c:48:9]\ [valid_files/simd-2.c:48:6]\ res.v\ =\ k.11_40;\l\
+|[valid_files/simd-2.c:50:46]\ _41\ =\ [valid_files/simd-2.c:50:46]\ [valid_files/simd-2.c:50:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:50:3]\ _42\ =\ (int)\ _41;\l\
+|[valid_files/simd-2.c:50:36]\ _43\ =\ [valid_files/simd-2.c:50:36]\ [valid_files/simd-2.c:50:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:50:3]\ _44\ =\ (int)\ _43;\l\
+|[valid_files/simd-2.c:50:26]\ _45\ =\ [valid_files/simd-2.c:50:26]\ [valid_files/simd-2.c:50:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:50:3]\ _46\ =\ (int)\ _45;\l\
+|[valid_files/simd-2.c:50:16]\ _47\ =\ [valid_files/simd-2.c:50:16]\ [valid_files/simd-2.c:50:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:50:3]\ _48\ =\ (int)\ _47;\l\
+|[valid_files/simd-2.c:50:3]\ verify\ (_48,\ _46,\ _44,\ _42,\ 2,\ 4,\ 20,\ 8);\l\
+|[valid_files/simd-2.c:52:9]\ i.12_49\ =\ i;\l\
+|[valid_files/simd-2.c:52:9]\ j.13_50\ =\ j;\l\
+|[valid_files/simd-2.c:52:9]\ _51\ =\ i.12_49\ \|\ j.13_50;\l\
+|[valid_files/simd-2.c:52:5]\ k\ =\ _51;\l\
+|[valid_files/simd-2.c:53:9]\ k.14_52\ =\ k;\l\
+|[valid_files/simd-2.c:53:9]\ [valid_files/simd-2.c:53:6]\ res.v\ =\ k.14_52;\l\
+|[valid_files/simd-2.c:55:46]\ _53\ =\ [valid_files/simd-2.c:55:46]\ [valid_files/simd-2.c:55:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:55:3]\ _54\ =\ (int)\ _53;\l\
+|[valid_files/simd-2.c:55:36]\ _55\ =\ [valid_files/simd-2.c:55:36]\ [valid_files/simd-2.c:55:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:55:3]\ _56\ =\ (int)\ _55;\l\
+|[valid_files/simd-2.c:55:26]\ _57\ =\ [valid_files/simd-2.c:55:26]\ [valid_files/simd-2.c:55:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:55:3]\ _58\ =\ (int)\ _57;\l\
+|[valid_files/simd-2.c:55:16]\ _59\ =\ [valid_files/simd-2.c:55:16]\ [valid_files/simd-2.c:55:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:55:3]\ _60\ =\ (int)\ _59;\l\
+|[valid_files/simd-2.c:55:3]\ verify\ (_60,\ _58,\ _56,\ _54,\ 158,\ 109,\ 150,\ 222);\l\
+|[valid_files/simd-2.c:57:9]\ i.15_61\ =\ i;\l\
+|[valid_files/simd-2.c:57:9]\ j.16_62\ =\ j;\l\
+|[valid_files/simd-2.c:57:9]\ _63\ =\ i.15_61\ ^\ j.16_62;\l\
+|[valid_files/simd-2.c:57:5]\ k\ =\ _63;\l\
+|[valid_files/simd-2.c:58:9]\ k.17_64\ =\ k;\l\
+|[valid_files/simd-2.c:58:9]\ [valid_files/simd-2.c:58:6]\ res.v\ =\ k.17_64;\l\
+|[valid_files/simd-2.c:60:46]\ _65\ =\ [valid_files/simd-2.c:60:46]\ [valid_files/simd-2.c:60:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:60:3]\ _66\ =\ (int)\ _65;\l\
+|[valid_files/simd-2.c:60:36]\ _67\ =\ [valid_files/simd-2.c:60:36]\ [valid_files/simd-2.c:60:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:60:3]\ _68\ =\ (int)\ _67;\l\
+|[valid_files/simd-2.c:60:26]\ _69\ =\ [valid_files/simd-2.c:60:26]\ [valid_files/simd-2.c:60:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:60:3]\ _70\ =\ (int)\ _69;\l\
+|[valid_files/simd-2.c:60:16]\ _71\ =\ [valid_files/simd-2.c:60:16]\ [valid_files/simd-2.c:60:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:60:3]\ _72\ =\ (int)\ _71;\l\
+|[valid_files/simd-2.c:60:3]\ verify\ (_72,\ _70,\ _68,\ _66,\ 156,\ 105,\ 130,\ 214);\l\
+|[valid_files/simd-2.c:62:7]\ i.18_73\ =\ i;\l\
+|[valid_files/simd-2.c:62:7]\ _74\ =\ -i.18_73;\l\
+|[valid_files/simd-2.c:62:5]\ k\ =\ _74;\l\
+|[valid_files/simd-2.c:63:9]\ k.19_75\ =\ k;\l\
+|[valid_files/simd-2.c:63:9]\ [valid_files/simd-2.c:63:6]\ res.v\ =\ k.19_75;\l\
+|[valid_files/simd-2.c:64:46]\ _76\ =\ [valid_files/simd-2.c:64:46]\ [valid_files/simd-2.c:64:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:64:3]\ _77\ =\ (int)\ _76;\l\
+|[valid_files/simd-2.c:64:36]\ _78\ =\ [valid_files/simd-2.c:64:36]\ [valid_files/simd-2.c:64:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:64:3]\ _79\ =\ (int)\ _78;\l\
+|[valid_files/simd-2.c:64:26]\ _80\ =\ [valid_files/simd-2.c:64:26]\ [valid_files/simd-2.c:64:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:64:3]\ _81\ =\ (int)\ _80;\l\
+|[valid_files/simd-2.c:64:16]\ _82\ =\ [valid_files/simd-2.c:64:16]\ [valid_files/simd-2.c:64:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:64:3]\ _83\ =\ (int)\ _82;\l\
+|[valid_files/simd-2.c:64:3]\ verify\ (_83,\ _81,\ _79,\ _77,\ -150,\ -100,\ -150,\ -200);\l\
+|[valid_files/simd-2.c:67:7]\ i.20_84\ =\ i;\l\
+|[valid_files/simd-2.c:67:7]\ _85\ =\ ~i.20_84;\l\
+|[valid_files/simd-2.c:67:5]\ k\ =\ _85;\l\
+|[valid_files/simd-2.c:68:9]\ k.21_86\ =\ k;\l\
+|[valid_files/simd-2.c:68:9]\ [valid_files/simd-2.c:68:6]\ res.v\ =\ k.21_86;\l\
+|[valid_files/simd-2.c:69:46]\ _87\ =\ [valid_files/simd-2.c:69:46]\ [valid_files/simd-2.c:69:44]\ res.i[3];\l\
+|[valid_files/simd-2.c:69:3]\ _88\ =\ (int)\ _87;\l\
+|[valid_files/simd-2.c:69:36]\ _89\ =\ [valid_files/simd-2.c:69:36]\ [valid_files/simd-2.c:69:34]\ res.i[2];\l\
+|[valid_files/simd-2.c:69:3]\ _90\ =\ (int)\ _89;\l\
+|[valid_files/simd-2.c:69:26]\ _91\ =\ [valid_files/simd-2.c:69:26]\ [valid_files/simd-2.c:69:24]\ res.i[1];\l\
+|[valid_files/simd-2.c:69:3]\ _92\ =\ (int)\ _91;\l\
+|[valid_files/simd-2.c:69:16]\ _93\ =\ [valid_files/simd-2.c:69:16]\ [valid_files/simd-2.c:69:14]\ res.i[0];\l\
+|[valid_files/simd-2.c:69:3]\ _94\ =\ (int)\ _93;\l\
+|[valid_files/simd-2.c:69:3]\ verify\ (_94,\ _92,\ _90,\ _88,\ -151,\ -101,\ -151,\ -201);\l\
+|[valid_files/simd-2.c:71:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

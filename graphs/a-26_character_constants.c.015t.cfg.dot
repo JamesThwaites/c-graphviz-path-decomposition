@@ -1,0 +1,33 @@
+digraph "a-26_character_constants.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/26_character_constants.c:5:4]\ printf\ ([valid_files/26_character_constants.c:5:11]\ \"%d\\n\",\ 1);\l\
+|[valid_files/26_character_constants.c:6:4]\ printf\ ([valid_files/26_character_constants.c:6:11]\ \"%d\\n\",\ 8);\l\
+|[valid_files/26_character_constants.c:7:4]\ printf\ ([valid_files/26_character_constants.c:7:11]\ \"%d\\n\",\ 64);\l\
+|[valid_files/26_character_constants.c:8:4]\ printf\ ([valid_files/26_character_constants.c:8:11]\ \"%d\\n\",\ 1);\l\
+|[valid_files/26_character_constants.c:9:4]\ printf\ ([valid_files/26_character_constants.c:9:11]\ \"%d\\n\",\ 14);\l\
+|[valid_files/26_character_constants.c:10:4]\ printf\ ([valid_files/26_character_constants.c:10:11]\ \"%d\\n\",\ 16);\l\
+|[valid_files/26_character_constants.c:11:4]\ printf\ ([valid_files/26_character_constants.c:11:11]\ \"%d\\n\",\ 64);\l\
+|[valid_files/26_character_constants.c:12:4]\ __builtin_puts\ (&\"test\ @\"[0]);\l\
+|[valid_files/26_character_constants.c:14:11]\ D.3207\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3207;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

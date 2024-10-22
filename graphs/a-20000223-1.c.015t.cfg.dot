@@ -1,0 +1,72 @@
+digraph "a-20000223-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_check" {
+	style="dashed";
+	color="black";
+	label="check ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20000223-1.c:10:16]\ _1\ =\ -align;\l\
+|[valid_files/20000223-1.c:10:14]\ _2\ =\ align\ &\ _1;\l\
+|[valid_files/20000223-1.c:10:6]\ if\ (align\ !=\ _2)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20000223-1.c:12:7]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20000223-1.c:14:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20000223-1.c:44:3]\ check\ ([valid_files/20000223-1.c:44:3]\ \"void\",\ 1);\l\
+|[valid_files/20000223-1.c:45:3]\ check\ ([valid_files/20000223-1.c:45:3]\ \"char\",\ 1);\l\
+|[valid_files/20000223-1.c:46:3]\ check\ ([valid_files/20000223-1.c:46:3]\ \"signed\ short\",\ 2);\l\
+|[valid_files/20000223-1.c:47:3]\ check\ ([valid_files/20000223-1.c:47:3]\ \"unsigned\ short\",\ 2);\l\
+|[valid_files/20000223-1.c:48:3]\ check\ ([valid_files/20000223-1.c:48:3]\ \"signed\ int\",\ 4);\l\
+|[valid_files/20000223-1.c:49:3]\ check\ ([valid_files/20000223-1.c:49:3]\ \"unsigned\ int\",\ 4);\l\
+|[valid_files/20000223-1.c:50:3]\ check\ ([valid_files/20000223-1.c:50:3]\ \"signed\ long\",\ 8);\l\
+|[valid_files/20000223-1.c:51:3]\ check\ ([valid_files/20000223-1.c:51:3]\ \"unsigned\ long\",\ 8);\l\
+|[valid_files/20000223-1.c:52:3]\ check\ ([valid_files/20000223-1.c:52:3]\ \"signed\ long\ long\",\ 8);\l\
+|[valid_files/20000223-1.c:53:3]\ check\ ([valid_files/20000223-1.c:53:3]\ \"unsigned\ long\ long\",\ 8);\l\
+|[valid_files/20000223-1.c:54:3]\ check\ ([valid_files/20000223-1.c:54:3]\ \"float\",\ 4);\l\
+|[valid_files/20000223-1.c:55:3]\ check\ ([valid_files/20000223-1.c:55:3]\ \"double\",\ 8);\l\
+|[valid_files/20000223-1.c:56:3]\ check\ ([valid_files/20000223-1.c:56:3]\ \"long\ double\",\ 16);\l\
+|[valid_files/20000223-1.c:57:3]\ check\ ([valid_files/20000223-1.c:57:3]\ \"void\ *\",\ 8);\l\
+|[valid_files/20000223-1.c:58:3]\ check\ ([valid_files/20000223-1.c:58:3]\ \"void\ (*)()\",\ 8);\l\
+|[valid_files/20000223-1.c:59:3]\ check\ ([valid_files/20000223-1.c:59:3]\ \"struct\ A\",\ 16);\l\
+|[valid_files/20000223-1.c:60:10]\ D.2793\ =\ 0;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.2793;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

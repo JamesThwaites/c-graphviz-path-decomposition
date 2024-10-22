@@ -1,0 +1,261 @@
+digraph "a-20071120-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_vec_assert_fail" {
+	style="dashed";
+	color="black";
+	label="vec_assert_fail ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20071120-1.c:6:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_perform_access_checks" {
+	style="dashed";
+	color="black";
+	label="perform_access_checks ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20071120-1.c:42:5]\ abort\ ();\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_pop_to_parent_deferring_access_checks" {
+	style="dashed";
+	color="black";
+	label="pop_to_parent_deferring_access_checks ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20071120-1.c:60:9]\ deferred_access_no_check.0_1\ =\ deferred_access_no_check;\l\
+|[valid_files/20071120-1.c:60:8]\ if\ (deferred_access_no_check.0_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20071120-1.c:61:26]\ deferred_access_no_check.1_2\ =\ deferred_access_no_check;\l\
+|[valid_files/20071120-1.c:61:26]\ _3\ =\ deferred_access_no_check.1_2\ +\ 4294967295;\l\
+|[valid_files/20071120-1.c:61:26]\ deferred_access_no_check\ =\ _3;\l\
+[0:0]\ goto\ \<bb\ 15\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20071120-1.c:66:64]\ deferred_access_stack.3_4\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:66:12]\ if\ (deferred_access_stack.3_4\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/20071120-1.c:66:88\ discrim\ 1]\ deferred_access_stack.4_5\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:66:12\ discrim\ 1]\ iftmp.2\ =\ [valid_files/20071120-1.c:66:66]\ &[valid_files/20071120-1.c:66:88]\ deferred_access_stack.4_5-\>base;\l\
+[0:0]\ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/20071120-1.c:66:12\ discrim\ 2]\ iftmp.2\ =\ 0B;\l\
+}"];
+
+	fn_4_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/20071120-1.c:66:12\ discrim\ 4]\ _6\ =\ VEC_deferred_access_base_last\ (iftmp.2);\l\
+|[valid_files/20071120-1.c:66:9\ discrim\ 1]\ checks\ =\ [valid_files/20071120-1.c:66:100]\ _6-\>deferred_access_checks;\l\
+|[valid_files/20071120-1.c:67:60]\ deferred_access_stack.6_7\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:67:9]\ if\ (deferred_access_stack.6_7\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/20071120-1.c:67:84\ discrim\ 1]\ deferred_access_stack.7_8\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:67:9\ discrim\ 1]\ iftmp.5\ =\ [valid_files/20071120-1.c:67:62]\ &[valid_files/20071120-1.c:67:84]\ deferred_access_stack.7_8-\>base;\l\
+[0:0]\ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/20071120-1.c:67:9\ discrim\ 2]\ iftmp.5\ =\ 0B;\l\
+}"];
+
+	fn_4_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/20071120-1.c:67:9\ discrim\ 4]\ VEC_deferred_access_base_pop\ (iftmp.5);\l\
+|[valid_files/20071120-1.c:68:67]\ deferred_access_stack.9_9\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:68:15]\ if\ (deferred_access_stack.9_9\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/20071120-1.c:68:91\ discrim\ 1]\ deferred_access_stack.10_10\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:68:15\ discrim\ 1]\ iftmp.8\ =\ [valid_files/20071120-1.c:68:69]\ &[valid_files/20071120-1.c:68:91]\ deferred_access_stack.10_10-\>base;\l\
+[0:0]\ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/20071120-1.c:68:15\ discrim\ 2]\ iftmp.8\ =\ 0B;\l\
+}"];
+
+	fn_4_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/20071120-1.c:68:15\ discrim\ 4]\ ptr\ =\ VEC_deferred_access_base_last\ (iftmp.8);\l\
+|[valid_files/20071120-1.c:69:16]\ _11\ =\ [valid_files/20071120-1.c:69:16]\ ptr-\>deferring_access_checks_kind;\l\
+|[valid_files/20071120-1.c:69:12]\ if\ (_11\ ==\ 0)\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/20071120-1.c:70:6]\ perform_access_checks\ (checks);\l\
+}"];
+
+	fn_4_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/20071120-1.c:72:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_15:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_5:s -> fn_4_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_6:s -> fn_4_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_7:s -> fn_4_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_7:s -> fn_4_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_8:s -> fn_4_basic_block_10:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_9:s -> fn_4_basic_block_10:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_10:s -> fn_4_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_10:s -> fn_4_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_11:s -> fn_4_basic_block_13:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_12:s -> fn_4_basic_block_13:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_13:s -> fn_4_basic_block_14:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_13:s -> fn_4_basic_block_15:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_14:s -> fn_4_basic_block_15:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_15:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_VEC_deferred_access_base_pop" {
+	style="dashed";
+	color="black";
+	label="VEC_deferred_access_base_pop ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20071120-1.c:35:17]\ _1\ =\ [valid_files/20071120-1.c:35:17]\ vec_-\>num;\l\
+|[valid_files/20071120-1.c:35:5]\ if\ (_1\ ==\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20071120-1.c:35:31\ discrim\ 1]\ vec_assert_fail\ ();\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20071120-1.c:36:11]\ _2\ =\ [valid_files/20071120-1.c:36:11]\ vec_-\>num;\l\
+|[valid_files/20071120-1.c:36:5]\ _3\ =\ _2\ +\ 4294967295;\l\
+|[valid_files/20071120-1.c:36:5]\ [valid_files/20071120-1.c:36:11]\ vec_-\>num\ =\ _3;\l\
+|[valid_files/20071120-1.c:37:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_4:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_VEC_deferred_access_base_last" {
+	style="dashed";
+	color="black";
+	label="VEC_deferred_access_base_last ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20071120-1.c:28:5]\ if\ (vec_\ ==\ 0B)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20071120-1.c:28:25\ discrim\ 2]\ _1\ =\ [valid_files/20071120-1.c:28:25]\ vec_-\>num;\l\
+|[valid_files/20071120-1.c:28:18\ discrim\ 2]\ if\ (_1\ ==\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20071120-1.c:28:39\ discrim\ 3]\ vec_assert_fail\ ();\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/20071120-1.c:29:27]\ _2\ =\ [valid_files/20071120-1.c:29:27]\ vec_-\>num;\l\
+|[valid_files/20071120-1.c:29:33]\ _3\ =\ _2\ +\ 4294967295;\l\
+|[valid_files/20071120-1.c:29:12]\ D.2830\ =\ [valid_files/20071120-1.c:29:12]\ &[valid_files/20071120-1.c:29:22]\ [valid_files/20071120-1.c:29:17]\ vec_-\>vec[_3];\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|\<L3\>:\l\
+|[valid_files/20071120-1.c:29:12\ discrim\ 1]\ return\ D.2830;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20071120-1.c:76:29]\ _1\ =\ __builtin_malloc\ (152);\l\
+|[valid_files/20071120-1.c:76:27\ discrim\ 1]\ deferred_access_stack\ =\ _1;\l\
+|[valid_files/20071120-1.c:77:26]\ deferred_access_stack.11_2\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:77:37]\ [valid_files/20071120-1.c:77:32]\ [valid_files/20071120-1.c:77:26]\ deferred_access_stack.11_2-\>base.num\ =\ 2;\l\
+|[valid_files/20071120-1.c:78:26]\ deferred_access_stack.12_3\ =\ deferred_access_stack;\l\
+|[valid_files/20071120-1.c:78:69]\ [valid_files/20071120-1.c:78:39]\ [valid_files/20071120-1.c:78:36]\ [valid_files/20071120-1.c:78:32]\ [valid_files/20071120-1.c:78:26]\ deferred_access_stack.12_3-\>base.vec[0].deferring_access_checks_kind\ =\ 1;\l\
+|[valid_files/20071120-1.c:79:5]\ pop_to_parent_deferring_access_checks\ ();\l\
+|[valid_files/20071120-1.c:80:12]\ D.2832\ =\ 0;\l\
+}"];
+
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.2832;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_3:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+}

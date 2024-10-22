@@ -1,0 +1,141 @@
+digraph "a-pr65369.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr65369.c:11:7]\ _1\ =\ __builtin_memcmp\ (buf,\ [valid_files/pr65369.c:11:7]\ &data,\ 64);\l\
+|[valid_files/pr65369.c:11:6\ discrim\ 1]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr65369.c:12:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr65369.c:13:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr65369.c:19:3]\ D.2875\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})block];\l\
+|[valid_files/pr65369.c:19:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})[valid_files/pr65369.c:19:21]\ &buf]\ =\ D.2875;\l\
+|[valid_files/pr65369.c:20:37]\ _1\ =\ block\ +\ 4;\l\
+|[valid_files/pr65369.c:20:3]\ _2\ =\ [valid_files/pr65369.c:20:21]\ &buf\ +\ 4;\l\
+|[valid_files/pr65369.c:20:3]\ D.2876\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_1];\l\
+|[valid_files/pr65369.c:20:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_2]\ =\ D.2876;\l\
+|[valid_files/pr65369.c:21:37]\ _3\ =\ block\ +\ 8;\l\
+|[valid_files/pr65369.c:21:3]\ _4\ =\ [valid_files/pr65369.c:21:21]\ &buf\ +\ 8;\l\
+|[valid_files/pr65369.c:21:3]\ D.2877\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_3];\l\
+|[valid_files/pr65369.c:21:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_4]\ =\ D.2877;\l\
+|[valid_files/pr65369.c:22:37]\ _5\ =\ block\ +\ 12;\l\
+|[valid_files/pr65369.c:22:3]\ _6\ =\ [valid_files/pr65369.c:22:21]\ &buf\ +\ 12;\l\
+|[valid_files/pr65369.c:22:3]\ D.2878\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_5];\l\
+|[valid_files/pr65369.c:22:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_6]\ =\ D.2878;\l\
+|[valid_files/pr65369.c:23:37]\ _7\ =\ block\ +\ 16;\l\
+|[valid_files/pr65369.c:23:3]\ _8\ =\ [valid_files/pr65369.c:23:21]\ &buf\ +\ 16;\l\
+|[valid_files/pr65369.c:23:3]\ D.2879\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_7];\l\
+|[valid_files/pr65369.c:23:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_8]\ =\ D.2879;\l\
+|[valid_files/pr65369.c:24:37]\ _9\ =\ block\ +\ 20;\l\
+|[valid_files/pr65369.c:24:3]\ _10\ =\ [valid_files/pr65369.c:24:21]\ &buf\ +\ 20;\l\
+|[valid_files/pr65369.c:24:3]\ D.2880\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_9];\l\
+|[valid_files/pr65369.c:24:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_10]\ =\ D.2880;\l\
+|[valid_files/pr65369.c:25:37]\ _11\ =\ block\ +\ 24;\l\
+|[valid_files/pr65369.c:25:3]\ _12\ =\ [valid_files/pr65369.c:25:21]\ &buf\ +\ 24;\l\
+|[valid_files/pr65369.c:25:3]\ D.2881\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_11];\l\
+|[valid_files/pr65369.c:25:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_12]\ =\ D.2881;\l\
+|[valid_files/pr65369.c:26:37]\ _13\ =\ block\ +\ 28;\l\
+|[valid_files/pr65369.c:26:3]\ _14\ =\ [valid_files/pr65369.c:26:21]\ &buf\ +\ 28;\l\
+|[valid_files/pr65369.c:26:3]\ D.2882\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_13];\l\
+|[valid_files/pr65369.c:26:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_14]\ =\ D.2882;\l\
+|[valid_files/pr65369.c:27:37]\ _15\ =\ block\ +\ 32;\l\
+|[valid_files/pr65369.c:27:3]\ _16\ =\ [valid_files/pr65369.c:27:21]\ &buf\ +\ 32;\l\
+|[valid_files/pr65369.c:27:3]\ D.2883\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_15];\l\
+|[valid_files/pr65369.c:27:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_16]\ =\ D.2883;\l\
+|[valid_files/pr65369.c:28:37]\ _17\ =\ block\ +\ 36;\l\
+|[valid_files/pr65369.c:28:3]\ _18\ =\ [valid_files/pr65369.c:28:21]\ &buf\ +\ 36;\l\
+|[valid_files/pr65369.c:28:3]\ D.2884\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_17];\l\
+|[valid_files/pr65369.c:28:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_18]\ =\ D.2884;\l\
+|[valid_files/pr65369.c:29:37]\ _19\ =\ block\ +\ 40;\l\
+|[valid_files/pr65369.c:29:3]\ _20\ =\ [valid_files/pr65369.c:29:21]\ &buf\ +\ 40;\l\
+|[valid_files/pr65369.c:29:3]\ D.2885\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_19];\l\
+|[valid_files/pr65369.c:29:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_20]\ =\ D.2885;\l\
+|[valid_files/pr65369.c:30:37]\ _21\ =\ block\ +\ 44;\l\
+|[valid_files/pr65369.c:30:3]\ _22\ =\ [valid_files/pr65369.c:30:21]\ &buf\ +\ 44;\l\
+|[valid_files/pr65369.c:30:3]\ D.2886\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_21];\l\
+|[valid_files/pr65369.c:30:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_22]\ =\ D.2886;\l\
+|[valid_files/pr65369.c:31:37]\ _23\ =\ block\ +\ 48;\l\
+|[valid_files/pr65369.c:31:3]\ _24\ =\ [valid_files/pr65369.c:31:21]\ &buf\ +\ 48;\l\
+|[valid_files/pr65369.c:31:3]\ D.2887\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_23];\l\
+|[valid_files/pr65369.c:31:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_24]\ =\ D.2887;\l\
+|[valid_files/pr65369.c:32:37]\ _25\ =\ block\ +\ 52;\l\
+|[valid_files/pr65369.c:32:3]\ _26\ =\ [valid_files/pr65369.c:32:21]\ &buf\ +\ 52;\l\
+|[valid_files/pr65369.c:32:3]\ D.2888\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_25];\l\
+|[valid_files/pr65369.c:32:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_26]\ =\ D.2888;\l\
+|[valid_files/pr65369.c:33:37]\ _27\ =\ block\ +\ 56;\l\
+|[valid_files/pr65369.c:33:3]\ _28\ =\ [valid_files/pr65369.c:33:21]\ &buf\ +\ 56;\l\
+|[valid_files/pr65369.c:33:3]\ D.2889\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_27];\l\
+|[valid_files/pr65369.c:33:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_28]\ =\ D.2889;\l\
+|[valid_files/pr65369.c:34:37]\ _29\ =\ block\ +\ 60;\l\
+|[valid_files/pr65369.c:34:3]\ _30\ =\ [valid_files/pr65369.c:34:21]\ &buf\ +\ 60;\l\
+|[valid_files/pr65369.c:34:3]\ D.2890\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_29];\l\
+|[valid_files/pr65369.c:34:3]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})_30]\ =\ D.2890;\l\
+|[valid_files/pr65369.c:35:3]\ foo\ ([valid_files/pr65369.c:35:8]\ &buf);\l\
+|buf\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/pr65369.c:36:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr65369.c:42:3]\ __builtin_memset\ ([valid_files/pr65369.c:42:21]\ &input,\ 0,\ 97);\l\
+|[valid_files/pr65369.c:43:3]\ _1\ =\ [valid_files/pr65369.c:43:21]\ &input\ +\ 1;\l\
+|[valid_files/pr65369.c:43:3]\ MEM\ \<unsigned\ char[81]\>\ [(char\ *\ \{ref-all\})_1]\ =\ MEM\ \<unsigned\ char[81]\>\ [(char\ *\ \{ref-all\})[valid_files/pr65369.c:43:32]\ &data];\l\
+|[valid_files/pr65369.c:44:3]\ _2\ =\ [valid_files/pr65369.c:44:8]\ &input\ +\ 1;\l\
+|[valid_files/pr65369.c:44:3]\ bar\ (_2);\l\
+|[valid_files/pr65369.c:45:10]\ D.2891\ =\ 0;\l\
+|input\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2891;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

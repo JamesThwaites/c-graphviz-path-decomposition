@@ -1,0 +1,143 @@
+digraph "a-94_generic.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_a_f" {
+	style="dashed";
+	color="black";
+	label="a_f ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/94_generic.c:15:9]\ D.3266\ =\ 20;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/94_generic.c:15:9\ discrim\ 1]\ return\ D.3266;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_b_f" {
+	style="dashed";
+	color="black";
+	label="b_f ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/94_generic.c:20:9]\ D.3268\ =\ 10;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/94_generic.c:20:9\ discrim\ 1]\ return\ D.3268;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/94_generic.c:27:10]\ D.3270\ =\ i;\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/94_generic.c:27:10\ discrim\ 1]\ return\ D.3270;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_void_foo" {
+	style="dashed";
+	color="black";
+	label="void_foo ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/94_generic.c:29:23]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/94_generic.c:37:6]\ i\ =\ 0;\l\
+|[valid_files/94_generic.c:38:18]\ l\ =\ 2;\l\
+|[valid_files/94_generic.c:44:6]\ i\ =\ a_f\ ();\l\
+|[valid_files/94_generic.c:45:2]\ printf\ ([valid_files/94_generic.c:45:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:46:23]\ _1\ =\ a_f\ ();\l\
+|[valid_files/94_generic.c:46:4\ discrim\ 1]\ i\ =\ _1\ /\ 2;\l\
+|[valid_files/94_generic.c:47:2]\ printf\ ([valid_files/94_generic.c:47:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:48:4]\ i\ =\ 20;\l\
+|[valid_files/94_generic.c:49:2]\ printf\ ([valid_files/94_generic.c:49:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:50:4]\ i\ =\ 123;\l\
+|[valid_files/94_generic.c:51:2]\ printf\ ([valid_files/94_generic.c:51:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:52:4]\ i\ =\ 2;\l\
+|[valid_files/94_generic.c:53:2]\ printf\ ([valid_files/94_generic.c:53:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:54:4]\ i\ =\ 0;\l\
+|[valid_files/94_generic.c:55:2]\ printf\ ([valid_files/94_generic.c:55:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:56:4]\ i\ =\ 5;\l\
+|[valid_files/94_generic.c:57:2]\ printf\ ([valid_files/94_generic.c:57:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:58:4]\ i\ =\ 1;\l\
+|[valid_files/94_generic.c:59:2]\ printf\ ([valid_files/94_generic.c:59:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:60:4]\ i\ =\ 2;\l\
+|[valid_files/94_generic.c:61:2]\ printf\ ([valid_files/94_generic.c:61:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:62:4]\ i\ =\ 3;\l\
+|[valid_files/94_generic.c:63:2]\ printf\ ([valid_files/94_generic.c:63:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:64:4]\ i\ =\ 4;\l\
+|[valid_files/94_generic.c:66:2]\ printf\ ([valid_files/94_generic.c:66:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:67:2]\ __builtin_puts\ ([valid_files/94_generic.c:67:40]\ \"long\");\l\
+|[valid_files/94_generic.c:69:4]\ i\ =\ 1;\l\
+|[valid_files/94_generic.c:70:2]\ printf\ ([valid_files/94_generic.c:70:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:71:4]\ i\ =\ 3;\l\
+|[valid_files/94_generic.c:72:2]\ printf\ ([valid_files/94_generic.c:72:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:73:4]\ i\ =\ 5;\l\
+|[valid_files/94_generic.c:74:2]\ printf\ ([valid_files/94_generic.c:74:9]\ \"%d\\n\",\ i);\l\
+|[valid_files/94_generic.c:82:12]\ x\ =\ 42;\l\
+|[valid_files/94_generic.c:82:46]\ xp\ =\ 0B;\l\
+|[valid_files/94_generic.c:118:9]\ D.3272\ =\ 0;\l\
+|titi\ =\ \{CLOBBER(eos)\};\l\
+|my_x\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3272;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

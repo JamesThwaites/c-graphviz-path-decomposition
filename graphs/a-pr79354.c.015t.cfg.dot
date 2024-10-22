@@ -1,0 +1,101 @@
+digraph "a-pr79354.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr79354.c:10:17\ discrim\ 1]\ g.3_7\ =\ g;\l\
+|[valid_files/pr79354.c:10:17\ discrim\ 1]\ if\ (g.3_7\ \<=\ 31)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr79354.c:11:9]\ f.0_1\ =\ f;\l\
+|[valid_files/pr79354.c:11:8]\ if\ (f.0_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr79354.c:13:11]\ d.1_2\ =\ d;\l\
+|[valid_files/pr79354.c:13:11]\ _3\ =\ (float)\ d.1_2;\l\
+|[valid_files/pr79354.c:13:11]\ e\ =\ _3;\l\
+|[valid_files/pr79354.c:14:9]\ D.2786\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})[valid_files/pr79354.c:14:31]\ &e];\l\
+|[valid_files/pr79354.c:14:9]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})[valid_files/pr79354.c:14:27]\ &b]\ =\ D.2786;\l\
+|[valid_files/pr79354.c:15:13]\ _4\ =\ [valid_files/pr79354.c:15:13]\ *a;\l\
+|[valid_files/pr79354.c:15:11]\ b\ =\ _4;\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr79354.c:10:24\ discrim\ 2]\ g.2_5\ =\ g;\l\
+|[valid_files/pr79354.c:10:24\ discrim\ 2]\ _6\ =\ g.2_5\ +\ 1;\l\
+|[valid_files/pr79354.c:10:24\ discrim\ 2]\ g\ =\ _6;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr79354.c:10:10]\ g\ =\ 0;\l\
+[valid_files/pr79354.c:10:3]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/pr79354.c:17:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_6:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr79354.c:22:7]\ h\ =\ 5;\l\
+|[valid_files/pr79354.c:23:5]\ f\ =\ 1;\l\
+|[valid_files/pr79354.c:24:3]\ __asm__\ __volatile__(\"\"\ :\ \ :\ \ :\ \"memory\");\l\
+|[valid_files/pr79354.c:25:3]\ foo\ ([valid_files/pr79354.c:25:3]\ &h);\l\
+|[valid_files/pr79354.c:26:3]\ __asm__\ __volatile__(\"\"\ :\ \ :\ \ :\ \"memory\");\l\
+|[valid_files/pr79354.c:27:3]\ foo\ ([valid_files/pr79354.c:27:3]\ &b);\l\
+|[valid_files/pr79354.c:28:3]\ __asm__\ __volatile__(\"\"\ :\ \ :\ \ :\ \"memory\");\l\
+|[valid_files/pr79354.c:29:10]\ D.2787\ =\ 0;\l\
+|h\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2787;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

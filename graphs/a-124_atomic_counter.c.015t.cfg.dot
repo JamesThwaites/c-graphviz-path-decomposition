@@ -1,0 +1,300 @@
+digraph "a-124_atomic_counter.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_adder_simple" {
+	style="dashed";
+	color="black";
+	label="adder_simple ()";
+	subgraph cluster_6_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_6_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/124_atomic_counter.c:23:25\ discrim\ 1]\ if\ (step\ \<=\ 262139)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/124_atomic_counter.c:24:9]\ __atomic_fetch_add_8\ (counter,\ 1,\ 0);\l\
+|[valid_files/124_atomic_counter.c:23:37\ discrim\ 3]\ step\ =\ step\ +\ 1;\l\
+}"];
+
+	}
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/124_atomic_counter.c:21:20]\ counter\ =\ arg;\l\
+|[valid_files/124_atomic_counter.c:23:15]\ step\ =\ 0;\l\
+[valid_files/124_atomic_counter.c:23:5]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/124_atomic_counter.c:26:12]\ D.4387\ =\ 0B;\l\
+}"];
+
+	fn_6_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|\<L3\>:\l\
+|[valid_files/124_atomic_counter.c:26:12\ discrim\ 1]\ return\ D.4387;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_6_basic_block_4:s -> fn_6_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_4:s -> fn_6_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_5:s -> fn_6_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_6:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_adder_cmpxchg" {
+	style="dashed";
+	color="black";
+	label="adder_cmpxchg ()";
+	subgraph cluster_7_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_7_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_7_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/124_atomic_counter.c:40:25]\ cmp.0_2\ =\ cmp;\l\
+|[valid_files/124_atomic_counter.c:40:18]\ xchg\ =\ cmp.0_2\ +\ 1;\l\
+|[valid_files/124_atomic_counter.c:41:19\ discrim\ 1]\ __atomic_compare_exchange_ptr\ =\ counter;\l\
+|[valid_files/124_atomic_counter.c:41:19\ discrim\ 1]\ __atomic_compare_exchange_tmp\ =\ xchg;\l\
+|[valid_files/124_atomic_counter.c:41:19\ discrim\ 1]\ _3\ =\ __atomic_compare_exchange_tmp;\l\
+|[valid_files/124_atomic_counter.c:41:19\ discrim\ 1]\ D.4349\ =\ __atomic_compare_exchange_8\ (__atomic_compare_exchange_ptr,\ [valid_files/124_atomic_counter.c:41:19]\ &cmp,\ _3,\ 0,\ 0,\ 0);\l\
+|__atomic_compare_exchange_tmp\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/124_atomic_counter.c:41:18\ discrim\ 1]\ _4\ =\ ~D.4349;\l\
+|[valid_files/124_atomic_counter.c:41:18\ discrim\ 1]\ if\ (_4\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	}
+	fn_7_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/124_atomic_counter.c:35:25\ discrim\ 1]\ if\ (step\ \<=\ 262139)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/124_atomic_counter.c:37:22]\ __atomic_load_ptr\ =\ counter;\l\
+|[valid_files/124_atomic_counter.c:37:22]\ _1\ =\ __atomic_load_8\ (__atomic_load_ptr,\ 0);\l\
+|[valid_files/124_atomic_counter.c:37:22\ discrim\ 1]\ __atomic_load_tmp\ =\ _1;\l\
+|[valid_files/124_atomic_counter.c:37:22\ discrim\ 1]\ D.4345\ =\ __atomic_load_tmp;\l\
+|__atomic_load_tmp\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/124_atomic_counter.c:37:16]\ cmp\ =\ D.4345;\l\
+}"];
+
+	fn_7_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|cmp\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/124_atomic_counter.c:35:37\ discrim\ 2]\ step\ =\ step\ +\ 1;\l\
+}"];
+
+	}
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/124_atomic_counter.c:33:20]\ counter\ =\ arg;\l\
+|[valid_files/124_atomic_counter.c:35:15]\ step\ =\ 0;\l\
+[valid_files/124_atomic_counter.c:35:5]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/124_atomic_counter.c:45:12]\ D.4389\ =\ 0B;\l\
+}"];
+
+	fn_7_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L5\>:\l\
+|[valid_files/124_atomic_counter.c:45:12\ discrim\ 1]\ return\ D.4389;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_4:s -> fn_7_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_5:s -> fn_7_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_6:s -> fn_7_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_6:s -> fn_7_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_8:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_atomic_counter_test" {
+	style="dashed";
+	color="black";
+	label="atomic_counter_test ()";
+	subgraph cluster_8_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_8_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/124_atomic_counter.c:60:27\ discrim\ 1]\ if\ (index\ \<=\ 15)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/124_atomic_counter.c:61:9]\ _4\ =\ [valid_files/124_atomic_counter.c:61:9]\ thread[index];\l\
+|[valid_files/124_atomic_counter.c:61:9]\ _5\ =\ pthread_join\ (_4,\ 0B);\l\
+|[valid_files/124_atomic_counter.c:61:9\ discrim\ 1]\ if\ (_5\ !=\ 0)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/124_atomic_counter.c:60:41\ discrim\ 2]\ index\ =\ index\ +\ 1;\l\
+}"];
+
+	}
+	subgraph cluster_8_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_8_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/124_atomic_counter.c:57:27\ discrim\ 1]\ if\ (index\ \<=\ 15)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/124_atomic_counter.c:58:9]\ _2\ =\ [valid_files/124_atomic_counter.c:58:9]\ &[valid_files/124_atomic_counter.c:58:9]\ thread[index];\l\
+|[valid_files/124_atomic_counter.c:58:9]\ _3\ =\ pthread_create\ (_2,\ 0B,\ adder,\ [valid_files/124_atomic_counter.c:58:9]\ &counter);\l\
+|[valid_files/124_atomic_counter.c:58:9\ discrim\ 1]\ if\ (_3\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/124_atomic_counter.c:57:41\ discrim\ 2]\ index\ =\ index\ +\ 1;\l\
+}"];
+
+	}
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/124_atomic_counter.c:55:5]\ __atomic_store_ptr\ =\ [valid_files/124_atomic_counter.c:55:5]\ &counter;\l\
+|[valid_files/124_atomic_counter.c:55:5]\ __atomic_store_tmp\ =\ 0;\l\
+|[valid_files/124_atomic_counter.c:55:5]\ __atomic_store_tmp.1_1\ =\ __atomic_store_tmp;\l\
+|[valid_files/124_atomic_counter.c:55:5]\ __atomic_store_8\ (__atomic_store_ptr,\ __atomic_store_tmp.1_1,\ 0);\l\
+|__atomic_store_tmp\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/124_atomic_counter.c:57:16]\ index\ =\ 0;\l\
+[valid_files/124_atomic_counter.c:57:5]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/124_atomic_counter.c:58:9\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_8_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/124_atomic_counter.c:60:16]\ index\ =\ 0;\l\
+[valid_files/124_atomic_counter.c:60:5]\ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/124_atomic_counter.c:61:9\ discrim\ 1]\ abort\ ();\l\
+}"];
+
+	fn_8_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/124_atomic_counter.c:63:9]\ __atomic_load_ptr\ =\ [valid_files/124_atomic_counter.c:63:9]\ &counter;\l\
+|[valid_files/124_atomic_counter.c:63:9]\ _6\ =\ __atomic_load_8\ (__atomic_load_ptr,\ 5);\l\
+|[valid_files/124_atomic_counter.c:63:9\ discrim\ 1]\ __atomic_load_tmp\ =\ _6;\l\
+|[valid_files/124_atomic_counter.c:63:9\ discrim\ 1]\ D.4370\ =\ __atomic_load_tmp;\l\
+|__atomic_load_tmp\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/124_atomic_counter.c:63:8]\ if\ (D.4370\ ==\ 4194240)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/124_atomic_counter.c:64:9]\ __builtin_puts\ (&\"SUCCESS\"[0]);\l\
+[0:0]\ goto\ \<bb\ 15\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/124_atomic_counter.c:66:9]\ __builtin_puts\ (&\"FAILURE\"[0]);\l\
+}"];
+
+	fn_8_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|counter\ =\ \{CLOBBER(eos)\};\l\
+|thread\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/124_atomic_counter.c:67:1]\ return;\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_5:s -> fn_8_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_8_basic_block_6:s -> fn_8_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_6:s -> fn_8_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_7:s -> fn_8_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_8:s -> fn_8_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_8:s -> fn_8_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_10:s -> fn_8_basic_block_11:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_8_basic_block_11:s -> fn_8_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_11:s -> fn_8_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_12:s -> fn_8_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_12:s -> fn_8_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_13:s -> fn_8_basic_block_15:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_14:s -> fn_8_basic_block_15:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_15:s -> fn_8_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_9_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_9_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_9_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/124_atomic_counter.c:71:5]\ atomic_counter_test\ ([valid_files/124_atomic_counter.c:71:5]\ adder_simple);\l\
+|[valid_files/124_atomic_counter.c:72:5]\ atomic_counter_test\ ([valid_files/124_atomic_counter.c:72:5]\ adder_cmpxchg);\l\
+|[valid_files/124_atomic_counter.c:74:12]\ D.4398\ =\ 0;\l\
+}"];
+
+	fn_9_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.4398;\l\
+}"];
+
+	fn_9_basic_block_0:s -> fn_9_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_2:s -> fn_9_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_3:s -> fn_9_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_9_basic_block_0:s -> fn_9_basic_block_1:n [style="invis",constraint=true];
+}
+}

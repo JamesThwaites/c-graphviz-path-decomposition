@@ -1,0 +1,277 @@
+digraph "a-93_integer_promotion.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/93_integer_promotion.c:14:7]\ s\ =\ \{\};\l\
+|[valid_files/93_integer_promotion.c:14:7]\ s.ub\ =\ 1;\l\
+|[valid_files/93_integer_promotion.c:14:7]\ s.u\ =\ 1;\l\
+|[valid_files/93_integer_promotion.c:14:7]\ s.ullb\ =\ 1;\l\
+|[valid_files/93_integer_promotion.c:16:5]\ printf\ ([valid_files/93_integer_promotion.c:16:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:16:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:16:5]\ \"s.ub\");\l\
+|[valid_files/93_integer_promotion.c:17:5]\ printf\ ([valid_files/93_integer_promotion.c:17:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:17:5]\ \"un\",\ [valid_files/93_integer_promotion.c:17:5]\ \"s.u\");\l\
+|[valid_files/93_integer_promotion.c:18:5]\ printf\ ([valid_files/93_integer_promotion.c:18:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:18:5]\ \"un\",\ [valid_files/93_integer_promotion.c:18:5]\ \"s.ullb\");\l\
+|[valid_files/93_integer_promotion.c:19:5]\ printf\ ([valid_files/93_integer_promotion.c:19:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:19:5]\ \"un\",\ [valid_files/93_integer_promotion.c:19:5]\ \"s.ull\");\l\
+|[valid_files/93_integer_promotion.c:20:5]\ _1\ =\ [valid_files/93_integer_promotion.c:20:5]\ s.c;\l\
+|[valid_files/93_integer_promotion.c:20:5]\ if\ (_1\ \<=\ 99)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/93_integer_promotion.c:20:5\ discrim\ 1]\ iftmp.0\ =\ [valid_files/93_integer_promotion.c:20:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/93_integer_promotion.c:20:5\ discrim\ 2]\ iftmp.0\ =\ [valid_files/93_integer_promotion.c:20:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/93_integer_promotion.c:20:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:20:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.0,\ [valid_files/93_integer_promotion.c:20:5]\ \"s.c\");\l\
+|[valid_files/93_integer_promotion.c:21:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:23:5]\ printf\ ([valid_files/93_integer_promotion.c:23:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:23:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:23:5]\ \"(1\ ?\ s.ub\ :\ 1)\");\l\
+|[valid_files/93_integer_promotion.c:24:5]\ printf\ ([valid_files/93_integer_promotion.c:24:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:24:5]\ \"un\",\ [valid_files/93_integer_promotion.c:24:5]\ \"(1\ ?\ s.u\ :\ 1)\");\l\
+|[valid_files/93_integer_promotion.c:25:5]\ printf\ ([valid_files/93_integer_promotion.c:25:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:25:5]\ \"un\",\ [valid_files/93_integer_promotion.c:25:5]\ \"(1\ ?\ s.ullb\ :\ 1)\");\l\
+|[valid_files/93_integer_promotion.c:26:5]\ printf\ ([valid_files/93_integer_promotion.c:26:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:26:5]\ \"un\",\ [valid_files/93_integer_promotion.c:26:5]\ \"(1\ ?\ s.ull\ :\ 1)\");\l\
+|[valid_files/93_integer_promotion.c:27:5]\ _2\ =\ [valid_files/93_integer_promotion.c:27:5]\ s.c;\l\
+|[valid_files/93_integer_promotion.c:27:5]\ if\ (_2\ \<=\ 99)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/93_integer_promotion.c:27:5\ discrim\ 1]\ iftmp.1\ =\ [valid_files/93_integer_promotion.c:27:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/93_integer_promotion.c:27:5\ discrim\ 2]\ iftmp.1\ =\ [valid_files/93_integer_promotion.c:27:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/93_integer_promotion.c:27:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:27:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.1,\ [valid_files/93_integer_promotion.c:27:5]\ \"(1\ ?\ s.c\ :\ 1)\");\l\
+|[valid_files/93_integer_promotion.c:28:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:30:5]\ _3\ =\ [valid_files/93_integer_promotion.c:30:5]\ s.ub;\l\
+|[valid_files/93_integer_promotion.c:30:5]\ _4\ =\ (int)\ _3;\l\
+|[valid_files/93_integer_promotion.c:30:5]\ _5\ =\ _4\ \<\<\ 1;\l\
+|[valid_files/93_integer_promotion.c:30:5]\ if\ (_5\ \<=\ 99)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/93_integer_promotion.c:30:5\ discrim\ 1]\ iftmp.2\ =\ [valid_files/93_integer_promotion.c:30:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/93_integer_promotion.c:30:5\ discrim\ 2]\ iftmp.2\ =\ [valid_files/93_integer_promotion.c:30:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/93_integer_promotion.c:30:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:30:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.2,\ [valid_files/93_integer_promotion.c:30:5]\ \"s.ub\ \<\<\ 1\");\l\
+|[valid_files/93_integer_promotion.c:31:5]\ printf\ ([valid_files/93_integer_promotion.c:31:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:31:5]\ \"un\",\ [valid_files/93_integer_promotion.c:31:5]\ \"s.u\ \<\<\ 1\");\l\
+|[valid_files/93_integer_promotion.c:32:5]\ printf\ ([valid_files/93_integer_promotion.c:32:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:32:5]\ \"un\",\ [valid_files/93_integer_promotion.c:32:5]\ \"s.ullb\ \<\<\ 1\");\l\
+|[valid_files/93_integer_promotion.c:33:5]\ printf\ ([valid_files/93_integer_promotion.c:33:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:33:5]\ \"un\",\ [valid_files/93_integer_promotion.c:33:5]\ \"s.ull\ \<\<\ 1\");\l\
+|[valid_files/93_integer_promotion.c:34:5]\ _6\ =\ [valid_files/93_integer_promotion.c:34:5]\ s.c;\l\
+|[valid_files/93_integer_promotion.c:34:5]\ _7\ =\ (int)\ _6;\l\
+|[valid_files/93_integer_promotion.c:34:5]\ _8\ =\ _7\ \<\<\ 1;\l\
+|[valid_files/93_integer_promotion.c:34:5]\ if\ (_8\ \<=\ 99)\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/93_integer_promotion.c:34:5\ discrim\ 1]\ iftmp.3\ =\ [valid_files/93_integer_promotion.c:34:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/93_integer_promotion.c:34:5\ discrim\ 2]\ iftmp.3\ =\ [valid_files/93_integer_promotion.c:34:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/93_integer_promotion.c:34:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:34:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.3,\ [valid_files/93_integer_promotion.c:34:5]\ \"s.c\ \<\<\ 1\");\l\
+|[valid_files/93_integer_promotion.c:35:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:37:5]\ printf\ ([valid_files/93_integer_promotion.c:37:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:37:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:37:5]\ \"+s.ub\");\l\
+|[valid_files/93_integer_promotion.c:38:5]\ printf\ ([valid_files/93_integer_promotion.c:38:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:38:5]\ \"un\",\ [valid_files/93_integer_promotion.c:38:5]\ \"+s.u\");\l\
+|[valid_files/93_integer_promotion.c:39:5]\ printf\ ([valid_files/93_integer_promotion.c:39:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:39:5]\ \"un\",\ [valid_files/93_integer_promotion.c:39:5]\ \"+s.ullb\");\l\
+|[valid_files/93_integer_promotion.c:40:5]\ printf\ ([valid_files/93_integer_promotion.c:40:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:40:5]\ \"un\",\ [valid_files/93_integer_promotion.c:40:5]\ \"+s.ull\");\l\
+|[valid_files/93_integer_promotion.c:41:5]\ _9\ =\ [valid_files/93_integer_promotion.c:41:5]\ s.c;\l\
+|[valid_files/93_integer_promotion.c:41:5]\ if\ (_9\ \<=\ 99)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/93_integer_promotion.c:41:5\ discrim\ 1]\ iftmp.4\ =\ [valid_files/93_integer_promotion.c:41:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/93_integer_promotion.c:41:5\ discrim\ 2]\ iftmp.4\ =\ [valid_files/93_integer_promotion.c:41:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/93_integer_promotion.c:41:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:41:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.4,\ [valid_files/93_integer_promotion.c:41:5]\ \"+s.c\");\l\
+|[valid_files/93_integer_promotion.c:42:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:44:5]\ _10\ =\ [valid_files/93_integer_promotion.c:44:5]\ s.ub;\l\
+|[valid_files/93_integer_promotion.c:44:5]\ _11\ =\ (int)\ _10;\l\
+|[valid_files/93_integer_promotion.c:44:5]\ _12\ =\ -100\ -\ _11;\l\
+|[valid_files/93_integer_promotion.c:44:5]\ if\ (_12\ \<\ 0)\l\
+\ \ goto\ \<bb\ 18\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/93_integer_promotion.c:44:5\ discrim\ 1]\ iftmp.5\ =\ [valid_files/93_integer_promotion.c:44:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 20\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/93_integer_promotion.c:44:5\ discrim\ 2]\ iftmp.5\ =\ [valid_files/93_integer_promotion.c:44:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/93_integer_promotion.c:44:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:44:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.5,\ [valid_files/93_integer_promotion.c:44:5]\ \"-s.ub\");\l\
+|[valid_files/93_integer_promotion.c:45:5]\ printf\ ([valid_files/93_integer_promotion.c:45:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:45:5]\ \"un\",\ [valid_files/93_integer_promotion.c:45:5]\ \"-s.u\");\l\
+|[valid_files/93_integer_promotion.c:46:5]\ printf\ ([valid_files/93_integer_promotion.c:46:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:46:5]\ \"un\",\ [valid_files/93_integer_promotion.c:46:5]\ \"-s.ullb\");\l\
+|[valid_files/93_integer_promotion.c:47:5]\ printf\ ([valid_files/93_integer_promotion.c:47:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:47:5]\ \"un\",\ [valid_files/93_integer_promotion.c:47:5]\ \"-s.ull\");\l\
+|[valid_files/93_integer_promotion.c:48:5]\ _13\ =\ [valid_files/93_integer_promotion.c:48:5]\ s.c;\l\
+|[valid_files/93_integer_promotion.c:48:5]\ _14\ =\ (int)\ _13;\l\
+|[valid_files/93_integer_promotion.c:48:5]\ _15\ =\ -100\ -\ _14;\l\
+|[valid_files/93_integer_promotion.c:48:5]\ if\ (_15\ \<\ 0)\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 22\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+|[valid_files/93_integer_promotion.c:48:5\ discrim\ 1]\ iftmp.6\ =\ [valid_files/93_integer_promotion.c:48:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 23\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|[valid_files/93_integer_promotion.c:48:5\ discrim\ 2]\ iftmp.6\ =\ [valid_files/93_integer_promotion.c:48:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 23\>:\l\
+|[valid_files/93_integer_promotion.c:48:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:48:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.6,\ [valid_files/93_integer_promotion.c:48:5]\ \"-s.c\");\l\
+|[valid_files/93_integer_promotion.c:49:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:51:5]\ _16\ =\ [valid_files/93_integer_promotion.c:51:5]\ s.ub;\l\
+|[valid_files/93_integer_promotion.c:51:5]\ _17\ =\ (int)\ _16;\l\
+|[valid_files/93_integer_promotion.c:51:5]\ _18\ =\ -101\ -\ _17;\l\
+|[valid_files/93_integer_promotion.c:51:5]\ if\ (_18\ \<\ 0)\l\
+\ \ goto\ \<bb\ 24\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 25\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 24\>:\l\
+|[valid_files/93_integer_promotion.c:51:5\ discrim\ 1]\ iftmp.7\ =\ [valid_files/93_integer_promotion.c:51:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 26\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 25\>:\l\
+|[valid_files/93_integer_promotion.c:51:5\ discrim\ 2]\ iftmp.7\ =\ [valid_files/93_integer_promotion.c:51:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_26 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 26\>:\l\
+|[valid_files/93_integer_promotion.c:51:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:51:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.7,\ [valid_files/93_integer_promotion.c:51:5]\ \"~s.ub\");\l\
+|[valid_files/93_integer_promotion.c:52:5]\ printf\ ([valid_files/93_integer_promotion.c:52:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:52:5]\ \"un\",\ [valid_files/93_integer_promotion.c:52:5]\ \"~s.u\");\l\
+|[valid_files/93_integer_promotion.c:53:5]\ printf\ ([valid_files/93_integer_promotion.c:53:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:53:5]\ \"un\",\ [valid_files/93_integer_promotion.c:53:5]\ \"~s.ullb\");\l\
+|[valid_files/93_integer_promotion.c:54:5]\ printf\ ([valid_files/93_integer_promotion.c:54:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:54:5]\ \"un\",\ [valid_files/93_integer_promotion.c:54:5]\ \"~s.ull\");\l\
+|[valid_files/93_integer_promotion.c:55:5]\ _19\ =\ [valid_files/93_integer_promotion.c:55:5]\ s.c;\l\
+|[valid_files/93_integer_promotion.c:55:5]\ _20\ =\ (int)\ _19;\l\
+|[valid_files/93_integer_promotion.c:55:5]\ _21\ =\ -101\ -\ _20;\l\
+|[valid_files/93_integer_promotion.c:55:5]\ if\ (_21\ \<\ 0)\l\
+\ \ goto\ \<bb\ 27\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 28\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_27 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 27\>:\l\
+|[valid_files/93_integer_promotion.c:55:5\ discrim\ 1]\ iftmp.8\ =\ [valid_files/93_integer_promotion.c:55:5]\ \"\ \ \";\l\
+[0:0]\ goto\ \<bb\ 29\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_28 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 28\>:\l\
+|[valid_files/93_integer_promotion.c:55:5\ discrim\ 2]\ iftmp.8\ =\ [valid_files/93_integer_promotion.c:55:5]\ \"un\";\l\
+}"];
+
+	fn_0_basic_block_29 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 29\>:\l\
+|[valid_files/93_integer_promotion.c:55:5\ discrim\ 4]\ printf\ ([valid_files/93_integer_promotion.c:55:5]\ \"\ %ssigned\ :\ %s\\n\",\ iftmp.8,\ [valid_files/93_integer_promotion.c:55:5]\ \"~s.c\");\l\
+|[valid_files/93_integer_promotion.c:56:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:58:5]\ printf\ ([valid_files/93_integer_promotion.c:58:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:58:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:58:5]\ \"!s.ub\");\l\
+|[valid_files/93_integer_promotion.c:59:5]\ printf\ ([valid_files/93_integer_promotion.c:59:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:59:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:59:5]\ \"!s.u\");\l\
+|[valid_files/93_integer_promotion.c:60:5]\ printf\ ([valid_files/93_integer_promotion.c:60:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:60:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:60:5]\ \"!s.ullb\");\l\
+|[valid_files/93_integer_promotion.c:61:5]\ printf\ ([valid_files/93_integer_promotion.c:61:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:61:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:61:5]\ \"!s.ull\");\l\
+|[valid_files/93_integer_promotion.c:62:5]\ printf\ ([valid_files/93_integer_promotion.c:62:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:62:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:62:5]\ \"!s.c\");\l\
+|[valid_files/93_integer_promotion.c:63:5]\ __builtin_putchar\ (10);\l\
+|[valid_files/93_integer_promotion.c:65:5]\ printf\ ([valid_files/93_integer_promotion.c:65:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:65:5]\ \"un\",\ [valid_files/93_integer_promotion.c:65:5]\ \"+(unsigned)s.ub\");\l\
+|[valid_files/93_integer_promotion.c:66:5]\ printf\ ([valid_files/93_integer_promotion.c:66:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:66:5]\ \"un\",\ [valid_files/93_integer_promotion.c:66:5]\ \"-(unsigned)s.ub\");\l\
+|[valid_files/93_integer_promotion.c:67:5]\ printf\ ([valid_files/93_integer_promotion.c:67:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:67:5]\ \"un\",\ [valid_files/93_integer_promotion.c:67:5]\ \"~(unsigned)s.ub\");\l\
+|[valid_files/93_integer_promotion.c:68:5]\ printf\ ([valid_files/93_integer_promotion.c:68:5]\ \"\ %ssigned\ :\ %s\\n\",\ [valid_files/93_integer_promotion.c:68:5]\ \"\ \ \",\ [valid_files/93_integer_promotion.c:68:5]\ \"!(unsigned)s.ub\");\l\
+|[valid_files/93_integer_promotion.c:70:12]\ D.2818\ =\ 0;\l\
+|s\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_30 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 30\>:\l\
+|\<L28\>:\l\
+|return\ D.2818;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_9:s -> fn_0_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_12:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_13:s -> fn_0_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_16:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_15:s -> fn_0_basic_block_17:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_16:s -> fn_0_basic_block_17:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_17:s -> fn_0_basic_block_18:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_17:s -> fn_0_basic_block_19:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_18:s -> fn_0_basic_block_20:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_19:s -> fn_0_basic_block_20:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_20:s -> fn_0_basic_block_21:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_20:s -> fn_0_basic_block_22:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_21:s -> fn_0_basic_block_23:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_22:s -> fn_0_basic_block_23:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_23:s -> fn_0_basic_block_24:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_23:s -> fn_0_basic_block_25:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_24:s -> fn_0_basic_block_26:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_25:s -> fn_0_basic_block_26:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_26:s -> fn_0_basic_block_27:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_26:s -> fn_0_basic_block_28:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_27:s -> fn_0_basic_block_29:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_28:s -> fn_0_basic_block_29:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_29:s -> fn_0_basic_block_30:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_30:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

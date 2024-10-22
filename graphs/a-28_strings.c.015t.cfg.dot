@@ -1,0 +1,89 @@
+digraph "a-28_strings.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/28_strings.c:8:4]\ __builtin_memcpy\ ([valid_files/28_strings.c:8:11]\ &a,\ [valid_files/28_strings.c:8:14]\ \"hello\",\ 6);\l\
+|[valid_files/28_strings.c:9:4]\ __builtin_puts\ ([valid_files/28_strings.c:9:19]\ &a);\l\
+|[valid_files/28_strings.c:11:4]\ __builtin_memcpy\ ([valid_files/28_strings.c:11:12]\ &a,\ [valid_files/28_strings.c:11:15]\ \"gosh\",\ 2);\l\
+|[valid_files/28_strings.c:12:4]\ __builtin_puts\ ([valid_files/28_strings.c:12:19]\ &a);\l\
+|[valid_files/28_strings.c:14:19]\ _1\ =\ strcmp\ ([valid_files/28_strings.c:14:19]\ &a,\ [valid_files/28_strings.c:14:19]\ \"apple\");\l\
+|[valid_files/28_strings.c:14:4\ discrim\ 1]\ _2\ =\ _1\ \>\ 0;\l\
+|[valid_files/28_strings.c:14:4\ discrim\ 1]\ _3\ =\ (int)\ _2;\l\
+|[valid_files/28_strings.c:14:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:14:11]\ \"%d\\n\",\ _3);\l\
+|[valid_files/28_strings.c:15:19]\ _4\ =\ strcmp\ ([valid_files/28_strings.c:15:19]\ &a,\ [valid_files/28_strings.c:15:19]\ \"goere\");\l\
+|[valid_files/28_strings.c:15:4\ discrim\ 1]\ _5\ =\ _4\ \>\ 0;\l\
+|[valid_files/28_strings.c:15:4\ discrim\ 1]\ _6\ =\ (int)\ _5;\l\
+|[valid_files/28_strings.c:15:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:15:11]\ \"%d\\n\",\ _6);\l\
+|[valid_files/28_strings.c:16:19]\ _7\ =\ strcmp\ ([valid_files/28_strings.c:16:19]\ &a,\ [valid_files/28_strings.c:16:19]\ \"zebra\");\l\
+|[valid_files/28_strings.c:16:4\ discrim\ 1]\ _8\ =\ _7\ \<\ 0;\l\
+|[valid_files/28_strings.c:16:4\ discrim\ 1]\ _9\ =\ (int)\ _8;\l\
+|[valid_files/28_strings.c:16:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:16:11]\ \"%d\\n\",\ _9);\l\
+|[valid_files/28_strings.c:18:4]\ _10\ =\ strlen\ ([valid_files/28_strings.c:18:4]\ &a);\l\
+|[valid_files/28_strings.c:18:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:18:11]\ \"%d\\n\",\ _10);\l\
+|[valid_files/28_strings.c:20:4]\ D.3420\ =\ __builtin_strlen\ ([valid_files/28_strings.c:20:11]\ &a);\l\
+|[valid_files/28_strings.c:20:4\ discrim\ 1]\ D.3421\ =\ [valid_files/28_strings.c:20:11]\ &a\ +\ D.3420;\l\
+|[valid_files/28_strings.c:20:4\ discrim\ 1]\ __builtin_memcpy\ (D.3421,\ [valid_files/28_strings.c:20:14]\ \"!\",\ 2);\l\
+|[valid_files/28_strings.c:21:4]\ __builtin_puts\ ([valid_files/28_strings.c:21:19]\ &a);\l\
+|[valid_files/28_strings.c:23:19]\ _11\ =\ strncmp\ ([valid_files/28_strings.c:23:19]\ &a,\ [valid_files/28_strings.c:23:19]\ \"apple\",\ 2);\l\
+|[valid_files/28_strings.c:23:4\ discrim\ 1]\ _12\ =\ _11\ \>\ 0;\l\
+|[valid_files/28_strings.c:23:4\ discrim\ 1]\ _13\ =\ (int)\ _12;\l\
+|[valid_files/28_strings.c:23:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:23:11]\ \"%d\\n\",\ _13);\l\
+|[valid_files/28_strings.c:24:19]\ _14\ =\ strncmp\ ([valid_files/28_strings.c:24:19]\ &a,\ [valid_files/28_strings.c:24:19]\ \"goere\",\ 2);\l\
+|[valid_files/28_strings.c:24:4\ discrim\ 1]\ _15\ =\ _14\ ==\ 0;\l\
+|[valid_files/28_strings.c:24:4\ discrim\ 1]\ _16\ =\ (int)\ _15;\l\
+|[valid_files/28_strings.c:24:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:24:11]\ \"%d\\n\",\ _16);\l\
+|[valid_files/28_strings.c:25:19]\ _17\ =\ strncmp\ ([valid_files/28_strings.c:25:19]\ &a,\ [valid_files/28_strings.c:25:19]\ \"goerg\",\ 2);\l\
+|[valid_files/28_strings.c:25:4\ discrim\ 1]\ _18\ =\ _17\ ==\ 0;\l\
+|[valid_files/28_strings.c:25:4\ discrim\ 1]\ _19\ =\ (int)\ _18;\l\
+|[valid_files/28_strings.c:25:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:25:11]\ \"%d\\n\",\ _19);\l\
+|[valid_files/28_strings.c:26:19]\ _20\ =\ strncmp\ ([valid_files/28_strings.c:26:19]\ &a,\ [valid_files/28_strings.c:26:19]\ \"zebra\",\ 2);\l\
+|[valid_files/28_strings.c:26:4\ discrim\ 1]\ _21\ =\ _20\ \<\ 0;\l\
+|[valid_files/28_strings.c:26:4\ discrim\ 1]\ _22\ =\ (int)\ _21;\l\
+|[valid_files/28_strings.c:26:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:26:11]\ \"%d\\n\",\ _22);\l\
+|[valid_files/28_strings.c:28:4]\ _23\ =\ strchr\ ([valid_files/28_strings.c:28:4]\ &a,\ 111);\l\
+|[valid_files/28_strings.c:28:4\ discrim\ 1]\ __builtin_puts\ (_23);\l\
+|[valid_files/28_strings.c:29:4]\ _24\ =\ strrchr\ ([valid_files/28_strings.c:29:4]\ &a,\ 108);\l\
+|[valid_files/28_strings.c:29:4\ discrim\ 1]\ __builtin_puts\ (_24);\l\
+|[valid_files/28_strings.c:30:19]\ _25\ =\ strrchr\ ([valid_files/28_strings.c:30:19]\ &a,\ 120);\l\
+|[valid_files/28_strings.c:30:4\ discrim\ 1]\ _26\ =\ _25\ ==\ 0B;\l\
+|[valid_files/28_strings.c:30:4\ discrim\ 1]\ _27\ =\ (int)\ _26;\l\
+|[valid_files/28_strings.c:30:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:30:11]\ \"%d\\n\",\ _27);\l\
+|[valid_files/28_strings.c:32:4]\ memset\ ([valid_files/28_strings.c:32:11]\ &[valid_files/28_strings.c:32:13]\ a[1],\ 114,\ 4);\l\
+|[valid_files/28_strings.c:33:4]\ __builtin_puts\ ([valid_files/28_strings.c:33:19]\ &a);\l\
+|[valid_files/28_strings.c:35:4]\ D.3422\ =\ MEM\ \<unsigned\ short\>\ [(char\ *\ \{ref-all\})[valid_files/28_strings.c:35:18]\ &a];\l\
+|[valid_files/28_strings.c:35:4]\ MEM\ \<unsigned\ short\>\ [(char\ *\ \{ref-all\})&a\ +\ 2B]\ =\ D.3422;\l\
+|[valid_files/28_strings.c:36:4]\ __builtin_puts\ ([valid_files/28_strings.c:36:19]\ &a);\l\
+|[valid_files/28_strings.c:38:19]\ _28\ =\ memcmp\ ([valid_files/28_strings.c:38:19]\ &a,\ [valid_files/28_strings.c:38:19]\ \"apple\",\ 4);\l\
+|[valid_files/28_strings.c:38:4\ discrim\ 1]\ _29\ =\ _28\ \>\ 0;\l\
+|[valid_files/28_strings.c:38:4\ discrim\ 1]\ _30\ =\ (int)\ _29;\l\
+|[valid_files/28_strings.c:38:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:38:11]\ \"%d\\n\",\ _30);\l\
+|[valid_files/28_strings.c:39:19]\ _31\ =\ memcmp\ ([valid_files/28_strings.c:39:19]\ &a,\ [valid_files/28_strings.c:39:19]\ \"grgr\",\ 4);\l\
+|[valid_files/28_strings.c:39:4\ discrim\ 1]\ _32\ =\ _31\ ==\ 0;\l\
+|[valid_files/28_strings.c:39:4\ discrim\ 1]\ _33\ =\ (int)\ _32;\l\
+|[valid_files/28_strings.c:39:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:39:11]\ \"%d\\n\",\ _33);\l\
+|[valid_files/28_strings.c:40:19]\ _34\ =\ memcmp\ ([valid_files/28_strings.c:40:19]\ &a,\ [valid_files/28_strings.c:40:19]\ \"zebra\",\ 4);\l\
+|[valid_files/28_strings.c:40:4\ discrim\ 1]\ _35\ =\ _34\ \<\ 0;\l\
+|[valid_files/28_strings.c:40:4\ discrim\ 1]\ _36\ =\ (int)\ _35;\l\
+|[valid_files/28_strings.c:40:4\ discrim\ 1]\ printf\ ([valid_files/28_strings.c:40:11]\ \"%d\\n\",\ _36);\l\
+|[valid_files/28_strings.c:42:11]\ D.3419\ =\ 0;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3419;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

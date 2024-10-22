@@ -1,0 +1,107 @@
+digraph "a-20080122-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_do_segfault" {
+	style="dashed";
+	color="black";
+	label="do_segfault ()";
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20080122-1.c:12:17\ discrim\ 1]\ if\ (i\ \<\ len)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20080122-1.c:13:5]\ __asm__\ __volatile__(\"\");\l\
+|[valid_files/20080122-1.c:15:32]\ _1\ =\ i\ *\ 2;\l\
+|[valid_files/20080122-1.c:15:32]\ _2\ =\ (sizetype)\ _1;\l\
+|[valid_files/20080122-1.c:15:30]\ _3\ =\ out_buf\ +\ _2;\l\
+|[valid_files/20080122-1.c:15:13]\ _4\ =\ i\ *\ 2;\l\
+|[valid_files/20080122-1.c:15:13]\ _5\ =\ (sizetype)\ _4;\l\
+|[valid_files/20080122-1.c:15:11]\ _6\ =\ in_buf\ +\ _5;\l\
+|[valid_files/20080122-1.c:15:30]\ _7\ =\ [valid_files/20080122-1.c:15:30]\ *_3;\l\
+|[valid_files/20080122-1.c:15:17]\ [valid_files/20080122-1.c:15:11]\ *_6\ =\ _7;\l\
+|[valid_files/20080122-1.c:17:5]\ __asm__\ __volatile__(\"\");\l\
+|[valid_files/20080122-1.c:19:35]\ _8\ =\ i\ *\ 2;\l\
+|[valid_files/20080122-1.c:19:35]\ _9\ =\ (sizetype)\ _8;\l\
+|[valid_files/20080122-1.c:19:33]\ _10\ =\ out_buf\ +\ _9;\l\
+|[valid_files/20080122-1.c:19:33]\ _11\ =\ [valid_files/20080122-1.c:19:33]\ *_10;\l\
+|[valid_files/20080122-1.c:19:33]\ _12\ =\ (int)\ _11;\l\
+|[valid_files/20080122-1.c:19:51]\ _13\ =\ i\ *\ 2;\l\
+|[valid_files/20080122-1.c:19:51]\ _14\ =\ (sizetype)\ _13;\l\
+|[valid_files/20080122-1.c:19:48]\ _15\ =\ _14\ +\ 1;\l\
+|[valid_files/20080122-1.c:19:48]\ _16\ =\ out_buf\ +\ _15;\l\
+|[valid_files/20080122-1.c:19:48]\ _17\ =\ [valid_files/20080122-1.c:19:48]\ *_16;\l\
+|[valid_files/20080122-1.c:19:48]\ _18\ =\ (int)\ _17;\l\
+|[valid_files/20080122-1.c:19:57]\ _19\ =\ _18\ \<\<\ 8;\l\
+|[valid_files/20080122-1.c:19:39]\ _20\ =\ _12\ \|\ _19;\l\
+|[valid_files/20080122-1.c:19:63]\ _21\ =\ _20\ \>\>\ 8;\l\
+|[valid_files/20080122-1.c:19:14]\ _22\ =\ i\ *\ 2;\l\
+|[valid_files/20080122-1.c:19:14]\ _23\ =\ (sizetype)\ _22;\l\
+|[valid_files/20080122-1.c:19:11]\ _24\ =\ _23\ +\ 1;\l\
+|[valid_files/20080122-1.c:19:11]\ _25\ =\ in_buf\ +\ _24;\l\
+|[valid_files/20080122-1.c:19:21]\ _26\ =\ (unsigned\ char)\ _21;\l\
+|[valid_files/20080122-1.c:19:21]\ [valid_files/20080122-1.c:19:11]\ *_25\ =\ _26;\l\
+|[valid_files/20080122-1.c:21:5]\ __asm__\ __volatile__(\"\");\l\
+|[valid_files/20080122-1.c:12:25\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20080122-1.c:12:10]\ i\ =\ 0;\l\
+[valid_files/20080122-1.c:12:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/20080122-1.c:23:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_4:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20080122-1.c:27:6]\ outbuf\ =\ \"buffer\ \ \ \ \ \";\l\
+|[valid_files/20080122-1.c:28:6]\ inbuf\ =\ \"\\f\";\l\
+|[valid_files/20080122-1.c:30:3]\ __asm__\ __volatile__(\"\");\l\
+|[valid_files/20080122-1.c:31:3]\ do_segfault\ ([valid_files/20080122-1.c:31:15]\ &inbuf,\ [valid_files/20080122-1.c:31:22]\ &outbuf,\ 12);\l\
+|[valid_files/20080122-1.c:32:3]\ __asm__\ __volatile__(\"\");\l\
+|[valid_files/20080122-1.c:34:10]\ D.2787\ =\ 0;\l\
+|outbuf\ =\ \{CLOBBER(eos)\};\l\
+|inbuf\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2787;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

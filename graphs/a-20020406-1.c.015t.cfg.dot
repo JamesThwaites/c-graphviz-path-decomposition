@@ -1,0 +1,428 @@
+digraph "a-20020406-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_FFmul" {
+	style="dashed";
+	color="black";
+	label="FFmul ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:11:10]\ D.2843\ =\ x;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20020406-1.c:11:10\ discrim\ 1]\ return\ D.2843;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFdeg" {
+	style="dashed";
+	color="black";
+	label="DUPFFdeg ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:27:11]\ D.2845\ =\ [valid_files/20020406-1.c:27:11]\ f-\>deg;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20020406-1.c:27:11\ discrim\ 1]\ return\ D.2845;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFnew" {
+	style="dashed";
+	color="black";
+	label="DUPFFnew ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:33:22]\ ans\ =\ malloc\ (16);\l\
+|[valid_files/20020406-1.c:34:15]\ [valid_files/20020406-1.c:34:6]\ ans-\>coeffs\ =\ 0B;\l\
+|[valid_files/20020406-1.c:35:6]\ if\ (maxdeg\ \>=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20020406-1.c:35:56\ discrim\ 1]\ _1\ =\ maxdeg\ +\ 1;\l\
+|[valid_files/20020406-1.c:35:43\ discrim\ 1]\ _2\ =\ (long\ unsigned\ int)\ _1;\l\
+|[valid_files/20020406-1.c:35:43\ discrim\ 1]\ _3\ =\ calloc\ (_2,\ 4);\l\
+|[valid_files/20020406-1.c:35:32\ discrim\ 1]\ [valid_files/20020406-1.c:35:23]\ ans-\>coeffs\ =\ _3;\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20020406-1.c:36:15]\ [valid_files/20020406-1.c:36:6]\ ans-\>maxdeg\ =\ maxdeg;\l\
+|[valid_files/20020406-1.c:37:12]\ [valid_files/20020406-1.c:37:6]\ ans-\>deg\ =\ -1;\l\
+|[valid_files/20020406-1.c:38:10]\ D.2849\ =\ ans;\l\
+}"];
+
+	fn_2_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L2\>:\l\
+|[valid_files/20020406-1.c:38:10\ discrim\ 1]\ return\ D.2849;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_4:s -> fn_2_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFfree" {
+	style="dashed";
+	color="black";
+	label="DUPFFfree ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:43:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFswap" {
+	style="dashed";
+	color="black";
+	label="DUPFFswap ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:47:1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFcopy" {
+	style="dashed";
+	color="black";
+	label="DUPFFcopy ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:52:10]\ D.2851\ =\ x;\l\
+}"];
+
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/20020406-1.c:52:10\ discrim\ 1]\ return\ D.2851;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_3:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFshift_add" {
+	style="dashed";
+	color="black";
+	label="DUPFFshift_add ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:58:1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_DUPFFexgcd" {
+	style="dashed";
+	color="black";
+	label="DUPFFexgcd ()";
+	subgraph cluster_7_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_7_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_7_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/20020406-1.c:88:12]\ _26\ =\ DUPFFdeg\ (u);\l\
+|[valid_files/20020406-1.c:88:24\ discrim\ 1]\ if\ (dv\ \<=\ _26)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/20020406-1.c:90:12]\ du\ =\ DUPFFdeg\ (u);\l\
+|[valid_files/20020406-1.c:91:14]\ _16\ =\ [valid_files/20020406-1.c:91:14]\ u-\>coeffs;\l\
+|[valid_files/20020406-1.c:91:22]\ _17\ =\ (long\ unsigned\ int)\ du;\l\
+|[valid_files/20020406-1.c:91:22]\ _18\ =\ _17\ *\ 4;\l\
+|[valid_files/20020406-1.c:91:22]\ _19\ =\ _16\ +\ _18;\l\
+|[valid_files/20020406-1.c:91:11]\ lcu\ =\ [valid_files/20020406-1.c:91:22]\ *_19;\l\
+|[valid_files/20020406-1.c:92:11]\ q\ =\ FFmul\ (lcu,\ lcvrecip);\l\
+|[valid_files/20020406-1.c:93:7]\ _20\ =\ p\ -\ q;\l\
+|[valid_files/20020406-1.c:93:7]\ _21\ =\ du\ -\ dv;\l\
+|[valid_files/20020406-1.c:93:7]\ DUPFFshift_add\ (u,\ v,\ _21,\ _20);\l\
+|[valid_files/20020406-1.c:94:7]\ _22\ =\ p\ -\ q;\l\
+|[valid_files/20020406-1.c:94:7]\ _23\ =\ du\ -\ dv;\l\
+|[valid_files/20020406-1.c:94:7]\ DUPFFshift_add\ (uf,\ vf,\ _23,\ _22);\l\
+|[valid_files/20020406-1.c:95:7]\ _24\ =\ p\ -\ q;\l\
+|[valid_files/20020406-1.c:95:7]\ _25\ =\ du\ -\ dv;\l\
+|[valid_files/20020406-1.c:95:7]\ DUPFFshift_add\ (ug,\ vg,\ _25,\ _24);\l\
+}"];
+
+	}
+	fn_7_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/20020406-1.c:84:10]\ _27\ =\ DUPFFdeg\ (v);\l\
+|[valid_files/20020406-1.c:84:22\ discrim\ 1]\ if\ (_27\ \>\ 0)\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/20020406-1.c:86:10]\ dv\ =\ DUPFFdeg\ (v);\l\
+|[valid_files/20020406-1.c:87:26]\ _11\ =\ [valid_files/20020406-1.c:87:26]\ v-\>coeffs;\l\
+|[valid_files/20020406-1.c:87:34]\ _12\ =\ (long\ unsigned\ int)\ dv;\l\
+|[valid_files/20020406-1.c:87:34]\ _13\ =\ _12\ *\ 4;\l\
+|[valid_files/20020406-1.c:87:34]\ _14\ =\ _11\ +\ _13;\l\
+|[valid_files/20020406-1.c:87:16]\ _15\ =\ [valid_files/20020406-1.c:87:16]\ *_14;\l\
+|[valid_files/20020406-1.c:87:16]\ lcvrecip\ =\ FFmul\ (1,\ _15);\l\
+[valid_files/20020406-1.c:88:11]\ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/20020406-1.c:97:5]\ DUPFFswap\ (u,\ v);\l\
+|[valid_files/20020406-1.c:98:5]\ DUPFFswap\ (uf,\ vf);\l\
+|[valid_files/20020406-1.c:99:5]\ DUPFFswap\ (ug,\ vg);\l\
+}"];
+
+	}
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:67:3]\ _1\ =\ DUPFFdeg\ (g);\l\
+|[valid_files/20020406-1.c:67:3\ discrim\ 1]\ _2\ =\ DUPFFdeg\ (f);\l\
+|[valid_files/20020406-1.c:67:3\ discrim\ 2]\ printf\ ([valid_files/20020406-1.c:67:10]\ \"DUPFFexgcd\ called\ on\ degrees\ %d\ and\ %d\\n\",\ _2,\ _1);\l\
+|[valid_files/20020406-1.c:68:7]\ _3\ =\ DUPFFdeg\ (f);\l\
+|[valid_files/20020406-1.c:68:21\ discrim\ 1]\ _4\ =\ DUPFFdeg\ (g);\l\
+|[valid_files/20020406-1.c:68:6\ discrim\ 2]\ if\ (_3\ \<\ _4)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20020406-1.c:68:41\ discrim\ 1]\ D.2855\ =\ DUPFFexgcd\ (gcofac,\ fcofac,\ g,\ f);\l\
+|[valid_files/20020406-1.c:68:41\ discrim\ 1]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/20020406-1.c:68:41]\ goto\ \<bb\ 22\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/20020406-1.c:69:7]\ _5\ =\ DUPFFdeg\ (f);\l\
+|[valid_files/20020406-1.c:69:6\ discrim\ 1]\ if\ (_5\ !=\ 2)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/20020406-1.c:69:27\ discrim\ 2]\ _6\ =\ DUPFFdeg\ (g);\l\
+|[valid_files/20020406-1.c:69:24\ discrim\ 1]\ if\ (_6\ !=\ 1)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/20020406-1.c:69:45\ discrim\ 3]\ abort\ ();\l\
+}"];
+
+	fn_7_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/20020406-1.c:70:8]\ _7\ =\ [valid_files/20020406-1.c:70:8]\ f-\>coeffs;\l\
+|[valid_files/20020406-1.c:70:16]\ _8\ =\ [valid_files/20020406-1.c:70:16]\ *_7;\l\
+|[valid_files/20020406-1.c:70:6]\ if\ (_8\ ==\ 0)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/20020406-1.c:70:33\ discrim\ 1]\ D.2855\ =\ f;\l\
+|[valid_files/20020406-1.c:70:33\ discrim\ 1]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/20020406-1.c:70:33]\ goto\ \<bb\ 22\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/20020406-1.c:72:5]\ p\ =\ 2;\l\
+|[valid_files/20020406-1.c:74:8]\ df\ =\ DUPFFdeg\ (f);\l\
+|[valid_files/20020406-1.c:74:25\ discrim\ 1]\ if\ (df\ \<\ 0)\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/20020406-1.c:74:37\ discrim\ 1]\ df\ =\ 0;\l\
+}"];
+
+	fn_7_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/20020406-1.c:75:8]\ dg\ =\ DUPFFdeg\ (g);\l\
+|[valid_files/20020406-1.c:75:25\ discrim\ 1]\ if\ (dg\ \<\ 0)\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/20020406-1.c:75:37\ discrim\ 1]\ dg\ =\ 0;\l\
+}"];
+
+	fn_7_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/20020406-1.c:76:7]\ u\ =\ DUPFFcopy\ (f);\l\
+|[valid_files/20020406-1.c:77:7]\ v\ =\ DUPFFcopy\ (g);\l\
+|[valid_files/20020406-1.c:79:8]\ uf\ =\ DUPFFnew\ (dg);\l\
+|[valid_files/20020406-1.c:79:24\ discrim\ 1]\ _9\ =\ [valid_files/20020406-1.c:79:24]\ uf-\>coeffs;\l\
+|[valid_files/20020406-1.c:79:36\ discrim\ 1]\ [valid_files/20020406-1.c:79:32]\ *_9\ =\ 1;\l\
+|[valid_files/20020406-1.c:79:49\ discrim\ 1]\ [valid_files/20020406-1.c:79:43]\ uf-\>deg\ =\ 0;\l\
+|[valid_files/20020406-1.c:80:8]\ ug\ =\ DUPFFnew\ (df);\l\
+|[valid_files/20020406-1.c:81:8]\ vf\ =\ DUPFFnew\ (dg);\l\
+|[valid_files/20020406-1.c:82:8]\ vg\ =\ DUPFFnew\ (df);\l\
+|[valid_files/20020406-1.c:82:24\ discrim\ 1]\ _10\ =\ [valid_files/20020406-1.c:82:24]\ vg-\>coeffs;\l\
+|[valid_files/20020406-1.c:82:36\ discrim\ 1]\ [valid_files/20020406-1.c:82:32]\ *_10\ =\ 1;\l\
+|[valid_files/20020406-1.c:82:49\ discrim\ 1]\ [valid_files/20020406-1.c:82:43]\ vg-\>deg\ =\ 0;\l\
+[valid_files/20020406-1.c:84:9]\ goto\ \<bb\ 18\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/20020406-1.c:101:7]\ _28\ =\ DUPFFdeg\ (v);\l\
+|[valid_files/20020406-1.c:101:6\ discrim\ 1]\ if\ (_28\ ==\ 0)\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/20020406-1.c:103:5]\ DUPFFswap\ (u,\ v);\l\
+|[valid_files/20020406-1.c:104:5]\ DUPFFswap\ (uf,\ vf);\l\
+|[valid_files/20020406-1.c:105:5]\ DUPFFswap\ (ug,\ vg);\l\
+}"];
+
+	fn_7_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+|[valid_files/20020406-1.c:107:3]\ DUPFFfree\ (vf);\l\
+|[valid_files/20020406-1.c:108:3]\ DUPFFfree\ (vg);\l\
+|[valid_files/20020406-1.c:109:3]\ DUPFFfree\ (v);\l\
+|[valid_files/20020406-1.c:110:11]\ [valid_files/20020406-1.c:110:3]\ *fcofac\ =\ uf;\l\
+|[valid_files/20020406-1.c:111:11]\ [valid_files/20020406-1.c:111:3]\ *gcofac\ =\ ug;\l\
+|[valid_files/20020406-1.c:112:10]\ D.2855\ =\ u;\l\
+}"];
+
+	fn_7_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|\<L19\>:\l\
+|return\ D.2855;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_22:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_5:s -> fn_7_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_5:s -> fn_7_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_8:s -> fn_7_basic_block_22:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_9:s -> fn_7_basic_block_10:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_9:s -> fn_7_basic_block_11:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_10:s -> fn_7_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_11:s -> fn_7_basic_block_12:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_11:s -> fn_7_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_12:s -> fn_7_basic_block_13:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_13:s -> fn_7_basic_block_18:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_14:s -> fn_7_basic_block_16:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_15:s -> fn_7_basic_block_16:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_16:s -> fn_7_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_16:s -> fn_7_basic_block_17:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_17:s -> fn_7_basic_block_18:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_18:s -> fn_7_basic_block_14:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_18:s -> fn_7_basic_block_19:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_19:s -> fn_7_basic_block_20:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_19:s -> fn_7_basic_block_21:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_20:s -> fn_7_basic_block_21:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_21:s -> fn_7_basic_block_22:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_22:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20020406-1.c:120:7]\ f\ =\ DUPFFnew\ (1);\l\
+|[valid_files/20020406-1.c:120:21\ discrim\ 1]\ _1\ =\ [valid_files/20020406-1.c:120:21]\ f-\>coeffs;\l\
+|[valid_files/20020406-1.c:120:29\ discrim\ 1]\ _2\ =\ _1\ +\ 4;\l\
+|[valid_files/20020406-1.c:120:33\ discrim\ 1]\ [valid_files/20020406-1.c:120:29]\ *_2\ =\ 1;\l\
+|[valid_files/20020406-1.c:120:45\ discrim\ 1]\ [valid_files/20020406-1.c:120:39]\ f-\>deg\ =\ 1;\l\
+|[valid_files/20020406-1.c:121:7]\ g\ =\ DUPFFnew\ (2);\l\
+|[valid_files/20020406-1.c:121:21\ discrim\ 1]\ _3\ =\ [valid_files/20020406-1.c:121:21]\ g-\>coeffs;\l\
+|[valid_files/20020406-1.c:121:29\ discrim\ 1]\ _4\ =\ _3\ +\ 8;\l\
+|[valid_files/20020406-1.c:121:33\ discrim\ 1]\ [valid_files/20020406-1.c:121:29]\ *_4\ =\ 1;\l\
+|[valid_files/20020406-1.c:121:45\ discrim\ 1]\ [valid_files/20020406-1.c:121:39]\ g-\>deg\ =\ 2;\l\
+|[valid_files/20020406-1.c:123:3]\ _5\ =\ DUPFFdeg\ (g);\l\
+|[valid_files/20020406-1.c:123:3\ discrim\ 1]\ _6\ =\ DUPFFdeg\ (f);\l\
+|[valid_files/20020406-1.c:123:3\ discrim\ 2]\ printf\ ([valid_files/20020406-1.c:123:10]\ \"calling\ DUPFFexgcd\ on\ degrees\ %d\ and\ %d\\n\",\ _6,\ _5);\l\
+|[valid_files/20020406-1.c:124:7]\ h\ =\ DUPFFexgcd\ ([valid_files/20020406-1.c:124:7]\ &cf,\ [valid_files/20020406-1.c:124:7]\ &cg,\ f,\ g);\l\
+|[valid_files/20020406-1.c:125:10]\ D.2868\ =\ 0;\l\
+|cf\ =\ \{CLOBBER(eos)\};\l\
+|cg\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_8_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2868;\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+}

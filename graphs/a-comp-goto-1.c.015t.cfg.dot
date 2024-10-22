@@ -1,0 +1,322 @@
+digraph "a-comp-goto-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/comp-goto-1.c:56:3]\ abort\ ();\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_simulator_kernel" {
+	style="dashed";
+	color="black";
+	label="simulator_kernel ()";
+	subgraph cluster_7_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_7_3 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 3";
+	labeljust=l;
+	penwidth=2;
+	fn_7_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/comp-goto-1.c:98:25]\ _24\ =\ (long\ unsigned\ int)\ x;\l\
+|[valid_files/comp-goto-1.c:98:25]\ _25\ =\ _24\ *\ 16;\l\
+|[valid_files/comp-goto-1.c:98:25]\ _26\ =\ tlb\ +\ _25;\l\
+|[valid_files/comp-goto-1.c:98:16]\ tag\ =\ [valid_files/comp-goto-1.c:98:28]\ _26-\>vaddr_tag;\l\
+|[valid_files/comp-goto-1.c:99:32]\ _27\ =\ (long\ unsigned\ int)\ x;\l\
+|[valid_files/comp-goto-1.c:99:32]\ _28\ =\ _27\ *\ 16;\l\
+|[valid_files/comp-goto-1.c:99:32]\ _29\ =\ tlb\ +\ _28;\l\
+|[valid_files/comp-goto-1.c:99:14]\ rigged_paddr\ =\ [valid_files/comp-goto-1.c:99:35]\ _29-\>rigged_paddr;\l\
+|[valid_files/comp-goto-1.c:101:5]\ if\ (tag\ ==\ vaddr_page)\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/comp-goto-1.c:109:7]\ tag.2_46\ =\ (int)\ tag;\l\
+|[valid_files/comp-goto-1.c:109:5]\ if\ (tag.2_46\ \<\ 0)\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/comp-goto-1.c:117:9]\ _62\ =\ x\ +\ 4294967295;\l\
+|[valid_files/comp-goto-1.c:117:4]\ x\ =\ _62\ &\ 255;\l\
+[valid_files/comp-goto-1.c:97:7]\ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	}
+	fn_7_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|goto\ gotovar.3;\l\
+}"];
+
+	fn_7_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/comp-goto-1.c:90:2]\ L_LOAD32_RR:\l\
+|[valid_files/comp-goto-1.c:92:19]\ vaddr_page\ =\ r2\ /\ 4096;\l\
+|[valid_files/comp-goto-1.c:93:18]\ x\ =\ vaddr_page\ &\ 255;\l\
+|[valid_files/comp-goto-1.c:94:15]\ pc.1_23\ =\ pc;\l\
+|[valid_files/comp-goto-1.c:94:15]\ pc\ =\ pc.1_23\ +\ 8;\l\
+|[valid_files/comp-goto-1.c:94:10]\ insn\ =\ [valid_files/comp-goto-1.c:94:12]\ *pc.1_23;\l\
+}"];
+
+	fn_7_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/comp-goto-1.c:103:68]\ _30\ =\ (long\ unsigned\ int)\ r2;\l\
+|[valid_files/comp-goto-1.c:103:68]\ _31\ =\ rigged_paddr\ +\ _30;\l\
+|[valid_files/comp-goto-1.c:103:43]\ _32\ =\ (uint32\ *)\ _31;\l\
+|[valid_files/comp-goto-1.c:103:7]\ _33\ =\ (sizetype)\ s1;\l\
+|[valid_files/comp-goto-1.c:103:7]\ _34\ =\ regs\ +\ _33;\l\
+|[valid_files/comp-goto-1.c:103:42]\ _35\ =\ [valid_files/comp-goto-1.c:103:42]\ *_32;\l\
+|[valid_files/comp-goto-1.c:103:40]\ [valid_files/comp-goto-1.c:103:6]\ *_34\ =\ _35;\l\
+|[valid_files/comp-goto-1.c:104:49]\ _36\ =\ [valid_files/comp-goto-1.c:104:49]\ [valid_files/comp-goto-1.c:104:46]\ insn.f1.s2;\l\
+|[valid_files/comp-goto-1.c:104:49]\ _37\ =\ (int)\ _36;\l\
+|[valid_files/comp-goto-1.c:104:53]\ _38\ =\ _37\ \<\<\ 2;\l\
+|[valid_files/comp-goto-1.c:104:53]\ _39\ =\ (sizetype)\ _38;\l\
+|[valid_files/comp-goto-1.c:104:12]\ _40\ =\ regs\ +\ _39;\l\
+|[valid_files/comp-goto-1.c:104:9]\ r2\ =\ [valid_files/comp-goto-1.c:104:11]\ *_40;\l\
+|[valid_files/comp-goto-1.c:105:18]\ _41\ =\ [valid_files/comp-goto-1.c:105:18]\ [valid_files/comp-goto-1.c:105:15]\ insn.f1.s1;\l\
+|[valid_files/comp-goto-1.c:105:18]\ _42\ =\ (int)\ _41;\l\
+|[valid_files/comp-goto-1.c:105:9]\ s1\ =\ _42\ \<\<\ 2;\l\
+|[valid_files/comp-goto-1.c:106:32]\ _43\ =\ [valid_files/comp-goto-1.c:106:32]\ [valid_files/comp-goto-1.c:106:29]\ insn.f1.offset;\l\
+|[valid_files/comp-goto-1.c:106:32]\ _44\ =\ (sizetype)\ _43;\l\
+|[valid_files/comp-goto-1.c:106:23]\ _45\ =\ base_addr\ +\ _44;\l\
+|gotovar.3\ =\ _45;\l\
+[valid_files/comp-goto-1.c:106:6]\ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/comp-goto-1.c:111:54]\ _47\ =\ f\ ();\l\
+|[valid_files/comp-goto-1.c:111:43\ discrim\ 1]\ _48\ =\ (uint32\ *)\ _47;\l\
+|[valid_files/comp-goto-1.c:111:7\ discrim\ 1]\ _49\ =\ (sizetype)\ s1;\l\
+|[valid_files/comp-goto-1.c:111:7\ discrim\ 1]\ _50\ =\ regs\ +\ _49;\l\
+|[valid_files/comp-goto-1.c:111:42\ discrim\ 1]\ _51\ =\ [valid_files/comp-goto-1.c:111:42]\ *_48;\l\
+|[valid_files/comp-goto-1.c:111:40\ discrim\ 1]\ [valid_files/comp-goto-1.c:111:6]\ *_50\ =\ _51;\l\
+|[valid_files/comp-goto-1.c:112:49]\ _52\ =\ [valid_files/comp-goto-1.c:112:49]\ [valid_files/comp-goto-1.c:112:46]\ insn.f1.s2;\l\
+|[valid_files/comp-goto-1.c:112:49]\ _53\ =\ (int)\ _52;\l\
+|[valid_files/comp-goto-1.c:112:53]\ _54\ =\ _53\ \<\<\ 2;\l\
+|[valid_files/comp-goto-1.c:112:53]\ _55\ =\ (sizetype)\ _54;\l\
+|[valid_files/comp-goto-1.c:112:12]\ _56\ =\ regs\ +\ _55;\l\
+|[valid_files/comp-goto-1.c:112:9]\ r2\ =\ [valid_files/comp-goto-1.c:112:11]\ *_56;\l\
+|[valid_files/comp-goto-1.c:113:18]\ _57\ =\ [valid_files/comp-goto-1.c:113:18]\ [valid_files/comp-goto-1.c:113:15]\ insn.f1.s1;\l\
+|[valid_files/comp-goto-1.c:113:18]\ _58\ =\ (int)\ _57;\l\
+|[valid_files/comp-goto-1.c:113:9]\ s1\ =\ _58\ \<\<\ 2;\l\
+|[valid_files/comp-goto-1.c:114:32]\ _59\ =\ [valid_files/comp-goto-1.c:114:32]\ [valid_files/comp-goto-1.c:114:29]\ insn.f1.offset;\l\
+|[valid_files/comp-goto-1.c:114:32]\ _60\ =\ (sizetype)\ _59;\l\
+|[valid_files/comp-goto-1.c:114:23]\ _61\ =\ base_addr\ +\ _60;\l\
+|gotovar.3\ =\ _61;\l\
+[valid_files/comp-goto-1.c:114:6]\ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	}
+	subgraph cluster_7_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_7_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/comp-goto-1.c:79:21\ discrim\ 1]\ if\ (i\ \<\ what)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/comp-goto-1.c:80:39]\ _1\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/comp-goto-1.c:80:39]\ _2\ =\ _1\ *\ 8;\l\
+|[valid_files/comp-goto-1.c:80:39]\ _3\ =\ program\ +\ _2;\l\
+|[valid_files/comp-goto-1.c:80:45]\ _4\ =\ [valid_files/comp-goto-1.c:80:45]\ [valid_files/comp-goto-1.c:80:42]\ _3-\>f1.offset;\l\
+|[valid_files/comp-goto-1.c:80:45]\ _5\ =\ (int)\ _4;\l\
+|[valid_files/comp-goto-1.c:80:31]\ _6\ =\ [valid_files/comp-goto-1.c:80:31]\ op_map[_5];\l\
+|[valid_files/comp-goto-1.c:80:54]\ _7\ =\ _6\ -\ base_addr;\l\
+|[valid_files/comp-goto-1.c:80:9]\ _8\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/comp-goto-1.c:80:9]\ _9\ =\ _8\ *\ 8;\l\
+|[valid_files/comp-goto-1.c:80:9]\ _10\ =\ program\ +\ _9;\l\
+|[valid_files/comp-goto-1.c:80:54]\ _11\ =\ (\<unnamed-signed:18\>)\ _7;\l\
+|[valid_files/comp-goto-1.c:80:23]\ [valid_files/comp-goto-1.c:80:15]\ [valid_files/comp-goto-1.c:80:12]\ _10-\>f1.offset\ =\ _11;\l\
+|[valid_files/comp-goto-1.c:79:30\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/comp-goto-1.c:62:20]\ pc\ =\ [valid_files/comp-goto-1.c:62:28]\ env-\>pc;\l\
+|[valid_files/comp-goto-1.c:63:19]\ regs\ =\ [valid_files/comp-goto-1.c:63:26]\ &[valid_files/comp-goto-1.c:63:29]\ env-\>registers;\l\
+|[valid_files/comp-goto-1.c:67:18]\ base_addr\ =\ [valid_files/comp-goto-1.c:67:30]\ &sim_base_addr;\l\
+|[valid_files/comp-goto-1.c:68:25]\ tlb\ =\ [valid_files/comp-goto-1.c:68:31]\ &[valid_files/comp-goto-1.c:68:34]\ env-\>tlb_tab;\l\
+|[valid_files/comp-goto-1.c:70:6]\ if\ (what\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/comp-goto-1.c:78:15]\ program\ =\ [valid_files/comp-goto-1.c:78:28]\ env-\>program;\l\
+|[valid_files/comp-goto-1.c:79:14]\ i\ =\ 0;\l\
+[valid_files/comp-goto-1.c:79:7]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/comp-goto-1.c:83:2]\ sim_base_addr:\l\
+|[valid_files/comp-goto-1.c:85:13]\ pc.0_12\ =\ pc;\l\
+|[valid_files/comp-goto-1.c:85:13]\ pc\ =\ pc.0_12\ +\ 8;\l\
+|[valid_files/comp-goto-1.c:85:8]\ insn\ =\ [valid_files/comp-goto-1.c:85:10]\ *pc.0_12;\l\
+|[valid_files/comp-goto-1.c:86:47]\ _13\ =\ [valid_files/comp-goto-1.c:86:47]\ [valid_files/comp-goto-1.c:86:44]\ insn.f1.s2;\l\
+|[valid_files/comp-goto-1.c:86:47]\ _14\ =\ (int)\ _13;\l\
+|[valid_files/comp-goto-1.c:86:51]\ _15\ =\ _14\ \<\<\ 2;\l\
+|[valid_files/comp-goto-1.c:86:51]\ _16\ =\ (sizetype)\ _15;\l\
+|[valid_files/comp-goto-1.c:86:10]\ _17\ =\ regs\ +\ _16;\l\
+|[valid_files/comp-goto-1.c:86:6]\ r2\ =\ [valid_files/comp-goto-1.c:86:9]\ *_17;\l\
+|[valid_files/comp-goto-1.c:87:16]\ _18\ =\ [valid_files/comp-goto-1.c:87:16]\ [valid_files/comp-goto-1.c:87:13]\ insn.f1.s1;\l\
+|[valid_files/comp-goto-1.c:87:16]\ _19\ =\ (int)\ _18;\l\
+|[valid_files/comp-goto-1.c:87:6]\ s1\ =\ _19\ \<\<\ 2;\l\
+|[valid_files/comp-goto-1.c:88:29]\ _20\ =\ [valid_files/comp-goto-1.c:88:29]\ [valid_files/comp-goto-1.c:88:26]\ insn.f1.offset;\l\
+|[valid_files/comp-goto-1.c:88:29]\ _21\ =\ (sizetype)\ _20;\l\
+|[valid_files/comp-goto-1.c:88:20]\ _22\ =\ base_addr\ +\ _21;\l\
+|gotovar.3\ =\ _22;\l\
+}"];
+
+	fn_7_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/comp-goto-1.c:120:5]\ L_METAOP_DONE:\l\
+|[valid_files/comp-goto-1.c:121:16]\ _63\ =\ (sizetype)\ s1;\l\
+|[valid_files/comp-goto-1.c:121:16]\ _64\ =\ regs\ +\ _63;\l\
+|[valid_files/comp-goto-1.c:121:15]\ D.3449\ =\ [valid_files/comp-goto-1.c:121:15]\ *_64;\l\
+|insn\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_7_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|\<L14\>:\l\
+|[valid_files/comp-goto-1.c:121:15]\ return\ D.3449;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_5:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_5:s -> fn_7_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_5:s -> fn_7_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_6:s -> fn_7_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_6:n [style="dotted,bold",color=red,weight=10,constraint=false];
+	fn_7_basic_block_7:s -> fn_7_basic_block_8:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_14:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_7_basic_block_8:s -> fn_7_basic_block_9:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_9:s -> fn_7_basic_block_10:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_9:s -> fn_7_basic_block_11:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_10:s -> fn_7_basic_block_7:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_11:s -> fn_7_basic_block_12:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_11:s -> fn_7_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_12:s -> fn_7_basic_block_7:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_13:s -> fn_7_basic_block_9:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_7_basic_block_14:s -> fn_7_basic_block_15:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_15:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	subgraph cluster_8_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_8_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/comp-goto-1.c:149:17\ discrim\ 1]\ if\ (i\ \<=\ 1)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/comp-goto-1.c:150:16]\ [valid_files/comp-goto-1.c:150:12]\ program[i]\ =\ insn;\l\
+|[valid_files/comp-goto-1.c:149:23\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/comp-goto-1.c:135:38]\ _1\ =\ malloc\ (8192);\l\
+|[valid_files/comp-goto-1.c:135:15\ discrim\ 1]\ a_page\ =\ (host_addr_t)\ _1;\l\
+|[valid_files/comp-goto-1.c:136:17]\ a_vaddr\ =\ 1193040;\l\
+|[valid_files/comp-goto-1.c:137:17]\ vaddr_page\ =\ a_vaddr\ /\ 4096;\l\
+|[valid_files/comp-goto-1.c:138:27]\ _2\ =\ a_page\ +\ 4095;\l\
+|[valid_files/comp-goto-1.c:138:10]\ a_page\ =\ _2\ &\ 18446744073709547520;\l\
+|[valid_files/comp-goto-1.c:140:29]\ _3\ =\ vaddr_page\ &\ 255;\l\
+|[valid_files/comp-goto-1.c:140:49]\ [valid_files/comp-goto-1.c:140:38]\ [valid_files/comp-goto-1.c:140:14]\ [valid_files/comp-goto-1.c:140:6]\ env.tlb_tab[_3].vaddr_tag\ =\ vaddr_page;\l\
+|[valid_files/comp-goto-1.c:141:74]\ _4\ =\ vaddr_page\ *\ 4096;\l\
+|[valid_files/comp-goto-1.c:141:74]\ _5\ =\ (long\ unsigned\ int)\ _4;\l\
+|[valid_files/comp-goto-1.c:141:29]\ _6\ =\ vaddr_page\ &\ 255;\l\
+|[valid_files/comp-goto-1.c:141:61]\ _7\ =\ a_page\ -\ _5;\l\
+|[valid_files/comp-goto-1.c:141:52]\ [valid_files/comp-goto-1.c:141:38]\ [valid_files/comp-goto-1.c:141:14]\ [valid_files/comp-goto-1.c:141:6]\ env.tlb_tab[_6].rigged_paddr\ =\ _7;\l\
+|[valid_files/comp-goto-1.c:142:18]\ [valid_files/comp-goto-1.c:142:10]\ [valid_files/comp-goto-1.c:142:7]\ insn.f1.offset\ =\ 0;\l\
+|[valid_files/comp-goto-1.c:143:20]\ [valid_files/comp-goto-1.c:143:16]\ [valid_files/comp-goto-1.c:143:6]\ env.registers[0]\ =\ 0;\l\
+|[valid_files/comp-goto-1.c:144:20]\ [valid_files/comp-goto-1.c:144:16]\ [valid_files/comp-goto-1.c:144:6]\ env.registers[2]\ =\ a_vaddr;\l\
+|[valid_files/comp-goto-1.c:145:33]\ _8\ =\ (long\ unsigned\ int)\ a_vaddr;\l\
+|[valid_files/comp-goto-1.c:145:33]\ _9\ =\ _8\ &\ 4095;\l\
+|[valid_files/comp-goto-1.c:145:23]\ _10\ =\ a_page\ +\ _9;\l\
+|[valid_files/comp-goto-1.c:145:4]\ _11\ =\ (sint32\ *)\ _10;\l\
+|[valid_files/comp-goto-1.c:145:41]\ [valid_files/comp-goto-1.c:145:3]\ *_11\ =\ 88;\l\
+|[valid_files/comp-goto-1.c:146:14]\ [valid_files/comp-goto-1.c:146:10]\ [valid_files/comp-goto-1.c:146:7]\ insn.f1.s1\ =\ 0;\l\
+|[valid_files/comp-goto-1.c:147:14]\ [valid_files/comp-goto-1.c:147:10]\ [valid_files/comp-goto-1.c:147:7]\ insn.f1.s2\ =\ 2;\l\
+|[valid_files/comp-goto-1.c:149:10]\ i\ =\ 0;\l\
+[valid_files/comp-goto-1.c:149:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/comp-goto-1.c:152:18]\ [valid_files/comp-goto-1.c:152:10]\ [valid_files/comp-goto-1.c:152:7]\ insn.f1.offset\ =\ 1;\l\
+|[valid_files/comp-goto-1.c:153:14]\ [valid_files/comp-goto-1.c:153:10]\ [valid_files/comp-goto-1.c:153:7]\ insn.f1.s1\ =\ 0;\l\
+|[valid_files/comp-goto-1.c:154:14]\ [valid_files/comp-goto-1.c:154:10]\ program[2]\ =\ insn;\l\
+|[valid_files/comp-goto-1.c:156:10]\ [valid_files/comp-goto-1.c:156:6]\ env.pc\ =\ [valid_files/comp-goto-1.c:156:12]\ &program;\l\
+|[valid_files/comp-goto-1.c:157:15]\ [valid_files/comp-goto-1.c:157:6]\ env.program\ =\ [valid_files/comp-goto-1.c:157:17]\ &program;\l\
+|[valid_files/comp-goto-1.c:159:9]\ _12\ =\ simulator_kernel\ (3,\ [valid_files/comp-goto-1.c:159:9]\ &env);\l\
+|[valid_files/comp-goto-1.c:159:7\ discrim\ 1]\ res\ =\ (int)\ _12;\l\
+|[valid_files/comp-goto-1.c:161:6]\ if\ (res\ !=\ 88)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_8_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/comp-goto-1.c:162:5]\ abort\ ();\l\
+}"];
+
+	fn_8_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/comp-goto-1.c:163:3]\ exit\ (0);\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_8_basic_block_4:s -> fn_8_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_4:s -> fn_8_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_5:s -> fn_8_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_8_basic_block_5:s -> fn_8_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+}

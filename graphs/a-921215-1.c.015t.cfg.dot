@@ -1,0 +1,97 @@
+digraph "a-921215-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/921215-1.c:3:1]\ D.2802\ =\ __builtin_dwarf_cfa\ (0);\l\
+|[valid_files/921215-1.c:3:1\ discrim\ 1]\ FRAME.2.FRAME_BASE.PARENT\ =\ D.2802;\l\
+|[valid_files/921215-1.c:3:1\ discrim\ 1]\ __builtin_init_trampoline\ (&FRAME.2.q,\ q,\ &FRAME.2);\l\
+|[valid_files/921215-1.c:20:3]\ D.2797\ =\ __builtin_adjust_trampoline\ (&FRAME.2.q);\l\
+|[valid_files/921215-1.c:20:3\ discrim\ 1]\ D.2798\ =\ (void\ (*\<T3dc\>)\ (void\ (*\<T24f\>)\ ()))\ D.2797;\l\
+|[valid_files/921215-1.c:20:3\ discrim\ 1]\ p\ (D.2798);\ [static-chain:\ &FRAME.2]\l\
+|[valid_files/921215-1.c:22:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_q" {
+	style="dashed";
+	color="black";
+	label="q ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/921215-1.c:17:7]\ f\ ();\l\
+|[valid_files/921215-1.c:18:5]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_p" {
+	style="dashed";
+	color="black";
+	label="p ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/921215-1.c:5:8]\ D.2800\ =\ __builtin_dwarf_cfa\ (0);\l\
+|[valid_files/921215-1.c:5:8\ discrim\ 1]\ FRAME.0.FRAME_BASE.PARENT\ =\ D.2800;\l\
+|[valid_files/921215-1.c:5:8\ discrim\ 1]\ __builtin_init_trampoline\ (&FRAME.0.r,\ r,\ &FRAME.0);\l\
+|[valid_files/921215-1.c:12:7]\ D.2793\ =\ &FRAME.0.r;\l\
+|[valid_files/921215-1.c:12:7]\ D.2794\ =\ __builtin_adjust_trampoline\ (D.2793);\l\
+|[valid_files/921215-1.c:12:7\ discrim\ 1]\ D.2795\ =\ (void\ (*\<T3e0\>)\ ())\ D.2794;\l\
+|[valid_files/921215-1.c:12:7\ discrim\ 1]\ f\ (D.2795);\l\
+|[valid_files/921215-1.c:13:5]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_r" {
+	style="dashed";
+	color="black";
+	label="r ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/921215-1.c:9:4]\ foo\ ();\l\
+|[valid_files/921215-1.c:10:2]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/921215-1.c:25:7]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,64 @@
+digraph "a-pr43987.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_add_input_file" {
+	style="dashed";
+	color="black";
+	label="add_input_file ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr43987.c:9:9]\ B.0_1\ =\ [valid_files/pr43987.c:9:9]\ &B;\l\
+|[valid_files/pr43987.c:9:12]\ _2\ =\ [valid_files/pr43987.c:9:12]\ [valid_files/pr43987.c:9:4]\ MEM[(struct\ T\ *\ \{ref-all\})B.0_1].l;\l\
+|[valid_files/pr43987.c:9:18]\ [valid_files/pr43987.c:9:14]\ *_2\ =\ file;\l\
+|[valid_files/pr43987.c:10:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr43987.c:15:9]\ B.1_1\ =\ [valid_files/pr43987.c:15:9]\ &B;\l\
+|[valid_files/pr43987.c:15:15]\ [valid_files/pr43987.c:15:12]\ [valid_files/pr43987.c:15:4]\ MEM[(struct\ T\ *\ \{ref-all\})B.1_1].l\ =\ [valid_files/pr43987.c:15:17]\ &x;\l\
+|[valid_files/pr43987.c:16:3]\ add_input_file\ (-1B);\l\
+|[valid_files/pr43987.c:17:13]\ B.2_2\ =\ [valid_files/pr43987.c:17:13]\ &B;\l\
+|[valid_files/pr43987.c:17:16]\ _3\ =\ [valid_files/pr43987.c:17:16]\ [valid_files/pr43987.c:17:8]\ MEM[(struct\ T\ *\ \{ref-all\})B.2_2].l;\l\
+|[valid_files/pr43987.c:17:18]\ _4\ =\ [valid_files/pr43987.c:17:18]\ *_3;\l\
+|[valid_files/pr43987.c:17:6]\ if\ (_4\ !=\ -1B)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr43987.c:18:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr43987.c:19:10]\ D.2785\ =\ 0;\l\
+|x\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L3\>:\l\
+|return\ D.2785;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,182 @@
+digraph "a-980526-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_do_mknod" {
+	style="dashed";
+	color="black";
+	label="do_mknod ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/980526-2.c:24:5]\ if\ (dev\ ==\ 360710264)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/980526-2.c:25:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/980526-2.c:27:3]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_getname" {
+	style="dashed";
+	color="black";
+	label="getname ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/980526-2.c:34:7]\ filename.0_1\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:34:7]\ _2\ =\ (unsigned\ int)\ filename.0_1;\l\
+|[valid_files/980526-2.c:34:32]\ _3\ =\ _2\ *\ 5;\l\
+|[valid_files/980526-2.c:34:5]\ a1\ =\ _3\ +\ 1;\l\
+|[valid_files/980526-2.c:35:7]\ filename.1_4\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:35:7]\ _5\ =\ (unsigned\ int)\ filename.1_4;\l\
+|[valid_files/980526-2.c:35:32]\ _6\ =\ _5\ *\ 6;\l\
+|[valid_files/980526-2.c:35:5]\ a2\ =\ _6\ +\ 2;\l\
+|[valid_files/980526-2.c:36:7]\ filename.2_7\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:36:7]\ _8\ =\ (unsigned\ int)\ filename.2_7;\l\
+|[valid_files/980526-2.c:36:32]\ _9\ =\ _8\ *\ 7;\l\
+|[valid_files/980526-2.c:36:5]\ a3\ =\ _9\ +\ 3;\l\
+|[valid_files/980526-2.c:37:7]\ filename.3_10\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:37:7]\ _11\ =\ (unsigned\ int)\ filename.3_10;\l\
+|[valid_files/980526-2.c:37:32]\ _12\ =\ _11\ *\ 8;\l\
+|[valid_files/980526-2.c:37:5]\ a4\ =\ _12\ +\ 4;\l\
+|[valid_files/980526-2.c:38:7]\ filename.4_13\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:38:7]\ _14\ =\ (unsigned\ int)\ filename.4_13;\l\
+|[valid_files/980526-2.c:38:32]\ _15\ =\ _14\ *\ 9;\l\
+|[valid_files/980526-2.c:38:5]\ a5\ =\ _15\ +\ 5;\l\
+|[valid_files/980526-2.c:39:7]\ filename.5_16\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:39:7]\ _17\ =\ (unsigned\ int)\ filename.5_16;\l\
+|[valid_files/980526-2.c:39:32]\ _18\ =\ _17\ *\ 10;\l\
+|[valid_files/980526-2.c:39:5]\ a6\ =\ _18\ +\ 5;\l\
+|[valid_files/980526-2.c:40:7]\ filename.6_19\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:40:7]\ _20\ =\ (unsigned\ int)\ filename.6_19;\l\
+|[valid_files/980526-2.c:40:32]\ _21\ =\ _20\ *\ 11;\l\
+|[valid_files/980526-2.c:40:5]\ a7\ =\ _21\ +\ 5;\l\
+|[valid_files/980526-2.c:41:7]\ filename.7_22\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:41:7]\ _23\ =\ (unsigned\ int)\ filename.7_22;\l\
+|[valid_files/980526-2.c:41:32]\ _24\ =\ _23\ *\ 12;\l\
+|[valid_files/980526-2.c:41:5]\ a8\ =\ _24\ +\ 5;\l\
+|[valid_files/980526-2.c:42:7]\ filename.8_25\ =\ (long\ int)\ filename;\l\
+|[valid_files/980526-2.c:42:7]\ _26\ =\ (unsigned\ int)\ filename.8_25;\l\
+|[valid_files/980526-2.c:42:32]\ _27\ =\ _26\ *\ 13;\l\
+|[valid_files/980526-2.c:42:5]\ a9\ =\ _27\ +\ 5;\l\
+|[valid_files/980526-2.c:43:20]\ _28\ =\ a1\ *\ a2;\l\
+|[valid_files/980526-2.c:43:26]\ _29\ =\ a3\ *\ a4;\l\
+|[valid_files/980526-2.c:43:23]\ _30\ =\ _28\ +\ _29;\l\
+|[valid_files/980526-2.c:43:38]\ _31\ =\ a7\ *\ a8;\l\
+|[valid_files/980526-2.c:43:32]\ _32\ =\ a5\ *\ a6;\l\
+|[valid_files/980526-2.c:43:35]\ _33\ =\ _31\ +\ _32;\l\
+|[valid_files/980526-2.c:43:35]\ _34\ =\ _30\ +\ _33;\l\
+|[valid_files/980526-2.c:43:41]\ _35\ =\ a9\ +\ _34;\l\
+|[valid_files/980526-2.c:43:41]\ _36\ =\ (long\ int)\ _35;\l\
+|[valid_files/980526-2.c:43:9]\ D.2808\ =\ (char\ *)\ _36;\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/980526-2.c:43:9\ discrim\ 1]\ return\ D.2808;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_sys_mknod" {
+	style="dashed";
+	color="black";
+	label="sys_mknod ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/980526-2.c:51:8]\ tmp\ =\ getname\ (filename);\l\
+|[valid_files/980526-2.c:52:8]\ tmp.9_1\ =\ (long\ int)\ tmp;\l\
+|[valid_files/980526-2.c:52:8]\ error\ =\ (int)\ tmp.9_1;\l\
+|[valid_files/980526-2.c:53:2]\ dev.10_2\ =\ (int)\ dev;\l\
+|[valid_files/980526-2.c:53:2]\ _3\ =\ to_kdev_t\ (dev.10_2);\l\
+|[valid_files/980526-2.c:53:2\ discrim\ 1]\ do_mknod\ (tmp,\ mode,\ _3);\l\
+|[valid_files/980526-2.c:54:9]\ D.2810\ =\ error;\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/980526-2.c:54:9\ discrim\ 1]\ return\ D.2810;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_to_kdev_t" {
+	style="dashed";
+	color="black";
+	label="to_kdev_t ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/980526-2.c:13:8]\ major\ =\ dev\ \>\>\ 8;\l\
+|[valid_files/980526-2.c:14:8]\ minor\ =\ dev\ &\ 255;\l\
+|[valid_files/980526-2.c:15:21]\ _1\ =\ major\ \<\<\ 22;\l\
+|[valid_files/980526-2.c:15:29]\ _2\ =\ minor\ \|\ _1;\l\
+|[valid_files/980526-2.c:15:29]\ D.2814\ =\ (kdev_t)\ _2;\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|\<L2\>:\l\
+|return\ D.2814;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/980526-2.c:62:9]\ D.2818\ =\ sys_mknod\ ([valid_files/980526-2.c:62:19]\ \"test\",\ 1,\ 305419896);\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|\<L2\>:\l\
+|return\ D.2818;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,178 @@
+digraph "a-pr92618.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_bar" {
+	style="dashed";
+	color="black";
+	label="bar ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr92618.c:12:7]\ cnt.0_1\ =\ cnt;\l\
+|[valid_files/pr92618.c:12:7]\ _2\ =\ cnt.0_1\ +\ 2;\l\
+|[valid_files/pr92618.c:12:7]\ cnt\ =\ _2;\l\
+|[valid_files/pr92618.c:13:10]\ cnt.1_3\ =\ cnt;\l\
+|[valid_files/pr92618.c:13:10]\ _4\ =\ (long\ long\ int)\ cnt.1_3;\l\
+|[valid_files/pr92618.c:13:31]\ cnt.2_5\ =\ cnt;\l\
+|[valid_files/pr92618.c:13:31]\ _6\ =\ cnt.2_5\ +\ 1;\l\
+|[valid_files/pr92618.c:13:31]\ _7\ =\ (long\ long\ int)\ _6;\l\
+|[valid_files/pr92618.c:13:10]\ D.2797\ =\ \{_4,\ _7\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/pr92618.c:13:10\ discrim\ 1]\ return\ D.2797;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_qux" {
+	style="dashed";
+	color="black";
+	label="qux ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr92618.c:23:7]\ cnt.3_1\ =\ cnt;\l\
+|[valid_files/pr92618.c:23:7]\ _2\ =\ cnt.3_1\ +\ 2.0e+0;\l\
+|[valid_files/pr92618.c:23:7]\ cnt\ =\ _2;\l\
+|[valid_files/pr92618.c:24:30]\ cnt.4_3\ =\ cnt;\l\
+|[valid_files/pr92618.c:24:41]\ cnt.5_4\ =\ cnt;\l\
+|[valid_files/pr92618.c:24:41]\ _5\ =\ cnt.5_4\ +\ 1.0e+0;\l\
+|[valid_files/pr92618.c:24:30]\ D.2781\ =\ \{cnt.4_3,\ _5\};\l\
+|[valid_files/pr92618.c:24:10]\ D.2799\ =\ [valid_files/pr92618.c:24:10]\ VIEW_CONVERT_EXPR\<__m128i\>(D.2781);\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/pr92618.c:24:10\ discrim\ 1]\ return\ D.2799;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr92618.c:31:15]\ c\ =\ bar\ ();\l\
+|[valid_files/pr92618.c:32:15]\ d\ =\ bar\ ();\l\
+|[valid_files/pr92618.c:33:16]\ _1\ =\ [valid_files/pr92618.c:33:16]\ &[valid_files/pr92618.c:33:18]\ b[0];\l\
+|[valid_files/pr92618.c:33:22]\ [valid_files/pr92618.c:33:3]\ MEM[(__m128i\ *\ \{ref-all\})_1]\ =\ c;\l\
+|[valid_files/pr92618.c:34:16]\ _2\ =\ [valid_files/pr92618.c:34:16]\ &[valid_files/pr92618.c:34:18]\ b[2];\l\
+|[valid_files/pr92618.c:34:22]\ [valid_files/pr92618.c:34:3]\ MEM[(__m128i\ *\ \{ref-all\})_2]\ =\ d;\l\
+|[valid_files/pr92618.c:35:9]\ _3\ =\ [valid_files/pr92618.c:35:9]\ b[0];\l\
+|[valid_files/pr92618.c:35:16]\ _4\ =\ [valid_files/pr92618.c:35:16]\ b[1];\l\
+|[valid_files/pr92618.c:35:13]\ _5\ =\ _3\ +\ _4;\l\
+|[valid_files/pr92618.c:35:23]\ _6\ =\ [valid_files/pr92618.c:35:23]\ b[2];\l\
+|[valid_files/pr92618.c:35:20]\ _7\ =\ _5\ +\ _6;\l\
+|[valid_files/pr92618.c:35:30]\ _8\ =\ [valid_files/pr92618.c:35:30]\ b[3];\l\
+|[valid_files/pr92618.c:35:27]\ _9\ =\ _7\ +\ _8;\l\
+|[valid_files/pr92618.c:35:6]\ [valid_files/pr92618.c:35:3]\ *x\ =\ _9;\l\
+|[valid_files/pr92618.c:36:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_baz" {
+	style="dashed";
+	color="black";
+	label="baz ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr92618.c:42:15]\ c\ =\ qux\ ();\l\
+|[valid_files/pr92618.c:43:15]\ d\ =\ qux\ ();\l\
+|[valid_files/pr92618.c:44:16]\ _1\ =\ [valid_files/pr92618.c:44:16]\ &[valid_files/pr92618.c:44:18]\ a[0];\l\
+|[valid_files/pr92618.c:44:22]\ [valid_files/pr92618.c:44:3]\ MEM[(__m128i\ *\ \{ref-all\})_1]\ =\ c;\l\
+|[valid_files/pr92618.c:45:16]\ _2\ =\ [valid_files/pr92618.c:45:16]\ &[valid_files/pr92618.c:45:18]\ a[2];\l\
+|[valid_files/pr92618.c:45:22]\ [valid_files/pr92618.c:45:3]\ MEM[(__m128i\ *\ \{ref-all\})_2]\ =\ d;\l\
+|[valid_files/pr92618.c:46:9]\ _3\ =\ [valid_files/pr92618.c:46:9]\ a[0];\l\
+|[valid_files/pr92618.c:46:16]\ _4\ =\ [valid_files/pr92618.c:46:16]\ a[1];\l\
+|[valid_files/pr92618.c:46:13]\ _5\ =\ _3\ +\ _4;\l\
+|[valid_files/pr92618.c:46:23]\ _6\ =\ [valid_files/pr92618.c:46:23]\ a[2];\l\
+|[valid_files/pr92618.c:46:20]\ _7\ =\ _5\ +\ _6;\l\
+|[valid_files/pr92618.c:46:30]\ _8\ =\ [valid_files/pr92618.c:46:30]\ a[3];\l\
+|[valid_files/pr92618.c:46:27]\ _9\ =\ _7\ +\ _8;\l\
+|[valid_files/pr92618.c:46:6]\ [valid_files/pr92618.c:46:3]\ *x\ =\ _9;\l\
+|[valid_files/pr92618.c:48:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr92618.c:53:22]\ c\ =\ 0;\l\
+|[valid_files/pr92618.c:54:3]\ foo\ ([valid_files/pr92618.c:54:3]\ &c);\l\
+|[valid_files/pr92618.c:55:9]\ c.6_1\ =\ c;\l\
+|[valid_files/pr92618.c:55:6]\ if\ (c.6_1\ !=\ 14)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr92618.c:56:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_4_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr92618.c:58:10]\ d\ =\ 0.0;\l\
+|[valid_files/pr92618.c:59:3]\ baz\ ([valid_files/pr92618.c:59:3]\ &d);\l\
+|[valid_files/pr92618.c:60:9]\ d.7_2\ =\ d;\l\
+|[valid_files/pr92618.c:60:6]\ if\ (d.7_2\ !=\ 1.4e+1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_4_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr92618.c:61:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_4_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|c\ =\ \{CLOBBER(eos)\};\l\
+|d\ =\ \{CLOBBER(eos)\};\l\
+|[\<built-in\>:0:0]\ D.2805\ =\ 0;\l\
+}"];
+
+	fn_4_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|\<L4\>:\l\
+|[\<built-in\>:0:0\ discrim\ 1]\ return\ D.2805;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_4_basic_block_4:s -> fn_4_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_4_basic_block_6:s -> fn_4_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_7:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,41 @@
+digraph "a-34_array_assignment.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/34_array_assignment.c:7:9]\ [valid_files/34_array_assignment.c:7:5]\ a[0]\ =\ 12;\l\
+|[valid_files/34_array_assignment.c:8:9]\ [valid_files/34_array_assignment.c:8:5]\ a[1]\ =\ 23;\l\
+|[valid_files/34_array_assignment.c:9:9]\ [valid_files/34_array_assignment.c:9:5]\ a[2]\ =\ 34;\l\
+|[valid_files/34_array_assignment.c:10:9]\ [valid_files/34_array_assignment.c:10:5]\ a[3]\ =\ 45;\l\
+|[valid_files/34_array_assignment.c:12:4]\ _1\ =\ [valid_files/34_array_assignment.c:12:4]\ a[3];\l\
+|[valid_files/34_array_assignment.c:12:4]\ _2\ =\ [valid_files/34_array_assignment.c:12:4]\ a[2];\l\
+|[valid_files/34_array_assignment.c:12:4]\ _3\ =\ [valid_files/34_array_assignment.c:12:4]\ a[1];\l\
+|[valid_files/34_array_assignment.c:12:4]\ _4\ =\ [valid_files/34_array_assignment.c:12:4]\ a[0];\l\
+|[valid_files/34_array_assignment.c:12:4]\ printf\ ([valid_files/34_array_assignment.c:12:11]\ \"%d\ %d\ %d\ %d\\n\",\ _4,\ _3,\ _2,\ _1);\l\
+|[valid_files/34_array_assignment.c:18:4]\ _5\ =\ [valid_files/34_array_assignment.c:18:4]\ b[3];\l\
+|[valid_files/34_array_assignment.c:18:4]\ _6\ =\ [valid_files/34_array_assignment.c:18:4]\ b[2];\l\
+|[valid_files/34_array_assignment.c:18:4]\ _7\ =\ [valid_files/34_array_assignment.c:18:4]\ b[1];\l\
+|[valid_files/34_array_assignment.c:18:4]\ _8\ =\ [valid_files/34_array_assignment.c:18:4]\ b[0];\l\
+|[valid_files/34_array_assignment.c:18:4]\ printf\ ([valid_files/34_array_assignment.c:18:11]\ \"%d\ %d\ %d\ %d\\n\",\ _8,\ _7,\ _6,\ _5);\l\
+|[valid_files/34_array_assignment.c:20:11]\ D.3209\ =\ 0;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+|b\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3209;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

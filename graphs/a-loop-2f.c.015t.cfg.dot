@@ -1,0 +1,82 @@
+digraph "a-loop-2f.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	subgraph cluster_6_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_6_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/loop-2f.c:32:22\ discrim\ 1]\ if\ (i\ \>=\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/loop-2f.c:32:25\ discrim\ 3]\ _3\ =\ (sizetype)\ i;\l\
+|[valid_files/loop-2f.c:32:25\ discrim\ 3]\ _4\ =\ p\ +\ _3;\l\
+|[valid_files/loop-2f.c:32:33\ discrim\ 3]\ _5\ =\ p\ +\ 40;\l\
+|[valid_files/loop-2f.c:32:22\ discrim\ 3]\ if\ (_4\ \<\ _5)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/loop-2f.c:34:8]\ _1\ =\ (sizetype)\ i;\l\
+|[valid_files/loop-2f.c:34:8]\ _2\ =\ p\ +\ _1;\l\
+|[valid_files/loop-2f.c:34:12]\ [valid_files/loop-2f.c:34:8]\ *_2\ =\ -2;\l\
+|[valid_files/loop-2f.c:32:42\ discrim\ 4]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/loop-2f.c:32:10]\ i\ =\ s;\l\
+[valid_files/loop-2f.c:32:3]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/loop-2f.c:36:1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_6_basic_block_4:s -> fn_6_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_4:s -> fn_6_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_5:s -> fn_6_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_5:s -> fn_6_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_6:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/loop-2f.c:44:14]\ dev_zero\ =\ open\ ([valid_files/loop-2f.c:44:20]\ \"/dev/zero\",\ 0);\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/loop-2f.c:47:5]\ exit\ (0);\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+}

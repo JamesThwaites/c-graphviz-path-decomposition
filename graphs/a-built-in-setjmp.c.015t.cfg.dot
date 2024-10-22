@@ -1,0 +1,144 @@
+digraph "a-built-in-setjmp.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_sub2" {
+	style="dashed";
+	color="black";
+	label="sub2 ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/built-in-setjmp.c:14:3]\ __builtin_longjmp\ ([valid_files/built-in-setjmp.c:14:22]\ &buf,\ 1);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	subgraph cluster_1_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_1_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/built-in-setjmp.c:40:7]\ sub2\ ();\l\
+}"];
+
+	fn_1_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+[valid_files/built-in-setjmp.c:40:7]\ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	}
+	subgraph cluster_1_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_1_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/built-in-setjmp.c:36:22\ discrim\ 1]\ _10\ =\ p\ +\ 2;\l\
+|[valid_files/built-in-setjmp.c:36:22\ discrim\ 1]\ _11\ =\ [valid_files/built-in-setjmp.c:36:22]\ *_10;\l\
+|[valid_files/built-in-setjmp.c:36:22\ discrim\ 1]\ _12\ =\ (int)\ _11;\l\
+|[valid_files/built-in-setjmp.c:36:19\ discrim\ 1]\ if\ (i\ \<\ _12)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/built-in-setjmp.c:37:8]\ _7\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/built-in-setjmp.c:37:8]\ _8\ =\ _7\ *\ 4;\l\
+|[valid_files/built-in-setjmp.c:37:8]\ _9\ =\ q\ +\ _8;\l\
+|[valid_files/built-in-setjmp.c:37:12]\ [valid_files/built-in-setjmp.c:37:8]\ *_9\ =\ 0;\l\
+|[valid_files/built-in-setjmp.c:36:28\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/built-in-setjmp.c:20:22]\ p\ =\ __builtin_alloca\ (20);\l\
+|[valid_files/built-in-setjmp.c:22:3]\ __builtin_memcpy\ (p,\ [valid_files/built-in-setjmp.c:22:14]\ \"test\",\ 5);\l\
+|[valid_files/built-in-setjmp.c:24:7]\ __builtin_setjmp_setup\ ([valid_files/built-in-setjmp.c:24:7]\ &buf,\ &\<L0\>);\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/built-in-setjmp.c:24:7\ discrim\ 1]\ D.2802\ =\ 0;\l\
+goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|\<L0\>:\l\
+|[valid_files/built-in-setjmp.c:24:7]\ __builtin_setjmp_receiver\ (&\<L0\>);\l\
+|[valid_files/built-in-setjmp.c:24:7\ discrim\ 2]\ D.2802\ =\ 1;\l\
+goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|.ABNORMAL_DISPATCHER\ (0);\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|_1\ =\ D.2802;\l\
+|[valid_files/built-in-setjmp.c:24:6\ discrim\ 3]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/built-in-setjmp.c:26:11]\ _2\ =\ strcmp\ (p,\ [valid_files/built-in-setjmp.c:26:11]\ \"test\");\l\
+|[valid_files/built-in-setjmp.c:26:10\ discrim\ 1]\ if\ (_2\ !=\ 0)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/built-in-setjmp.c:27:2]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/built-in-setjmp.c:29:7]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/built-in-setjmp.c:33:41]\ _3\ =\ p\ +\ 2;\l\
+|[valid_files/built-in-setjmp.c:33:41]\ _4\ =\ [valid_files/built-in-setjmp.c:33:41]\ *_3;\l\
+|[valid_files/built-in-setjmp.c:33:41]\ _5\ =\ (long\ unsigned\ int)\ _4;\l\
+|[valid_files/built-in-setjmp.c:33:22]\ _6\ =\ _5\ *\ 4;\l\
+|[valid_files/built-in-setjmp.c:33:22]\ q\ =\ __builtin_alloca\ (_6);\l\
+|[valid_files/built-in-setjmp.c:36:12]\ i\ =\ 0;\l\
+[valid_files/built-in-setjmp.c:36:5]\ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_5:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_5:s -> fn_1_basic_block_4:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_6:s -> fn_1_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_9:s -> fn_1_basic_block_5:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_1_basic_block_10:s -> fn_1_basic_block_12:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_11:s -> fn_1_basic_block_12:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_12:s -> fn_1_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_12:s -> fn_1_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_13:s -> fn_1_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_13:s -> fn_1_basic_block_5:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_1_basic_block_14:s -> fn_1_basic_block_13:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

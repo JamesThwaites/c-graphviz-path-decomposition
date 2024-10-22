@@ -1,0 +1,110 @@
+digraph "a-80_flexarray.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f1char" {
+	style="dashed";
+	color="black";
+	label="f1char ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/80_flexarray.c:9:10]\ s\ =\ \"nonono\";\l\
+|[valid_files/80_flexarray.c:10:18]\ q.data\ =\ [valid_files/80_flexarray.c:10:12]\ \"bugs\";\l\
+|[valid_files/80_flexarray.c:11:14]\ _1\ =\ [valid_files/80_flexarray.c:11:14]\ s[0];\l\
+|[valid_files/80_flexarray.c:11:12]\ _2\ =\ _1\ ==\ 0;\l\
+|[valid_files/80_flexarray.c:11:12]\ D.3226\ =\ (int)\ _2;\l\
+|s\ =\ \{CLOBBER(eos)\};\l\
+|q\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/80_flexarray.c:11:12]\ return\ D.3226;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_f1int" {
+	style="dashed";
+	color="black";
+	label="f1int ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/80_flexarray.c:14:10]\ s\ =\ \"nonono\";\l\
+|[valid_files/80_flexarray.c:15:17]\ q.data\ =\ [valid_files/80_flexarray.c:15:12]\ \"bugs\";\l\
+|[valid_files/80_flexarray.c:16:14]\ _1\ =\ [valid_files/80_flexarray.c:16:14]\ s[0];\l\
+|[valid_files/80_flexarray.c:16:12]\ _2\ =\ _1\ ==\ 0;\l\
+|[valid_files/80_flexarray.c:16:12]\ D.3229\ =\ (int)\ _2;\l\
+|s\ =\ \{CLOBBER(eos)\};\l\
+|q\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/80_flexarray.c:16:12]\ return\ D.3229;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/80_flexarray.c:19:9]\ s\ =\ \"nonono\";\l\
+|[valid_files/80_flexarray.c:22:8]\ _1\ =\ f1char\ ();\l\
+|[valid_files/80_flexarray.c:22:7\ discrim\ 1]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/80_flexarray.c:22:20\ discrim\ 1]\ _2\ =\ f1int\ ();\l\
+|[valid_files/80_flexarray.c:22:17\ discrim\ 1]\ if\ (_2\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_2_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/80_flexarray.c:23:6]\ __builtin_puts\ (&\"bla\"[0]);\l\
+}"];
+
+	fn_2_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/80_flexarray.c:24:13]\ _3\ =\ [valid_files/80_flexarray.c:24:13]\ s[0];\l\
+|[valid_files/80_flexarray.c:24:11]\ _4\ =\ _3\ ==\ 0;\l\
+|[valid_files/80_flexarray.c:24:11]\ D.3235\ =\ (int)\ _4;\l\
+|s\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_2_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|\<L4\>:\l\
+|return\ D.3235;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_2_basic_block_4:s -> fn_2_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_5:s -> fn_2_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_6:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

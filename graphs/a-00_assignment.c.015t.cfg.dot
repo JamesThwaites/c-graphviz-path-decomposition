@@ -1,0 +1,32 @@
+digraph "a-00_assignment.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/00_assignment.c:6:6]\ a\ =\ 42;\l\
+|[valid_files/00_assignment.c:7:4]\ printf\ ([valid_files/00_assignment.c:7:11]\ \"%d\\n\",\ a);\l\
+|[valid_files/00_assignment.c:9:8]\ b\ =\ 64;\l\
+|[valid_files/00_assignment.c:10:4]\ printf\ ([valid_files/00_assignment.c:10:11]\ \"%d\\n\",\ b);\l\
+|[valid_files/00_assignment.c:12:8]\ c\ =\ 12;\l\
+|[valid_files/00_assignment.c:12:16]\ d\ =\ 34;\l\
+|[valid_files/00_assignment.c:13:4]\ printf\ ([valid_files/00_assignment.c:13:11]\ \"%d,\ %d\\n\",\ c,\ d);\l\
+|[valid_files/00_assignment.c:15:11]\ D.3211\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3211;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

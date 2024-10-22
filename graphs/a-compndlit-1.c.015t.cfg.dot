@@ -1,0 +1,62 @@
+digraph "a-compndlit-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/compndlit-1.c:20:43]\ o\ =\ x;\l\
+|[valid_files/compndlit-1.c:20:54]\ _1\ =\ [valid_files/compndlit-1.c:20:54]\ BIT_FIELD_REF\ \<o,\ 8,\ 0\>;\l\
+|[valid_files/compndlit-1.c:20:54]\ _2\ =\ _1\ &\ 7;\l\
+|[valid_files/compndlit-1.c:20:64]\ if\ (_2\ ==\ 1)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/compndlit-1.c:20:64\ discrim\ 1]\ iftmp.0\ =\ 10;\l\
+[0:0]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/compndlit-1.c:20:64\ discrim\ 2]\ iftmp.0\ =\ 20;\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/compndlit-1.c:20:64\ discrim\ 4]\ D.2777\ =\ iftmp.0;\l\
+|o\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/compndlit-1.c:20:32\ discrim\ 4]\ _3\ =\ (\<unnamed-unsigned:28\>)\ D.2777;\l\
+|[valid_files/compndlit-1.c:20:5\ discrim\ 4]\ x.a\ =\ 0;\l\
+|[valid_files/compndlit-1.c:20:5\ discrim\ 4]\ x.b\ =\ 0;\l\
+|[valid_files/compndlit-1.c:20:5\ discrim\ 4]\ x.c\ =\ _3;\l\
+|[valid_files/compndlit-1.c:21:11]\ _4\ =\ VIEW_CONVERT_EXPR\<unsigned\ int\>(x);\l\
+|[valid_files/compndlit-1.c:21:11]\ _5\ =\ _4\ &\ 4294967280;\l\
+|[valid_files/compndlit-1.c:21:6]\ if\ (_5\ !=\ 160)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/compndlit-1.c:22:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/compndlit-1.c:23:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

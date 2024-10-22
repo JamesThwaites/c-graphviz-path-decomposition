@@ -1,0 +1,48 @@
+digraph "a-20_pointer_comparison.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20_pointer_comparison.c:9:6]\ d\ =\ [valid_files/20_pointer_comparison.c:9:8]\ &a;\l\
+|[valid_files/20_pointer_comparison.c:10:6]\ e\ =\ [valid_files/20_pointer_comparison.c:10:8]\ &b;\l\
+|[valid_files/20_pointer_comparison.c:11:6]\ a\ =\ 12;\l\
+|[valid_files/20_pointer_comparison.c:12:6]\ b\ =\ 34;\l\
+|[valid_files/20_pointer_comparison.c:13:4]\ _1\ =\ [valid_files/20_pointer_comparison.c:13:4]\ *d;\l\
+|[valid_files/20_pointer_comparison.c:13:4]\ printf\ ([valid_files/20_pointer_comparison.c:13:11]\ \"%d\\n\",\ _1);\l\
+|[valid_files/20_pointer_comparison.c:14:4]\ _2\ =\ [valid_files/20_pointer_comparison.c:14:4]\ *e;\l\
+|[valid_files/20_pointer_comparison.c:14:4]\ printf\ ([valid_files/20_pointer_comparison.c:14:11]\ \"%d\\n\",\ _2);\l\
+|[valid_files/20_pointer_comparison.c:15:4]\ _3\ =\ d\ ==\ e;\l\
+|[valid_files/20_pointer_comparison.c:15:4]\ _4\ =\ (int)\ _3;\l\
+|[valid_files/20_pointer_comparison.c:15:4]\ printf\ ([valid_files/20_pointer_comparison.c:15:11]\ \"%d\\n\",\ _4);\l\
+|[valid_files/20_pointer_comparison.c:16:4]\ _5\ =\ d\ !=\ e;\l\
+|[valid_files/20_pointer_comparison.c:16:4]\ _6\ =\ (int)\ _5;\l\
+|[valid_files/20_pointer_comparison.c:16:4]\ printf\ ([valid_files/20_pointer_comparison.c:16:11]\ \"%d\\n\",\ _6);\l\
+|[valid_files/20_pointer_comparison.c:17:6]\ d\ =\ e;\l\
+|[valid_files/20_pointer_comparison.c:18:4]\ _7\ =\ d\ ==\ e;\l\
+|[valid_files/20_pointer_comparison.c:18:4]\ _8\ =\ (int)\ _7;\l\
+|[valid_files/20_pointer_comparison.c:18:4]\ printf\ ([valid_files/20_pointer_comparison.c:18:11]\ \"%d\\n\",\ _8);\l\
+|[valid_files/20_pointer_comparison.c:19:4]\ _9\ =\ d\ !=\ e;\l\
+|[valid_files/20_pointer_comparison.c:19:4]\ _10\ =\ (int)\ _9;\l\
+|[valid_files/20_pointer_comparison.c:19:4]\ printf\ ([valid_files/20_pointer_comparison.c:19:11]\ \"%d\\n\",\ _10);\l\
+|[valid_files/20_pointer_comparison.c:21:11]\ D.3211\ =\ 0;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+|b\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.3211;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

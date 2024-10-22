@@ -1,0 +1,930 @@
+digraph "a-90_struct-init.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_inc_global" {
+	style="dashed";
+	color="black";
+	label="inc_global ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:126:9]\ global.0_1\ =\ global;\l\
+|[valid_files/90_struct-init.c:126:9]\ _2\ =\ global.0_1\ +\ 1;\l\
+|[valid_files/90_struct-init.c:126:9]\ global\ =\ _2;\l\
+|[valid_files/90_struct-init.c:127:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_print_" {
+	style="dashed";
+	color="black";
+	label="print_ ()";
+	subgraph cluster_1_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/90_struct-init.c:138:14]\ size.2_4\ =\ size;\l\
+|[valid_files/90_struct-init.c:138:14]\ size\ =\ size.2_4\ +\ -1;\l\
+|[valid_files/90_struct-init.c:138:10]\ if\ (size.2_4\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/90_struct-init.c:139:24]\ p.1_1\ =\ p;\l\
+|[valid_files/90_struct-init.c:139:24]\ p\ =\ p.1_1\ +\ 1;\l\
+|[valid_files/90_struct-init.c:139:22]\ _2\ =\ [valid_files/90_struct-init.c:139:22]\ *p.1_1;\l\
+|[valid_files/90_struct-init.c:139:7]\ _3\ =\ (int)\ _2;\l\
+|[valid_files/90_struct-init.c:139:7]\ printf\ ([valid_files/90_struct-init.c:139:15]\ \"\ %x\",\ _3);\l\
+}"];
+
+	}
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:137:3]\ printf\ ([valid_files/90_struct-init.c:137:11]\ \"%s:\",\ name);\l\
+[valid_files/90_struct-init.c:138:9]\ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/90_struct-init.c:141:3]\ __builtin_putchar\ (10);\l\
+|[valid_files/90_struct-init.c:142:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_1_basic_block_4:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:147:12]\ ls.a\ =\ 1;\l\
+|[valid_files/90_struct-init.c:147:12]\ ls.b\ =\ 2;\l\
+|[valid_files/90_struct-init.c:147:12]\ ls.c\ =\ \"\\x03\\x04\";\l\
+|[valid_files/90_struct-init.c:148:12]\ ls2.a\ =\ 1;\l\
+|[valid_files/90_struct-init.c:148:12]\ ls2.b\ =\ 2;\l\
+|[valid_files/90_struct-init.c:148:12]\ ls2.c\ =\ \"\\x03\\x04\";\l\
+|[valid_files/90_struct-init.c:149:12]\ lt.s\ =\ \"hello\";\l\
+|[valid_files/90_struct-init.c:149:12]\ lt.a\ =\ 42;\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.s.a\ =\ 5;\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.s.b\ =\ 6;\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.s.c\ =\ \"\\x07\\b\";\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.t.s\ =\ \"huhu\";\l\
+|[valid_files/90_struct-init.c:150:12]\ lu.t.a\ =\ 43;\l\
+|[valid_files/90_struct-init.c:151:12]\ lu1.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:151:12]\ lu1.s\ =\ ls;\l\
+|[valid_files/90_struct-init.c:151:12]\ lu1.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:151:12]\ lu1.t.s\ =\ \"huhu\";\l\
+|[valid_files/90_struct-init.c:151:12]\ lu1.t.a\ =\ 43;\l\
+|[valid_files/90_struct-init.c:152:12]\ lu2.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:152:12]\ lu2.s\ =\ ls;\l\
+|[valid_files/90_struct-init.c:152:12]\ lu2.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:152:12]\ lu2.t.s\ =\ \"huhu\";\l\
+|[valid_files/90_struct-init.c:152:12]\ lu2.t.a\ =\ 43;\l\
+|[valid_files/90_struct-init.c:153:19]\ pls\ =\ [valid_files/90_struct-init.c:153:25]\ &ls;\l\
+|[valid_files/90_struct-init.c:154:12]\ ls21\ =\ [valid_files/90_struct-init.c:154:19]\ *pls;\l\
+|[valid_files/90_struct-init.c:155:12]\ lu22.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:155:12]\ lu22.s\ =\ [valid_files/90_struct-init.c:155:23]\ *pls;\l\
+|[valid_files/90_struct-init.c:155:12]\ lu22.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:155:12]\ lu22.t.s\ =\ \"huhu\";\l\
+|[valid_files/90_struct-init.c:155:12]\ lu22.t.a\ =\ 43;\l\
+|[valid_files/90_struct-init.c:157:12]\ lu21.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:157:12]\ lu21.s\ =\ ls;\l\
+|[valid_files/90_struct-init.c:157:12]\ lu21.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:157:12]\ lu21.t.s\ =\ \"huhu\";\l\
+|[valid_files/90_struct-init.c:157:12]\ lu21.t.a\ =\ 43;\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.s.a\ =\ 5;\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.s.b\ =\ 6;\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.s.c\ =\ \"\\x07\\b\";\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.t.s\ =\ \"huhu\";\l\
+|[valid_files/90_struct-init.c:160:12]\ lu3.t.a\ =\ 43;\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.s.a\ =\ 5;\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.s.b\ =\ 6;\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.s.c\ =\ \"\\x07\";\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.b\ =\ 5;\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.t.s\ =\ \"bla\";\l\
+|[valid_files/90_struct-init.c:162:12]\ lu4.t.a\ =\ 44;\l\
+|[valid_files/90_struct-init.c:164:12]\ ls3.a\ =\ 1;\l\
+|[valid_files/90_struct-init.c:164:12]\ ls3.b\ =\ 2;\l\
+|[valid_files/90_struct-init.c:164:12]\ ls3.c\ =\ \"\\x03\\x04\";\l\
+|[valid_files/90_struct-init.c:166:12]\ lv.s.a\ =\ 3;\l\
+|[valid_files/90_struct-init.c:166:12]\ lv.s.b\ =\ 4;\l\
+|[valid_files/90_struct-init.c:166:12]\ lv.s.c\ =\ \"\\x05\\x06\";\l\
+|[valid_files/90_struct-init.c:166:12]\ lv.t.s\ =\ \"haha\";\l\
+|[valid_files/90_struct-init.c:166:12]\ lv.t.a\ =\ 45;\l\
+|[valid_files/90_struct-init.c:166:12]\ lv.a\ =\ 46;\l\
+|[valid_files/90_struct-init.c:168:12]\ lv2.s\ =\ [valid_files/90_struct-init.c:168:19]\ [valid_files/90_struct-init.c:168:30]\ w-\>t.s;\l\
+|[valid_files/90_struct-init.c:168:12]\ lv2.t.s\ =\ \"hihi\";\l\
+|[valid_files/90_struct-init.c:168:12]\ lv2.t.a\ =\ 47;\l\
+|[valid_files/90_struct-init.c:168:12]\ lv2.a\ =\ 48;\l\
+|[valid_files/90_struct-init.c:170:12]\ lv3.s.a\ =\ 7;\l\
+|[valid_files/90_struct-init.c:170:12]\ lv3.s.b\ =\ 8;\l\
+|[valid_files/90_struct-init.c:170:12]\ lv3.s.c[0]\ =\ 9;\l\
+|[valid_files/90_struct-init.c:170:12]\ lv3.s.c[1]\ =\ 10;\l\
+|[valid_files/90_struct-init.c:170:12]\ lv3.t\ =\ [valid_files/90_struct-init.c:170:69]\ [valid_files/90_struct-init.c:170:66]\ [valid_files/90_struct-init.c:170:66]\ MEM[(const\ struct\ W\ *)w].t.t;\l\
+|[valid_files/90_struct-init.c:170:12]\ lv3.a\ =\ 50;\l\
+|[valid_files/90_struct-init.c:171:24]\ phdr\ =\ phdr_;\l\
+|[valid_files/90_struct-init.c:172:17]\ flow.saddr\ =\ [valid_files/90_struct-init.c:172:61]\ phdr-\>saddr;\l\
+|[valid_files/90_struct-init.c:172:17]\ flow.daddr\ =\ [valid_files/90_struct-init.c:172:39]\ phdr-\>daddr;\l\
+|[valid_files/90_struct-init.c:173:7]\ elt\ =\ 66;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2\ =\ \{\};\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[1]\ =\ 9;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[2]\ =\ 9;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[3]\ =\ 9;\l\
+|[valid_files/90_struct-init.c:175:70]\ D.3438\ =\ elt\ +\ 1;\l\
+|[valid_files/90_struct-init.c:175:12]\ _1\ =\ (unsigned\ char)\ D.3438;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[4]\ =\ _1;\l\
+|[valid_files/90_struct-init.c:175:12]\ _2\ =\ (unsigned\ char)\ D.3438;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[5]\ =\ _2;\l\
+|[valid_files/90_struct-init.c:175:12]\ _3\ =\ (unsigned\ char)\ D.3438;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[6]\ =\ _3;\l\
+|[valid_files/90_struct-init.c:175:12]\ _4\ =\ (unsigned\ char)\ D.3438;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[7]\ =\ _4;\l\
+|[valid_files/90_struct-init.c:175:12]\ elt.3\ =\ elt;\l\
+|[valid_files/90_struct-init.c:175:12]\ _5\ =\ (unsigned\ char)\ elt.3;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[8]\ =\ _5;\l\
+|[valid_files/90_struct-init.c:175:12]\ _6\ =\ (unsigned\ char)\ elt.3;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[9]\ =\ _6;\l\
+|[valid_files/90_struct-init.c:175:12]\ _7\ =\ (unsigned\ char)\ elt.3;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.s[10]\ =\ _7;\l\
+|[valid_files/90_struct-init.c:175:12]\ lt2.a\ =\ 1;\l\
+|[valid_files/90_struct-init.c:176:14]\ lssu1.y\ =\ 5;\l\
+|[valid_files/90_struct-init.c:176:14]\ lssu1.D.2835.x\ =\ 3;\l\
+|[valid_files/90_struct-init.c:177:14]\ lssu2.y\ =\ 5;\l\
+|[valid_files/90_struct-init.c:177:14]\ lssu2.D.2835.x\ =\ 3;\l\
+|[valid_files/90_struct-init.c:180:12]\ ls4.a\ =\ 1;\l\
+|[valid_files/90_struct-init.c:180:12]\ ls4.b\ =\ 2;\l\
+|[valid_files/90_struct-init.c:180:12]\ ls4.c\ =\ \"\\x03\\x04\";\l\
+|[valid_files/90_struct-init.c:184:3]\ print_\ ([valid_files/90_struct-init.c:184:3]\ \"ls\",\ [valid_files/90_struct-init.c:184:3]\ &ls,\ 4);\l\
+|[valid_files/90_struct-init.c:185:3]\ print_\ ([valid_files/90_struct-init.c:185:3]\ \"ls2\",\ [valid_files/90_struct-init.c:185:3]\ &ls2,\ 4);\l\
+|[valid_files/90_struct-init.c:186:3]\ print_\ ([valid_files/90_struct-init.c:186:3]\ \"lt\",\ [valid_files/90_struct-init.c:186:3]\ &lt,\ 17);\l\
+|[valid_files/90_struct-init.c:187:3]\ print_\ ([valid_files/90_struct-init.c:187:3]\ \"lu\",\ [valid_files/90_struct-init.c:187:3]\ &lu,\ 23);\l\
+|[valid_files/90_struct-init.c:188:3]\ print_\ ([valid_files/90_struct-init.c:188:3]\ \"lu1\",\ [valid_files/90_struct-init.c:188:3]\ &lu1,\ 23);\l\
+|[valid_files/90_struct-init.c:189:3]\ print_\ ([valid_files/90_struct-init.c:189:3]\ \"lu2\",\ [valid_files/90_struct-init.c:189:3]\ &lu2,\ 23);\l\
+|[valid_files/90_struct-init.c:190:3]\ print_\ ([valid_files/90_struct-init.c:190:3]\ \"ls21\",\ [valid_files/90_struct-init.c:190:3]\ &ls21,\ 4);\l\
+|[valid_files/90_struct-init.c:191:3]\ print_\ ([valid_files/90_struct-init.c:191:3]\ \"lu21\",\ [valid_files/90_struct-init.c:191:3]\ &lu21,\ 23);\l\
+|[valid_files/90_struct-init.c:192:3]\ print_\ ([valid_files/90_struct-init.c:192:3]\ \"lu22\",\ [valid_files/90_struct-init.c:192:3]\ &lu22,\ 23);\l\
+|[valid_files/90_struct-init.c:193:3]\ print_\ ([valid_files/90_struct-init.c:193:3]\ \"lu3\",\ [valid_files/90_struct-init.c:193:3]\ &lu3,\ 23);\l\
+|[valid_files/90_struct-init.c:194:3]\ print_\ ([valid_files/90_struct-init.c:194:3]\ \"lu4\",\ [valid_files/90_struct-init.c:194:3]\ &lu4,\ 23);\l\
+|[valid_files/90_struct-init.c:195:3]\ print_\ ([valid_files/90_struct-init.c:195:3]\ \"ls3\",\ [valid_files/90_struct-init.c:195:3]\ &ls3,\ 4);\l\
+|[valid_files/90_struct-init.c:196:3]\ print_\ ([valid_files/90_struct-init.c:196:3]\ \"lv\",\ [valid_files/90_struct-init.c:196:3]\ &lv,\ 22);\l\
+|[valid_files/90_struct-init.c:197:3]\ print_\ ([valid_files/90_struct-init.c:197:3]\ \"lv2\",\ [valid_files/90_struct-init.c:197:3]\ &lv2,\ 22);\l\
+|[valid_files/90_struct-init.c:198:3]\ print_\ ([valid_files/90_struct-init.c:198:3]\ \"lv3\",\ [valid_files/90_struct-init.c:198:3]\ &lv3,\ 22);\l\
+|[valid_files/90_struct-init.c:199:3]\ print_\ ([valid_files/90_struct-init.c:199:3]\ \"lt2\",\ [valid_files/90_struct-init.c:199:3]\ &lt2,\ 17);\l\
+|[valid_files/90_struct-init.c:200:3]\ print_\ ([valid_files/90_struct-init.c:200:3]\ \"lssu1\",\ [valid_files/90_struct-init.c:200:3]\ &lssu1,\ 8);\l\
+|[valid_files/90_struct-init.c:201:3]\ print_\ ([valid_files/90_struct-init.c:201:3]\ \"lssu2\",\ [valid_files/90_struct-init.c:201:3]\ &lssu2,\ 8);\l\
+|[valid_files/90_struct-init.c:202:3]\ print_\ ([valid_files/90_struct-init.c:202:3]\ \"flow\",\ [valid_files/90_struct-init.c:202:3]\ &flow,\ 32);\l\
+|[valid_files/90_struct-init.c:203:3]\ print_\ ([valid_files/90_struct-init.c:203:3]\ \"ls4\",\ [valid_files/90_struct-init.c:203:3]\ &ls4,\ 4);\l\
+|ls\ =\ \{CLOBBER(eos)\};\l\
+|ls2\ =\ \{CLOBBER(eos)\};\l\
+|lt\ =\ \{CLOBBER(eos)\};\l\
+|lu\ =\ \{CLOBBER(eos)\};\l\
+|lu1\ =\ \{CLOBBER(eos)\};\l\
+|lu2\ =\ \{CLOBBER(eos)\};\l\
+|ls21\ =\ \{CLOBBER(eos)\};\l\
+|lu22\ =\ \{CLOBBER(eos)\};\l\
+|lu21\ =\ \{CLOBBER(eos)\};\l\
+|lu3\ =\ \{CLOBBER(eos)\};\l\
+|lu4\ =\ \{CLOBBER(eos)\};\l\
+|ls3\ =\ \{CLOBBER(eos)\};\l\
+|lv\ =\ \{CLOBBER(eos)\};\l\
+|lv2\ =\ \{CLOBBER(eos)\};\l\
+|lv3\ =\ \{CLOBBER(eos)\};\l\
+|D.3322\ =\ \{CLOBBER(eos)\};\l\
+|flow\ =\ \{CLOBBER(eos)\};\l\
+|lt2\ =\ \{CLOBBER(eos)\};\l\
+|lssu1\ =\ \{CLOBBER(eos)\};\l\
+|lssu2\ =\ \{CLOBBER(eos)\};\l\
+|ls4\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/90_struct-init.c:204:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test_compound_with_relocs" {
+	style="dashed";
+	color="black";
+	label="test_compound_with_relocs ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:209:15]\ local_wrap[0].func\ =\ [valid_files/90_struct-init.c:210:23]\ inc_global;\l\
+|[valid_files/90_struct-init.c:209:15]\ local_wrap[1].func\ =\ [valid_files/90_struct-init.c:211:7]\ inc_global;\l\
+|[valid_files/90_struct-init.c:214:21]\ _1\ =\ [valid_files/90_struct-init.c:214:21]\ [valid_files/90_struct-init.c:214:18]\ global_wrap[0].func;\l\
+|[valid_files/90_struct-init.c:214:5]\ p\ =\ (void\ (*\<T406\>)\ (void))\ _1;\l\
+|[valid_files/90_struct-init.c:214:28]\ p\ ();\l\
+|[valid_files/90_struct-init.c:215:21]\ _2\ =\ [valid_files/90_struct-init.c:215:21]\ [valid_files/90_struct-init.c:215:18]\ global_wrap[1].func;\l\
+|[valid_files/90_struct-init.c:215:5]\ p\ =\ (void\ (*\<T406\>)\ (void))\ _2;\l\
+|[valid_files/90_struct-init.c:215:28]\ p\ ();\l\
+|[valid_files/90_struct-init.c:216:20]\ _3\ =\ [valid_files/90_struct-init.c:216:20]\ [valid_files/90_struct-init.c:216:17]\ local_wrap[0].func;\l\
+|[valid_files/90_struct-init.c:216:5]\ p\ =\ (void\ (*\<T406\>)\ (void))\ _3;\l\
+|[valid_files/90_struct-init.c:216:27]\ p\ ();\l\
+|[valid_files/90_struct-init.c:217:20]\ _4\ =\ [valid_files/90_struct-init.c:217:20]\ [valid_files/90_struct-init.c:217:17]\ local_wrap[1].func;\l\
+|[valid_files/90_struct-init.c:217:5]\ p\ =\ (void\ (*\<T406\>)\ (void))\ _4;\l\
+|[valid_files/90_struct-init.c:217:27]\ p\ ();\l\
+|local_wrap\ =\ \{CLOBBER(eos)\};\l\
+|D.3334\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/90_struct-init.c:218:1]\ return;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_sys_ni" {
+	style="dashed";
+	color="black";
+	label="sys_ni ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:220:21]\ __builtin_puts\ (&\"ni\"[0]);\l\
+|[valid_files/90_struct-init.c:220:37\ discrim\ 1]\ return;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_sys_one" {
+	style="dashed";
+	color="black";
+	label="sys_one ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:221:22]\ __builtin_puts\ (&\"one\"[0]);\l\
+|[valid_files/90_struct-init.c:221:39\ discrim\ 1]\ return;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_sys_two" {
+	style="dashed";
+	color="black";
+	label="sys_two ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:222:22]\ __builtin_puts\ (&\"two\"[0]);\l\
+|[valid_files/90_struct-init.c:222:39\ discrim\ 1]\ return;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_sys_three" {
+	style="dashed";
+	color="black";
+	label="sys_three ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:223:24]\ __builtin_puts\ (&\"three\"[0]);\l\
+|[valid_files/90_struct-init.c:223:43\ discrim\ 1]\ return;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_sys_four" {
+	style="dashed";
+	color="black";
+	label="sys_four ()";
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:224:23]\ __builtin_puts\ (&\"four\"[0]);\l\
+|[valid_files/90_struct-init.c:224:41\ discrim\ 1]\ return;\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test_multi_relocs" {
+	style="dashed";
+	color="black";
+	label="test_multi_relocs ()";
+	subgraph cluster_9_4 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 4";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_9_5 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 5";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_9_6 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey66";
+	label="loop 6";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_9_7 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 7";
+	labeljust=l;
+	penwidth=2;
+	fn_9_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 25\>:\l\
+|[valid_files/90_struct-init.c:280:19\ discrim\ 1]\ k.10_17\ =\ (unsigned\ int)\ k;\l\
+|[valid_files/90_struct-init.c:280:19\ discrim\ 1]\ if\ (k.10_17\ \<=\ 2)\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 26\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+|[valid_files/90_struct-init.c:281:28]\ if\ (g\ ==\ 0)\l\
+\ \ goto\ \<bb\ 22\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 23\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|[valid_files/90_struct-init.c:281:28\ discrim\ 1]\ iftmp.9\ =\ [valid_files/90_struct-init.c:281:29]\ &m2;\l\
+[0:0]\ goto\ \<bb\ 24\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 23\>:\l\
+|[valid_files/90_struct-init.c:281:28\ discrim\ 2]\ iftmp.9\ =\ [valid_files/90_struct-init.c:281:26]\ &m1;\l\
+}"];
+
+	fn_9_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 24\>:\l\
+|[valid_files/90_struct-init.c:281:32\ discrim\ 4]\ _12\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/90_struct-init.c:281:32\ discrim\ 4]\ _13\ =\ _12\ *\ 6;\l\
+|[valid_files/90_struct-init.c:281:32\ discrim\ 4]\ _14\ =\ iftmp.9\ +\ _13;\l\
+|[valid_files/90_struct-init.c:281:38\ discrim\ 4]\ _15\ =\ [valid_files/90_struct-init.c:281:38]\ [valid_files/90_struct-init.c:281:35]\ [valid_files/90_struct-init.c:281:32]\ (*_14)[j][k];\l\
+|[valid_files/90_struct-init.c:281:7\ discrim\ 4]\ _16\ =\ (int)\ _15;\l\
+|[valid_files/90_struct-init.c:281:7\ discrim\ 4]\ printf\ ([valid_files/90_struct-init.c:281:14]\ \"\ %d\",\ _16);\l\
+|[valid_files/90_struct-init.c:280:44\ discrim\ 2]\ k\ =\ k\ +\ 1;\l\
+}"];
+
+	}
+	fn_9_basic_block_27 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 27\>:\l\
+|[valid_files/90_struct-init.c:279:19\ discrim\ 1]\ j.11_18\ =\ (unsigned\ int)\ j;\l\
+|[valid_files/90_struct-init.c:279:19\ discrim\ 1]\ if\ (j.11_18\ \<=\ 1)\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 28\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/90_struct-init.c:280:12]\ k\ =\ 0;\l\
+[valid_files/90_struct-init.c:280:5]\ goto\ \<bb\ 25\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_26 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 26\>:\l\
+|[valid_files/90_struct-init.c:279:41\ discrim\ 2]\ j\ =\ j\ +\ 1;\l\
+}"];
+
+	}
+	fn_9_basic_block_29 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 29\>:\l\
+|[valid_files/90_struct-init.c:278:19\ discrim\ 1]\ i.12_19\ =\ (unsigned\ int)\ i;\l\
+|[valid_files/90_struct-init.c:278:19\ discrim\ 1]\ if\ (i.12_19\ \<=\ 4)\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 30\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/90_struct-init.c:279:12]\ j\ =\ 0;\l\
+[valid_files/90_struct-init.c:279:5]\ goto\ \<bb\ 27\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_28 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 28\>:\l\
+|[valid_files/90_struct-init.c:278:38\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_9_basic_block_31 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 31\>:\l\
+|[valid_files/90_struct-init.c:276:16\ discrim\ 1]\ g.13_20\ =\ g;\l\
+|[valid_files/90_struct-init.c:276:16\ discrim\ 1]\ g\ =\ g.13_20\ +\ -1;\l\
+|[valid_files/90_struct-init.c:276:19\ discrim\ 1]\ if\ (g.13_20\ \>\ 0)\l\
+\ \ goto\ \<bb\ 18\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 32\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/90_struct-init.c:277:46]\ _9\ =\ g\ *\ 5;\l\
+|[valid_files/90_struct-init.c:277:46]\ _10\ =\ (sizetype)\ _9;\l\
+|[valid_files/90_struct-init.c:277:5]\ _11\ =\ [valid_files/90_struct-init.c:277:29]\ \"locl\\x00glob\"\ +\ _10;\l\
+|[valid_files/90_struct-init.c:277:5]\ printf\ ([valid_files/90_struct-init.c:277:12]\ \"mdfa\ %s:\ %d\ -\",\ _11,\ 30);\l\
+|[valid_files/90_struct-init.c:278:12]\ i\ =\ 0;\l\
+[valid_files/90_struct-init.c:278:5]\ goto\ \<bb\ 29\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_30 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 30\>:\l\
+|[valid_files/90_struct-init.c:282:5]\ __builtin_putchar\ (10);\l\
+}"];
+
+	}
+	subgraph cluster_9_3 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 3";
+	labeljust=l;
+	penwidth=2;
+	fn_9_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/90_struct-init.c:268:17\ discrim\ 1]\ i.8_8\ =\ (unsigned\ int)\ i;\l\
+|[valid_files/90_struct-init.c:268:17\ discrim\ 1]\ if\ (i.8_8\ \<=\ 3)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/90_struct-init.c:269:5]\ _7\ =\ [valid_files/90_struct-init.c:269:5]\ dd[i];\l\
+|[valid_files/90_struct-init.c:269:5]\ printf\ ([valid_files/90_struct-init.c:269:12]\ \"\ %d\",\ _7);\l\
+|[valid_files/90_struct-init.c:268:36\ discrim\ 3]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	subgraph cluster_9_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_9_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/90_struct-init.c:257:17\ discrim\ 1]\ i.5_6\ =\ (unsigned\ int)\ i;\l\
+|[valid_files/90_struct-init.c:257:17\ discrim\ 1]\ if\ (i.5_6\ \<=\ 3)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/90_struct-init.c:258:14]\ _4\ =\ [valid_files/90_struct-init.c:258:14]\ tabl2[i];\l\
+|[valid_files/90_struct-init.c:258:8]\ if\ (_4\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/90_struct-init.c:259:12]\ _5\ =\ [valid_files/90_struct-init.c:259:12]\ tabl2[i];\l\
+|[valid_files/90_struct-init.c:259:7]\ _5\ ();\l\
+[0:0]\ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/90_struct-init.c:261:7]\ __builtin_puts\ (&\"(0)\"[0]);\l\
+}"];
+
+	fn_9_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/90_struct-init.c:257:39\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	subgraph cluster_9_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_9_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/90_struct-init.c:242:17\ discrim\ 1]\ i.4_3\ =\ (unsigned\ int)\ i;\l\
+|[valid_files/90_struct-init.c:242:17\ discrim\ 1]\ if\ (i.4_3\ \<=\ 3)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/90_struct-init.c:243:14]\ _1\ =\ [valid_files/90_struct-init.c:243:14]\ tabl1[i];\l\
+|[valid_files/90_struct-init.c:243:8]\ if\ (_1\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/90_struct-init.c:244:12]\ _2\ =\ [valid_files/90_struct-init.c:244:12]\ tabl1[i];\l\
+|[valid_files/90_struct-init.c:244:7]\ _2\ ();\l\
+[0:0]\ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/90_struct-init.c:246:7]\ __builtin_puts\ (&\"(0)\"[0]);\l\
+}"];
+
+	fn_9_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/90_struct-init.c:242:39\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_9_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_9_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_9_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:242:10]\ i\ =\ 0;\l\
+[valid_files/90_struct-init.c:242:3]\ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/90_struct-init.c:248:14]\ tabl2[0]\ =\ [valid_files/90_struct-init.c:250:13]\ sys_one;\l\
+|[valid_files/90_struct-init.c:248:14]\ tabl2[1]\ =\ 0B;\l\
+|[valid_files/90_struct-init.c:248:14]\ tabl2[2]\ =\ [valid_files/90_struct-init.c:254:19]\ sys_ni;\l\
+|[valid_files/90_struct-init.c:248:14]\ tabl2[3]\ =\ [valid_files/90_struct-init.c:253:7]\ sys_four;\l\
+|[valid_files/90_struct-init.c:257:10]\ i\ =\ 0;\l\
+[valid_files/90_struct-init.c:257:3]\ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/90_struct-init.c:263:7]\ c\ =\ 0;\l\
+|[valid_files/90_struct-init.c:264:7]\ c\ =\ c\ +\ 1;\l\
+|[valid_files/90_struct-init.c:265:17]\ c.6\ =\ c;\l\
+|[valid_files/90_struct-init.c:264:7]\ dd[0]\ =\ c.6;\l\
+|[valid_files/90_struct-init.c:264:7]\ dd[1]\ =\ c.6;\l\
+|[valid_files/90_struct-init.c:264:7]\ c\ =\ c\ +\ 1;\l\
+|[valid_files/90_struct-init.c:266:17]\ c.7\ =\ c;\l\
+|[valid_files/90_struct-init.c:264:7]\ dd[2]\ =\ c.7;\l\
+|[valid_files/90_struct-init.c:264:7]\ dd[3]\ =\ c.7;\l\
+|[valid_files/90_struct-init.c:268:10]\ i\ =\ 0;\l\
+[valid_files/90_struct-init.c:268:3]\ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/90_struct-init.c:270:3]\ __builtin_putchar\ (10);\l\
+|[valid_files/90_struct-init.c:274:15]\ m2\ =\ \{\};\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[0][0]\ =\ \"\\x03\\x04\\x05\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[0][1]\ =\ \"\\x06\\x07\\b\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[1][0]\ =\ \"\\x03\\x04\\x05\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[1][1]\ =\ \"\\x06\\x07\\b\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[2][0]\ =\ \"\\x03\\x04\\x05\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[2][1]\ =\ \"\\x06\\x07\\b\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[3][0]\ =\ \"\\t\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[3][1]\ =\ \"\\n\";\l\
+|[valid_files/90_struct-init.c:274:15]\ m2[4][0]\ =\ \"abc\";\l\
+|[valid_files/90_struct-init.c:276:10]\ g\ =\ 2;\l\
+[valid_files/90_struct-init.c:276:3]\ goto\ \<bb\ 31\>;\ [INV]\l\
+}"];
+
+	fn_9_basic_block_32 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 32\>:\l\
+|tabl2\ =\ \{CLOBBER(eos)\};\l\
+|dd\ =\ \{CLOBBER(eos)\};\l\
+|m2\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/90_struct-init.c:284:1]\ return;\l\
+}"];
+
+	fn_9_basic_block_0:s -> fn_9_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_2:s -> fn_9_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_3:s -> fn_9_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_3:s -> fn_9_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_4:s -> fn_9_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_5:s -> fn_9_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_6:s -> fn_9_basic_block_7:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_7:s -> fn_9_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_7:s -> fn_9_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_8:s -> fn_9_basic_block_13:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_9:s -> fn_9_basic_block_10:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_9:s -> fn_9_basic_block_11:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_10:s -> fn_9_basic_block_12:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_11:s -> fn_9_basic_block_12:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_12:s -> fn_9_basic_block_13:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_13:s -> fn_9_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_13:s -> fn_9_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_14:s -> fn_9_basic_block_16:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_15:s -> fn_9_basic_block_16:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_16:s -> fn_9_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_16:s -> fn_9_basic_block_17:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_17:s -> fn_9_basic_block_31:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_18:s -> fn_9_basic_block_29:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_19:s -> fn_9_basic_block_27:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_20:s -> fn_9_basic_block_25:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_21:s -> fn_9_basic_block_22:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_21:s -> fn_9_basic_block_23:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_22:s -> fn_9_basic_block_24:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_23:s -> fn_9_basic_block_24:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_24:s -> fn_9_basic_block_25:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_25:s -> fn_9_basic_block_21:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_25:s -> fn_9_basic_block_26:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_26:s -> fn_9_basic_block_27:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_27:s -> fn_9_basic_block_20:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_27:s -> fn_9_basic_block_28:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_28:s -> fn_9_basic_block_29:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_29:s -> fn_9_basic_block_19:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_29:s -> fn_9_basic_block_30:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_30:s -> fn_9_basic_block_31:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_9_basic_block_31:s -> fn_9_basic_block_18:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_9_basic_block_31:s -> fn_9_basic_block_32:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_9_basic_block_32:s -> fn_9_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_9_basic_block_0:s -> fn_9_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test_init_ranges" {
+	style="dashed";
+	color="black";
+	label="test_init_ranges ()";
+	subgraph cluster_10_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_10_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/90_struct-init.c:299:19\ discrim\ 1]\ if\ (i\ \<=\ 255)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_10_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/90_struct-init.c:300:23]\ _1\ =\ [valid_files/90_struct-init.c:300:23]\ gostring[i];\l\
+|gotovar.14\ =\ _1;\l\
+[valid_files/90_struct-init.c:300:9]\ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_10_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|goto\ gotovar.14;\l\
+}"];
+
+	fn_10_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/90_struct-init.c:301:9]\ l_bad:\l\
+|[valid_files/90_struct-init.c:301:17]\ c\ =\ c\ +\ 1;\l\
+goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_10_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/90_struct-init.c:302:9]\ l_loop:\l\
+|[valid_files/90_struct-init.c:302:18]\ c\ =\ c\ +\ 1;\l\
+}"];
+
+	fn_10_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/90_struct-init.c:303:9]\ l_esc:\l\
+|[valid_files/90_struct-init.c:303:17]\ c\ =\ c\ +\ 1;\l\
+}"];
+
+	fn_10_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/90_struct-init.c:304:9]\ l_qdown:\l\
+|[valid_files/90_struct-init.c:304:19]\ c\ =\ c\ +\ 1;\l\
+}"];
+
+	fn_10_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/90_struct-init.c:305:9]\ l_utf8_2:\l\
+|[valid_files/90_struct-init.c:305:20]\ c\ =\ c\ +\ 1;\l\
+}"];
+
+	fn_10_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/90_struct-init.c:306:9]\ l_utf8_3:\l\
+|[valid_files/90_struct-init.c:306:20]\ c\ =\ c\ +\ 1;\l\
+}"];
+
+	fn_10_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/90_struct-init.c:307:9]\ l_utf8_4:\l\
+|[valid_files/90_struct-init.c:307:20]\ c\ =\ c\ +\ 1;\l\
+|[valid_files/90_struct-init.c:299:27\ discrim\ 2]\ i\ =\ i\ +\ 1;\l\
+}"];
+
+	}
+	fn_10_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_10_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_10_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:287:11]\ c\ =\ 0;\l\
+|[valid_files/90_struct-init.c:299:12]\ i\ =\ 0;\l\
+[valid_files/90_struct-init.c:299:5]\ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_10_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/90_struct-init.c:309:5]\ printf\ ([valid_files/90_struct-init.c:309:13]\ \"%d\\n\",\ c);\l\
+|[valid_files/90_struct-init.c:310:1]\ return;\l\
+}"];
+
+	fn_10_basic_block_0:s -> fn_10_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_2:s -> fn_10_basic_block_12:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_3:s -> fn_10_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_4:s -> fn_10_basic_block_6:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_4:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_6:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_7:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_8:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_9:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_10:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_5:s -> fn_10_basic_block_11:n [style="solid,bold",color=red,weight=10,constraint=true];
+	fn_10_basic_block_6:s -> fn_10_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_7:s -> fn_10_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_8:s -> fn_10_basic_block_9:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_9:s -> fn_10_basic_block_10:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_10:s -> fn_10_basic_block_11:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_11:s -> fn_10_basic_block_12:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_10_basic_block_12:s -> fn_10_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_10_basic_block_12:s -> fn_10_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_10_basic_block_13:s -> fn_10_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_10_basic_block_0:s -> fn_10_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test_correct_filling" {
+	style="dashed";
+	color="black";
+	label="test_correct_filling ()";
+	fn_11_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_11_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_11_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:324:8]\ _1\ =\ [valid_files/90_struct-init.c:324:8]\ x-\>i;\l\
+|[valid_files/90_struct-init.c:324:6]\ if\ (_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/90_struct-init.c:324:21\ discrim\ 1]\ _2\ =\ [valid_files/90_struct-init.c:324:21]\ x-\>j;\l\
+|[valid_files/90_struct-init.c:324:17\ discrim\ 1]\ if\ (_2\ !=\ 5)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/90_struct-init.c:324:34\ discrim\ 2]\ _3\ =\ [valid_files/90_struct-init.c:324:34]\ x-\>k;\l\
+|[valid_files/90_struct-init.c:324:30\ discrim\ 2]\ if\ (_3\ !=\ 0)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/90_struct-init.c:324:47\ discrim\ 3]\ _4\ =\ [valid_files/90_struct-init.c:324:47]\ x-\>l;\l\
+|[valid_files/90_struct-init.c:324:43\ discrim\ 3]\ if\ (_4\ !=\ 0)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/90_struct-init.c:325:5]\ i.15_5\ =\ i;\l\
+|[valid_files/90_struct-init.c:325:5]\ printf\ ([valid_files/90_struct-init.c:325:12]\ \"sea_fill%d:\ wrong\\n\",\ i.15_5);\l\
+[valid_files/90_struct-init.c:325:5]\ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_11_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/90_struct-init.c:327:5]\ i.16_6\ =\ i;\l\
+|[valid_files/90_struct-init.c:327:5]\ printf\ ([valid_files/90_struct-init.c:327:12]\ \"sea_fill%d:\ okay\\n\",\ i.16_6);\l\
+}"];
+
+	fn_11_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/90_struct-init.c:328:4]\ i.17_7\ =\ i;\l\
+|[valid_files/90_struct-init.c:328:4]\ _8\ =\ i.17_7\ +\ 1;\l\
+|[valid_files/90_struct-init.c:328:4]\ i\ =\ _8;\l\
+|[valid_files/90_struct-init.c:329:1]\ return;\l\
+}"];
+
+	fn_11_basic_block_0:s -> fn_11_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_2:s -> fn_11_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_11_basic_block_2:s -> fn_11_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_11_basic_block_3:s -> fn_11_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_11_basic_block_3:s -> fn_11_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_11_basic_block_4:s -> fn_11_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_11_basic_block_4:s -> fn_11_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_11_basic_block_5:s -> fn_11_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_11_basic_block_5:s -> fn_11_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_11_basic_block_6:s -> fn_11_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_7:s -> fn_11_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_8:s -> fn_11_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_11_basic_block_0:s -> fn_11_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_test_zero_init" {
+	style="dashed";
+	color="black";
+	label="test_zero_init ()";
+	fn_12_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_12_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_12_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:337:14]\ b\ =\ \{\};\l\
+|[valid_files/90_struct-init.c:337:14]\ b.a.j\ =\ 5;\l\
+|[valid_files/90_struct-init.c:338:14]\ c\ =\ \{\};\l\
+|[valid_files/90_struct-init.c:338:14]\ c.a.j\ =\ 5;\l\
+|[valid_files/90_struct-init.c:339:14]\ d\ =\ \{\};\l\
+|[valid_files/90_struct-init.c:339:14]\ d.a.j\ =\ 5;\l\
+|[valid_files/90_struct-init.c:340:3]\ test_correct_filling\ ([valid_files/90_struct-init.c:340:3]\ &[valid_files/90_struct-init.c:340:27]\ b.a);\l\
+|[valid_files/90_struct-init.c:341:3]\ test_correct_filling\ ([valid_files/90_struct-init.c:341:3]\ &[valid_files/90_struct-init.c:341:27]\ c.a);\l\
+|[valid_files/90_struct-init.c:342:3]\ test_correct_filling\ ([valid_files/90_struct-init.c:342:3]\ &[valid_files/90_struct-init.c:342:27]\ d.a);\l\
+|[valid_files/90_struct-init.c:343:10]\ D.3460\ =\ 0;\l\
+|b\ =\ \{CLOBBER(eos)\};\l\
+|c\ =\ \{CLOBBER(eos)\};\l\
+|d\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_12_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/90_struct-init.c:343:10]\ return\ D.3460;\l\
+}"];
+
+	fn_12_basic_block_0:s -> fn_12_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_12_basic_block_2:s -> fn_12_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_12_basic_block_3:s -> fn_12_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_12_basic_block_0:s -> fn_12_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_13_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_13_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_13_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/90_struct-init.c:348:3]\ print_\ ([valid_files/90_struct-init.c:348:3]\ \"ce\",\ [valid_files/90_struct-init.c:348:3]\ &ce,\ 2);\l\
+|[valid_files/90_struct-init.c:349:3]\ print_\ ([valid_files/90_struct-init.c:349:3]\ \"gs\",\ [valid_files/90_struct-init.c:349:3]\ &gs,\ 4);\l\
+|[valid_files/90_struct-init.c:350:3]\ print_\ ([valid_files/90_struct-init.c:350:3]\ \"gs2\",\ [valid_files/90_struct-init.c:350:3]\ &gs2,\ 4);\l\
+|[valid_files/90_struct-init.c:351:3]\ print_\ ([valid_files/90_struct-init.c:351:3]\ \"gt\",\ [valid_files/90_struct-init.c:351:3]\ &gt,\ 17);\l\
+|[valid_files/90_struct-init.c:352:3]\ print_\ ([valid_files/90_struct-init.c:352:3]\ \"gu\",\ [valid_files/90_struct-init.c:352:3]\ &gu,\ 23);\l\
+|[valid_files/90_struct-init.c:353:3]\ print_\ ([valid_files/90_struct-init.c:353:3]\ \"gu2\",\ [valid_files/90_struct-init.c:353:3]\ &gu2,\ 23);\l\
+|[valid_files/90_struct-init.c:354:3]\ print_\ ([valid_files/90_struct-init.c:354:3]\ \"gu3\",\ [valid_files/90_struct-init.c:354:3]\ &gu3,\ 23);\l\
+|[valid_files/90_struct-init.c:355:3]\ print_\ ([valid_files/90_struct-init.c:355:3]\ \"gu4\",\ [valid_files/90_struct-init.c:355:3]\ &gu4,\ 23);\l\
+|[valid_files/90_struct-init.c:356:3]\ print_\ ([valid_files/90_struct-init.c:356:3]\ \"gs3\",\ [valid_files/90_struct-init.c:356:3]\ &gs3,\ 4);\l\
+|[valid_files/90_struct-init.c:357:3]\ print_\ ([valid_files/90_struct-init.c:357:3]\ \"gv\",\ [valid_files/90_struct-init.c:357:3]\ &gv,\ 22);\l\
+|[valid_files/90_struct-init.c:358:3]\ print_\ ([valid_files/90_struct-init.c:358:3]\ \"gv2\",\ [valid_files/90_struct-init.c:358:3]\ &gv2,\ 22);\l\
+|[valid_files/90_struct-init.c:359:3]\ print_\ ([valid_files/90_struct-init.c:359:3]\ \"gv3\",\ [valid_files/90_struct-init.c:359:3]\ &gv3,\ 22);\l\
+|[valid_files/90_struct-init.c:360:3]\ print_\ ([valid_files/90_struct-init.c:360:3]\ \"sinit16\",\ [valid_files/90_struct-init.c:360:3]\ &sinit16,\ 8);\l\
+|[valid_files/90_struct-init.c:361:3]\ print_\ ([valid_files/90_struct-init.c:361:3]\ \"gw\",\ [valid_files/90_struct-init.c:361:3]\ &gw,\ 22);\l\
+|[valid_files/90_struct-init.c:362:3]\ print_\ ([valid_files/90_struct-init.c:362:3]\ \"gsu\",\ [valid_files/90_struct-init.c:362:3]\ &gsu,\ 2);\l\
+|[valid_files/90_struct-init.c:363:3]\ print_\ ([valid_files/90_struct-init.c:363:3]\ \"guv\",\ [valid_files/90_struct-init.c:363:3]\ &guv,\ 4);\l\
+|[valid_files/90_struct-init.c:364:3]\ print_\ ([valid_files/90_struct-init.c:364:3]\ \"guv.b\",\ [valid_files/90_struct-init.c:364:3]\ &[valid_files/90_struct-init.c:364:3]\ [valid_files/90_struct-init.c:364:3]\ guv.D.2826.b,\ 1);\l\
+|[valid_files/90_struct-init.c:365:3]\ print_\ ([valid_files/90_struct-init.c:365:3]\ \"guv2\",\ [valid_files/90_struct-init.c:365:3]\ &guv2,\ 4);\l\
+|[valid_files/90_struct-init.c:366:3]\ print_\ ([valid_files/90_struct-init.c:366:3]\ \"guv3\",\ [valid_files/90_struct-init.c:366:3]\ &guv3,\ 4);\l\
+|[valid_files/90_struct-init.c:367:3]\ print_\ ([valid_files/90_struct-init.c:367:3]\ \"gssu1\",\ [valid_files/90_struct-init.c:367:3]\ &gssu1,\ 8);\l\
+|[valid_files/90_struct-init.c:368:3]\ print_\ ([valid_files/90_struct-init.c:368:3]\ \"gssu2\",\ [valid_files/90_struct-init.c:368:3]\ &gssu2,\ 8);\l\
+|[valid_files/90_struct-init.c:369:3]\ print_\ ([valid_files/90_struct-init.c:369:3]\ \"phdr\",\ [valid_files/90_struct-init.c:369:3]\ &phdr,\ 32);\l\
+|[valid_files/90_struct-init.c:370:3]\ foo\ ([valid_files/90_struct-init.c:370:3]\ &gw,\ [valid_files/90_struct-init.c:370:3]\ &phdr);\l\
+|[valid_files/90_struct-init.c:372:3]\ test_compound_with_relocs\ ();\l\
+|[valid_files/90_struct-init.c:373:3]\ test_multi_relocs\ ();\l\
+|[valid_files/90_struct-init.c:374:3]\ test_zero_init\ ();\l\
+|[valid_files/90_struct-init.c:375:3]\ test_init_ranges\ ();\l\
+|[valid_files/90_struct-init.c:376:10]\ D.3463\ =\ 0;\l\
+}"];
+
+	fn_13_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3463;\l\
+}"];
+
+	fn_13_basic_block_0:s -> fn_13_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_13_basic_block_2:s -> fn_13_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_13_basic_block_3:s -> fn_13_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_13_basic_block_0:s -> fn_13_basic_block_1:n [style="invis",constraint=true];
+}
+}

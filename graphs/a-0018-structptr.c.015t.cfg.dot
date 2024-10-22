@@ -1,0 +1,32 @@
+digraph "a-0018-structptr.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/0018-structptr.c:10:4]\ p\ =\ [valid_files/0018-structptr.c:10:6]\ &s;\l\
+|[valid_files/0018-structptr.c:11:6]\ [valid_files/0018-structptr.c:11:3]\ s.x\ =\ 1;\l\
+|[valid_files/0018-structptr.c:12:7]\ [valid_files/0018-structptr.c:12:3]\ p-\>y\ =\ 2;\l\
+|[valid_files/0018-structptr.c:13:10]\ _1\ =\ [valid_files/0018-structptr.c:13:10]\ p-\>y;\l\
+|[valid_files/0018-structptr.c:13:17]\ _2\ =\ [valid_files/0018-structptr.c:13:17]\ p-\>x;\l\
+|[valid_files/0018-structptr.c:13:14]\ _3\ =\ _1\ +\ _2;\l\
+|[valid_files/0018-structptr.c:13:21]\ D.2776\ =\ _3\ +\ -3;\l\
+|s\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2776;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

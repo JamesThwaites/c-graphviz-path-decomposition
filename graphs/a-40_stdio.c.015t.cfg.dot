@@ -1,0 +1,170 @@
+digraph "a-40_stdio.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	subgraph cluster_0_3 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 3";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/40_stdio.c:44:11]\ _4\ =\ fgets\ ([valid_files/40_stdio.c:44:11]\ &freddy,\ 7,\ f);\l\
+|[valid_files/40_stdio.c:44:44\ discrim\ 1]\ if\ (_4\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/40_stdio.c:45:7]\ printf\ ([valid_files/40_stdio.c:45:14]\ \"x:\ %s\",\ [valid_files/40_stdio.c:45:23]\ &freddy);\l\
+}"];
+
+	}
+	subgraph cluster_0_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/40_stdio.c:33:22]\ InChar\ =\ getc\ (f);\l\
+|[valid_files/40_stdio.c:33:31\ discrim\ 1]\ if\ (InChar\ !=\ -1)\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/40_stdio.c:35:16]\ ShowChar\ =\ (char)\ InChar;\l\
+|[valid_files/40_stdio.c:36:10]\ if\ (ShowChar\ \<=\ 31)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/40_stdio.c:37:19]\ ShowChar\ =\ 46;\l\
+}"];
+
+	fn_0_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/40_stdio.c:39:7]\ _3\ =\ (int)\ ShowChar;\l\
+|[valid_files/40_stdio.c:39:7]\ printf\ ([valid_files/40_stdio.c:39:14]\ \"ch:\ %d\ \\'%c\\'\\n\",\ InChar,\ _3);\l\
+}"];
+
+	}
+	subgraph cluster_0_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_0_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/40_stdio.c:22:22]\ InChar\ =\ fgetc\ (f);\l\
+|[valid_files/40_stdio.c:22:32\ discrim\ 1]\ if\ (InChar\ !=\ -1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/40_stdio.c:24:16]\ ShowChar\ =\ (char)\ InChar;\l\
+|[valid_files/40_stdio.c:25:10]\ if\ (ShowChar\ \<=\ 31)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/40_stdio.c:26:19]\ ShowChar\ =\ 46;\l\
+}"];
+
+	fn_0_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/40_stdio.c:28:7]\ _2\ =\ (int)\ ShowChar;\l\
+|[valid_files/40_stdio.c:28:7]\ printf\ ([valid_files/40_stdio.c:28:14]\ \"ch:\ %d\ \\'%c\\'\\n\",\ InChar,\ _2);\l\
+}"];
+
+	}
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/40_stdio.c:5:14]\ f\ =\ fopen\ ([valid_files/40_stdio.c:5:20]\ \"fred.txt\",\ [valid_files/40_stdio.c:5:32]\ \"w\");\l\
+|[valid_files/40_stdio.c:6:4]\ fwrite\ ([valid_files/40_stdio.c:6:11]\ \"hello\\nhello\\n\",\ 1,\ 12,\ f);\l\
+|[valid_files/40_stdio.c:7:4]\ fclose\ (f);\l\
+|[valid_files/40_stdio.c:10:8]\ f\ =\ fopen\ ([valid_files/40_stdio.c:10:14]\ \"fred.txt\",\ [valid_files/40_stdio.c:10:26]\ \"r\");\l\
+|[valid_files/40_stdio.c:11:8]\ _1\ =\ fread\ ([valid_files/40_stdio.c:11:8]\ &freddy,\ 1,\ 6,\ f);\l\
+|[valid_files/40_stdio.c:11:7\ discrim\ 1]\ if\ (_1\ !=\ 6)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/40_stdio.c:12:7]\ __builtin_puts\ (&\"couldn\\'t\ read\ fred.txt\"[0]);\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/40_stdio.c:14:14]\ [valid_files/40_stdio.c:14:10]\ freddy[6]\ =\ 0;\l\
+|[valid_files/40_stdio.c:15:4]\ fclose\ (f);\l\
+|[valid_files/40_stdio.c:17:4]\ printf\ ([valid_files/40_stdio.c:17:11]\ \"%s\",\ [valid_files/40_stdio.c:17:17]\ &freddy);\l\
+|[valid_files/40_stdio.c:21:8]\ f\ =\ fopen\ ([valid_files/40_stdio.c:21:14]\ \"fred.txt\",\ [valid_files/40_stdio.c:21:26]\ \"r\");\l\
+[valid_files/40_stdio.c:22:10]\ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/40_stdio.c:30:4]\ fclose\ (f);\l\
+|[valid_files/40_stdio.c:32:8]\ f\ =\ fopen\ ([valid_files/40_stdio.c:32:14]\ \"fred.txt\",\ [valid_files/40_stdio.c:32:26]\ \"r\");\l\
+[valid_files/40_stdio.c:33:10]\ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/40_stdio.c:41:4]\ fclose\ (f);\l\
+|[valid_files/40_stdio.c:43:8]\ f\ =\ fopen\ ([valid_files/40_stdio.c:43:14]\ \"fred.txt\",\ [valid_files/40_stdio.c:43:26]\ \"r\");\l\
+[valid_files/40_stdio.c:44:10]\ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/40_stdio.c:47:4]\ fclose\ (f);\l\
+|[valid_files/40_stdio.c:49:11]\ D.3226\ =\ 0;\l\
+|freddy\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|\<L16\>:\l\
+|return\ D.3226;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_5:s -> fn_0_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_6:s -> fn_0_basic_block_7:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_7:s -> fn_0_basic_block_8:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_8:s -> fn_0_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_8:s -> fn_0_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_9:s -> fn_0_basic_block_13:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_10:s -> fn_0_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_11:s -> fn_0_basic_block_12:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_12:s -> fn_0_basic_block_13:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_13:s -> fn_0_basic_block_10:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_13:s -> fn_0_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_14:s -> fn_0_basic_block_16:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_15:s -> fn_0_basic_block_16:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_0_basic_block_16:s -> fn_0_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_16:s -> fn_0_basic_block_17:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_17:s -> fn_0_basic_block_18:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_18:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

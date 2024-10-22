@@ -1,0 +1,60 @@
+digraph "a-nest-stdar-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/nest-stdar-1.c:3:1]\ D.2787\ =\ __builtin_dwarf_cfa\ (0);\l\
+|[valid_files/nest-stdar-1.c:3:1\ discrim\ 1]\ FRAME.0.FRAME_BASE.PARENT\ =\ D.2787;\l\
+|[valid_files/nest-stdar-1.c:16:7]\ _1\ =\ f\ (1,\ 1.0e+0);\ [static-chain:\ &FRAME.0]\l\
+|[valid_files/nest-stdar-1.c:16:6\ discrim\ 1]\ if\ (_1\ !=\ 1.0e+0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/nest-stdar-1.c:17:5]\ abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/nest-stdar-1.c:18:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/nest-stdar-1.c:10:7]\ __builtin_va_start\ ([valid_files/nest-stdar-1.c:10:7]\ &args,\ 0);\l\
+|[valid_files/nest-stdar-1.c:11:9]\ a\ =\ .VA_ARG\ (&args,\ 0B,\ 0B);\l\
+|[valid_files/nest-stdar-1.c:12:7]\ __builtin_va_end\ ([valid_files/nest-stdar-1.c:12:7]\ &args);\l\
+|[valid_files/nest-stdar-1.c:13:14]\ D.2783\ =\ a;\l\
+|args\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/nest-stdar-1.c:13:14]\ return\ D.2783;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,76 @@
+digraph "a-pr70903.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr70903.c:8:40]\ _1\ =\ [valid_files/pr70903.c:8:40]\ BIT_FIELD_REF\ \<x,\ 64,\ 0\>;\l\
+|[valid_files/pr70903.c:8:31]\ _2\ =\ \{65535,\ _1\};\l\
+|[valid_files/pr70903.c:8:31]\ D.2775\ =\ _2;\l\
+|[valid_files/pr70903.c:8:45]\ _3\ =\ [valid_files/pr70903.c:8:45]\ BIT_FIELD_REF\ \<D.2775,\ 8,\ 8\>;\l\
+|[valid_files/pr70903.c:8:20]\ D.2776\ =\ \{_3\};\l\
+|[valid_files/pr70903.c:8:11]\ _4\ =\ [valid_files/pr70903.c:8:11]\ VIEW_CONVERT_EXPR\<V64\>(D.2776);\l\
+|[valid_files/pr70903.c:8:7]\ y\ =\ _4;\l\
+|[valid_files/pr70903.c:9:17]\ _5\ =\ [valid_files/pr70903.c:9:17]\ BIT_FIELD_REF\ \<y,\ 64,\ 0\>;\l\
+|[valid_files/pr70903.c:9:10]\ _6\ =\ (unsigned\ int)\ _5;\l\
+|[valid_files/pr70903.c:9:10]\ _7\ =\ \{_6,\ 255\};\l\
+|[valid_files/pr70903.c:9:10]\ \<retval\>\ =\ _7;\l\
+|y\ =\ \{CLOBBER(eos)\};\l\
+|D.2775\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|[valid_files/pr70903.c:9:10]\ return\ \<retval\>;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr70903.c:14:11]\ _1\ =\ foo\ (\{\ 0,\ 0,\ 0,\ 0\ \});\l\
+|[valid_files/pr70903.c:14:7\ discrim\ 1]\ x\ =\ _1;\l\
+|[valid_files/pr70903.c:16:8]\ _2\ =\ [valid_files/pr70903.c:16:8]\ BIT_FIELD_REF\ \<x,\ 32,\ 32\>;\l\
+|[valid_files/pr70903.c:16:6]\ if\ (_2\ !=\ 255)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr70903.c:17:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr70903.c:18:10]\ D.2788\ =\ 0;\l\
+|x\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|\<L3\>:\l\
+|return\ D.2788;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

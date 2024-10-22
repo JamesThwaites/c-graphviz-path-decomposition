@@ -1,0 +1,223 @@
+digraph "a-timeout.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_sigchld_handler" {
+	style="dashed";
+	color="black";
+	label="sigchld_handler ()";
+	subgraph cluster_6_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/timeout.c:194:13]\ pid\ =\ waitpid\ (-1,\ [valid_files/timeout.c:194:13]\ &status,\ 1);\l\
+|[valid_files/timeout.c:195:11]\ status.0_1\ =\ status;\l\
+|[valid_files/timeout.c:195:11]\ _2\ =\ status.0_1\ &\ 65280;\l\
+|[valid_files/timeout.c:195:10]\ if\ (_2\ !=\ 0)\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/timeout.c:196:21]\ exit_status\ =\ 1;\l\
+}"];
+
+	fn_6_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/timeout.c:199:10]\ if\ (pid\ \<=\ 0)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+[valid_files/timeout.c:194:11]\ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	}
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/timeout.c:190:7]\ exit_status\ =\ 0;\l\
+}"];
+
+	fn_6_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+[valid_files/timeout.c:200:9]\ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_6_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/timeout.c:202:3]\ exit\ (exit_status);\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_4:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_4:s -> fn_6_basic_block_5:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_5:s -> fn_6_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_6_basic_block_5:s -> fn_6_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_6_basic_block_6:s -> fn_6_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_7:s -> fn_6_basic_block_3:n [style="dotted,bold",color=blue,weight=10,constraint=false];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/timeout.c:209:7]\ flagNoFork\ =\ 0;\l\
+|[valid_files/timeout.c:215:6]\ if\ (argc\ \<=\ 2)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/timeout.c:217:7]\ stderr.1_1\ =\ stderr;\l\
+|[valid_files/timeout.c:217:7]\ __builtin_fwrite\ ([valid_files/timeout.c:217:24]\ \"timeout\ :\ 1.10\\nUsage\ :\ timeout\ timeout_in_seconds\ filename\ [arguments]\\n\ \ \\\"filename\\\"\ is\ executed,\ the\ arguments\ are\ passed\ to\ \\\"filename\\\".\\n\ \ When\ \\\"filename\\\"\ exits\ before\ the\ timeout\ expires,\ the\\n\ \ exit-status\ of\ \\\"filename\\\"\ is\ returned.\\n\ \ When\ the\ timeout\ expires\ before\ \\\"filename\\\"\ exits,\ \\\"filename\\\"\\n\ \ will\ be\ killed\ and\ an\ exit-status\ of\ 1\ is\ returned.\\n\",\ 1,\ 351,\ stderr.1_1);\l\
+|[valid_files/timeout.c:218:14]\ D.4896\ =\ 1;\l\
+|[valid_files/timeout.c:218:14]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/timeout.c:218:14]\ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/timeout.c:220:23]\ _2\ =\ argv\ +\ 8;\l\
+|[valid_files/timeout.c:220:13]\ _3\ =\ [valid_files/timeout.c:220:13]\ *_2;\l\
+|[valid_files/timeout.c:220:13]\ timeout\ =\ atol\ (_3);\l\
+|[valid_files/timeout.c:221:6]\ if\ (timeout\ ==\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/timeout.c:223:7]\ stderr.2_4\ =\ stderr;\l\
+|[valid_files/timeout.c:223:7]\ __builtin_fwrite\ ([valid_files/timeout.c:223:24]\ \"Error\ parameter\ timeout:\ must\ be\ a\ non-zero\ dezimal\ value\\n\",\ 1,\ 58,\ stderr.2_4);\l\
+|[valid_files/timeout.c:224:14]\ D.4896\ =\ 1;\l\
+|[valid_files/timeout.c:224:14]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/timeout.c:224:14]\ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/timeout.c:229:7]\ _5\ =\ getrlimit\ (0,\ [valid_files/timeout.c:229:7]\ &rl);\l\
+|[valid_files/timeout.c:229:6\ discrim\ 1]\ if\ (_5\ ==\ 0)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/timeout.c:231:19]\ timeout.3_6\ =\ (long\ unsigned\ int)\ timeout;\l\
+|[valid_files/timeout.c:231:19]\ [valid_files/timeout.c:231:9]\ rl.rlim_cur\ =\ timeout.3_6;\l\
+|[valid_files/timeout.c:232:11]\ _7\ =\ setrlimit\ (0,\ [valid_files/timeout.c:232:11]\ &rl);\l\
+|[valid_files/timeout.c:232:10\ discrim\ 1]\ if\ (_7\ ==\ 0)\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/timeout.c:233:20]\ flagNoFork\ =\ 1;\l\
+}"];
+
+	fn_7_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/timeout.c:236:6]\ if\ (flagNoFork\ !=\ 0)\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/timeout.c:245:20]\ old_stderr\ =\ dup\ (2);\l\
+|[valid_files/timeout.c:246:7]\ dup2\ (1,\ 2);\l\
+|[valid_files/timeout.c:248:7]\ _8\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:248:19]\ _9\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:248:7]\ _10\ =\ [valid_files/timeout.c:248:7]\ *_9;\l\
+|[valid_files/timeout.c:248:7]\ execvp\ (_10,\ _8);\l\
+|[valid_files/timeout.c:250:7]\ dup2\ (old_stderr,\ 2);\l\
+|[valid_files/timeout.c:251:19]\ _11\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:251:7]\ _12\ =\ [valid_files/timeout.c:251:7]\ *_11;\l\
+|[valid_files/timeout.c:251:7]\ perror\ (_12);\l\
+|[valid_files/timeout.c:252:14]\ D.4896\ =\ 1;\l\
+|[valid_files/timeout.c:252:14]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/timeout.c:252:14]\ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/timeout.c:257:7]\ signal\ (17,\ [valid_files/timeout.c:257:7]\ sigchld_handler);\l\
+|[valid_files/timeout.c:258:19]\ pid_child\ =\ fork\ ();\l\
+|[valid_files/timeout.c:259:10]\ if\ (pid_child\ ==\ 0)\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/timeout.c:267:25]\ old_stderr\ =\ dup\ (2);\l\
+|[valid_files/timeout.c:268:12]\ dup2\ (1,\ 2);\l\
+|[valid_files/timeout.c:270:12]\ _13\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:270:24]\ _14\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:270:12]\ _15\ =\ [valid_files/timeout.c:270:12]\ *_14;\l\
+|[valid_files/timeout.c:270:12]\ execvp\ (_15,\ _13);\l\
+|[valid_files/timeout.c:272:12]\ dup2\ (old_stderr,\ 2);\l\
+|[valid_files/timeout.c:273:24]\ _16\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:273:12]\ _17\ =\ [valid_files/timeout.c:273:12]\ *_16;\l\
+|[valid_files/timeout.c:273:12]\ perror\ (_17);\l\
+|[valid_files/timeout.c:274:19]\ D.4896\ =\ 1;\l\
+|[valid_files/timeout.c:274:19]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+[valid_files/timeout.c:274:19]\ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_7_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/timeout.c:279:11]\ _18\ =\ (unsigned\ int)\ timeout;\l\
+|[valid_files/timeout.c:279:11]\ sleep\ (_18);\l\
+|[valid_files/timeout.c:280:74]\ _19\ =\ argv\ +\ 16;\l\
+|[valid_files/timeout.c:280:11]\ _20\ =\ [valid_files/timeout.c:280:11]\ *_19;\l\
+|[valid_files/timeout.c:280:11]\ stderr.4_21\ =\ stderr;\l\
+|[valid_files/timeout.c:280:11]\ fprintf\ (stderr.4_21,\ [valid_files/timeout.c:280:28]\ \"timeout:\ timeout,\ killing\ child\ %s\\n\",\ _20);\l\
+|[valid_files/timeout.c:281:11]\ kill\ (pid_child,\ 15);\l\
+|[valid_files/timeout.c:282:18]\ D.4896\ =\ 1;\l\
+|[valid_files/timeout.c:282:18]\ //\ predicted\ unlikely\ by\ early\ return\ (on\ trees)\ predictor.\l\
+}"];
+
+	fn_7_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|rl\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_7_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|\<L13\>:\l\
+|return\ D.4896;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_4:s -> fn_7_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_5:s -> fn_7_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_6:s -> fn_7_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_6:s -> fn_7_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_8:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_7:s -> fn_7_basic_block_9:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_8:s -> fn_7_basic_block_9:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_9:s -> fn_7_basic_block_10:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_9:s -> fn_7_basic_block_11:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_10:s -> fn_7_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_11:s -> fn_7_basic_block_12:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_7_basic_block_11:s -> fn_7_basic_block_13:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_7_basic_block_12:s -> fn_7_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_13:s -> fn_7_basic_block_14:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_14:s -> fn_7_basic_block_15:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_15:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+}

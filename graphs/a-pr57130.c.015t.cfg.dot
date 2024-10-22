@@ -1,0 +1,72 @@
+digraph "a-pr57130.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr57130.c:9:35]\ cnt.0_1\ =\ cnt;\l\
+|[valid_files/pr57130.c:9:35]\ cnt.1_2\ =\ cnt.0_1;\l\
+|[valid_files/pr57130.c:9:35]\ _3\ =\ cnt.1_2\ +\ 1;\l\
+|[valid_files/pr57130.c:9:35]\ cnt\ =\ _3;\l\
+|[valid_files/pr57130.c:9:29]\ _4\ =\ [valid_files/pr57130.c:9:29]\ &[valid_files/pr57130.c:9:31]\ s[cnt.1_2];\l\
+|[valid_files/pr57130.c:9:7]\ _5\ =\ __builtin_memcmp\ ([valid_files/pr57130.c:9:7]\ &r,\ _4,\ 16);\l\
+|[valid_files/pr57130.c:9:6\ discrim\ 1]\ if\ (_5\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr57130.c:10:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr57130.c:11:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr57130.c:16:12]\ r.a\ =\ 6;\l\
+|[valid_files/pr57130.c:16:12]\ r.b\ =\ 8;\l\
+|[valid_files/pr57130.c:16:12]\ r.c\ =\ -8;\l\
+|[valid_files/pr57130.c:16:12]\ r.d\ =\ -5;\l\
+|[valid_files/pr57130.c:17:3]\ foo\ (r);\l\
+|[valid_files/pr57130.c:18:5]\ r.a\ =\ 0;\l\
+|[valid_files/pr57130.c:18:5]\ r.b\ =\ 2;\l\
+|[valid_files/pr57130.c:18:5]\ r.c\ =\ -1;\l\
+|[valid_files/pr57130.c:18:5]\ r.d\ =\ 2;\l\
+|[valid_files/pr57130.c:19:3]\ foo\ (r);\l\
+|[valid_files/pr57130.c:20:10]\ D.2785\ =\ 0;\l\
+|r\ =\ \{CLOBBER(eos)\};\l\
+|D.2781\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2785;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

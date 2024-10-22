@@ -1,0 +1,22 @@
+digraph "a-strct-pack-2.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/strct-pack-2.c:9:12]\ j\ =\ 1;\l\
+|[valid_files/strct-pack-2.c:10:9]\ ap\ =\ [valid_files/strct-pack-2.c:10:14]\ &a;\l\
+|[valid_files/strct-pack-2.c:11:9]\ _1\ =\ (int)\ j;\l\
+|[valid_files/strct-pack-2.c:11:13]\ [valid_files/strct-pack-2.c:11:9]\ [valid_files/strct-pack-2.c:11:5]\ ap-\>ap[_1]\ =\ [valid_files/strct-pack-2.c:11:15]\ &i;\l\
+|[valid_files/strct-pack-2.c:12:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

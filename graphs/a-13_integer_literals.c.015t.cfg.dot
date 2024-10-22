@@ -1,0 +1,35 @@
+digraph "a-13_integer_literals.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/13_integer_literals.c:5:8]\ a\ =\ 24680;\l\
+|[valid_files/13_integer_literals.c:6:8]\ b\ =\ 342391;\l\
+|[valid_files/13_integer_literals.c:7:8]\ c\ =\ 2386092;\l\
+|[valid_files/13_integer_literals.c:8:8]\ d\ =\ 2386092;\l\
+|[valid_files/13_integer_literals.c:9:8]\ e\ =\ 1365;\l\
+|[valid_files/13_integer_literals.c:11:4]\ printf\ ([valid_files/13_integer_literals.c:11:11]\ \"%d\\n\",\ a);\l\
+|[valid_files/13_integer_literals.c:12:4]\ printf\ ([valid_files/13_integer_literals.c:12:11]\ \"%d\\n\",\ b);\l\
+|[valid_files/13_integer_literals.c:13:4]\ printf\ ([valid_files/13_integer_literals.c:13:11]\ \"%d\\n\",\ c);\l\
+|[valid_files/13_integer_literals.c:14:4]\ printf\ ([valid_files/13_integer_literals.c:14:11]\ \"%d\\n\",\ d);\l\
+|[valid_files/13_integer_literals.c:15:4]\ printf\ ([valid_files/13_integer_literals.c:15:11]\ \"%d\\n\",\ e);\l\
+|[valid_files/13_integer_literals.c:17:11]\ D.3212\ =\ 0;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3212;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+}

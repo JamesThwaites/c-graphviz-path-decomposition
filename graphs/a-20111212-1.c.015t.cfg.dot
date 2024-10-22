@@ -1,0 +1,64 @@
+digraph "a-20111212-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_frob_entry" {
+	style="dashed";
+	color="black";
+	label="frob_entry ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20111212-1.c:15:5]\ D.2786\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})buf];\l\
+|[valid_files/20111212-1.c:15:5]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})[valid_files/20111212-1.c:15:22]\ &event]\ =\ D.2786;\l\
+|[valid_files/20111212-1.c:16:19]\ _1\ =\ [valid_files/20111212-1.c:16:19]\ [valid_files/20111212-1.c:16:14]\ event.sent.sec;\l\
+|[valid_files/20111212-1.c:16:8]\ if\ (_1\ \<=\ 63)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/20111212-1.c:17:17]\ [valid_files/20111212-1.c:17:12]\ [valid_files/20111212-1.c:17:7]\ event.sent.sec\ =\ 4294967295;\l\
+|[valid_files/20111212-1.c:18:2]\ D.2787\ =\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})[valid_files/20111212-1.c:18:24]\ &event];\l\
+|[valid_files/20111212-1.c:18:2]\ MEM\ \<unsigned\ int\>\ [(char\ *\ \{ref-all\})buf]\ =\ D.2787;\l\
+}"];
+
+	fn_0_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|event\ =\ \{CLOBBER(eos)\};\l\
+|[valid_files/20111212-1.c:20:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_4:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_4:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20111212-1.c:29:5]\ __builtin_memset\ ([valid_files/20111212-1.c:29:22]\ &u,\ 0,\ 8);\l\
+|[valid_files/20111212-1.c:31:5]\ frob_entry\ ([valid_files/20111212-1.c:31:5]\ &[valid_files/20111212-1.c:31:22]\ [valid_files/20111212-1.c:31:18]\ u.buf[1]);\l\
+|[valid_files/20111212-1.c:33:12]\ D.2788\ =\ 0;\l\
+|u\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2788;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

@@ -1,0 +1,1040 @@
+digraph "a-builtin-prefetch-4.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_assign_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="assign_arg_ptr ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:20:26]\ q\ =\ p;\l\
+|[valid_files/builtin-prefetch-4.c:20:3]\ __builtin_prefetch\ (q,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:21:12]\ _1\ =\ q\ ==\ p;\l\
+|[valid_files/builtin-prefetch-4.c:21:12]\ D.2897\ =\ (int)\ _1;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:21:12\ discrim\ 1]\ return\ D.2897;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_assign_glob_ptr" {
+	style="dashed";
+	color="black";
+	label="assign_glob_ptr ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:28:26]\ q\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:28:3]\ __builtin_prefetch\ (q,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:29:12]\ ptr.0_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:29:12]\ _2\ =\ q\ ==\ ptr.0_1;\l\
+|[valid_files/builtin-prefetch-4.c:29:12]\ D.2899\ =\ (int)\ _2;\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:29:12\ discrim\ 1]\ return\ D.2899;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_assign_arg_idx" {
+	style="dashed";
+	color="black";
+	label="assign_arg_idx ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:36:28]\ j\ =\ i;\l\
+|[valid_files/builtin-prefetch-4.c:36:28]\ _1\ =\ (long\ unsigned\ int)\ j;\l\
+|[valid_files/builtin-prefetch-4.c:36:25]\ _2\ =\ _1\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:36:23]\ _3\ =\ p\ +\ _2;\l\
+|[valid_files/builtin-prefetch-4.c:36:3]\ __builtin_prefetch\ (_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:37:12]\ _4\ =\ j\ ==\ i;\l\
+|[valid_files/builtin-prefetch-4.c:37:12]\ D.2901\ =\ (int)\ _4;\l\
+}"];
+
+	fn_2_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:37:12\ discrim\ 1]\ return\ D.2901;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_3:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_assign_glob_idx" {
+	style="dashed";
+	color="black";
+	label="assign_glob_idx ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:44:3]\ ptr.1_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:44:30]\ j\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:44:30]\ _2\ =\ (long\ unsigned\ int)\ j;\l\
+|[valid_files/builtin-prefetch-4.c:44:27]\ _3\ =\ _2\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:44:23]\ _4\ =\ ptr.1_1\ +\ _3;\l\
+|[valid_files/builtin-prefetch-4.c:44:3]\ __builtin_prefetch\ (_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:45:12]\ arrindex.2_5\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:45:12]\ _6\ =\ j\ ==\ arrindex.2_5;\l\
+|[valid_files/builtin-prefetch-4.c:45:12]\ D.2903\ =\ (int)\ _6;\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:45:12\ discrim\ 1]\ return\ D.2903;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_preinc_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="preinc_arg_ptr ()";
+	fn_4_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_4_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_4_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:55:5]\ q\ =\ p\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:56:3]\ p\ =\ p\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:56:3]\ __builtin_prefetch\ (p,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:57:12]\ _1\ =\ p\ ==\ q;\l\
+|[valid_files/builtin-prefetch-4.c:57:12]\ D.2905\ =\ (int)\ _1;\l\
+}"];
+
+	fn_4_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:57:12\ discrim\ 1]\ return\ D.2905;\l\
+}"];
+
+	fn_4_basic_block_0:s -> fn_4_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_2:s -> fn_4_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_4_basic_block_3:s -> fn_4_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_4_basic_block_0:s -> fn_4_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_preinc_glob_ptr" {
+	style="dashed";
+	color="black";
+	label="preinc_glob_ptr ()";
+	fn_5_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_5_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_5_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:64:11]\ ptr.3_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:64:5]\ q\ =\ ptr.3_1\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:65:3]\ ptr.4_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:65:3]\ _3\ =\ ptr.4_2\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:65:3]\ ptr\ =\ _3;\l\
+|[valid_files/builtin-prefetch-4.c:65:3]\ ptr.5_4\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:65:3]\ __builtin_prefetch\ (ptr.5_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:66:14]\ ptr.6_5\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:66:14]\ _6\ =\ q\ ==\ ptr.6_5;\l\
+|[valid_files/builtin-prefetch-4.c:66:14]\ D.2907\ =\ (int)\ _6;\l\
+}"];
+
+	fn_5_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:66:14\ discrim\ 1]\ return\ D.2907;\l\
+}"];
+
+	fn_5_basic_block_0:s -> fn_5_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_2:s -> fn_5_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_5_basic_block_3:s -> fn_5_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_5_basic_block_0:s -> fn_5_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postinc_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="postinc_arg_ptr ()";
+	fn_6_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_6_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_6_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:73:5]\ q\ =\ p\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:74:3]\ p.7_1\ =\ p;\l\
+|[valid_files/builtin-prefetch-4.c:74:3]\ p\ =\ p.7_1\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:74:3]\ __builtin_prefetch\ (p.7_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:75:12]\ _2\ =\ p\ ==\ q;\l\
+|[valid_files/builtin-prefetch-4.c:75:12]\ D.2909\ =\ (int)\ _2;\l\
+}"];
+
+	fn_6_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:75:12\ discrim\ 1]\ return\ D.2909;\l\
+}"];
+
+	fn_6_basic_block_0:s -> fn_6_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_2:s -> fn_6_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_6_basic_block_3:s -> fn_6_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_6_basic_block_0:s -> fn_6_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postinc_glob_ptr" {
+	style="dashed";
+	color="black";
+	label="postinc_glob_ptr ()";
+	fn_7_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_7_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_7_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:82:11]\ ptr.8_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:82:5]\ q\ =\ ptr.8_1\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:83:3]\ ptr.9_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:83:3]\ ptr.10_3\ =\ ptr.9_2;\l\
+|[valid_files/builtin-prefetch-4.c:83:3]\ _4\ =\ ptr.10_3\ +\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:83:3]\ ptr\ =\ _4;\l\
+|[valid_files/builtin-prefetch-4.c:83:3]\ __builtin_prefetch\ (ptr.10_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:84:14]\ ptr.11_5\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:84:14]\ _6\ =\ q\ ==\ ptr.11_5;\l\
+|[valid_files/builtin-prefetch-4.c:84:14]\ D.2911\ =\ (int)\ _6;\l\
+}"];
+
+	fn_7_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:84:14\ discrim\ 1]\ return\ D.2911;\l\
+}"];
+
+	fn_7_basic_block_0:s -> fn_7_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_2:s -> fn_7_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_7_basic_block_3:s -> fn_7_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_7_basic_block_0:s -> fn_7_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_predec_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="predec_arg_ptr ()";
+	fn_8_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_8_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_8_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:91:5]\ q\ =\ p\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:92:3]\ p\ =\ p\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:92:3]\ __builtin_prefetch\ (p,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:93:12]\ _1\ =\ p\ ==\ q;\l\
+|[valid_files/builtin-prefetch-4.c:93:12]\ D.2913\ =\ (int)\ _1;\l\
+}"];
+
+	fn_8_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:93:12\ discrim\ 1]\ return\ D.2913;\l\
+}"];
+
+	fn_8_basic_block_0:s -> fn_8_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_2:s -> fn_8_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_8_basic_block_3:s -> fn_8_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_8_basic_block_0:s -> fn_8_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_predec_glob_ptr" {
+	style="dashed";
+	color="black";
+	label="predec_glob_ptr ()";
+	fn_9_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_9_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_9_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:100:11]\ ptr.12_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:100:5]\ q\ =\ ptr.12_1\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:101:3]\ ptr.13_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:101:3]\ _3\ =\ ptr.13_2\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:101:3]\ ptr\ =\ _3;\l\
+|[valid_files/builtin-prefetch-4.c:101:3]\ ptr.14_4\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:101:3]\ __builtin_prefetch\ (ptr.14_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:102:14]\ ptr.15_5\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:102:14]\ _6\ =\ q\ ==\ ptr.15_5;\l\
+|[valid_files/builtin-prefetch-4.c:102:14]\ D.2915\ =\ (int)\ _6;\l\
+}"];
+
+	fn_9_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:102:14\ discrim\ 1]\ return\ D.2915;\l\
+}"];
+
+	fn_9_basic_block_0:s -> fn_9_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_2:s -> fn_9_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_9_basic_block_3:s -> fn_9_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_9_basic_block_0:s -> fn_9_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postdec_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="postdec_arg_ptr ()";
+	fn_10_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_10_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_10_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:109:5]\ q\ =\ p\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:110:3]\ p.16_1\ =\ p;\l\
+|[valid_files/builtin-prefetch-4.c:110:3]\ p\ =\ p.16_1\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:110:3]\ __builtin_prefetch\ (p.16_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:111:12]\ _2\ =\ p\ ==\ q;\l\
+|[valid_files/builtin-prefetch-4.c:111:12]\ D.2917\ =\ (int)\ _2;\l\
+}"];
+
+	fn_10_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:111:12\ discrim\ 1]\ return\ D.2917;\l\
+}"];
+
+	fn_10_basic_block_0:s -> fn_10_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_2:s -> fn_10_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_10_basic_block_3:s -> fn_10_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_10_basic_block_0:s -> fn_10_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postdec_glob_ptr" {
+	style="dashed";
+	color="black";
+	label="postdec_glob_ptr ()";
+	fn_11_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_11_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_11_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:118:11]\ ptr.17_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:118:5]\ q\ =\ ptr.17_1\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:119:3]\ ptr.18_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:119:3]\ ptr.19_3\ =\ ptr.18_2;\l\
+|[valid_files/builtin-prefetch-4.c:119:3]\ _4\ =\ ptr.19_3\ +\ 18446744073709551612;\l\
+|[valid_files/builtin-prefetch-4.c:119:3]\ ptr\ =\ _4;\l\
+|[valid_files/builtin-prefetch-4.c:119:3]\ __builtin_prefetch\ (ptr.19_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:120:14]\ ptr.20_5\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:120:14]\ _6\ =\ q\ ==\ ptr.20_5;\l\
+|[valid_files/builtin-prefetch-4.c:120:14]\ D.2919\ =\ (int)\ _6;\l\
+}"];
+
+	fn_11_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:120:14\ discrim\ 1]\ return\ D.2919;\l\
+}"];
+
+	fn_11_basic_block_0:s -> fn_11_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_2:s -> fn_11_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_11_basic_block_3:s -> fn_11_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_11_basic_block_0:s -> fn_11_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_preinc_arg_idx" {
+	style="dashed";
+	color="black";
+	label="preinc_arg_idx ()";
+	fn_12_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_12_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_12_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:126:7]\ j\ =\ i\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:127:3]\ i\ =\ i\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:127:26]\ _1\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/builtin-prefetch-4.c:127:25]\ _2\ =\ _1\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:127:23]\ _3\ =\ p\ +\ _2;\l\
+|[valid_files/builtin-prefetch-4.c:127:3]\ __builtin_prefetch\ (_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:128:12]\ _4\ =\ i\ ==\ j;\l\
+|[valid_files/builtin-prefetch-4.c:128:12]\ D.2921\ =\ (int)\ _4;\l\
+}"];
+
+	fn_12_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:128:12\ discrim\ 1]\ return\ D.2921;\l\
+}"];
+
+	fn_12_basic_block_0:s -> fn_12_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_12_basic_block_2:s -> fn_12_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_12_basic_block_3:s -> fn_12_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_12_basic_block_0:s -> fn_12_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_preinc_glob_idx" {
+	style="dashed";
+	color="black";
+	label="preinc_glob_idx ()";
+	fn_13_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_13_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_13_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:135:20]\ arrindex.21_1\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:135:7]\ j\ =\ arrindex.21_1\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:136:3]\ ptr.22_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:136:28]\ arrindex.23_3\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:136:28]\ _4\ =\ arrindex.23_3\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:136:3]\ arrindex\ =\ _4;\l\
+|[valid_files/builtin-prefetch-4.c:136:28]\ arrindex.24_5\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:136:28]\ _6\ =\ (long\ unsigned\ int)\ arrindex.24_5;\l\
+|[valid_files/builtin-prefetch-4.c:136:27]\ _7\ =\ _6\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:136:23]\ _8\ =\ ptr.22_2\ +\ _7;\l\
+|[valid_files/builtin-prefetch-4.c:136:3]\ __builtin_prefetch\ (_8,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:137:19]\ arrindex.25_9\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:137:19]\ _10\ =\ j\ ==\ arrindex.25_9;\l\
+|[valid_files/builtin-prefetch-4.c:137:19]\ D.2923\ =\ (int)\ _10;\l\
+}"];
+
+	fn_13_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:137:19\ discrim\ 1]\ return\ D.2923;\l\
+}"];
+
+	fn_13_basic_block_0:s -> fn_13_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_13_basic_block_2:s -> fn_13_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_13_basic_block_3:s -> fn_13_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_13_basic_block_0:s -> fn_13_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postinc_arg_idx" {
+	style="dashed";
+	color="black";
+	label="postinc_arg_idx ()";
+	fn_14_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_14_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_14_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:143:7]\ j\ =\ i\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:144:27]\ i.26_1\ =\ i;\l\
+|[valid_files/builtin-prefetch-4.c:144:27]\ i\ =\ i.26_1\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:144:27]\ _2\ =\ (long\ unsigned\ int)\ i.26_1;\l\
+|[valid_files/builtin-prefetch-4.c:144:25]\ _3\ =\ _2\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:144:23]\ _4\ =\ p\ +\ _3;\l\
+|[valid_files/builtin-prefetch-4.c:144:3]\ __builtin_prefetch\ (_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:145:12]\ _5\ =\ i\ ==\ j;\l\
+|[valid_files/builtin-prefetch-4.c:145:12]\ D.2925\ =\ (int)\ _5;\l\
+}"];
+
+	fn_14_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:145:12\ discrim\ 1]\ return\ D.2925;\l\
+}"];
+
+	fn_14_basic_block_0:s -> fn_14_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_14_basic_block_2:s -> fn_14_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_14_basic_block_3:s -> fn_14_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_14_basic_block_0:s -> fn_14_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postinc_glob_idx" {
+	style="dashed";
+	color="black";
+	label="postinc_glob_idx ()";
+	fn_15_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_15_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_15_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:151:20]\ arrindex.27_1\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:151:7]\ j\ =\ arrindex.27_1\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:152:3]\ ptr.28_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:152:36]\ arrindex.29_3\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:152:36]\ arrindex.30_4\ =\ arrindex.29_3;\l\
+|[valid_files/builtin-prefetch-4.c:152:36]\ _5\ =\ arrindex.30_4\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:152:36]\ arrindex\ =\ _5;\l\
+|[valid_files/builtin-prefetch-4.c:152:36]\ _6\ =\ (long\ unsigned\ int)\ arrindex.30_4;\l\
+|[valid_files/builtin-prefetch-4.c:152:27]\ _7\ =\ _6\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:152:23]\ _8\ =\ ptr.28_2\ +\ _7;\l\
+|[valid_files/builtin-prefetch-4.c:152:3]\ __builtin_prefetch\ (_8,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:153:19]\ arrindex.31_9\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:153:19]\ _10\ =\ j\ ==\ arrindex.31_9;\l\
+|[valid_files/builtin-prefetch-4.c:153:19]\ D.2927\ =\ (int)\ _10;\l\
+}"];
+
+	fn_15_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:153:19\ discrim\ 1]\ return\ D.2927;\l\
+}"];
+
+	fn_15_basic_block_0:s -> fn_15_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_15_basic_block_2:s -> fn_15_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_15_basic_block_3:s -> fn_15_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_15_basic_block_0:s -> fn_15_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_predec_arg_idx" {
+	style="dashed";
+	color="black";
+	label="predec_arg_idx ()";
+	fn_16_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_16_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_16_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:159:7]\ j\ =\ i\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:160:3]\ i\ =\ i\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:160:26]\ _1\ =\ (long\ unsigned\ int)\ i;\l\
+|[valid_files/builtin-prefetch-4.c:160:25]\ _2\ =\ _1\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:160:23]\ _3\ =\ p\ +\ _2;\l\
+|[valid_files/builtin-prefetch-4.c:160:3]\ __builtin_prefetch\ (_3,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:161:12]\ _4\ =\ i\ ==\ j;\l\
+|[valid_files/builtin-prefetch-4.c:161:12]\ D.2929\ =\ (int)\ _4;\l\
+}"];
+
+	fn_16_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:161:12\ discrim\ 1]\ return\ D.2929;\l\
+}"];
+
+	fn_16_basic_block_0:s -> fn_16_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_16_basic_block_2:s -> fn_16_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_16_basic_block_3:s -> fn_16_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_16_basic_block_0:s -> fn_16_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_predec_glob_idx" {
+	style="dashed";
+	color="black";
+	label="predec_glob_idx ()";
+	fn_17_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_17_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_17_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:167:20]\ arrindex.32_1\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:167:7]\ j\ =\ arrindex.32_1\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:168:3]\ ptr.33_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:168:28]\ arrindex.34_3\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:168:28]\ _4\ =\ arrindex.34_3\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:168:3]\ arrindex\ =\ _4;\l\
+|[valid_files/builtin-prefetch-4.c:168:28]\ arrindex.35_5\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:168:28]\ _6\ =\ (long\ unsigned\ int)\ arrindex.35_5;\l\
+|[valid_files/builtin-prefetch-4.c:168:27]\ _7\ =\ _6\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:168:23]\ _8\ =\ ptr.33_2\ +\ _7;\l\
+|[valid_files/builtin-prefetch-4.c:168:3]\ __builtin_prefetch\ (_8,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:169:19]\ arrindex.36_9\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:169:19]\ _10\ =\ j\ ==\ arrindex.36_9;\l\
+|[valid_files/builtin-prefetch-4.c:169:19]\ D.2931\ =\ (int)\ _10;\l\
+}"];
+
+	fn_17_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:169:19\ discrim\ 1]\ return\ D.2931;\l\
+}"];
+
+	fn_17_basic_block_0:s -> fn_17_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_17_basic_block_2:s -> fn_17_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_17_basic_block_3:s -> fn_17_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_17_basic_block_0:s -> fn_17_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postdec_arg_idx" {
+	style="dashed";
+	color="black";
+	label="postdec_arg_idx ()";
+	fn_18_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_18_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_18_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:175:7]\ j\ =\ i\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:176:27]\ i.37_1\ =\ i;\l\
+|[valid_files/builtin-prefetch-4.c:176:27]\ i\ =\ i.37_1\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:176:27]\ _2\ =\ (long\ unsigned\ int)\ i.37_1;\l\
+|[valid_files/builtin-prefetch-4.c:176:25]\ _3\ =\ _2\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:176:23]\ _4\ =\ p\ +\ _3;\l\
+|[valid_files/builtin-prefetch-4.c:176:3]\ __builtin_prefetch\ (_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:177:12]\ _5\ =\ i\ ==\ j;\l\
+|[valid_files/builtin-prefetch-4.c:177:12]\ D.2933\ =\ (int)\ _5;\l\
+}"];
+
+	fn_18_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:177:12\ discrim\ 1]\ return\ D.2933;\l\
+}"];
+
+	fn_18_basic_block_0:s -> fn_18_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_18_basic_block_2:s -> fn_18_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_18_basic_block_3:s -> fn_18_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_18_basic_block_0:s -> fn_18_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_postdec_glob_idx" {
+	style="dashed";
+	color="black";
+	label="postdec_glob_idx ()";
+	fn_19_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_19_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_19_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:183:20]\ arrindex.38_1\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:183:7]\ j\ =\ arrindex.38_1\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:184:3]\ ptr.39_2\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:184:36]\ arrindex.40_3\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:184:36]\ arrindex.41_4\ =\ arrindex.40_3;\l\
+|[valid_files/builtin-prefetch-4.c:184:36]\ _5\ =\ arrindex.41_4\ +\ -1;\l\
+|[valid_files/builtin-prefetch-4.c:184:36]\ arrindex\ =\ _5;\l\
+|[valid_files/builtin-prefetch-4.c:184:36]\ _6\ =\ (long\ unsigned\ int)\ arrindex.41_4;\l\
+|[valid_files/builtin-prefetch-4.c:184:27]\ _7\ =\ _6\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:184:23]\ _8\ =\ ptr.39_2\ +\ _7;\l\
+|[valid_files/builtin-prefetch-4.c:184:3]\ __builtin_prefetch\ (_8,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:185:19]\ arrindex.42_9\ =\ arrindex;\l\
+|[valid_files/builtin-prefetch-4.c:185:19]\ _10\ =\ j\ ==\ arrindex.42_9;\l\
+|[valid_files/builtin-prefetch-4.c:185:19]\ D.2935\ =\ (int)\ _10;\l\
+}"];
+
+	fn_19_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:185:19\ discrim\ 1]\ return\ D.2935;\l\
+}"];
+
+	fn_19_basic_block_0:s -> fn_19_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_19_basic_block_2:s -> fn_19_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_19_basic_block_3:s -> fn_19_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_19_basic_block_0:s -> fn_19_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_getptr" {
+	style="dashed";
+	color="black";
+	label="getptr ()";
+	fn_20_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_20_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_20_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:196:12]\ getptrcnt.43_1\ =\ getptrcnt;\l\
+|[valid_files/builtin-prefetch-4.c:196:12]\ _2\ =\ getptrcnt.43_1\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:196:12]\ getptrcnt\ =\ _2;\l\
+|[valid_files/builtin-prefetch-4.c:197:12]\ D.2937\ =\ p\ +\ 4;\l\
+}"];
+
+	fn_20_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:197:12\ discrim\ 1]\ return\ D.2937;\l\
+}"];
+
+	fn_20_basic_block_0:s -> fn_20_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_20_basic_block_2:s -> fn_20_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_20_basic_block_3:s -> fn_20_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_20_basic_block_0:s -> fn_20_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_funccall_arg_ptr" {
+	style="dashed";
+	color="black";
+	label="funccall_arg_ptr ()";
+	fn_21_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_21_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_21_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:203:23]\ _1\ =\ getptr\ (p);\l\
+|[valid_files/builtin-prefetch-4.c:203:3\ discrim\ 1]\ __builtin_prefetch\ (_1,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:204:20]\ getptrcnt.44_2\ =\ getptrcnt;\l\
+|[valid_files/builtin-prefetch-4.c:204:20]\ _3\ =\ getptrcnt.44_2\ ==\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:204:20]\ D.2939\ =\ (int)\ _3;\l\
+}"];
+
+	fn_21_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:204:20\ discrim\ 1]\ return\ D.2939;\l\
+}"];
+
+	fn_21_basic_block_0:s -> fn_21_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_21_basic_block_2:s -> fn_21_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_21_basic_block_3:s -> fn_21_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_21_basic_block_0:s -> fn_21_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_getint" {
+	style="dashed";
+	color="black";
+	label="getint ()";
+	fn_22_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_22_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_22_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:212:12]\ getintcnt.45_1\ =\ getintcnt;\l\
+|[valid_files/builtin-prefetch-4.c:212:12]\ _2\ =\ getintcnt.45_1\ +\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:212:12]\ getintcnt\ =\ _2;\l\
+|[valid_files/builtin-prefetch-4.c:213:12]\ D.2941\ =\ i\ +\ 1;\l\
+}"];
+
+	fn_22_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:213:12\ discrim\ 1]\ return\ D.2941;\l\
+}"];
+
+	fn_22_basic_block_0:s -> fn_22_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_22_basic_block_2:s -> fn_22_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_22_basic_block_3:s -> fn_22_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_22_basic_block_0:s -> fn_22_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_funccall_arg_idx" {
+	style="dashed";
+	color="black";
+	label="funccall_arg_idx ()";
+	fn_23_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_23_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_23_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:219:26]\ _1\ =\ getint\ (i);\l\
+|[valid_files/builtin-prefetch-4.c:219:26\ discrim\ 1]\ _2\ =\ (long\ unsigned\ int)\ _1;\l\
+|[valid_files/builtin-prefetch-4.c:219:25\ discrim\ 1]\ _3\ =\ _2\ *\ 4;\l\
+|[valid_files/builtin-prefetch-4.c:219:23\ discrim\ 1]\ _4\ =\ p\ +\ _3;\l\
+|[valid_files/builtin-prefetch-4.c:219:3\ discrim\ 1]\ __builtin_prefetch\ (_4,\ 0,\ 0);\l\
+|[valid_files/builtin-prefetch-4.c:220:20]\ getintcnt.46_5\ =\ getintcnt;\l\
+|[valid_files/builtin-prefetch-4.c:220:20]\ _6\ =\ getintcnt.46_5\ ==\ 1;\l\
+|[valid_files/builtin-prefetch-4.c:220:20]\ D.2943\ =\ (int)\ _6;\l\
+}"];
+
+	fn_23_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/builtin-prefetch-4.c:220:20\ discrim\ 1]\ return\ D.2943;\l\
+}"];
+
+	fn_23_basic_block_0:s -> fn_23_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_23_basic_block_2:s -> fn_23_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_23_basic_block_3:s -> fn_23_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_23_basic_block_0:s -> fn_23_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_24_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_24_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_24_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/builtin-prefetch-4.c:226:8]\ ptr.47_1\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:226:8]\ _2\ =\ assign_arg_ptr\ (ptr.47_1);\l\
+|[valid_files/builtin-prefetch-4.c:226:6\ discrim\ 1]\ if\ (_2\ ==\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/builtin-prefetch-4.c:227:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/builtin-prefetch-4.c:228:8]\ _3\ =\ assign_glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-4.c:228:6\ discrim\ 1]\ if\ (_3\ ==\ 0)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/builtin-prefetch-4.c:229:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/builtin-prefetch-4.c:230:8]\ ptr.48_4\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:230:8]\ _5\ =\ assign_arg_idx\ (ptr.48_4,\ 4);\l\
+|[valid_files/builtin-prefetch-4.c:230:6\ discrim\ 1]\ if\ (_5\ ==\ 0)\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/builtin-prefetch-4.c:231:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|[valid_files/builtin-prefetch-4.c:232:8]\ _6\ =\ assign_glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-4.c:232:6\ discrim\ 1]\ if\ (_6\ ==\ 0)\l\
+\ \ goto\ \<bb\ 9\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 10\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 9\>:\l\
+|[valid_files/builtin-prefetch-4.c:233:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 10\>:\l\
+|[valid_files/builtin-prefetch-4.c:234:8]\ ptr.49_7\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:234:8]\ _8\ =\ preinc_arg_ptr\ (ptr.49_7);\l\
+|[valid_files/builtin-prefetch-4.c:234:6\ discrim\ 1]\ if\ (_8\ ==\ 0)\l\
+\ \ goto\ \<bb\ 11\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 12\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 11\>:\l\
+|[valid_files/builtin-prefetch-4.c:235:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 12\>:\l\
+|[valid_files/builtin-prefetch-4.c:236:8]\ _9\ =\ preinc_glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-4.c:236:6\ discrim\ 1]\ if\ (_9\ ==\ 0)\l\
+\ \ goto\ \<bb\ 13\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 13\>:\l\
+|[valid_files/builtin-prefetch-4.c:237:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 14\>:\l\
+|[valid_files/builtin-prefetch-4.c:238:8]\ ptr.50_10\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:238:8]\ _11\ =\ postinc_arg_ptr\ (ptr.50_10);\l\
+|[valid_files/builtin-prefetch-4.c:238:6\ discrim\ 1]\ if\ (_11\ ==\ 0)\l\
+\ \ goto\ \<bb\ 15\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 16\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 15\>:\l\
+|[valid_files/builtin-prefetch-4.c:239:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 16\>:\l\
+|[valid_files/builtin-prefetch-4.c:240:8]\ _12\ =\ postinc_glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-4.c:240:6\ discrim\ 1]\ if\ (_12\ ==\ 0)\l\
+\ \ goto\ \<bb\ 17\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 18\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 17\>:\l\
+|[valid_files/builtin-prefetch-4.c:241:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 18\>:\l\
+|[valid_files/builtin-prefetch-4.c:242:8]\ ptr.51_13\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:242:8]\ _14\ =\ predec_arg_ptr\ (ptr.51_13);\l\
+|[valid_files/builtin-prefetch-4.c:242:6\ discrim\ 1]\ if\ (_14\ ==\ 0)\l\
+\ \ goto\ \<bb\ 19\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 20\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 19\>:\l\
+|[valid_files/builtin-prefetch-4.c:243:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 20\>:\l\
+|[valid_files/builtin-prefetch-4.c:244:8]\ _15\ =\ predec_glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-4.c:244:6\ discrim\ 1]\ if\ (_15\ ==\ 0)\l\
+\ \ goto\ \<bb\ 21\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 22\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 21\>:\l\
+|[valid_files/builtin-prefetch-4.c:245:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 22\>:\l\
+|[valid_files/builtin-prefetch-4.c:246:8]\ ptr.52_16\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:246:8]\ _17\ =\ postdec_arg_ptr\ (ptr.52_16);\l\
+|[valid_files/builtin-prefetch-4.c:246:6\ discrim\ 1]\ if\ (_17\ ==\ 0)\l\
+\ \ goto\ \<bb\ 23\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 24\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 23\>:\l\
+|[valid_files/builtin-prefetch-4.c:247:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 24\>:\l\
+|[valid_files/builtin-prefetch-4.c:248:8]\ _18\ =\ postdec_glob_ptr\ ();\l\
+|[valid_files/builtin-prefetch-4.c:248:6\ discrim\ 1]\ if\ (_18\ ==\ 0)\l\
+\ \ goto\ \<bb\ 25\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 26\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 25\>:\l\
+|[valid_files/builtin-prefetch-4.c:249:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_26 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 26\>:\l\
+|[valid_files/builtin-prefetch-4.c:250:8]\ ptr.53_19\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:250:8]\ _20\ =\ preinc_arg_idx\ (ptr.53_19,\ 3);\l\
+|[valid_files/builtin-prefetch-4.c:250:6\ discrim\ 1]\ if\ (_20\ ==\ 0)\l\
+\ \ goto\ \<bb\ 27\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 28\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_27 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 27\>:\l\
+|[valid_files/builtin-prefetch-4.c:251:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_28 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 28\>:\l\
+|[valid_files/builtin-prefetch-4.c:252:8]\ _21\ =\ preinc_glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-4.c:252:6\ discrim\ 1]\ if\ (_21\ ==\ 0)\l\
+\ \ goto\ \<bb\ 29\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 30\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_29 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 29\>:\l\
+|[valid_files/builtin-prefetch-4.c:253:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_30 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 30\>:\l\
+|[valid_files/builtin-prefetch-4.c:254:8]\ ptr.54_22\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:254:8]\ _23\ =\ postinc_arg_idx\ (ptr.54_22,\ 3);\l\
+|[valid_files/builtin-prefetch-4.c:254:6\ discrim\ 1]\ if\ (_23\ ==\ 0)\l\
+\ \ goto\ \<bb\ 31\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 32\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_31 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 31\>:\l\
+|[valid_files/builtin-prefetch-4.c:255:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_32 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 32\>:\l\
+|[valid_files/builtin-prefetch-4.c:256:8]\ _24\ =\ postinc_glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-4.c:256:6\ discrim\ 1]\ if\ (_24\ ==\ 0)\l\
+\ \ goto\ \<bb\ 33\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 34\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_33 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 33\>:\l\
+|[valid_files/builtin-prefetch-4.c:257:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_34 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 34\>:\l\
+|[valid_files/builtin-prefetch-4.c:258:8]\ ptr.55_25\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:258:8]\ _26\ =\ predec_arg_idx\ (ptr.55_25,\ 3);\l\
+|[valid_files/builtin-prefetch-4.c:258:6\ discrim\ 1]\ if\ (_26\ ==\ 0)\l\
+\ \ goto\ \<bb\ 35\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 36\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_35 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 35\>:\l\
+|[valid_files/builtin-prefetch-4.c:259:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_36 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 36\>:\l\
+|[valid_files/builtin-prefetch-4.c:260:8]\ _27\ =\ predec_glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-4.c:260:6\ discrim\ 1]\ if\ (_27\ ==\ 0)\l\
+\ \ goto\ \<bb\ 37\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 38\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_37 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 37\>:\l\
+|[valid_files/builtin-prefetch-4.c:261:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_38 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 38\>:\l\
+|[valid_files/builtin-prefetch-4.c:262:8]\ ptr.56_28\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:262:8]\ _29\ =\ postdec_arg_idx\ (ptr.56_28,\ 3);\l\
+|[valid_files/builtin-prefetch-4.c:262:6\ discrim\ 1]\ if\ (_29\ ==\ 0)\l\
+\ \ goto\ \<bb\ 39\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 40\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_39 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 39\>:\l\
+|[valid_files/builtin-prefetch-4.c:263:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_40 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 40\>:\l\
+|[valid_files/builtin-prefetch-4.c:264:8]\ _30\ =\ postdec_glob_idx\ ();\l\
+|[valid_files/builtin-prefetch-4.c:264:6\ discrim\ 1]\ if\ (_30\ ==\ 0)\l\
+\ \ goto\ \<bb\ 41\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 42\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_41 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 41\>:\l\
+|[valid_files/builtin-prefetch-4.c:265:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_42 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 42\>:\l\
+|[valid_files/builtin-prefetch-4.c:266:8]\ ptr.57_31\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:266:8]\ _32\ =\ funccall_arg_ptr\ (ptr.57_31);\l\
+|[valid_files/builtin-prefetch-4.c:266:6\ discrim\ 1]\ if\ (_32\ ==\ 0)\l\
+\ \ goto\ \<bb\ 43\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 44\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_43 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 43\>:\l\
+|[valid_files/builtin-prefetch-4.c:267:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_44 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 44\>:\l\
+|[valid_files/builtin-prefetch-4.c:268:8]\ ptr.58_33\ =\ ptr;\l\
+|[valid_files/builtin-prefetch-4.c:268:8]\ _34\ =\ funccall_arg_idx\ (ptr.58_33,\ 3);\l\
+|[valid_files/builtin-prefetch-4.c:268:6\ discrim\ 1]\ if\ (_34\ ==\ 0)\l\
+\ \ goto\ \<bb\ 45\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 46\>;\ [INV]\l\
+}"];
+
+	fn_24_basic_block_45 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 45\>:\l\
+|[valid_files/builtin-prefetch-4.c:269:5]\ abort\ ();\l\
+}"];
+
+	fn_24_basic_block_46 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 46\>:\l\
+|[valid_files/builtin-prefetch-4.c:270:3]\ exit\ (0);\l\
+}"];
+
+	fn_24_basic_block_0:s -> fn_24_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_24_basic_block_2:s -> fn_24_basic_block_3:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_2:s -> fn_24_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_4:s -> fn_24_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_4:s -> fn_24_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_6:s -> fn_24_basic_block_7:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_6:s -> fn_24_basic_block_8:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_8:s -> fn_24_basic_block_9:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_8:s -> fn_24_basic_block_10:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_10:s -> fn_24_basic_block_11:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_10:s -> fn_24_basic_block_12:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_12:s -> fn_24_basic_block_13:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_12:s -> fn_24_basic_block_14:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_14:s -> fn_24_basic_block_15:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_14:s -> fn_24_basic_block_16:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_16:s -> fn_24_basic_block_17:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_16:s -> fn_24_basic_block_18:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_18:s -> fn_24_basic_block_19:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_18:s -> fn_24_basic_block_20:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_20:s -> fn_24_basic_block_21:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_20:s -> fn_24_basic_block_22:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_22:s -> fn_24_basic_block_23:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_22:s -> fn_24_basic_block_24:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_24:s -> fn_24_basic_block_25:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_24:s -> fn_24_basic_block_26:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_26:s -> fn_24_basic_block_27:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_26:s -> fn_24_basic_block_28:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_28:s -> fn_24_basic_block_29:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_28:s -> fn_24_basic_block_30:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_30:s -> fn_24_basic_block_31:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_30:s -> fn_24_basic_block_32:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_32:s -> fn_24_basic_block_33:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_32:s -> fn_24_basic_block_34:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_34:s -> fn_24_basic_block_35:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_34:s -> fn_24_basic_block_36:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_36:s -> fn_24_basic_block_37:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_36:s -> fn_24_basic_block_38:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_38:s -> fn_24_basic_block_39:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_38:s -> fn_24_basic_block_40:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_40:s -> fn_24_basic_block_41:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_40:s -> fn_24_basic_block_42:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_42:s -> fn_24_basic_block_43:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_42:s -> fn_24_basic_block_44:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_44:s -> fn_24_basic_block_45:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_24_basic_block_44:s -> fn_24_basic_block_46:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_24_basic_block_0:s -> fn_24_basic_block_1:n [style="invis",constraint=true];
+}
+}

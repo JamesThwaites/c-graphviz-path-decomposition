@@ -1,0 +1,119 @@
+digraph "a-pr82954.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_foo" {
+	style="dashed";
+	color="black";
+	label="foo ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr82954.c:6:11]\ _1\ =\ [valid_files/pr82954.c:6:11]\ *p;\l\
+|[valid_files/pr82954.c:6:15]\ _2\ =\ _1\ ^\ 1;\l\
+|[valid_files/pr82954.c:6:8]\ [valid_files/pr82954.c:6:4]\ *p\ =\ _2;\l\
+|[valid_files/pr82954.c:7:11]\ _3\ =\ p\ +\ 4;\l\
+|[valid_files/pr82954.c:7:11]\ _4\ =\ [valid_files/pr82954.c:7:11]\ *_3;\l\
+|[valid_files/pr82954.c:7:4]\ _5\ =\ p\ +\ 4;\l\
+|[valid_files/pr82954.c:7:15]\ _6\ =\ _4\ ^\ 2;\l\
+|[valid_files/pr82954.c:7:8]\ [valid_files/pr82954.c:7:4]\ *_5\ =\ _6;\l\
+|[valid_files/pr82954.c:8:11]\ _7\ =\ p\ +\ 8;\l\
+|[valid_files/pr82954.c:8:11]\ _8\ =\ [valid_files/pr82954.c:8:11]\ *_7;\l\
+|[valid_files/pr82954.c:8:18]\ _9\ =\ q\ +\ 8;\l\
+|[valid_files/pr82954.c:8:18]\ _10\ =\ [valid_files/pr82954.c:8:18]\ *_9;\l\
+|[valid_files/pr82954.c:8:4]\ _11\ =\ p\ +\ 8;\l\
+|[valid_files/pr82954.c:8:15]\ _12\ =\ _8\ ^\ _10;\l\
+|[valid_files/pr82954.c:8:8]\ [valid_files/pr82954.c:8:4]\ *_11\ =\ _12;\l\
+|[valid_files/pr82954.c:9:11]\ _13\ =\ p\ +\ 12;\l\
+|[valid_files/pr82954.c:9:11]\ _14\ =\ [valid_files/pr82954.c:9:11]\ *_13;\l\
+|[valid_files/pr82954.c:9:18]\ _15\ =\ q\ +\ 12;\l\
+|[valid_files/pr82954.c:9:18]\ _16\ =\ [valid_files/pr82954.c:9:18]\ *_15;\l\
+|[valid_files/pr82954.c:9:4]\ _17\ =\ p\ +\ 12;\l\
+|[valid_files/pr82954.c:9:15]\ _18\ =\ _14\ ^\ _16;\l\
+|[valid_files/pr82954.c:9:8]\ [valid_files/pr82954.c:9:4]\ *_17\ =\ _18;\l\
+|[valid_files/pr82954.c:10:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr82954.c:15:7]\ p[0]\ =\ 16;\l\
+|[valid_files/pr82954.c:15:7]\ p[1]\ =\ 32;\l\
+|[valid_files/pr82954.c:15:7]\ p[2]\ =\ 64;\l\
+|[valid_files/pr82954.c:15:7]\ p[3]\ =\ 128;\l\
+|[valid_files/pr82954.c:16:7]\ q[0]\ =\ 8;\l\
+|[valid_files/pr82954.c:16:7]\ q[1]\ =\ 4;\l\
+|[valid_files/pr82954.c:16:7]\ q[2]\ =\ 2;\l\
+|[valid_files/pr82954.c:16:7]\ q[3]\ =\ 1;\l\
+|[valid_files/pr82954.c:17:3]\ __asm__\ __volatile__(\"\"\ :\ \ :\ \"g\"\ [valid_files/pr82954.c:17:3]\ &p,\ \"g\"\ [valid_files/pr82954.c:17:3]\ &q\ :\ \"memory\");\l\
+|[valid_files/pr82954.c:18:3]\ foo\ ([valid_files/pr82954.c:18:8]\ &p,\ [valid_files/pr82954.c:18:11]\ &q);\l\
+|[valid_files/pr82954.c:19:8]\ _1\ =\ [valid_files/pr82954.c:19:8]\ p[0];\l\
+|[valid_files/pr82954.c:19:6]\ if\ (_1\ !=\ 17)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr82954.c:19:22\ discrim\ 1]\ _2\ =\ [valid_files/pr82954.c:19:22]\ p[1];\l\
+|[valid_files/pr82954.c:19:18\ discrim\ 1]\ if\ (_2\ !=\ 34)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr82954.c:19:36\ discrim\ 2]\ _3\ =\ [valid_files/pr82954.c:19:36]\ p[2];\l\
+|[valid_files/pr82954.c:19:32\ discrim\ 2]\ if\ (_3\ !=\ 66)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr82954.c:19:50\ discrim\ 3]\ _4\ =\ [valid_files/pr82954.c:19:50]\ p[3];\l\
+|[valid_files/pr82954.c:19:46\ discrim\ 3]\ if\ (_4\ !=\ 129)\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 7\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr82954.c:20:5]\ __builtin_abort\ ();\l\
+}"];
+
+	fn_1_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 7\>:\l\
+|[valid_files/pr82954.c:21:10]\ D.2782\ =\ 0;\l\
+|p\ =\ \{CLOBBER(eos)\};\l\
+|q\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 8\>:\l\
+|\<L6\>:\l\
+|return\ D.2782;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_6:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_5:s -> fn_1_basic_block_7:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_7:s -> fn_1_basic_block_8:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_8:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

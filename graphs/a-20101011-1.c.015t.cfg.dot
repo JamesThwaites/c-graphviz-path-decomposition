@@ -1,0 +1,38 @@
+digraph "a-20101011-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_sigfpe" {
+	style="dashed";
+	color="black";
+	label="sigfpe ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20101011-1.c:120:3]\ exit\ (0);\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/20101011-1.c:136:3]\ signal\ (8,\ [valid_files/20101011-1.c:136:3]\ sigfpe);\l\
+|[valid_files/20101011-1.c:137:9]\ i.0_1\ =\ i;\l\
+|[valid_files/20101011-1.c:137:9]\ j.1_2\ =\ j;\l\
+|[valid_files/20101011-1.c:137:9]\ _3\ =\ i.0_1\ /\ j.1_2;\l\
+|[valid_files/20101011-1.c:137:5]\ k\ =\ _3;\l\
+|[valid_files/20101011-1.c:138:3]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

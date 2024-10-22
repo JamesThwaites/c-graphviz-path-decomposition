@@ -1,0 +1,85 @@
+digraph "a-pr22098-3.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_f" {
+	style="dashed";
+	color="black";
+	label="f ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr22098-3.c:5:23]\ n.0_1\ =\ n;\l\
+|[valid_files/pr22098-3.c:5:23]\ _2\ =\ n.0_1\ +\ 1;\l\
+|[valid_files/pr22098-3.c:5:23]\ n\ =\ _2;\l\
+|[valid_files/pr22098-3.c:5:23]\ D.2785\ =\ n;\l\
+}"];
+
+	fn_0_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/pr22098-3.c:5:23\ discrim\ 1]\ return\ D.2785;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_3:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/pr22098-3.c:9:7]\ a\ =\ 0;\l\
+|[valid_files/pr22098-3.c:12:32]\ D.2783[0]\ =\ 0;\l\
+|[valid_files/pr22098-3.c:12:36]\ _1\ =\ f\ ();\l\
+|[valid_files/pr22098-3.c:12:32\ discrim\ 1]\ D.2783[1]\ =\ _1;\l\
+|[valid_files/pr22098-3.c:12:32\ discrim\ 1]\ D.2783[2]\ =\ 2;\l\
+|[valid_files/pr22098-3.c:12:21\ discrim\ 1]\ p\ =\ [valid_files/pr22098-3.c:12:23]\ &[valid_files/pr22098-3.c:12:43]\ D.2783[1];\l\
+|[valid_files/pr22098-3.c:12:5\ discrim\ 1]\ b\ =\ (uintptr_t)\ p;\l\
+|[valid_files/pr22098-3.c:13:7]\ _2\ =\ [valid_files/pr22098-3.c:13:7]\ *p;\l\
+|[valid_files/pr22098-3.c:13:6]\ if\ (_2\ !=\ 1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 3\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|[valid_files/pr22098-3.c:13:19\ discrim\ 1]\ b.1_3\ =\ (int\ *)\ b;\l\
+|[valid_files/pr22098-3.c:13:18\ discrim\ 1]\ _4\ =\ [valid_files/pr22098-3.c:13:18]\ *b.1_3;\l\
+|[valid_files/pr22098-3.c:13:15\ discrim\ 1]\ if\ (_4\ !=\ 1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 4\>:\l\
+|[valid_files/pr22098-3.c:13:38\ discrim\ 2]\ n.2_5\ =\ n;\l\
+|[valid_files/pr22098-3.c:13:33\ discrim\ 2]\ if\ (n.2_5\ !=\ 1)\l\
+\ \ goto\ \<bb\ 5\>;\ [INV]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [INV]\l\
+}"];
+
+	fn_1_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 5\>:\l\
+|[valid_files/pr22098-3.c:14:5]\ abort\ ();\l\
+}"];
+
+	fn_1_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 6\>:\l\
+|[valid_files/pr22098-3.c:15:3]\ exit\ (0);\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_4:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_5:n [style="solid,bold",color=forestgreen,weight=10,constraint=true];
+	fn_1_basic_block_4:s -> fn_1_basic_block_6:n [style="solid,bold",color=darkorange,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

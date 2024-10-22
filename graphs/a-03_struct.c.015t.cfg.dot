@@ -1,0 +1,63 @@
+digraph "a-03_struct.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_fred$" {
+	style="dashed";
+	color="black";
+	label="fred$ ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/03_struct.c:7:5]\ __builtin_puts\ (&\"~fred()\"[0]);\l\
+|[valid_files/03_struct.c:8:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/03_struct.c:20:17]\ [valid_files/03_struct.c:20:10]\ bloggs.boris\ =\ 12;\l\
+|[valid_files/03_struct.c:21:19]\ [valid_files/03_struct.c:21:10]\ bloggs.natasha\ =\ 34;\l\
+|[valid_files/03_struct.c:23:4]\ _1\ =\ [valid_files/03_struct.c:23:4]\ bloggs.boris;\l\
+|[valid_files/03_struct.c:23:4]\ printf\ ([valid_files/03_struct.c:23:11]\ \"%d\\n\",\ _1);\l\
+|[valid_files/03_struct.c:24:4]\ _2\ =\ [valid_files/03_struct.c:24:4]\ bloggs.natasha;\l\
+|[valid_files/03_struct.c:24:4]\ printf\ ([valid_files/03_struct.c:24:11]\ \"%d\\n\",\ _2);\l\
+|[valid_files/03_struct.c:27:19]\ [valid_files/03_struct.c:27:12]\ [valid_files/03_struct.c:27:9]\ jones[0].boris\ =\ 12;\l\
+|[valid_files/03_struct.c:28:21]\ [valid_files/03_struct.c:28:12]\ [valid_files/03_struct.c:28:9]\ jones[0].natasha\ =\ 34;\l\
+|[valid_files/03_struct.c:29:19]\ [valid_files/03_struct.c:29:12]\ [valid_files/03_struct.c:29:9]\ jones[1].boris\ =\ 56;\l\
+|[valid_files/03_struct.c:30:21]\ [valid_files/03_struct.c:30:12]\ [valid_files/03_struct.c:30:9]\ jones[1].natasha\ =\ 78;\l\
+|[valid_files/03_struct.c:32:4]\ _3\ =\ [valid_files/03_struct.c:32:4]\ [valid_files/03_struct.c:32:24]\ jones[0].boris;\l\
+|[valid_files/03_struct.c:32:4]\ printf\ ([valid_files/03_struct.c:32:11]\ \"%d\\n\",\ _3);\l\
+|[valid_files/03_struct.c:33:4]\ _4\ =\ [valid_files/03_struct.c:33:4]\ [valid_files/03_struct.c:33:24]\ jones[0].natasha;\l\
+|[valid_files/03_struct.c:33:4]\ printf\ ([valid_files/03_struct.c:33:11]\ \"%d\\n\",\ _4);\l\
+|[valid_files/03_struct.c:34:4]\ _5\ =\ [valid_files/03_struct.c:34:4]\ [valid_files/03_struct.c:34:24]\ jones[1].boris;\l\
+|[valid_files/03_struct.c:34:4]\ printf\ ([valid_files/03_struct.c:34:11]\ \"%d\\n\",\ _5);\l\
+|[valid_files/03_struct.c:35:4]\ _6\ =\ [valid_files/03_struct.c:35:4]\ [valid_files/03_struct.c:35:24]\ jones[1].natasha;\l\
+|[valid_files/03_struct.c:35:4]\ printf\ ([valid_files/03_struct.c:35:11]\ \"%d\\n\",\ _6);\l\
+|[valid_files/03_struct.c:37:11]\ D.2781\ =\ 0;\l\
+|[valid_files/03_struct.c:18:54]\ fred$\ ([valid_files/03_struct.c:18:54]\ &bloggs);\l\
+|bloggs\ =\ \{CLOBBER(eos)\};\l\
+|jones\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L2\>:\l\
+|return\ D.2781;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

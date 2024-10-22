@@ -1,0 +1,100 @@
+digraph "a-23_type_coercion.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_charfunc" {
+	style="dashed";
+	color="black";
+	label="charfunc ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/23_type_coercion.c:5:4]\ _1\ =\ (int)\ a;\l\
+|[valid_files/23_type_coercion.c:5:4]\ printf\ ([valid_files/23_type_coercion.c:5:11]\ \"char:\ %c\\n\",\ _1);\l\
+|[valid_files/23_type_coercion.c:6:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_intfunc" {
+	style="dashed";
+	color="black";
+	label="intfunc ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/23_type_coercion.c:10:4]\ printf\ ([valid_files/23_type_coercion.c:10:11]\ \"int:\ %d\\n\",\ a);\l\
+|[valid_files/23_type_coercion.c:11:1]\ return;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_floatfunc" {
+	style="dashed";
+	color="black";
+	label="floatfunc ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/23_type_coercion.c:15:4]\ _1\ =\ (double)\ a;\l\
+|[valid_files/23_type_coercion.c:15:4]\ printf\ ([valid_files/23_type_coercion.c:15:11]\ \"float:\ %f\\n\",\ _1);\l\
+|[valid_files/23_type_coercion.c:16:1]\ return;\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_2:s -> fn_2_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_3_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_3_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_3_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/23_type_coercion.c:20:4]\ charfunc\ (97);\l\
+|[valid_files/23_type_coercion.c:21:4]\ charfunc\ (98);\l\
+|[valid_files/23_type_coercion.c:22:4]\ charfunc\ (99);\l\
+|[valid_files/23_type_coercion.c:24:4]\ intfunc\ (97);\l\
+|[valid_files/23_type_coercion.c:25:4]\ intfunc\ (98);\l\
+|[valid_files/23_type_coercion.c:26:4]\ intfunc\ (99);\l\
+|[valid_files/23_type_coercion.c:28:4]\ floatfunc\ (9.7e+1);\l\
+|[valid_files/23_type_coercion.c:29:4]\ floatfunc\ (9.8e+1);\l\
+|[valid_files/23_type_coercion.c:30:4]\ floatfunc\ (9.9e+1);\l\
+|[valid_files/23_type_coercion.c:36:9]\ b\ =\ 97;\l\
+|[valid_files/23_type_coercion.c:37:9]\ c\ =\ 97;\l\
+|[valid_files/23_type_coercion.c:39:4]\ _1\ =\ (int)\ c;\l\
+|[valid_files/23_type_coercion.c:39:4]\ _2\ =\ (int)\ b;\l\
+|[valid_files/23_type_coercion.c:39:4]\ printf\ ([valid_files/23_type_coercion.c:39:11]\ \"%d\ %d\\n\",\ _2,\ _1);\l\
+|[valid_files/23_type_coercion.c:41:8]\ d\ =\ 97;\l\
+|[valid_files/23_type_coercion.c:42:8]\ e\ =\ 97;\l\
+|[valid_files/23_type_coercion.c:44:4]\ printf\ ([valid_files/23_type_coercion.c:44:11]\ \"%d\ %d\\n\",\ d,\ e);\l\
+|[valid_files/23_type_coercion.c:46:10]\ f\ =\ 9.7e+1;\l\
+|[valid_files/23_type_coercion.c:47:10]\ g\ =\ 9.7e+1;\l\
+|[valid_files/23_type_coercion.c:49:4]\ _3\ =\ (double)\ g;\l\
+|[valid_files/23_type_coercion.c:49:4]\ _4\ =\ (double)\ f;\l\
+|[valid_files/23_type_coercion.c:49:4]\ printf\ ([valid_files/23_type_coercion.c:49:11]\ \"%f\ %f\\n\",\ _4,\ _3);\l\
+|[valid_files/23_type_coercion.c:51:11]\ D.3222\ =\ 0;\l\
+}"];
+
+	fn_3_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|return\ D.3222;\l\
+}"];
+
+	fn_3_basic_block_0:s -> fn_3_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_2:s -> fn_3_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_3_basic_block_3:s -> fn_3_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_3_basic_block_0:s -> fn_3_basic_block_1:n [style="invis",constraint=true];
+}
+}

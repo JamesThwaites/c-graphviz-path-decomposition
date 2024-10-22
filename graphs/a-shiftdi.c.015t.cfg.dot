@@ -1,0 +1,56 @@
+digraph "a-shiftdi.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_g" {
+	style="dashed";
+	color="black";
+	label="g ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/shiftdi.c:10:19]\ _1\ =\ x\ \>\>\ y;\l\
+|[valid_files/shiftdi.c:10:25]\ _2\ =\ _1\ &\ 4294967295;\l\
+|[valid_files/shiftdi.c:10:48]\ _3\ =\ z\ &\ 31;\l\
+|[valid_files/shiftdi.c:10:42]\ _4\ =\ _2\ \<\<\ _3;\l\
+|[valid_files/shiftdi.c:10:11]\ w\ =\ (unsigned\ int)\ _4;\l\
+|[valid_files/shiftdi.c:11:2]\ _5\ =\ [valid_files/shiftdi.c:11:2]\ *p;\l\
+|[valid_files/shiftdi.c:11:11]\ _6\ =\ (long\ long\ unsigned\ int)\ w;\l\
+|[valid_files/shiftdi.c:11:28]\ _7\ =\ _6\ \<\<\ z;\l\
+|[valid_files/shiftdi.c:11:5]\ _8\ =\ _5\ \|\ _7;\l\
+|[valid_files/shiftdi.c:11:5]\ [valid_files/shiftdi.c:11:2]\ *p\ =\ _8;\l\
+|[valid_files/shiftdi.c:12:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/shiftdi.c:16:9]\ a\ =\ 0;\l\
+|[valid_files/shiftdi.c:17:2]\ g\ (16045690981116495207,\ 0,\ 0,\ [valid_files/shiftdi.c:17:2]\ &a);\l\
+|[valid_files/shiftdi.c:18:31]\ a.0_1\ =\ a;\l\
+|[valid_files/shiftdi.c:18:31]\ _2\ =\ a.0_1\ !=\ 19088743;\l\
+|[valid_files/shiftdi.c:18:31]\ D.2781\ =\ (int)\ _2;\l\
+|a\ =\ \{CLOBBER(eos)\};\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L1\>:\l\
+|return\ D.2781;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+}

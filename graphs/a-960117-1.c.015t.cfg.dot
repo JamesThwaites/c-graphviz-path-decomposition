@@ -1,0 +1,72 @@
+digraph "a-960117-1.c.015t.cfg" {
+overlap=false;
+subgraph "cluster_get_id" {
+	style="dashed";
+	color="black";
+	label="get_id ()";
+	fn_0_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_0_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_0_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/960117-1.c:30:14]\ _1\ =\ [valid_files/960117-1.c:30:14]\ [valid_files/960117-1.c:30:9]\ curval.vals.id;\l\
+|[valid_files/960117-1.c:30:21]\ [valid_files/960117-1.c:30:17]\ *_1\ =\ c;\l\
+|[valid_files/960117-1.c:31:1]\ return;\l\
+}"];
+
+	fn_0_basic_block_0:s -> fn_0_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_0_basic_block_2:s -> fn_0_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_0_basic_block_0:s -> fn_0_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_get_tok" {
+	style="dashed";
+	color="black";
+	label="get_tok ()";
+	fn_1_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/960117-1.c:36:8]\ c\ =\ 99;\l\
+|[valid_files/960117-1.c:37:28]\ idc.0_1\ =\ idc;\l\
+|[valid_files/960117-1.c:37:28]\ _2\ =\ (int)\ idc.0_1;\l\
+|[valid_files/960117-1.c:37:20]\ _3\ =\ [valid_files/960117-1.c:37:20]\ &[valid_files/960117-1.c:37:28]\ id_space[_2];\l\
+|[valid_files/960117-1.c:37:18]\ [valid_files/960117-1.c:37:14]\ [valid_files/960117-1.c:37:9]\ curval.vals.id\ =\ _3;\l\
+|[valid_files/960117-1.c:38:33]\ cur_line.1_4\ =\ cur_line;\l\
+|[valid_files/960117-1.c:38:33]\ _5\ =\ (short\ int)\ cur_line.1_4;\l\
+|[valid_files/960117-1.c:38:33]\ _6\ =\ _5\ \<\<\ 10;\l\
+|[valid_files/960117-1.c:38:33]\ char_pos.2_7\ =\ char_pos;\l\
+|[valid_files/960117-1.c:38:33]\ _8\ =\ (short\ int)\ char_pos.2_7;\l\
+|[valid_files/960117-1.c:38:33]\ _9\ =\ _6\ \|\ _8;\l\
+|[valid_files/960117-1.c:38:14]\ [valid_files/960117-1.c:38:9]\ curval.pos\ =\ _9;\l\
+|[valid_files/960117-1.c:39:10]\ _10\ =\ (int)\ c;\l\
+|[valid_files/960117-1.c:39:10]\ D.2793\ =\ get_id\ (_10);\l\
+}"];
+
+	fn_1_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 3\>:\l\
+|\<L0\>:\l\
+|[valid_files/960117-1.c:39:10\ discrim\ 1]\ return\ D.2793;\l\
+}"];
+
+	fn_1_basic_block_0:s -> fn_1_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_2:s -> fn_1_basic_block_3:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_1_basic_block_3:s -> fn_1_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true];
+	fn_1_basic_block_0:s -> fn_1_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_2_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{\<bb\ 2\>:\l\
+|[valid_files/960117-1.c:44:3]\ get_tok\ ();\l\
+|[valid_files/960117-1.c:45:3]\ exit\ (0);\l\
+}"];
+
+	fn_2_basic_block_0:s -> fn_2_basic_block_2:n [style="solid,bold",color=black,weight=100,constraint=true];
+	fn_2_basic_block_0:s -> fn_2_basic_block_1:n [style="invis",constraint=true];
+}
+}

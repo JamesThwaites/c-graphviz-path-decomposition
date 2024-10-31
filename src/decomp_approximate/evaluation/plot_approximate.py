@@ -142,6 +142,23 @@ def main():
         axs.flat[i].set(ylabel="Path-width", xlabel="Nesting Depth", ylim=(0,26))
         axs.flat[i].legend()
 
+    # Plot width vs While Depth, by algorithm
+    fig, axs = plt.subplots(1, 2)
+    fig.tight_layout(h_pad=2, w_pad=1)
+    for i, alg in enumerate(results.keys()):
+        #print(alg, i % 2, i % 3)
+        if i not in (4, 5):
+            continue
+        widths = []
+        num_tokens = []
+        for result in results[alg]: 
+            widths.append(result.pathwidth)
+            num_tokens.append(result.while_depth)
+
+        axs.flat[i-4].scatter(num_tokens, widths, c=colours[i], label=alg)
+        axs.flat[i-4].set_title(f"Optimisation {i}")
+        axs.flat[i-4].set(ylabel="Path-width", xlabel="Nesting Depth (only whiles)")
+
     # Plot number of bags vs tokens, by algorithm
     # fig, axs = plt.subplots(2, 3)
     # fig.tight_layout(h_pad=2, w_pad=1)

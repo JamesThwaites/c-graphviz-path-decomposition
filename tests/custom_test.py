@@ -1,5 +1,5 @@
 import unittest
-from read_dotgraph_tokenise import tokenise_dot_file
+from src.CFG_to_STRUCTURED.read_dotgraph_tokenise import tokenise_dot_file
 
 class CustomTest(unittest.TestCase):
     def test_simple_break(self):
@@ -20,11 +20,11 @@ class CustomTest(unittest.TestCase):
 
     def test_breaks_in_else(self):
         tokens = tokenise_dot_file("tests/custom_test_graphs/breaks_in_else.cfg.dot", "cluster_main")
-        self.assertEqual(tokens, "p o2 w1 i0 i1 o5 e1 o6 f1 o7 e0 i2 o9 b1 f2 o10 b1 f0 d1 r0 m")
+        self.assertEqual(tokens, "p o2 w1 i0 i1 o5 e1 o6 f1 o7 c1 f0 i2 o9 e2 o10 f2 r0 d1 m")
 
     def test_lots_of_else_breaks(self):
         tokens = tokenise_dot_file("tests/custom_test_graphs/break_both_branches.cfg.dot", "cluster_main")
-        self.assertEqual(tokens, "p o2 w1 i0 i1 i2 o6 e2 o7 f2 i3 o17 f3 e1 i4 o9 e4 o10 f4 o11 b1 f1 e0 i5 o13 e5 o14 f5 o15 b1 f0 d1 r0 m")
+        self.assertEqual(tokens, "p o2 w1 i0 i1 i2 o6 e2 o7 f2 i3 o17 f3 c1 f1 i4 o9 e4 o10 f4 o11 r0 f0 i5 o13 e5 o14 f5 o15 r1 d1 r2 m")
 
     def test_continues(self):
         tokens = tokenise_dot_file("tests/custom_test_graphs/continues.cfg.dot", "cluster_main")
@@ -48,7 +48,7 @@ class CustomTest(unittest.TestCase):
 
     def test_custom_multiconditional_with_break(self):
         tokens = tokenise_dot_file("tests/custom_test_graphs/more_multiconditionals.cfg.dot", "cluster_main")
-        self.assertEqual(tokens, "p o2 w1 i0 o6 e0 i1 o10 b1 f1 f0 d1 r0 m")
+        self.assertEqual(tokens, "p o2 w1 i0 o6 c1 f0 i1 o10 b1 f1 d1 r0 m")
 
     def test_custom_multiconditional_without_else(self):
         tokens = tokenise_dot_file("tests/custom_test_graphs/multiconditional_no_else.cfg.dot", "cluster_main")

@@ -1,5 +1,5 @@
 import unittest
-from read_dotgraph_tokenise import tokenise_dot_file
+from src.CFG_to_STRUCTURED.read_dotgraph_tokenise import tokenise_dot_file
 
 class BasicTest(unittest.TestCase):
     def test_if(self):

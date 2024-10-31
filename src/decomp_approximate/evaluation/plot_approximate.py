@@ -94,18 +94,14 @@ def parseResults(file: Path):
     )
 
 def main():
-    if len(sys.argv) != 3:
-        print(f"Usage: {__file__.split('/')[-1]} <test_results_directory> <output_directory>\n"
-              f"e.g. {__file__.split('/')[-1]} results_approximate/ results_approximate_plots/")
+    if len(sys.argv) != 2:
+        print(f"Usage: {__file__.split('/')[-1]} <test_results_directory>\n"
+              f"e.g. {__file__.split('/')[-1]} results_approximate/")
         return
     
     if not Path(sys.argv[1]).is_dir():
         print(f"{sys.argv[1]} is not a valid directory!")
         return
-    
-    if not Path(sys.argv[2]).is_dir():
-        print(f"Making directory {sys.argv[2]}...")
-        Path(sys.argv[2]).mkdir()
 
     dirs = [obj for obj in Path(sys.argv[1]).glob("*") if obj.is_dir()]
 

@@ -1,0 +1,1 @@
+p i0 o4 i1 o7 i2 o13 o15 w1 o16 i3 r0 f3 i4 o17 f4 i5 o20 f5 i6 o22 f6 i7 o24 c1 f7 o25 d1 r1 f2 r2 f1 r3 f0 r4 m

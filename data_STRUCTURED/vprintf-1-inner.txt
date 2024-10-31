@@ -1,0 +1,1 @@
+p o2 i0 r0 f0 i1 i2 r1 f2 r2 f1 i3 i4 r3 f4 r4 f3 i5 i6 r5 f6 r6 f5 i7 i8 r7 f8 r8 f7 i9 i10 r9 f10 r10 f9 i11 i12 r11 f12 r12 f11 i13 i14 r13 f14 r14 f13 i15 i16 r15 f16 r16 f15 i17 i18 r17 f18 r18 f17 i19 i20 r19 f20 r20 f19 i21 r21 f21 r22 m

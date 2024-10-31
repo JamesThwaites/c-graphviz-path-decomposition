@@ -1,0 +1,1 @@
+p i0 r0 f0 o4 w1 o5 d1 o7 w2 o8 d2 o10 w3 o11 d3 o13 w4 o14 d4 o16 w5 o17 d5 o19 w6 o20 d6 o22 w7 o23 d7 o25 w8 o26 d8 o28 w9 o29 d9 o31 w10 o32 d10 o34 w11 o35 d11 o37 w12 o38 d12 o40 w13 o41 d13 o43 w14 o44 d14 o46 w15 o47 d15 o49 w16 o50 d16 o52 w17 o53 d17 o55 w18 o56 d18 o58 w19 o59 d19 o61 w20 o62 d20 o64 w21 o65 d21 r1 m

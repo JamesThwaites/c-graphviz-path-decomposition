@@ -1,0 +1,1 @@
+p i0 r0 f0 i1 o5 f1 o6 w1 o7 d1 i2 r1 f2 r2 m
